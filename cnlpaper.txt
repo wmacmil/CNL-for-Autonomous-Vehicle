@@ -4,21 +4,20 @@ Main letters:
 proscriptive : what rules aren't allowed
 prescriptive : written from scratch
 
-Problem type they are supposed to solve
+Problem type they are supposed to solve : 
 
-C : improve communication among humans
-T : improve translation or translatability
-F : natural & intuitive for formal notations
-
+- C : improve communication among humans
+- T : improve translation or translatability
+- F : natural & intuitive for formal notations
 
 Precision Expressiveness Naturalness Simplicity (PENS)
 
 Precision 
 
-  P1 : imprecise
-  p3 : mapping sentences to formal representation is not fully formal
-    - think of this in the context of noise
-  p5 : fixed semantics
+  -  P1 : imprecise
+  -  p3 : mapping sentences to formal representation is not fully formal
+        + think of this in the context of noise
+  -  p5 : fixed semantics
 
 Expressiveness
    
@@ -29,18 +28,18 @@ Expressiveness
 (d) negation (strong negation or negation as failure)
 (e) general second-order universal quantification over concepts and relations
 
-  E1 : inexpressive 
-  E2 : description logics (still decidable)
-  E3 : FOL
-  E4 : HOL(2+)
-  E5 : Anything expressable
+  - E1 : inexpressive 
+  - E2 : description logics (still decidable)
+  - E3 : FOL
+  - E4 : HOL(2+)
+  - E5 : Anything expressable
 
 Naturalness
 
-N1 : symbols, purely formal
-N3 : Dominant natural elements. Languages with dominant natural elements
-N4 : Natural sentences
-N5 : natural texts 
+  - N1 : symbols, purely formal
+  - N3 : Languages with dominant natural elements
+  - N4 : Natural sentences
+  - N5 : natural texts 
 
 
 
