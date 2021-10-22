@@ -3,7 +3,7 @@ concrete DriveEng of Drive = open
     SymbolicEng,
     (C = ConstructorsEng),
     ParadigmsEng,
-    -- ExtraEng, -- for the negative prop
+    ExtraEng, -- for the negative prop
     Prelude in {
 
 lincat
@@ -19,6 +19,9 @@ lincat
   Time = Adv ;
   -- Event ;
 
+  Conjunct = Conj ;
+  [Command] = [Imp] ;
+
 lin
 
   -- Ask : Something -> Question ;
@@ -32,7 +35,8 @@ lin
   DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
 
 
-  -- MultipleRoutes : Command -> Command -> Command ;
+  -- MultipleRoutes : Conjunct -> Command -> Command -> Command ;
+  MultipleRoutes c1 c2 = ConjImp c1 c2 ;
 
 
   -- then , adverb
@@ -49,6 +53,10 @@ lin
 
   -- -- EndRoute : Way -> Place -> Route ;
   -- EndRoute w p = mkAdv w p ;
+
+  And = and_Conj ;
+  Or = or_Conj ;
+  Then = then ;
 
 oper
   five    = mkDet (mkCard (mkNumeral n5_Unit)) ;

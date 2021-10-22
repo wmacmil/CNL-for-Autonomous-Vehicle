@@ -1,18 +1,121 @@
 
-Imperative mood vs Interogative QA
+Types of statements :
 
-Driving Control
-  - auxilliary (windows, AC, winshield, lights) 
-  - music (externally wrt to internet)
-Direction Control
+  - Imperative 
+  - Interogative (QA)
+
+Big issue :
+  What are the assumptions we make about the capabilities of the automation. The more "capable" our system is, the less language input we imagine the user needing to provide (because the meaning of how can be inferred) i.e.
+  what : turn
+  how  : slightly
+  Micromanaging presumably defeats the purpose of self driving car
+
+Controls :
+
+  local : things the driver can do with body
+    - cruise control is a controller for the pedal
+    - wheel control is a controller for the wheel
+    - break control 
+
+  global : things the driver can do with thinking
+    - set route
+    - adjust route
+
+  auxiliary 
+    - internal (windows, AC, windshield, lights, volume, ...) 
+    - external [externally wrt to internet] (music, audio, directions, ...)
+
+Commands can be (i) logically invalid (ii) unsafe/illegal (iii) overly complex
+
+(i)
+  - accelerate and breaking events at the same time 
+  - take a left and right on MLK blvd
+(ii)
+  - Hit that pedestrian
+  - Don't stop, no matter what
+(iii)
+  - if the Riemann hypothesis is true then take the next left
+  - drive at 35.52 mph and stay 1 cm from the right yellow line
+
+The role of context : the context inside someone's head should, which has been
+verbalized, should match that of the vehicle. 
+
+Example Utterances (please add to this list)
+
+what kinds of constraints : local (l) vs. global (g)
+ideal to focus on denotative, or global commands rather than local ones, generally
+
+Logic :
+  Time, space, time & space, event, action, propositions
+
+Simple  :
+
+  - Just drive
+  - Start car
+  - Stop at X
+  - Go to X
+  - Circle back, I just saw X
+  - Take X instead 
+  - Turn _.
+  - Shift lanes after this car passes
+    - (even if there are two options)
+  - Drive slower
+    - (how much?, context dependent (i.e. current speed, person driving, etc))
+  - Keep going 65 until we approach a town.
+  - No rush, we need to be there by T.
+  - Accelerate slowly, there's a baby in the car
+  - Accelerate as fast as possible
+  - turn right after the bridge
+  - turn right right after the bridge
+    - (ambiguous with our grammar)
+  - always take the cheapest route
+  - Stop at the next cheapest gas station 
+  - Let this person pass
+  - pick up the kids
+
+Compound (some kind of conjunction generally presumed, although not always)
+
+- Go to X via Y.
+- Go to X stopping at Y first.
+- Go to X then Y.
+- Reverse out of this parking spot and wait (what does that mean)
+- Take the next left and X
+- Take X to Y. 
+- Take the least expensive route to X.
+- Take the most scenic route to X, such that Y.
+- if there temperature is below, and especially if [there has been rain], drive slower
+- if there temperature is below, and especially if [the roads are wet], drive slower
+
+Logic : 
+- if there is a red light, and we're taking a right soon ahead, always take a right (as opposed to stopping).
+- if there is a road that avoids X, take that 
+- go either way (left or right) depending on if theres significantly more cars
+- keep the blinkers on and drive 5kmh to the next gas station
+
+Should we define stop := not(drive) ?
+
+QA : should share a lexicon, syntax, but also extend our basis here
+- How much longer is the X than the Y.
+- if there temperature is below, and especially if there has been rain, drive slower
+- How much more expensive is the X than the Y. 
+- Can we get there in X minutes if we need to stop at Y? 
+
+Lexical considerations :
+
+How to make it invariant, or robust, with respect to synonymy?
+What is the lexical difference between "go" and "drive"?
+
+
+
+This should make the bulk of the lexicon
 
 Verbs/Actions :
 
 Go 
-Turn left ahead
+Turn 
 Shift (lane)
 Drive (ambiguous)
-Find
+Find (perhaps outside the scope of current systems, find the nearest park with a bench, )
 Break
 "Catch up"
 Stop
@@ -26,14 +129,8 @@ traffic, pothole, other car (that one), blinker
 
 tree, house, pedestrian, child, school, deer
 
-Prepositions :
-
-On, in, by, through, over /
 
 
-places : home, edinburgh, cafe, 
 
-
-logic : take either 
 
 

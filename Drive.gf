@@ -10,22 +10,30 @@ cat
   Action ; -- should this be dependently typed over controller
   Way ; -- in a certain way (adverb, or via some landmark)
   Direction ;
-  Question ;
-  Something ;
   Object ;
   -- Event ; -- dependent on time
 
-  -- for places, times, orders : lists possibly ?
+  -- GF supports lists
+  [Command]{2} ;
+
+  Question ; --QA, not relevant yet
+  Something ;
+  Conjunct ;
 
 fun
 
-  -- so a question is how composable are the actions
+  And : Conjunct ;
+  Or : Conjunct ;
+  Then : Conjunct ;
 
-  Ask : Something -> Question ;
+  Ask : Something -> Question ; --just for illustrative purposes
+  Thing : Something ;
 
   SimpleCom : Action -> Command ;
   DriveTo : Action -> Way -> Place -> Command ;
   ModAction : Action -> Direction -> Action ; --adverbial
+
+  MultipleRoutes : Conjunct -> Command -> Command -> Command ;
   -- EndRoute : Way -> Place -> Route ;
 
   DoTil : Action -> Time -> Command ;
@@ -53,7 +61,7 @@ fun
   Gallery : Place ;
   Museum : Place ;
   Bridge : Place ; -- also an object
-  -- Overpass : Place ; -- also an object
+  -- Overpass : Place ;
 
   Edinburgh : Place ;
   London : Place ;
@@ -70,5 +78,4 @@ fun
   Now : Time ;
   InFive : Time ;
 
-  Thing : Something ;
 }

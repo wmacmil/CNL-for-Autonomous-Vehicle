@@ -1,32 +1,34 @@
 
-Main letters:
 
-proscriptive : what rules aren't allowed
-prescriptive : written from scratch
+General Considerations :
+
+  - Proscriptive : what rules aren't allowed
+  - Prescriptive : written from scratch
 
 Problem type they are supposed to solve : 
 
-- C : improve communication among humans
-- T : improve translation or translatability
-- F : natural & intuitive for formal notations
+  - C : improve communication among humans
+  - T : improve translation or translatability
+  - F : natural & intuitive for formal notations
 
 Precision Expressiveness Naturalness Simplicity (PENS)
 
-Precision 
+(i) Precision 
 
   -  P1 : imprecise
   -  p3 : mapping sentences to formal representation is not fully formal
         + think of this in the context of noise
   -  p5 : fixed semantics
 
-Expressiveness
+(ii) Expressiveness
    
-(a) universal quantification over individuals (possibly limited)
-(b) relations of arity greater than 1 (e.g., binary relations)
-(c) general rule structures (if–then statements with multiple universal
-    quantification that can target all argument positions of relations)
-(d) negation (strong negation or negation as failure)
-(e) general second-order universal quantification over concepts and relations
+  -- given in paper
+  (a) universal quantification over individuals (possibly limited)
+  (b) relations of arity greater than 1 (e.g., binary relations)
+  (c) general rule structures (if–then statements with multiple universal
+      quantification that can target all argument positions of relations)
+  (d) negation (strong negation or negation as failure)
+  (e) general second-order universal quantification over concepts and relations
 
   - E1 : inexpressive 
   - E2 : description logics (still decidable)
@@ -34,78 +36,55 @@ Expressiveness
   - E4 : HOL(2+)
   - E5 : Anything expressable
 
-Naturalness
+(iii) Naturalness
 
   - N1 : symbols, purely formal
   - N3 : Languages with dominant natural elements
   - N4 : Natural sentences
   - N5 : natural texts 
 
+(iv) Simplicity : 
 
-
-Simplicity : 
-
-This description should not presuppose intuitive knowledge about any natural
-language. It is therefore not primarily a measure for the effort needed by a
-human to learn the language, neither does it capture the theoretical
-complexity of the language (as, for example, the Chomsky hierarchy does).
-Rather, it is closely related to the effort needed to fully implement the
-syntax and the semantics of the language in a mathematical model, such as a
-computer program.
+(verbatim)
+  This description should not presuppose intuitive knowledge about any natural
+  language. It is therefore not primarily a measure for the effort needed by a
+  human to learn the language, neither does it capture the theoretical
+  complexity of the language (as, for example, the Chomsky hierarchy does).
+  Rather, it is closely related to the effort needed to fully implement the
+  syntax and the semantics of the language in a mathematical model, such as a
+  computer program.
 
 criteria of exact and comprehensive
 
-  S1 : Very complex language
-  S2 : no exact nor comprehensive manner, but much simpler than S1
-  {natural}
+  - S1 : Very complex language
+  - S2 : no exact nor comprehensive manner, but much simpler than S1
+  - {natural}
+  - S3 : >10 pages of rules
+  - S4 : 1-10 pages of rules
+  - S5 : <1 page of description
+    {formal natural}
 
-  S3 : >10 pages of rules
-  S4 : 1-10 pages of rules
-  S5 : <1 page of description
-  {formal natural}
-
+Examples 
 English : p1 e5 n5 s1
 Prop Logic : p5 e1 n1 s5
 
-Sowa's syllogisms - P5 E1 N4 S5 , F W A
+General "grading" criteria
 
 C The goal is comprehensibility
-T The goal is translation
-F The goal is formal representation (including automatic execution)
+T The goal is translation (**)
+F The goal is formal representation (including automatic execution) (*)
 
 W The language is intended to be written
-S The language is intended to be spoken
-D The language is designed for a specific narrow domain
+S The language is intended to be spoken (*)
+D The language is designed for a specific narrow domain (*)
 
-A The language originated from academia
-I The language originated from industry
-G The language originated from a government
+A The language originated from academia (*)
+I The language originated from industry 
+G The language originated from a government 
 
+(*) Definitely ours
+(**) Possibly ours, or ideally
 
-{Utterance} --audio analysis-> 
-{Logical Form} : this is a possible verification condition the network
-
-
-For the navigation coordinator :
-
-constraints
-- condition : can't intersect accelerate and breaking events at the same time 
-- condition : rules for cutting people off, etc. all this should be done by the
-  downstream system. but if we give it conflicting information, then it has to
-  update its context
-- micromanaging defeats the purpose of self driving car
-
-Pedal 
-Break Pedal
-Wheel
-
-local control
-{
-cruise control is a controller for the pedal
-wheel control is a controller for the wheel
-break control
-  auxiliarry : windshield, windows. 
-}
 
 drive slowly when we pass the monument ahead
 
@@ -120,92 +99,19 @@ take :
   - take the next exit (turn right ahead)
   - take the 101 to the 405 sound
 
-global control : managing the state 
-{
-stop at
-go to 
-circle back, I just saw x walking
-take x route instead, but stop by the y
-}
 
 if we adjust local context, it may or may not effect the global context
-  (drive slower, theres a bump ahead)
-  vs 
-  (no rush, we can get there a few minutes later)
 
 
 
 What are the constraints of a self-driving car?
 When does it disobey orders, either intentionally or unintentionally?
 
-Go / Drive 
-stop = ~drive
-
-- no rush, we need to be there by ...
-- accelerate slowly, theres a baby in the car
-- Just drive
-- Start car
-- reverse out of this parking spot and wait (what does that mean)
-- Go to X.
-- take the next left and 
-- Go to X via Y.
-- Go to X stopping at Y first.
-- Go to X then Y.
-- Take X to Y. 
-- Take the least expensive route to X.
-- Take the most scenic route to X, such that Y.
-- Stop at the next cheapest gas station 
-- Let this person pass
-- pick up the kids
-
-go to x. then, from there, go to y.
-
-keep the cruise on 65 until we approach a town
-
-time reasoning
-distance reasoning
 
 
-p "turn right after the bridge"
-p "turn right right after the bridge" -- ambiguous parses
 
 
-t after the bridge"
-- keep the blinkers on and drive 5kmh to the next gas station
 
-logic : 
-if there is a red light, and we're taking a right soon ahead, always take a right (as opposed to stopping).
-always take the cheapest route
-if there is a road that avoids X, take that 
-go either way (left or right) if theres significantly more cars
-
-- Accelerate 
-- Slow down
-- Speed up
-- Set the cruise to X (verification condition)
-- Stop
-
-QA 
-- How much longer is the X than the Y.
-- How much more expensive is the X than the Y. 
-- can we get there in X minutes if we need to stop at Y? 
-
-What about other languages. Mixing of languages
-
-French
-Mandarin 
-Arabic 
-English
-
-Could translate everything to English, or could have the CNL be inductively defined map down to 
-a common set of formulas in first order logic. 
-
-What is the controller have control of 
-
-(i) endpoint, ;q
-
-
-semantic primitives 
 
 
 
