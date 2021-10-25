@@ -3,7 +3,8 @@ concrete DriveEng of Drive = open
     SymbolicEng,
     (C = ConstructorsEng),
     ParadigmsEng,
-    ExtraEng, -- for the negative prop
+    -- ExtraEng, -- for the negative prop
+    ExtendEng, -- for the negative prop
     Prelude in {
 
 lincat
@@ -34,12 +35,9 @@ lin
   -- DriveTo : Action -> Way -> Place -> Command ;
   DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
 
+  -- MultipleRoutes : Conjunct -> [Command] -> Command ;
+  MultipleRoutes = ConjImp ;
 
-  -- MultipleRoutes : Conjunct -> Command -> Command -> Command ;
-  MultipleRoutes c1 c2 = ConjImp c1 c2 ;
-
-
-  -- then , adverb
 
   -- ModAction : Action -> Direction -> Action ;
   ModAction a d = mkVP a d ;
@@ -70,20 +68,16 @@ oper
 
 lin
 
+  --List Constructors
+  BaseCommand = BaseImp ;
+  ConsCommand = ConsImp ;
+
   Now = ParadigmsEng.mkAdv "now" ;
   InFive = C.mkAdv in_Prep fiveminutes ;
 
   -- (furure) event is a time and thing at the time
-
-  -- mkUtt (mkCard at_least_AdN (mkCard (mkNumeral n8_Unit)))
-  -- InFive = mkAdv in_Prep (mkNP  Time ; -- generalize to mkTime
-
-  -- mkUtt (mkImp (mkVP (mkVP come_V) (mkAdv to_Prep (mkNP i_Pron house_N))))
   -- later
   -- after some event
-  -- DriveTo : Action -> Way -> Place -> Route ;
-  -- TakeAction : gcAction -> Action ;
-
 
   --  : Direction ;
   Left = ParadigmsEng.mkAdv "left" ;

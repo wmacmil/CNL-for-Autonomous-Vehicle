@@ -33,7 +33,7 @@ fun
   DriveTo : Action -> Way -> Place -> Command ;
   ModAction : Action -> Direction -> Action ; --adverbial
 
-  MultipleRoutes : Conjunct -> Command -> Command -> Command ;
+  MultipleRoutes : Conjunct -> [Command] -> Command ;
   -- EndRoute : Way -> Place -> Route ;
 
   DoTil : Action -> Time -> Command ;
