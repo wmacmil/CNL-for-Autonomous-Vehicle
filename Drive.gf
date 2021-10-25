@@ -31,7 +31,7 @@ fun
 
   SimpleCom : Action -> Command ;
   DriveTo : Action -> Way -> Place -> Command ;
-  ModAction : Action -> Direction -> Action ; --adverbial
+  ModAction : Action -> Direction -> Action ;
 
   MultipleRoutes : Conjunct -> [Command] -> Command ;
 
@@ -63,7 +63,7 @@ fun
   Cafe : Thing ;
   Gallery : Thing ;
   Museum : Thing ;
-  Bridge : Thing ; -- also an object
+  Bridge : Thing ;
 
   Home : Place ;
   Edinburgh : Place ;
@@ -75,6 +75,7 @@ fun
   Stop : Action ;
   Break : Action ;
   Turn : Action ;
+  --Avoid, ....
 
 
   A : Determ ;

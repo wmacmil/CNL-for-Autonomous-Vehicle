@@ -116,16 +116,14 @@ lin
 
 
   Person = mkN "person" "people" ;
-  -- why this error
+  -- why this error?
   -- p -cat=Thing "people"
   --   The parser failed at token 1: "people"
 
-  -- -should coerce these to place
   Cafe = mkN "cafe" ;
   Gallery = mkN "gallery" ;
   Museum = mkN "museum" ;
-  Bridge = mkN "bridge" ; -- also an object
-  -- places
+  Bridge = mkN "bridge" ;
   -- Person = mkN "person" ;
   Tree = mkN "tree" ;
   Car = mkN "car" ;
