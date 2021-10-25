@@ -9,25 +9,26 @@ concrete DriveEng of Drive = open
 
 lincat
   Command = Imp ;
+  Conjunct = Conj ;
+  [Command] = [Imp] ;
   Place = NP ;
   Route = Adv ;
   Action = VP ;
   Way = Prep ; -- in a certain way (adverb, or via some landmark)
   Direction = Adv ;
-  Question = QS ;
-  Something = QCl ;
   Object = NP ;
   Determ = Det ;
   Thing = N ;
   Time = Adv ;
-  -- Event ;
 
-  -- Number = NP ; -- from the arithmetic library
   Number = Det ;
+  -- Number = NP ; -- from the arithmetic library
   -- 3 + 5 minutes
+  -- 3 to 5 minutes
 
-  Conjunct = Conj ;
-  [Command] = [Imp] ;
+  --I gnore for now, just included to approximate completeness
+  Question = QS ;
+  Something = QCl ;
 
 lin
 
@@ -54,17 +55,16 @@ lin
   Or = or_Conj ;
   Then = then ;
 
-  -- run-time error, is this a bug?
+  -- Hack : https://inariksit.github.io/gf/2019/01/26/literals-2.html
   -- MkNum : Int -> Number ;
-  -- MkNum i = mkDet (mkDigits i.s) ;
+  MkNum int =
+    let sym : Symb = mkSymb int.s ; -- mkSymb : Str -> Symb ;
+        card : Card = symb sym ;    -- symb : Symb -> Card ;
+        det : Det = mkDet card ;
+    in det ;
 
-oper
-  five    = mkDet (mkCard (mkNumeral n5_Unit)) ;
-  minutes = mkN "minute" "minutes" ;
-  fiveminutes = mkNP five minutes ;
-  then = mkConj "then" ;
-
-lin
+  -- InNMin : Determ -> Time ;
+  InNMin d way = C.mkAdv way (mkNP d minutes) ;
 
   --List Constructors
   BaseCommand = BaseImp ;
@@ -109,30 +109,29 @@ lin
 
   -- Determ
   A = a_Det ;
-  The = the_Det ;
+  The = the_Det ; --need to refactor to include both singular and plural
   This = this_Det ;
   These = these_Det ;
   That = that_Det ;
 
-
   Person = mkN "person" "people" ;
-  -- why this error?
-  -- p -cat=Thing "people"
-  --   The parser failed at token 1: "people"
-
   Cafe = mkN "cafe" ;
   Gallery = mkN "gallery" ;
   Museum = mkN "museum" ;
   Bridge = mkN "bridge" ;
-  -- Person = mkN "person" ;
   Tree = mkN "tree" ;
   Car = mkN "car" ;
 
   --for QA, ignore for now
   -- Ask : Something -> Question ;
   Ask s = mkQS s ;
-
   -- Thing : Something ;
   SomeThing = mkQCl who_IP (mkV "something") ;
+
+oper
+  five    = mkDet (mkCard (mkNumeral n5_Unit)) ;
+  minutes = mkN "minute" "minutes" ;
+  fiveminutes = mkNP five minutes ;
+  then = mkConj "then" ;
 
 }

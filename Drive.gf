@@ -14,20 +14,17 @@ cat
   Determ ;
   Object ;
   Number ;
-  -- Event ; -- dependent on time
-
-  -- GF supports lists
-  [Command]{2} ;
-
-  Question ; --QA, not relevant yet
-  Something ;
+  [Command]{2} ; -- GF supports lists
   Conjunct ;
+
+  --QA, not relevant yet
+  Question ;
+  Something ;
+
+  -- Event ; -- dependent on time, need to figure out how to incorporate this
 
 fun
 
-  And : Conjunct ;
-  Or : Conjunct ;
-  Then : Conjunct ;
 
   SimpleCom : Action -> Command ;
   DriveTo : Action -> Way -> Place -> Command ;
@@ -40,7 +37,11 @@ fun
   WhichObject : Determ -> Thing -> Object ;
   ObjectPlace : Object -> Place ;
 
-  MkNum : Int -> Number ;
+  MkNum : Int -> Determ ;
+
+  And : Conjunct ;
+  Or : Conjunct ;
+  Then : Conjunct ;
 
   Left   : Direction ;
   Right  : Direction ;
@@ -59,7 +60,6 @@ fun
   Until : Way ;
   Past : Way ;
 
-
   Cafe : Thing ;
   Gallery : Thing ;
   Museum : Thing ;
@@ -77,7 +77,6 @@ fun
   Turn : Action ;
   --Avoid, ....
 
-
   A : Determ ;
   The : Determ ;
   This : Determ ;
@@ -90,8 +89,10 @@ fun
 
   Now : Time ;
   InFive : Time ;
+  InNMin : Determ -> Way -> Time ;
 
-  Ask : Something -> Question ; --just for illustrative purposes in the QA
+  --just for illustrative purposes in the QA
+  Ask : Something -> Question ;
   SomeThing : Something ;
 
 }

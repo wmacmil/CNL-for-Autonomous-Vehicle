@@ -13,7 +13,5 @@ of the noun tree" - the same AST node Tree yields two different linearizations.
   p "stop after this tree"
   DriveTo Stop After (ObjectPlace (WhichObject This Tree))
 
-
-
-"These" vs "those" have a spatial component
+"These" vs "those" have a spatial component, and u
 

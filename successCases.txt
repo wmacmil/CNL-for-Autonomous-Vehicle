@@ -1,0 +1,10 @@
+
+-- grammatically and semantically valid
+p "go until the cafe then turn left in 5 minutes"
+p "go until the cafe then turn left after 4 minutes"
+
+
+-- semantically invalid, grammatically valid
+p "go until the cafe then turn left now"
+
+
