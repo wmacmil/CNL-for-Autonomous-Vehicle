@@ -8,9 +8,12 @@ cat
   Time ;
   Route ;
   Action ; -- should this be dependently typed over controller
-  Way ; -- in a certain way (adverb, or via some landmark)
+  Way ; -- in a certain way (adverb, or via some landmark), TODO: improve name
   Direction ;
+  Thing ;
+  Determ ;
   Object ;
+  Number ;
   -- Event ; -- dependent on time
 
   -- GF supports lists
@@ -26,27 +29,25 @@ fun
   Or : Conjunct ;
   Then : Conjunct ;
 
-  Ask : Something -> Question ; --just for illustrative purposes
-  Thing : Something ;
-
   SimpleCom : Action -> Command ;
   DriveTo : Action -> Way -> Place -> Command ;
   ModAction : Action -> Direction -> Action ; --adverbial
 
   MultipleRoutes : Conjunct -> [Command] -> Command ;
-  -- EndRoute : Way -> Place -> Route ;
 
   DoTil : Action -> Time -> Command ;
 
-  -- DriveTo : Action -> Route -> Command ; --go to the store
-  -- EndRoute : Way -> Place -> Route ;
-  -- MakeTurn : Action -> Direction -> Place -> Command ; --turn left after the tree
+  WhichObject : Determ -> Thing -> Object ;
+  ObjectPlace : Object -> Place ;
+
+  MkNum : Int -> Number ;
 
   Left   : Direction ;
   Right  : Direction ;
   Around : Direction ;
 
   At    : Way ;
+  By    : Way ;
   On    : Way ;
   In    : Way ;
   To    : Way ;
@@ -55,27 +56,41 @@ fun
   Under : Way ;
   Before : Way ;
   Over : Way ;
+  Until : Way ;
+  Past : Way ;
+
+
+  Cafe : Thing ;
+  Gallery : Thing ;
+  Museum : Thing ;
+  Bridge : Thing ; -- also an object
 
   Home : Place ;
-  Cafe : Place ;
-  Gallery : Place ;
-  Museum : Place ;
-  Bridge : Place ; -- also an object
-  -- Overpass : Place ;
-
   Edinburgh : Place ;
   London : Place ;
   Gothenburg : Place ;
 
+  Drive : Action ;
   Go : Action ;
   Stop : Action ;
   Break : Action ;
   Turn : Action ;
 
-  Tree : Object ;
-  Car  : Object ;
+
+  A : Determ ;
+  The : Determ ;
+  This : Determ ;
+  These : Determ ;
+  That : Determ ;
+
+  Tree : Thing ;
+  Car  : Thing ;
+  Person : Thing ;
 
   Now : Time ;
   InFive : Time ;
+
+  Ask : Something -> Question ; --just for illustrative purposes in the QA
+  SomeThing : Something ;
 
 }

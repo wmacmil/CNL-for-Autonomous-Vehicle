@@ -102,10 +102,10 @@ take :
 
 if we adjust local context, it may or may not effect the global context
 
-
-
 What are the constraints of a self-driving car?
 When does it disobey orders, either intentionally or unintentionally?
+
+"These" vs "those" have a spatial component
 
 
 
