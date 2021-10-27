@@ -1,7 +1,17 @@
 
 -- grammatically and semantically valid
+
+
+-- simple
+
+p "stop at the tree"
+
+--compound
+
+p "go to the cafe , turn right and turn left"
 p "go until the cafe then turn left in 5 minutes"
 p "go until the cafe then turn left after 4 minutes"
+p "drive to the gallery and the cafe"
 
 
 -- semantically invalid, grammatically valid

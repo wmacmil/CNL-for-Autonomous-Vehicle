@@ -1,21 +1,30 @@
 abstract Drive = {
 
-flags startcat = Command ;
+flags startcat = PosCommand ;
 
 cat
+  Keyword ; --Kinda meta-category, so that the user can unambiguously say something
+  Route ;
   Command ;
+  Polarity ;
+  PosCommand ;
   Place ;
   Time ;
-  Route ;
   Action ; -- should this be dependently typed over controller
   Way ; -- in a certain way (adverb, or via some landmark), TODO: improve name
   Direction ;
-  Thing ;
+  UndetObj ;
   Determ ;
-  Object ;
+  Object ; --the cafe
   Number ;
-  [Command]{2} ; -- GF supports lists
   Conjunct ;
+  Condition ;
+
+  -- GF supports lists
+  [Command]{2} ;
+  [PosCommand]{2} ;
+  [Place]{2} ;
+  [Object]{2} ; --the cafe and the store
 
   --QA, not relevant yet
   Question ;
@@ -25,23 +34,43 @@ cat
 
 fun
 
+  StartRoute : Keyword ;
+  EndRoute : Keyword ;
+  -- ModifyRoute : Keyword ;
 
-  SimpleCom : Action -> Command ;
-  DriveTo : Action -> Way -> Place -> Command ;
+  SetRoute : Keyword -> [Command] -> Keyword -> Route ;
+
+  -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
+
+  -- MultipleCommands : 
+  ModifyCommand : Conjunct -> Condition -> Command -> Command ;
+  MKCommand : Polarity -> PosCommand -> Command ;
+
+  SimpleCom : Action -> PosCommand ;
+  DriveTo : Action -> Way -> Place -> PosCommand ;
   ModAction : Action -> Direction -> Action ;
 
-  MultipleRoutes : Conjunct -> [Command] -> Command ;
+  MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
+  MultipleObject : Conjunct -> [Object] -> Object ; -- should we only coordinate places?
+  MultiplePlaces : Conjunct -> [Place] -> Place ;
 
-  DoTil : Action -> Time -> Command ;
+  DoTil : Action -> Time -> PosCommand ;
 
-  WhichObject : Determ -> Thing -> Object ;
+  WhichObject : Determ -> UndetObj -> Object ;
   ObjectPlace : Object -> Place ;
+
+  UnlessSomething : UndetObj -> Condition ;
+
 
   MkNum : Int -> Determ ;
 
   And : Conjunct ;
-  Or : Conjunct ;
-  Then : Conjunct ;
+  Unless : Conjunct ; -- need to figure out
+  Then : Conjunct ; -- specifies temporal flow
+  Or : Conjunct ; -- Requires QA, or a follow up at least
+
+  -- "otherwise" should be like "if"
+  -- mkUtt (mkAdv if_Subj (mkS (mkCl she_NP sleep_V)))
 
   Left   : Direction ;
   Right  : Direction ;
@@ -60,10 +89,17 @@ fun
   Until : Way ;
   Past : Way ;
 
-  Cafe : Thing ;
-  Gallery : Thing ;
-  Museum : Thing ;
-  Bridge : Thing ;
+  Cafe : UndetObj ;
+  Store : UndetObj ;
+  Gallery : UndetObj ;
+  Museum : UndetObj ;
+  Bridge : UndetObj ;
+  Traffic : UndetObj ;
+
+  Tree : UndetObj ;
+  Car  : UndetObj ;
+  Person : UndetObj ;
+  --Obstacle, ...
 
   Home : Place ;
   Edinburgh : Place ;
@@ -75,7 +111,8 @@ fun
   Stop : Action ;
   Break : Action ;
   Turn : Action ;
-  --Avoid, ....
+  --Avoid (the object), change/Shift (lanes), hang (a right), pull (a u-e), ....
+  --keep (going, breaking, turning) ...
 
   A : Determ ;
   The : Determ ;
@@ -83,16 +120,11 @@ fun
   These : Determ ;
   That : Determ ;
 
-  Tree : Thing ;
-  Car  : Thing ;
-  Person : Thing ;
-
   Now : Time ;
-  InFive : Time ;
   InNMin : Determ -> Way -> Time ;
 
   --just for illustrative purposes in the QA
   Ask : Something -> Question ;
-  SomeThing : Something ;
+  SomeUndetObj : Something ;
 
 }

@@ -52,15 +52,15 @@ Simple  :
 
   - Just drive
   - Start car
-  - Stop at X
-  - Go to X
   - Circle back, I just saw X
   - Take X instead 
-  - Turn _.
   - Shift lanes after this car passes
     - (even if there are two options)
   - Drive slower
     - (how much?, context dependent (i.e. current speed, person driving, etc))
+  - turn right at the "big" tree
+  - Keep going -- deal with the gerund o
+  - Keep (going 65) -- going is now an adjective
   - Keep going 65 until we approach a town.
   - No rush, we need to be there by T.
   - Accelerate slowly, there's a baby in the car
@@ -73,16 +73,37 @@ Simple  :
   - Let this person pass
   - pick up the kids
 
+-- she (perhaps a person is letting the car take their daughter)
+
 Compound (some kind of conjunction generally presumed, although not always)
 
+go to the store then the cafe == go the store then go to the cafe
+so can have list of nounphrases
+go to the cafe then home
+go home then the cafe
+go home then to the cafe
+
+go as fast as you can -- as is an adverb 
+
+via, preposition
+unless, conjunction
+or, is undecided (it is a non command, but it narrows the space of possible commands), requires QA
+is "and then" an adverb or a conjunction
+
+- drive to Gothenburg and then go home 
+
+
+- Go to the store unless theres traffic (== if there is traffic, then nothing, else go to store)
 - Go to X via Y.
 - Go to X stopping at Y first.
 - Go to X then Y.
+- stop between [x time] and [y time]
+- stop between [x place] and [y place]
 - Reverse out of this parking spot and wait (what does that mean)
 - Take the next left and X
 - Take X to Y. 
-- Take the least expensive route to X.
-- Take the most scenic route to X, such that Y.
+- Take the least expensive route to X. --conditions for how
+- Take the most scenic route to X, such that Y. (this Y condition could be a simga type)
 - if there temperature is below, and especially if [there has been rain], drive slower
 - if there temperature is below, and especially if [the roads are wet], drive slower
 

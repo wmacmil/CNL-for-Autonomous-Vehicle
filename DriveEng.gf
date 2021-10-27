@@ -3,23 +3,32 @@ concrete DriveEng of Drive = open
     SymbolicEng,
     (C = ConstructorsEng),
     ParadigmsEng,
+    ConjunctionEng,
     -- ExtraEng, -- for the negative prop
     ExtendEng, -- for the negative prop
     Prelude in {
 
 lincat
-  Command = Imp ;
+  Route = Text ;
+  Polarity = Pol ;
+  Keyword = Utt ;
+  ListCommand = Utt ;
+  Command = { ut : Utt ; adv : Adv } ;
+  PosCommand = Imp ;
   Conjunct = Conj ;
-  [Command] = [Imp] ;
+  [PosCommand] = [Imp] ;
   Place = NP ;
-  Route = Adv ;
+  [Place] = ConstructorsEng.ListNP ; --NP ;
   Action = VP ;
   Way = Prep ; -- in a certain way (adverb, or via some landmark)
   Direction = Adv ;
   Object = NP ;
+  [Object] = ConstructorsEng.ListNP ; -- [NP] ;
   Determ = Det ;
-  Thing = N ;
+  UndetObj = N ;
   Time = Adv ;
+
+  Condition = Cl ; --should be Utt? 
 
   Number = Det ;
   -- Number = NP ; -- from the arithmetic library
@@ -32,13 +41,19 @@ lincat
 
 lin
 
-  -- SimpleCom : Action -> Command ;
+  -- SimpleCom : Action -> PosCommand ;
   SimpleCom a = mkImp a ;
-  -- DriveTo : Action -> Way -> Place -> Command ;
+  -- DriveTo : Action -> Way -> Place -> PosCommand ;
   DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
 
-  -- MultipleRoutes : Conjunct -> [Command] -> Command ;
+  -- MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
   MultipleRoutes = ConjImp ;
+  MultipleObject = ConjNP ;
+  MultiplePlaces = ConjNP ;
+  -- MultipleObject s1 s2 = mkNP and_Conj (mkListNP s1 s2) ;
+
+  -- UnlessSomething : UndetObj -> Condition ;
+  UnlessSomething t = mkCl t ;
 
   -- ModAction : Action -> Direction -> Action ;
   ModAction a d = mkVP a d ;
@@ -48,12 +63,25 @@ lin
   -- ObjectPlace : Object -> Place ;
   ObjectPlace o = o ;
 
-  -- WhichObject : Determ -> Thing -> Object ;
+  -- WhichObject : Determ -> UndetObj -> Object ;
   WhichObject = mkNP ;
+
+
+  -- -- ModifyCommand : Conjunct -> Condition -> Command -> Command ;
+  -- ModifyCommand conj cond com =  <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt {s = com.s} ) : Adv>) : Utt> ** { adv = ""} ;
+
+
+  -- MKCommand : Polarity -> PosCommand -> Command ;
+
+  -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
+  -- ControlledCom conj cond com = <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt com) : Adv>) : Imp> ;
+  -- ControlledCom conj cond com = <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt com) : Adv>) : Imp> ;
+  -- mkAdj conj <utt1 : Adv> <utt2 : Adv>
 
   And = and_Conj ;
   Or = or_Conj ;
   Then = then ;
+  Unless = unless ;
 
   -- Hack : https://inariksit.github.io/gf/2019/01/26/literals-2.html
   -- MkNum : Int -> Number ;
@@ -66,12 +94,20 @@ lin
   -- InNMin : Determ -> Time ;
   InNMin d way = C.mkAdv way (mkNP d minutes) ;
 
+  -- BaseCommand = BaseAdv ;
+  -- ConsCommand com1 l = ConsAdv ({s = com1.adv.s ++ com1.ut.s }) l ;
+
   --List Constructors
-  BaseCommand = BaseImp ;
-  ConsCommand = ConsImp ;
+  BasePosCommand = BaseImp ;
+  ConsPosCommand = ConsImp ;
+
+  BaseObject = mkListNP ;
+  ConsObject = mkListNP ;
+
+  BasePlace = mkListNP ;
+  ConsPlace = mkListNP ;
 
   Now = ParadigmsEng.mkAdv "now" ;
-  InFive = C.mkAdv in_Prep fiveminutes ;
 
   --  : Direction ;
   Left = ParadigmsEng.mkAdv "left" ;
@@ -116,8 +152,11 @@ lin
 
   Person = mkN "person" "people" ;
   Cafe = mkN "cafe" ;
+  Store = mkN "store" ;
   Gallery = mkN "gallery" ;
   Museum = mkN "museum" ;
+  Traffic = mkN "traffic" ;
+
   Bridge = mkN "bridge" ;
   Tree = mkN "tree" ;
   Car = mkN "car" ;
@@ -125,13 +164,17 @@ lin
   --for QA, ignore for now
   -- Ask : Something -> Question ;
   Ask s = mkQS s ;
-  -- Thing : Something ;
-  SomeThing = mkQCl who_IP (mkV "something") ;
+  -- UndetObj : Something ;
+  SomeUndetObj = mkQCl who_IP (mkV "something") ;
+
+  -- Keyword
+  StartRoute = mkUtt (mkImp (mkV2 (mkV "start")) (mkNP route)) ;
+  EndRoute = mkUtt (mkImp (mkV2 (mkV "end")) (mkNP route)) ;
 
 oper
-  five    = mkDet (mkCard (mkNumeral n5_Unit)) ;
   minutes = mkN "minute" "minutes" ;
-  fiveminutes = mkNP five minutes ;
   then = mkConj "then" ;
+  unless = mkConj "unless" ;
+  route = mkN "route" ;
 
 }
