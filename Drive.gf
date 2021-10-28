@@ -43,7 +43,9 @@ fun
   -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
 
   -- MultipleCommands : 
-  ModifyCommand : Conjunct -> Condition -> Command -> Command ;
+  -- ModifyCommand : Conjunct -> Condition -> Command -> Command ;
+  -- ModifyCommand : Condition -> Command -> Command ;
+  ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
   MKCommand : Polarity -> PosCommand -> Command ;
 
   SimpleCom : Action -> PosCommand ;

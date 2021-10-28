@@ -4,8 +4,8 @@ concrete DriveEng of Drive = open
     (C = ConstructorsEng),
     ParadigmsEng,
     ConjunctionEng,
-    -- ExtraEng, -- for the negative prop
-    ExtendEng, -- for the negative prop
+    -- ExtraEng,
+    ExtendEng,
     Prelude in {
 
 lincat
@@ -13,7 +13,7 @@ lincat
   Polarity = Pol ;
   Keyword = Utt ;
   ListCommand = Utt ;
-  Command = { ut : Utt ; adv : Adv } ;
+  Command = Utt ; --- { ut : Utt ; adv : Adv } ;
   PosCommand = Imp ;
   Conjunct = Conj ;
   [PosCommand] = [Imp] ;
@@ -23,12 +23,12 @@ lincat
   Way = Prep ; -- in a certain way (adverb, or via some landmark)
   Direction = Adv ;
   Object = NP ;
-  [Object] = ConstructorsEng.ListNP ; -- [NP] ;
+  [Object] = ConstructorsEng.ListNP ;
   Determ = Det ;
   UndetObj = N ;
   Time = Adv ;
 
-  Condition = Cl ; --should be Utt? 
+  Condition = Cl ; --should be Utt?
 
   Number = Det ;
   -- Number = NP ; -- from the arithmetic library
@@ -66,9 +66,16 @@ lin
   -- WhichObject : Determ -> UndetObj -> Object ;
   WhichObject = mkNP ;
 
+  -- ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
+  ModifyCommand conj cl imp =
+      let clUtt : Utt = mkUtt cl ;
+          impUtt : Utt = mkUtt imp ;
+          fakeAdv : Adv =
+            C.mkAdv conj
+                  <impUtt : Adv>
+                  <clUtt : Adv> ;
+      in lin Utt fakeAdv ;
 
-  -- -- ModifyCommand : Conjunct -> Condition -> Command -> Command ;
-  -- ModifyCommand conj cond com =  <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt {s = com.s} ) : Adv>) : Utt> ** { adv = ""} ;
 
 
   -- MKCommand : Polarity -> PosCommand -> Command ;
@@ -94,10 +101,10 @@ lin
   -- InNMin : Determ -> Time ;
   InNMin d way = C.mkAdv way (mkNP d minutes) ;
 
+  --List Constructors
   -- BaseCommand = BaseAdv ;
   -- ConsCommand com1 l = ConsAdv ({s = com1.adv.s ++ com1.ut.s }) l ;
 
-  --List Constructors
   BasePosCommand = BaseImp ;
   ConsPosCommand = ConsImp ;
 
@@ -176,5 +183,11 @@ oper
   then = mkConj "then" ;
   unless = mkConj "unless" ;
   route = mkN "route" ;
+
+-- oper
+--   advIsUtt : Adv -> Utt ;
+--   advIsUtt a = <a : Utt> ;
+--   -- advIsUtt a = <a : Utt> ;
+--   -- Adv -> Utt
 
 }
