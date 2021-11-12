@@ -26,6 +26,7 @@ data BaseObject : Set where
   museum  : BaseObject
   bridge  : BaseObject
   traffic : BaseObject
+  school  : BaseObject
 
 --way
 data Prep : Set where
@@ -73,8 +74,9 @@ mutual -- so that adjective phrases can reference nouns
 
   data CompoundObj : Set where
     basecomp : BaseObject → CompoundObj
-    comp     : CompoundObj → List (ADJ ⊎ CompoundObj) → CompoundObj
-    -- ⊎ hypothetically used for other languages
+    comp     : CompoundObj → List ADJ → CompoundObj
+    -- comp     : CompoundObj → List (ADJ ⊎ CompoundObj) → CompoundObj
+    -- ⊎ hypothetically used for other languages, but we'll get rid of it for the time being
 
   data Determ : Set where
     a     : Determ
@@ -97,14 +99,14 @@ data BaseAction : Set where
   honk   : BaseAction
 
 data ADV : Set where
-  left : ADV
-  right : ADV
-  around : ADV
+  left      : ADV
+  right     : ADV
+  around    : ADV
   advPhrase : Prep → DetObj → ADV
 
 data CompoundAction : Set where
   basecompV : BaseAction → CompoundAction
-  compV : CompoundAction → List (ADV ⊎ CompoundAction) → CompoundAction
+  compV : CompoundAction → List ADV → CompoundAction
 
 -- Command : Set
 -- Command = CompoundAction
@@ -117,10 +119,10 @@ data Command : Set where
 road = basecomp street
 
 woman : CompoundObj
-woman = comp (basecomp human) (inj₁ female ∷ [])
+woman = comp (basecomp human) (female ∷ [])
 
 man : CompoundObj
-man = comp (basecomp human) (inj₁ male ∷ [])
+man = comp (basecomp human) (male ∷ [])
 
 -- do we have to do these dummy coercions everywhere?
 dog' : CompoundObj
@@ -130,34 +132,38 @@ withTheDog : ADJ
 withTheDog = adjPhrase with' (NP the dog')
 
 manWithTheDog : CompoundObj
-manWithTheDog = comp (basecomp human) (inj₁ male ∷ inj₁ withTheDog ∷ [])
+manWithTheDog = comp (basecomp human) (male ∷ withTheDog ∷ [])
 
 turnLeftAfterTheMan : Command
 turnLeftAfterTheMan =
-  baseCommand (compV (basecompV turn) (inj₁ left ∷ (inj₁ (advPhrase after (NP the man)) ∷ [])))
-
--- turnLeftAfterTheMan : Command
--- turnLeftAfterTheMan =
---   baseCommand (compV (basecompV turn) (inj₁ left ∷ (inj₁ (advPhrase after (NP the man)) ∷ [])))
+  baseCommand (compV (basecompV turn) (left ∷ (advPhrase after (NP the man)) ∷ []))
 
 turnLeftAfterTheManWithTheDog =
-  (compV (basecompV turn) (inj₁ left ∷ (inj₁ (advPhrase after (NP the manWithTheDog)) ∷ [])))
+  (compV (basecompV turn) (left ∷ (advPhrase after (NP the manWithTheDog)) ∷ []))
+
+-- until we hit the school
+-- untilWeHitTheSchool
+goFastUntilTheSchool =
+  (compV (basecompV go) ((advPhrase until (NP the (basecomp school))) ∷ []))
+
+-- turnLeftAfterTheManWithTheDog =
+--   (compV (basecompV turn) (inj₁ left ∷ (inj₁ (advPhrase after (NP the manWithTheDog)) ∷ [])))
 
 turnLeftAfterTheManWithTheDog' : Command
 turnLeftAfterTheManWithTheDog' =
-  baseCommand (compV (basecompV turn) (inj₁ left ∷ (inj₁ (advPhrase after (NP the manWithTheDog)) ∷ [])))
+  baseCommand (compV (basecompV turn) (left ∷ (advPhrase after (NP the manWithTheDog)) ∷ []))
 
 justGo : Command
 justGo = baseCommand (basecompV go)
 
-turnLeft = (compV (basecompV turn) (inj₁ left ∷ []))
+turnLeft = (compV (basecompV turn) (left ∷ []))
 -- turnLeft = (compV (basecompV turn) (inj₁ left ∷ []))
 
 turnLeftThenTurnRight : Command
 turnLeftThenTurnRight =
   consCommand then'
-    (compV (basecompV turn) (inj₁ left ∷ []))
-    (baseCommand (compV (basecompV turn) (inj₁ right ∷ [])))
+    (compV (basecompV turn) (left ∷ []))
+    (baseCommand (compV (basecompV turn) (right ∷ [])))
 
 
 -- if the riemann hypothesis is true, turn left
