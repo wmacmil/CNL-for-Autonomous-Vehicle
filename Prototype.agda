@@ -154,7 +154,10 @@ turnLeft = (compV (basecompV turn) (inj₁ left ∷ []))
 -- turnLeft = (compV (basecompV turn) (inj₁ left ∷ []))
 
 turnLeftThenTurnRight : Command
-turnLeftThenTurnRight = consCommand then' (compV (basecompV turn) (inj₁ left ∷ [])) {!!}
+turnLeftThenTurnRight =
+  consCommand then'
+    (compV (basecompV turn) (inj₁ left ∷ []))
+    (baseCommand (compV (basecompV turn) (inj₁ right ∷ [])))
 
 
 -- if the riemann hypothesis is true, turn left
