@@ -8,7 +8,9 @@ Big issue :
   What are the assumptions we make about the capabilities of the automation. The more "capable" our system is, the less language input we imagine the user needing to provide (because the meaning of how can be inferred) i.e.
   what : turn
   how  : slightly
-  Micromanaging presumably defeats the purpose of self driving car
+  Micromanaging presumably defeats the purpose of self driving car, nor does it seem computationally feasible
+
+Methodology : keep the CNL as lean as possible
 
 Controls :
 
@@ -85,15 +87,16 @@ go home then to the cafe
 
 go as fast as you can -- as is an adverb 
 
+
 via, preposition
-unless, conjunction
-or, is undecided (it is a non command, but it narrows the space of possible commands), requires QA
+Note : 
+  or, is undecided (it is a non command, but it narrows the space of possible commands), requires QA
 is "and then" an adverb or a conjunction
 
-- drive to Gothenburg and then go home 
-
-
 - Go to the store unless theres traffic (== if there is traffic, then nothing, else go to store)
+- Go to a drugstore, and if they are all closed, try a supermarket instead.
+- Don't turn right until you(we) see a blue house with a white van.  -- too much information
+- turn right unless theres someone in the crosswalk or you have a green light
 - Go to X via Y.
 - Go to X stopping at Y first.
 - Go to X then Y.
@@ -126,27 +129,17 @@ Lexical considerations :
 How to make it invariant, or robust, with respect to synonymy?
 What is the lexical difference between "go" and "drive"?
 
-
-
 This should make the bulk of the lexicon
 
 Verbs/Actions :
 
-Go 
-Turn 
-Shift (lane)
-Drive (ambiguous)
-Find (perhaps outside the scope of current systems, find the nearest park with a bench, )
-Break
-"Catch up"
-Stop
-
 Objects:
-
 Road, lane, (yellow, white, solid, dotted) line, street,
 roundabout
 
 traffic, pothole, other car (that one), blinker
+
+lexicon for streets
 
 tree, house, pedestrian, child, school, deer
 
