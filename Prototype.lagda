@@ -9,6 +9,46 @@ open import Data.Sum
 open import Data.Product
 \end{code}
 
+Prior Critique :
+
+The decidability of type-checking in type theories like those which underly
+Agda, while from some perspectives can be seen as (with valid arguments for the
+postion) a crutch, it rules out programs like the following,
+"RiemannHypothesisOrItsNegation → IO ()" which prints out the proof of the
+Riemann Hypothesis. For, to the construtivist, this program won't typecheck
+unless one has either proven or disproven the Reimann hypothesis, and to create
+a typechecking algorithm capable of proving the Riemann Hypothesis would be a
+research feat unimaginable to mortals.
+
+When designing a machine learning interface capable of doing taking advanced
+natural language commands, like "Go right if theres a red light", one wants to
+similarly rule out pathological examples such as "Go left if the Riemann
+hypothesis is true". A human driver would not even understand the command unless
+they are mathematically fluent, and even if they were, they would be incapable
+of deciding wether or not to turn. When trying to extend coverage of a natural
+language component, it is up to the designer of the system where to draw the
+line. This may be by choice when making up a Controlled Natural Language (CNL),
+or subject to the conditions of the data some algorithm is trained on.
+
+Regardless, this a priori decision may and likely will have deep implications
+for what the system is capable of and how usable it is. We begin with a
+"minimalalist menatiality" here, acknowledging that this may be brittle will not
+get very far when it comes to an actual system which may eventually be
+incorporated into a real autonomous robot. To the machine learning enthusiast,
+the lack of appeal will be in the fact that nothing is learned, rather, it is
+specified. Nonetheless, the fact that it is specified and inductively defined,
+as we do below, gives us a much better way of reasoning about our system, and
+verifying its correctness. The point at which it becomes overlyspecified, and
+the transition to a purely learned language, should be made trying to balance
+practical and theoretical concerns, subject to the availability of emerical data
+and the possibility of actual real-world usage.
+
+We name these ideas in anticipation of objections, but more importantly, to
+guide our own design and iterative processes.
+
+-----
+
+
 TODO :
 - rename stuff (both grammatical and semantic categories as currently
 - make more compositional
@@ -21,15 +61,16 @@ Conventions :
 
 We note that the main concern of our system is of a user giving the vehicle (or
 perhaps better thought of as a robot more generally) natural langauge commands,
-e.g. utterances in the imperative form. The extension to a question answer (QA)
+e.g. utterances in the *imperative form*. The extension to a question answer (QA)
 system, would be ideal, but this would not explicity linked with the behavior of
-the robot as regards how the user controls its motion, our main concern here.
+the robot as regards how the user controls its motion, our main concern here. It
+is the job for some other person, although perhaps we should pretend that there
+is a prepended command to signal to the vehicle which control system should be
+targeted.
 
-Additionally, we are starting with an incredibly small lexicon, with
-a sparse set of combinators over the lexemes.
-
-In a programming language design, minimilism is *generally* to be preferred, in
-part because
+Additionally, we are starting with an incredibly small lexicon, with a sparse
+set of combinators over the lexemes. In a programming language design,
+minimilism is *generally* to be preferred, in part because
 
 (i) The more primities to learn, the more difficult the learning curve for the programmer
 (ii) The bigger the language, the more difficult it is to apply meta-reasoning principles to
@@ -188,6 +229,7 @@ mutual -- so that adjective phrases can reference nouns
     number    : ℕ → ADJ -- two streets
     adjPhrase : Prep → DetObj → ADJ -- with the dog
 
+
   data CompoundObj : Set where
     basecomp : BaseObject → CompoundObj
     comp     : CompoundObj → List ADJ → CompoundObj
@@ -201,7 +243,18 @@ mutual -- so that adjective phrases can reference nouns
 
 \end{code}
 
-Finally, we come to verbs, which we call actions
+Finally, we come to verbs, which we call actions. These are modified similairly
+to nouns, with the (unrealistic but practical) exception that there is no way of
+of simply modifying a verb with another verb. If one does take into account an
+adverbial clause, however, it is presumed we will have to make most of the file
+a mutual inductive defition.
+
+Again, going to our motiviting critique, we want to rule out what we'll call
+"Forest Gump sentences" like "drive to the man sitting on the bench, talking to
+the woman next to him about his childhood in rural Alabama, which is about ...."
+
+The way adverbs and adjectives modify is different, "big red ball" versus "turn
+slowly and gently", although most likely these details are irrelevant for a first pass.
 
 \begin{code}
 
@@ -216,18 +269,30 @@ data ADV : Set where
   left      : ADV
   right     : ADV
   around    : ADV
+  conAdv    : Conjunct → ADV → ADV → ADV -- go quickly but cautiously through this neigborhood
   advPhrase : Prep → DetObj → ADV
 
 data CompoundAction : Set where
   basecompV : BaseAction → CompoundAction
   compV : CompoundAction → List ADV → CompoundAction
 
--- Command : Set
--- Command = CompoundAction
+\end{code}
+
+We finally showcase the notion of a command, a single compound action or
+multiple action with various ways of coordinating them.
+
+
+\begin{code}
 
 data Command : Set where
   baseCommand : CompoundAction → Command
   consCommand : Conjunct → CompoundAction → Command → Command
+
+\end{code}
+
+We now showcase examples utterances using this lexicon and "grammar" below.
+
+\begin{code}
 
 -- TEST LEXICON
 -- coercion for synonym
@@ -281,9 +346,9 @@ turnLeftThenTurnRight =
     turnLeft = (compV (basecompV turn) (left ∷ []))
     turnRight = (compV (basecompV turn) (right ∷ []))
 
+\end{code}
 
--- derelict example :
--- if the riemann hypothesis is true, turn left
+Posthumous Ideas: 
 
 -- if this is actually generated from a data set (where the users are somehow
 -- confined to the cnl, then pathological examples (grammatical, semantic) should be ruled out
