@@ -17,7 +17,7 @@ postion) a crutch, it rules out programs like the following,
 "RiemannHypothesisOrItsNegation → IO ()" which prints out the proof of the
 Riemann Hypothesis. For, to the construtivist, this program won't typecheck
 unless one has either proven or disproven the Reimann hypothesis, and to create
-a typechecking algorithm capable of proving the Riemann Hypothesis would be a
+a type-checking algorithm capable of proving the Riemann Hypothesis would be a
 research feat unimaginable to mortals.
 
 When designing a machine learning interface capable of doing taking advanced
@@ -28,7 +28,7 @@ they are mathematically fluent, and even if they were, they would be incapable
 of deciding wether or not to turn. When trying to extend coverage of a natural
 language component, it is up to the designer of the system where to draw the
 line. This may be by choice when making up a Controlled Natural Language (CNL),
-or subject to the conditions of the data some algorithm is trained on.
+or possibly subject to the conditions of the data some algorithm is trained on.
 
 Regardless, this a priori decision may and likely will have deep implications
 for what the system is capable of and how usable it is. We begin with a
@@ -47,7 +47,6 @@ We name these ideas in anticipation of objections, but more importantly, to
 guide our own design and iterative processes.
 
 -----
-
 
 TODO :
 - rename stuff (both grammatical and semantic categories as currently
@@ -82,9 +81,12 @@ a natural language syntax, both (i) and (ii) still apply. However, (iii) is
 quite different. One does not define natural language inductively, and
 therefore, one cannot simply define new lexical items nor new grammatical rules
 out of old ones. Although statistical, or "machine learning" methods may give us
-a way of expanding our lexicon and well as cover much more grammatical ground, doing so negates (i) and (ii). Reconciling these differences is an important and difficult question.
+a way of expanding our lexicon and well as cover much more grammatical ground,
+doing so negates (i) and (ii). Reconciling these differences is an important and
+difficult question.
 
-(Our approach to synonyms with respect to new lexical items out of old ones does kind of exploit this approach, but it's purely with regards to our application)
+(Our approach to synonyms with respect to new lexical items out of old ones does
+kind of exploit this approach, but it's purely with regards to our application)
 
 We begin, in some sense, with the "base ontology", the things the objects our
 system has to navigate. These are all comon nouns. One could instead choose
@@ -139,7 +141,6 @@ data Prep : Set where
   in'    : Prep -- agda keywords
   with'  : Prep --
 
-
 \end{code}
 
 We additionally include propor nouns, which, in English are undetermined and
@@ -150,11 +151,12 @@ though I doubt there are many streets named as such in Europe.
 \begin{code}
 
 data Place : Set where
+
   Edinburgh  : Place
   London     : Place
   Gothenburg : Place
-  NewYork : Place
-  MLKblvd : Place
+  NewYork    : Place
+  MLKblvd    : Place
 
 \end{code}
 
@@ -172,15 +174,18 @@ data Determ : Set where
   these : Determ
   that  : Determ
   those : Determ
+  numdet : ℕ → Determ
 
 \end{code}
 
-Conjunctions can be used to coordinate all types of parts of speech linguistically, but we introduce them here because they can obviously be used to coordinate nouns, both determined and undetermined.
+Conjunctions can be used to coordinate all types of parts of speech
+linguistically, but we introduce them here because they can obviously be used to
+coordinate nouns, both determined and undetermined.
 
 Please note :
 
-- Then is an adverb used as a coordinating conjunction
-- before/after are prepositions but treated as conjunctions semantically, sometimes
+- "Then" is an adverb used as a coordinating conjunction
+- "before/after" are prepositions but treated as conjunctions semantically, sometimes
 - once one uses conjuncts, everything needs to be listified
 - can actual give these semantically as a logical conjunctive form if one desires a deep agda embedding
 - There can be spatial and temporal coordination, oftentimes using the same conjuction (give exampeles)
@@ -200,18 +205,26 @@ data Conjunct : Set where
 To define our notion of compound object, including those with adjectival
 phrases, we realize that a determined object, which itself may include a
 modified object, (think "the cute puppy"), may also be used to modify another
-object and thus make it compopund, like "girl with the cute puppy". We therefore require a mutual inductive definition.
+object and thus make it compopund, like "girl with the cute puppy". We therefore
+require a mutual inductive definition.
 
-Originally we had, due to Matthew's suggestion, a coproduct arguement in the comp constructor for compound objects, in order to accomodate other languages, like german.
+Originally we had, due to Matthew's suggestion, a coproduct arguement in the
+comp constructor for compound objects, in order to accomodate other languages,
+like german.
 
 -- comp : CompoundObj → List (ADJ ⊎ CompoundObj) → CompoundObj
 
 However, we will witness this as either :
 
-(i) a grammatical artificact that shouldn't effect the way we reason semantically (or at least in this context)
+(i) a grammatical artificact that shouldn't effect the way we reason
+semantically (or at least in this context)
+
 (ii) subsumed in some adjectival phrase
 
-Comments on this from people with other opinions, and knowledge of other languages, are welcome.
+Comments on this from people with other opinions, and knowledge of other
+languages, are welcome.
+
+-- I think adjectival phrases is linguistically incorrect
 
 \begin{code}
 mutual -- so that adjective phrases can reference nouns
@@ -321,6 +334,14 @@ turnLeftAfterTheMan : Command
 turnLeftAfterTheMan =
   baseCommand (compV (basecompV turn) (left ∷ (advPhrase after (NP the man)) ∷ []))
 
+turnLeftAfterTwoStreets : Command
+turnLeftAfterTwoStreets  =
+  baseCommand (compV (basecompV turn) (left ∷ (advPhrase after (NP (numdet 2) road)) ∷ []))
+
+turnLeftIn3Minutes : Command
+turnLeftIn3Minutes =
+  baseCommand (compV (basecompV turn) (left ∷ (advPhrase after (NP (numdet 3) (basecomp minute))) ∷ []))
+
 -- until we hit the school
 -- untilWeHitTheSchool
 goFastUntilTheSchool =
@@ -378,4 +399,3 @@ Posthumous Ideas:
 -- "turn left after the man"
 -- Idea CompoundObj + CompoundAction
 
-\end{code}
