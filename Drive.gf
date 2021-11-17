@@ -3,8 +3,6 @@ abstract Drive = {
 flags startcat = PosCommand ;
 
 cat
-  Keyword ; --Kinda meta-category, so that the user can unambiguously say something
-  Route ;
   Command ;
   Polarity ;
   PosCommand ;
@@ -31,6 +29,9 @@ cat
   [Place]{2} ;
   [Object]{2} ; --the cafe and the store
 
+  -- TODO
+  Route ;
+  Keyword ; --Kinda meta-category, so that the user can unambiguously say something
   --QA, not relevant yet
   Question ;
   Something ;
@@ -39,53 +40,37 @@ cat
 
 fun
 
-
   -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
 
-  -- MultipleCommands :
-  -- ModifyCommand : Conjunct -> Condition -> Command -> Command ;
-  -- ModifyCommand : Condition -> Command -> Command ;
-  ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
   -- MKCommand : Polarity -> PosCommand -> Command ;
-
-  -- idea : bury way, place inside an adverb
-  SimpleCom : Action -> PosCommand ;
-  -- DriveTo : Action -> Way -> Place -> PosCommand ;
-  ModAction : Action -> AdvPh -> Action ;
-
-  -- Direction : Direction -> How ;
-  -- InWhatWay : Way -> Place -> How ;
-  MkAdvPh : Way -> Object -> AdvPh ;
-  HowPhrase : How -> AdvPh ;
-  WherePhrase : Where -> AdvPh ;
-
-
-  MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
-  MultipleObject : Conjunct -> [Object] -> Object ; -- should we only coordinate places?
-  MultiplePlaces : Conjunct -> [Place] -> Place ;
-
-  DoTil : Action -> Time -> PosCommand ;
-
-
-
-  WhichObject : Determ -> UndetObj -> Object ;
-  ObjectPlace : Place -> Object ;
+  ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
 
   UnlessSomething : UndetObj -> Condition ;
 
-  --ignoring adjectival phrases
-  ModObj : Descript -> UndetObj -> UndetObj ;
-  -- ModObj : Descript -> UndetObj -> UndetObj ;
+  MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
+  DoTil          : Action   -> Time         -> PosCommand ;
+  SimpleCom      : Action   -> PosCommand ;
 
-  PhraseModObj : UndetObj -> AdjPh -> UndetObj ;
+  ModAction : Action -> AdvPh -> Action ;
+
+  MkAdvPh     : Way   -> Object -> AdvPh ;
+  HowPhrase   : How   -> AdvPh ;
+  WherePhrase : Where -> AdvPh ;
+
+  MultipleObject : Conjunct -> [Object] -> Object ; -- should we only coordinate places?
+  WhichObject    : Determ   -> UndetObj -> Object ;
+  ObjectPlace    : Place    -> Object ;
+
+  MultiplePlaces : Conjunct -> [Place] -> Place ;
+
+  ModObj       : Descript -> UndetObj -> UndetObj ;
+  PhraseModObj : UndetObj -> AdjPh    -> UndetObj ;
 
   MkAdjPh : Way -> Object -> AdjPh ;
 
-  -- AdjPhrase == ModObj
+  InNMin : Determ -> Way -> Time ;
 
   MkNum : Int -> Determ ;
-
-  InNMin : Determ -> Way -> Time ;
 
   Now : Time ;
 
@@ -99,11 +84,10 @@ fun
   Carefully : How ;
   -- in the left lane
 
-  --previously "Direction"
   Left          : Where ;
   Right         : Where ;
   Around        : Where ;
-  Straight : Where ;
+  Straight      : Where ;
 
   At     : Way ;
   With   : Way ;
@@ -160,7 +144,6 @@ fun
   That  : Determ ;
 
 
-
   -- BEGIN META Stuff, Ignore for now
   StartRoute : Keyword ;
   EndRoute : Keyword ;
@@ -173,6 +156,11 @@ fun
   -- END META
 
   -- GENERAL THOUGHTS, should be cleaned up soon
+
+  -- still want a semantic distinction between adverbial vs adjectival
+  -- preposotional phrases
+
+  -- overgenerative parsing is a feature of semantic degeneracy
 
   -- p "drive to the male person with the dog after the tree"
   -- lots of parses

@@ -33,7 +33,6 @@ lincat
   Time         = Adv ;
   Descript     = SyntaxEng.A ; --adjective
 
-
   Condition = Cl ; --should be Utt?
 
   Number = Det ;
@@ -94,18 +93,11 @@ lin
                   <clUtt : Adv> ;
       in lin Utt fakeAdv ;
 
-
-  -- MKCommand : Polarity -> PosCommand -> Command ;
-
   -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
   -- ControlledCom conj cond com = <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt com) : Adv>) : Imp> ;
   -- ControlledCom conj cond com = <(C.mkAdv conj <(mkUtt cond) : Adv> <(mkUtt com) : Adv>) : Imp> ;
   -- mkAdj conj <utt1 : Adv> <utt2 : Adv>
 
-  And = and_Conj ;
-  Or = or_Conj ;
-  Then = then ;
-  Unless = unless ;
 
   -- Hack : https://inariksit.github.io/gf/2019/01/26/literals-2.html
   -- MkNum : Int -> Number ;
@@ -122,9 +114,6 @@ lin
   -- BaseCommand = BaseAdv ;
   -- ConsCommand com1 l = ConsAdv ({s = com1.adv.s ++ com1.ut.s }) l ;
 
-  -- BasePosCommand = BaseImp ;
-  -- ConsPosCommand = ConsImp ;
-
   BasePosCommand = BaseImp ;
   ConsPosCommand = ConsImp ;
 
@@ -134,13 +123,22 @@ lin
   BasePlace = mkListNP ;
   ConsPlace = mkListNP ;
 
+  -- ModObj : Descript -> UndetObj -> UndetObj ;
+  ModObj = mkCN ;
+
+  -- PhraseModObj : AdjPh -> UndetObj -> UndetObj ;
+  PhraseModObj = mkCN ;
 
 
+  And    = and_Conj ;
+  Or     = or_Conj  ;
+  Then   = then     ;
+  Unless = unless   ;
 
   Now = ParadigmsEng.mkAdv "now" ;
 
   Carefully = ParadigmsEng.mkAdv "carefully" ;
-  Quickly = ParadigmsEng.mkAdv "quickly" ;
+  Quickly   = ParadigmsEng.mkAdv "quickly"   ;
 
   --  : Direction                          ;
   Left     = ParadigmsEng.mkAdv "left"     ;
@@ -150,48 +148,40 @@ lin
 
   -- Way
   -- temporal vs spatial prepositions
-  At = mkPrep "at" ;
-  With = with_Prep ; -- mkPrep "at" ;
-  By = by8agent_Prep ;
-  On = on_Prep ;
-  In = in_Prep ;
-  To = to_Prep ;
-  From  = from_Prep ;
-  After = after_Prep ;
-  Under = under_Prep ;
-  Over  = mkPrep "over" ;
-  Before  = mkPrep "before" ;
-  Until  = mkPrep "until" ;
-  Past  = mkPrep "past" ;
+  At     = mkPrep "at"     ;
+  With   = with_Prep       ; -- mkPrep "at" ;
+  By     = by8agent_Prep   ;
+  On     = on_Prep         ;
+  In     = in_Prep         ;
+  To     = to_Prep         ;
+  From   = from_Prep       ;
+  After  = after_Prep      ;
+  Under  = under_Prep      ;
+  Over   = mkPrep "over"   ;
+  Before = mkPrep "before" ;
+  Until  = mkPrep "until"  ;
+  Past   = mkPrep "past"   ;
 
 
   -- places
-  Home = mkNP (mkN "home") ; -- fix "drive to home"
-  Edinburgh = mkNP (mkPN "Edinburgh") ;
-  London = mkNP (mkPN "London") ;
+  Home       = mkNP (mkN "home") ; -- fix "drive to home"
+  Edinburgh  = mkNP (mkPN "Edinburgh") ;
+  London     = mkNP (mkPN "London") ;
   Gothenburg = mkNP (mkPN "Gothenburg") ;
 
   -- action
   Drive = mkVP (mkV "drive") ;
-  Go = mkVP (mkV "go") ;
-  Stop = mkVP (mkV "stop") ;
+  Go    = mkVP (mkV "go")    ;
+  Stop  = mkVP (mkV "stop")  ;
   Break = mkVP (mkV "break") ;
-  Turn = mkVP (mkV "turn") ;
+  Turn  = mkVP (mkV "turn")  ;
 
   -- Determ
-  A = a_Det ;
-  The = the_Det ; --need to refactor to include both singular and plural
-  This = this_Det ;
+  A     = a_Det     ;
+  The   = the_Det   ; --need to refactor to include both singular and plural
+  This  = this_Det  ;
   These = these_Det ;
-  That = that_Det ;
-
-  -- ModObj : Descript -> UndetObj -> UndetObj ;
-  ModObj = mkCN ;
-
-  -- PhraseModObj : AdjPh -> UndetObj -> UndetObj ;
-  PhraseModObj = mkCN ;
-
-  -- p "drive to the male person with the dog after the tree" -- should be ambiguous, but its only getting one parse
+  That  = that_Det  ;
 
   -- Descript
   Female    = invarA "female"     ;
@@ -210,12 +200,13 @@ lin
   Gallery = mkCN (mkN "gallery") ;
   Museum  = mkCN (mkN "museum") ;
   Traffic = mkCN (mkN "traffic") ;
-  --
+  -- different things
   Bridge  = mkCN (mkN "bridge") ;
   Tree    = mkCN (mkN "tree") ;
   Car     = mkCN (mkN "car") ;
 
-  --for QA, ignore for now
+  --TODO
+  -- for QA, ignore for now
   -- Ask : Something -> Question ;
   Ask s = mkQS s ;
   -- UndetObj : Something ;
@@ -223,13 +214,14 @@ lin
 
   -- Keyword
   StartRoute = mkUtt (mkImp (mkV2 (mkV "start")) (mkNP route)) ;
-  EndRoute = mkUtt (mkImp (mkV2 (mkV "end")) (mkNP route)) ;
+  EndRoute   = mkUtt (mkImp (mkV2 (mkV "end")) (mkNP route)) ;
 
 oper
+
   minutes = mkN "minute" "minutes" ;
-  then = mkConj "then" ;
-  unless = mkConj "unless" ;
-  route = mkN "route" ;
+  then    = mkConj "then"          ;
+  unless  = mkConj "unless"        ;
+  route   = mkN "route"            ;
 
 -- oper
 --   advIsUtt : Adv -> Utt ;
