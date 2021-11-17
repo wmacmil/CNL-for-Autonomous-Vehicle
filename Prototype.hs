@@ -27,8 +27,8 @@ data Prep where
   Over   :: Prep
   Until  :: Prep
   Past   :: Prep
-  In'    :: Prep -- agda keywords
-  With'  :: Prep --
+  In'    :: Prep
+  With'  :: Prep
 
 data Place where
   Edinburgh  :: Place
@@ -51,7 +51,7 @@ data Conjunct where
 
 -- mutual -- so that adjective phrases can reference nouns
 
-  -- quality from GF
+-- quality from GF
 data ADJ where
   Female    :: ADJ
   Male      :: ADJ
@@ -61,9 +61,8 @@ data ADJ where
   Slow      :: ADJ
   Living    :: ADJ
   Nonliving :: ADJ
-  -- NumberAdj    :: ℕ → ADJ -- two streets
   AdjPhrase :: Prep -> DetObj -> ADJ -- with the dog
-
+  -- this is its own category in GF, AdjPh
 
 data CompoundObj where
   Basecomp :: BaseObject -> CompoundObj
@@ -72,8 +71,8 @@ data CompoundObj where
 
 data DetObj where
   Home    :: DetObj
-  MkPlace :: Place -> DetObj
-  NP      :: Determ -> CompoundObj -> DetObj
+  MkPlace :: Place -> DetObj --ObjectPlace
+  NP      :: Determ -> CompoundObj -> DetObj  --WhichObject
   ConjDetObj :: Determ -> DetObj -> DetObj -> DetObj
 
 data BaseAction where
@@ -83,6 +82,10 @@ data BaseAction where
   Drive  :: BaseAction
   Honk   :: BaseAction
 
+data CompoundAction where
+  BasecompV :: BaseAction -> CompoundAction
+  CompV     :: CompoundAction -> [ADV] -> CompoundAction
+
 data ADV where
   Left'      :: ADV
   Right'     :: ADV
@@ -90,15 +93,11 @@ data ADV where
   ConAdv    :: Conjunct -> ADV -> ADV -> ADV -- go quickly but cautiously through this neigborhood
   AdvPhrase :: Prep -> DetObj -> ADV
 
-data CompoundAction where
-  BasecompV :: BaseAction -> CompoundAction
-  CompV     :: CompoundAction -> [ADV] -> CompoundAction
-
 
 road = Basecomp Street
 
 woman :: CompoundObj
-woman = Comp (Basecomp Human) (Female : []) 
+woman = Comp (Basecomp Human) (Female : [])
 
 dog :: CompoundObj
 dog = Basecomp Dog

@@ -194,6 +194,7 @@ lin
   Nonliving = invarA "non-living" ;
 
   Person  = mkCN (mkN "person" "people") ;
+  Woman   = mkCN (mkN "woman" "women") ;
   Dog     = mkCN (mkN "dog") ;
   Cafe    = mkCN (mkN "cafe") ;
   Store   = mkCN (mkN "store") ;

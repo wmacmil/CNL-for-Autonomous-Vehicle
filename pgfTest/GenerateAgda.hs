@@ -38,6 +38,8 @@ embedX Gx2 = X2
 -- EApp (EApp (EFun mkS1) (EFun x1)) (EFun y2)
 -- >>> eng = head $ languages gr
 -- >>> foo = fg $ treeS345
+-- >>> foo :: GS
+-- GmkS1 Gx1 Gy2
 -- >>> bar' = gf $ flipSentence foo
 -- >>> linearize gr eng bar'
 -- "y2 x1"

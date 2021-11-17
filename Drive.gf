@@ -40,9 +40,9 @@ cat
 
 fun
 
+  -- MKCommand : Polarity -> PosCommand -> Command ;
   -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
 
-  -- MKCommand : Polarity -> PosCommand -> Command ;
   ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
 
   UnlessSomething : UndetObj -> Condition ;
@@ -113,6 +113,7 @@ fun
   Tree   : UndetObj ;
   Car    : UndetObj ;
   Person : UndetObj ;
+  Woman  : UndetObj ;
   Dog    : UndetObj ;
   --Obstacle, ...
 
