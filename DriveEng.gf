@@ -9,24 +9,30 @@ concrete DriveEng of Drive = open
     Prelude in {
 
 lincat
-  Route = Text ;
-  Polarity = Pol ;
-  Keyword = Utt ;
-  ListCommand = Utt ;
-  Command = Utt ; --- { ut : Utt ; adv : Adv } ;
-  PosCommand = Imp ;
-  Conjunct = Conj ;
+
+  Route        = Text ;
+  Polarity     = Pol ;
+  Keyword      = Utt ;
+  -- ListCommand  = Utt ;
+  Command      = Utt ; --- { ut : Utt ; adv : Adv } ;
+  PosCommand   = Imp ;
+  Conjunct     = Conj ;
   [PosCommand] = [Imp] ;
-  Place = NP ;
-  [Place] = ConstructorsEng.ListNP ; --NP ;
-  Action = VP ;
-  Way = Prep ; -- in a certain way (adverb, or via some landmark)
-  Direction = Adv ;
-  Object = NP ;
-  [Object] = ConstructorsEng.ListNP ;
-  Determ = Det ;
-  UndetObj = N ;
-  Time = Adv ;
+  Place        = NP ;
+  [Place]      = ConstructorsEng.ListNP ; --NP ;
+  Action       = VP ;
+  Way          = Prep ; -- in a certain way (adverb, or via some landmark)
+  AdvPh        = Adv ;
+  AdjPh        = Adv ;
+  How          = Adv ;
+  Where        = Adv ;
+  Object       = NP ;
+  [Object]     = ConstructorsEng.ListNP ;
+  Determ       = Det ;
+  UndetObj     = CN ;-- N ;
+  Time         = Adv ;
+  Descript     = SyntaxEng.A ; --adjective
+
 
   Condition = Cl ; --should be Utt?
 
@@ -43,8 +49,10 @@ lin
 
   -- SimpleCom : Action -> PosCommand ;
   SimpleCom a = mkImp a ;
+
+  --removed
   -- DriveTo : Action -> Way -> Place -> PosCommand ;
-  DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
+  -- DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
 
   -- MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
   MultipleRoutes = ConjImp ;
@@ -57,6 +65,16 @@ lin
 
   -- ModAction : Action -> Direction -> Action ;
   ModAction a d = mkVP a d ;
+
+  -- MkAdjPh : Way -> Obj -> AdjPh ;
+  MkAdjPh w p = C.mkAdv w p ;
+
+  -- MkAdvPh : Way -> Place -> AdvPh ;
+  MkAdvPh w p = C.mkAdv w p ;
+  -- HowPhrase : How -> AdvPh ;
+  HowPhrase how = how ;
+  -- WherePhrase : where -> AdvPh ;
+  WherePhrase wher = wher ;
 
   DoTil a t = mkImp (mkVP a t) ; --  "turn right in five minutes"
 
@@ -75,7 +93,6 @@ lin
                   <impUtt : Adv>
                   <clUtt : Adv> ;
       in lin Utt fakeAdv ;
-
 
 
   -- MKCommand : Polarity -> PosCommand -> Command ;
@@ -105,6 +122,9 @@ lin
   -- BaseCommand = BaseAdv ;
   -- ConsCommand com1 l = ConsAdv ({s = com1.adv.s ++ com1.ut.s }) l ;
 
+  -- BasePosCommand = BaseImp ;
+  -- ConsPosCommand = ConsImp ;
+
   BasePosCommand = BaseImp ;
   ConsPosCommand = ConsImp ;
 
@@ -114,16 +134,24 @@ lin
   BasePlace = mkListNP ;
   ConsPlace = mkListNP ;
 
+
+
+
   Now = ParadigmsEng.mkAdv "now" ;
 
-  --  : Direction ;
-  Left = ParadigmsEng.mkAdv "left" ;
-  Right = ParadigmsEng.mkAdv "right" ;
-  Around = ParadigmsEng.mkAdv "around" ;
+  Carefully = ParadigmsEng.mkAdv "carefully" ;
+  Quickly = ParadigmsEng.mkAdv "quickly" ;
+
+  --  : Direction                          ;
+  Left     = ParadigmsEng.mkAdv "left"     ;
+  Right    = ParadigmsEng.mkAdv "right"    ;
+  Around   = ParadigmsEng.mkAdv "around"   ;
+  Straight = ParadigmsEng.mkAdv "straight" ;
 
   -- Way
   -- temporal vs spatial prepositions
   At = mkPrep "at" ;
+  With = with_Prep ; -- mkPrep "at" ;
   By = by8agent_Prep ;
   On = on_Prep ;
   In = in_Prep ;
@@ -157,16 +185,35 @@ lin
   These = these_Det ;
   That = that_Det ;
 
-  Person = mkN "person" "people" ;
-  Cafe = mkN "cafe" ;
-  Store = mkN "store" ;
-  Gallery = mkN "gallery" ;
-  Museum = mkN "museum" ;
-  Traffic = mkN "traffic" ;
+  -- ModObj : Descript -> UndetObj -> UndetObj ;
+  ModObj = mkCN ;
 
-  Bridge = mkN "bridge" ;
-  Tree = mkN "tree" ;
-  Car = mkN "car" ;
+  -- PhraseModObj : AdjPh -> UndetObj -> UndetObj ;
+  PhraseModObj = mkCN ;
+
+  -- p "drive to the male person with the dog after the tree" -- should be ambiguous, but its only getting one parse
+
+  -- Descript
+  Female    = invarA "female"     ;
+  Male      = invarA "male"       ;
+  Big       = mkA "big" "bigger"  ;
+  Small     = mkA "small"         ;
+  Fast      = mkA "fast"          ;
+  Slow      = mkA "slow"          ;
+  Living    = invarA "living"     ;
+  Nonliving = invarA "non-living" ;
+
+  Person  = mkCN (mkN "person" "people") ;
+  Dog     = mkCN (mkN "dog") ;
+  Cafe    = mkCN (mkN "cafe") ;
+  Store   = mkCN (mkN "store") ;
+  Gallery = mkCN (mkN "gallery") ;
+  Museum  = mkCN (mkN "museum") ;
+  Traffic = mkCN (mkN "traffic") ;
+  --
+  Bridge  = mkCN (mkN "bridge") ;
+  Tree    = mkCN (mkN "tree") ;
+  Car     = mkCN (mkN "car") ;
 
   --for QA, ignore for now
   -- Ask : Something -> Question ;

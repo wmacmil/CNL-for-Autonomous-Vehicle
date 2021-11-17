@@ -18,6 +18,18 @@ flipSentence :: GS -> GS
 flipSentence (GmkS1 x y) = (GmkS2 y x)
 flipSentence (GmkS2 x y) = (GmkS1 y x)
 
+data X where
+  X1 :: X
+  X2 :: X
+
+data Y where
+  Y1 :: Y
+  Y2 :: Y
+
+embedX :: GX -> X
+embedX Gx1 = X1
+embedX Gx2 = X2
+
 -- >>> gr <- readPGF "Test.pgf"
 -- >>> cat = startCat gr
 -- >>> sum345 = "x1 y2"

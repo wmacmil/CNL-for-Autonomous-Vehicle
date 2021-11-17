@@ -41,18 +41,18 @@ instance Gf GFloat where
 ----------------------------------------------------
 
 data GS =
-   GmkS1 GX GY 
- | GmkS2 GY GX 
+   GmkS1 GX GY
+ | GmkS2 GY GX
   deriving Show
 
 data GX =
-   Gx1 
- | Gx2 
+   Gx1
+ | Gx2
   deriving Show
 
 data GY =
-   Gy1 
- | Gy2 
+   Gy1
+ | Gy2
   deriving Show
 
 
@@ -74,8 +74,8 @@ instance Gf GX where
 
   fg t =
     case unApp t of
-      Just (i,[]) | i == mkCId "x1" -> Gx1 
-      Just (i,[]) | i == mkCId "x2" -> Gx2 
+      Just (i,[]) | i == mkCId "x1" -> Gx1
+      Just (i,[]) | i == mkCId "x2" -> Gx2
 
 
       _ -> error ("no X " ++ show t)
@@ -86,10 +86,8 @@ instance Gf GY where
 
   fg t =
     case unApp t of
-      Just (i,[]) | i == mkCId "y1" -> Gy1 
-      Just (i,[]) | i == mkCId "y2" -> Gy2 
+      Just (i,[]) | i == mkCId "y1" -> Gy1
+      Just (i,[]) | i == mkCId "y2" -> Gy2
 
 
       _ -> error ("no Y " ++ show t)
-
-
