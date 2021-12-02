@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Current\040Landscape}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Voice\040assistants\040for\040autonomous\040vehicles}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Natural\040Language\040and\040Robots,\040generally}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Semantic\040Representations\040of\040NL}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Foundation\040Models}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Work}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{GF\040Grammar}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{TODO}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{Grammar\040modulo\040wordnet}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{LTL\040in\040Agda}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{AST\040->\040Agda}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.4}{ML\040training/verification\040stuff}{section.5}% 14

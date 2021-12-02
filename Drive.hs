@@ -1,5 +1,8 @@
+{-# LANGUAGE GADTs, FlexibleInstances, KindSignatures, RankNTypes, TypeSynonymInstances #-}
 module Drive where
 
+import Control.Monad.Identity
+import Data.Monoid
 import PGF hiding (Tree)
 ----------------------------------------------------
 -- automatic translation from GF to Haskell
@@ -9,8 +12,6 @@ class Gf a where
   gf :: a -> Expr
   fg :: Expr -> a
 
-newtype GString = GString String deriving Show
-
 instance Gf GString where
   gf (GString x) = mkStr x
   fg t =
@@ -18,16 +19,12 @@ instance Gf GString where
       Just x  ->  GString x
       Nothing -> error ("no GString " ++ show t)
 
-newtype GInt = GInt Int deriving Show
-
 instance Gf GInt where
   gf (GInt x) = mkInt x
   fg t =
     case unInt t of
       Just x  ->  GInt x
       Nothing -> error ("no GInt " ++ show t)
-
-newtype GFloat = GFloat Double deriving Show
 
 instance Gf GFloat where
   gf (GFloat x) = mkFloat x
@@ -40,149 +37,238 @@ instance Gf GFloat where
 -- below this line machine-generated
 ----------------------------------------------------
 
-data GAction =
-   GBreak 
- | GDrive 
- | GGo 
- | GModAction GAction GAdvPh 
- | GStop 
- | GTurn 
-  deriving Show
+type GAction = Tree GAction_
+data GAction_
+type GAdjPh = Tree GAdjPh_
+data GAdjPh_
+type GAdvPh = Tree GAdvPh_
+data GAdvPh_
+type GCommand = Tree GCommand_
+data GCommand_
+type GCondition = Tree GCondition_
+data GCondition_
+type GConjunct = Tree GConjunct_
+data GConjunct_
+type GDescript = Tree GDescript_
+data GDescript_
+type GDeterm = Tree GDeterm_
+data GDeterm_
+type GHow = Tree GHow_
+data GHow_
+type GKeyword = Tree GKeyword_
+data GKeyword_
+type GListObject = Tree GListObject_
+data GListObject_
+type GListPlace = Tree GListPlace_
+data GListPlace_
+type GListPosCommand = Tree GListPosCommand_
+data GListPosCommand_
+type GObject = Tree GObject_
+data GObject_
+type GPlace = Tree GPlace_
+data GPlace_
+type GPosCommand = Tree GPosCommand_
+data GPosCommand_
+type GQuestion = Tree GQuestion_
+data GQuestion_
+type GSomething = Tree GSomething_
+data GSomething_
+type GTime = Tree GTime_
+data GTime_
+type GUndetObj = Tree GUndetObj_
+data GUndetObj_
+type GWay = Tree GWay_
+data GWay_
+type GWhere = Tree GWhere_
+data GWhere_
+type GNumber = Tree GNumber_
+data GNumber_
+type GPolarity = Tree GPolarity_
+data GPolarity_
+type GRoute = Tree GRoute_
+data GRoute_
+type GString = Tree GString_
+data GString_
+type GInt = Tree GInt_
+data GInt_
+type GFloat = Tree GFloat_
+data GFloat_
 
-data GAdjPh = GMkAdjPh GWay GObject 
-  deriving Show
+data Tree :: * -> * where
+  GBreak :: Tree GAction_
+  GDrive :: Tree GAction_
+  GGo :: Tree GAction_
+  GModAction :: GAction -> GAdvPh -> Tree GAction_
+  GStop :: Tree GAction_
+  GTurn :: Tree GAction_
+  GMkAdjPh :: GWay -> GObject -> Tree GAdjPh_
+  GHowPhrase :: GHow -> Tree GAdvPh_
+  GMkAdvPh :: GWay -> GObject -> Tree GAdvPh_
+  GWherePhrase :: GWhere -> Tree GAdvPh_
+  GModifyCommand :: GConjunct -> GCondition -> GPosCommand -> Tree GCommand_
+  GUnlessSomething :: GUndetObj -> Tree GCondition_
+  GAnd :: Tree GConjunct_
+  GOr :: Tree GConjunct_
+  GThen :: Tree GConjunct_
+  GUnless :: Tree GConjunct_
+  GBig :: Tree GDescript_
+  GFast :: Tree GDescript_
+  GFemale :: Tree GDescript_
+  GLiving :: Tree GDescript_
+  GMale :: Tree GDescript_
+  GNonliving :: Tree GDescript_
+  GSlow :: Tree GDescript_
+  GSmall :: Tree GDescript_
+  GA :: Tree GDeterm_
+  GMkNum :: GInt -> Tree GDeterm_
+  GThat :: Tree GDeterm_
+  GThe :: Tree GDeterm_
+  GThese :: Tree GDeterm_
+  GThis :: Tree GDeterm_
+  GCarefully :: Tree GHow_
+  GQuickly :: Tree GHow_
+  GEndRoute :: Tree GKeyword_
+  GStartRoute :: Tree GKeyword_
+  GListObject :: [GObject] -> Tree GListObject_
+  GListPlace :: [GPlace] -> Tree GListPlace_
+  GListPosCommand :: [GPosCommand] -> Tree GListPosCommand_
+  GMultipleObject :: GConjunct -> GListObject -> Tree GObject_
+  GObjectPlace :: GPlace -> Tree GObject_
+  GWhichObject :: GDeterm -> GUndetObj -> Tree GObject_
+  GEdinburgh :: Tree GPlace_
+  GGothenburg :: Tree GPlace_
+  GHome :: Tree GPlace_
+  GLondon :: Tree GPlace_
+  GMultiplePlaces :: GConjunct -> GListPlace -> Tree GPlace_
+  GDoTil :: GAction -> GTime -> Tree GPosCommand_
+  GMultipleRoutes :: GConjunct -> GListPosCommand -> Tree GPosCommand_
+  GSimpleCom :: GAction -> Tree GPosCommand_
+  GAsk :: GSomething -> Tree GQuestion_
+  GSomeUndetObj :: Tree GSomething_
+  GInNMin :: GDeterm -> GWay -> Tree GTime_
+  GNow :: Tree GTime_
+  GBridge :: Tree GUndetObj_
+  GCafe :: Tree GUndetObj_
+  GCar :: Tree GUndetObj_
+  GDog :: Tree GUndetObj_
+  GGallery :: Tree GUndetObj_
+  GModObj :: GDescript -> GUndetObj -> Tree GUndetObj_
+  GMuseum :: Tree GUndetObj_
+  GPerson :: Tree GUndetObj_
+  GPhraseModObj :: GUndetObj -> GAdjPh -> Tree GUndetObj_
+  GStore :: Tree GUndetObj_
+  GTraffic :: Tree GUndetObj_
+  GTree :: Tree GUndetObj_
+  GWoman :: Tree GUndetObj_
+  GAfter :: Tree GWay_
+  GAt :: Tree GWay_
+  GBefore :: Tree GWay_
+  GBy :: Tree GWay_
+  GFrom :: Tree GWay_
+  GIn :: Tree GWay_
+  GOn :: Tree GWay_
+  GOver :: Tree GWay_
+  GPast :: Tree GWay_
+  GTo :: Tree GWay_
+  GUnder :: Tree GWay_
+  GUntil :: Tree GWay_
+  GWith :: Tree GWay_
+  GAround :: Tree GWhere_
+  GLeft :: Tree GWhere_
+  GRight :: Tree GWhere_
+  GStraight :: Tree GWhere_
+  GString :: String -> Tree GString_
+  GInt :: Int -> Tree GInt_
+  GFloat :: Double -> Tree GFloat_
 
-data GAdvPh =
-   GHowPhrase GHow 
- | GMkAdvPh GWay GObject 
- | GWherePhrase GWhere 
-  deriving Show
-
-data GCommand = GModifyCommand GConjunct GCondition GPosCommand 
-  deriving Show
-
-data GCondition = GUnlessSomething GUndetObj 
-  deriving Show
-
-data GConjunct =
-   GAnd 
- | GOr 
- | GThen 
- | GUnless 
-  deriving Show
-
-data GDescript =
-   GBig 
- | GFast 
- | GFemale 
- | GLiving 
- | GMale 
- | GNonliving 
- | GSlow 
- | GSmall 
-  deriving Show
-
-data GDeterm =
-   GA 
- | GMkNum GInt 
- | GThat 
- | GThe 
- | GThese 
- | GThis 
-  deriving Show
-
-data GHow =
-   GCarefully 
- | GQuickly 
-  deriving Show
-
-data GKeyword =
-   GEndRoute 
- | GStartRoute 
-  deriving Show
-
-newtype GListObject = GListObject [GObject] deriving Show
-
-newtype GListPlace = GListPlace [GPlace] deriving Show
-
-newtype GListPosCommand = GListPosCommand [GPosCommand] deriving Show
-
-data GObject =
-   GMultipleObject GConjunct GListObject 
- | GObjectPlace GPlace 
- | GWhichObject GDeterm GUndetObj 
-  deriving Show
-
-data GPlace =
-   GEdinburgh 
- | GGothenburg 
- | GHome 
- | GLondon 
- | GMultiplePlaces GConjunct GListPlace 
-  deriving Show
-
-data GPosCommand =
-   GDoTil GAction GTime 
- | GMultipleRoutes GConjunct GListPosCommand 
- | GSimpleCom GAction 
-  deriving Show
-
-data GQuestion = GAsk GSomething 
-  deriving Show
-
-data GSomething = GSomeUndetObj 
-  deriving Show
-
-data GTime =
-   GInNMin GDeterm GWay 
- | GNow 
-  deriving Show
-
-data GUndetObj =
-   GBridge 
- | GCafe 
- | GCar 
- | GDog 
- | GGallery 
- | GModObj GDescript GUndetObj 
- | GMuseum 
- | GPerson 
- | GPhraseModObj GUndetObj GAdjPh 
- | GStore 
- | GTraffic 
- | GTree 
- | GWoman 
-  deriving Show
-
-data GWay =
-   GAfter 
- | GAt 
- | GBefore 
- | GBy 
- | GFrom 
- | GIn 
- | GOn 
- | GOver 
- | GPast 
- | GTo 
- | GUnder 
- | GUntil 
- | GWith 
-  deriving Show
-
-data GWhere =
-   GAround 
- | GLeft 
- | GRight 
- | GStraight 
-  deriving Show
-
-data GNumber
-
-data GPolarity
-
-data GRoute
-
+instance Eq (Tree a) where
+  i == j = case (i,j) of
+    (GBreak,GBreak) -> and [ ]
+    (GDrive,GDrive) -> and [ ]
+    (GGo,GGo) -> and [ ]
+    (GModAction x1 x2,GModAction y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GStop,GStop) -> and [ ]
+    (GTurn,GTurn) -> and [ ]
+    (GMkAdjPh x1 x2,GMkAdjPh y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GHowPhrase x1,GHowPhrase y1) -> and [ x1 == y1 ]
+    (GMkAdvPh x1 x2,GMkAdvPh y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GWherePhrase x1,GWherePhrase y1) -> and [ x1 == y1 ]
+    (GModifyCommand x1 x2 x3,GModifyCommand y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
+    (GUnlessSomething x1,GUnlessSomething y1) -> and [ x1 == y1 ]
+    (GAnd,GAnd) -> and [ ]
+    (GOr,GOr) -> and [ ]
+    (GThen,GThen) -> and [ ]
+    (GUnless,GUnless) -> and [ ]
+    (GBig,GBig) -> and [ ]
+    (GFast,GFast) -> and [ ]
+    (GFemale,GFemale) -> and [ ]
+    (GLiving,GLiving) -> and [ ]
+    (GMale,GMale) -> and [ ]
+    (GNonliving,GNonliving) -> and [ ]
+    (GSlow,GSlow) -> and [ ]
+    (GSmall,GSmall) -> and [ ]
+    (GA,GA) -> and [ ]
+    (GMkNum x1,GMkNum y1) -> and [ x1 == y1 ]
+    (GThat,GThat) -> and [ ]
+    (GThe,GThe) -> and [ ]
+    (GThese,GThese) -> and [ ]
+    (GThis,GThis) -> and [ ]
+    (GCarefully,GCarefully) -> and [ ]
+    (GQuickly,GQuickly) -> and [ ]
+    (GEndRoute,GEndRoute) -> and [ ]
+    (GStartRoute,GStartRoute) -> and [ ]
+    (GListObject x1,GListObject y1) -> and [x == y | (x,y) <- zip x1 y1]
+    (GListPlace x1,GListPlace y1) -> and [x == y | (x,y) <- zip x1 y1]
+    (GListPosCommand x1,GListPosCommand y1) -> and [x == y | (x,y) <- zip x1 y1]
+    (GMultipleObject x1 x2,GMultipleObject y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GObjectPlace x1,GObjectPlace y1) -> and [ x1 == y1 ]
+    (GWhichObject x1 x2,GWhichObject y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GEdinburgh,GEdinburgh) -> and [ ]
+    (GGothenburg,GGothenburg) -> and [ ]
+    (GHome,GHome) -> and [ ]
+    (GLondon,GLondon) -> and [ ]
+    (GMultiplePlaces x1 x2,GMultiplePlaces y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GDoTil x1 x2,GDoTil y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GMultipleRoutes x1 x2,GMultipleRoutes y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GSimpleCom x1,GSimpleCom y1) -> and [ x1 == y1 ]
+    (GAsk x1,GAsk y1) -> and [ x1 == y1 ]
+    (GSomeUndetObj,GSomeUndetObj) -> and [ ]
+    (GInNMin x1 x2,GInNMin y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GNow,GNow) -> and [ ]
+    (GBridge,GBridge) -> and [ ]
+    (GCafe,GCafe) -> and [ ]
+    (GCar,GCar) -> and [ ]
+    (GDog,GDog) -> and [ ]
+    (GGallery,GGallery) -> and [ ]
+    (GModObj x1 x2,GModObj y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GMuseum,GMuseum) -> and [ ]
+    (GPerson,GPerson) -> and [ ]
+    (GPhraseModObj x1 x2,GPhraseModObj y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GStore,GStore) -> and [ ]
+    (GTraffic,GTraffic) -> and [ ]
+    (GTree,GTree) -> and [ ]
+    (GWoman,GWoman) -> and [ ]
+    (GAfter,GAfter) -> and [ ]
+    (GAt,GAt) -> and [ ]
+    (GBefore,GBefore) -> and [ ]
+    (GBy,GBy) -> and [ ]
+    (GFrom,GFrom) -> and [ ]
+    (GIn,GIn) -> and [ ]
+    (GOn,GOn) -> and [ ]
+    (GOver,GOver) -> and [ ]
+    (GPast,GPast) -> and [ ]
+    (GTo,GTo) -> and [ ]
+    (GUnder,GUnder) -> and [ ]
+    (GUntil,GUntil) -> and [ ]
+    (GWith,GWith) -> and [ ]
+    (GAround,GAround) -> and [ ]
+    (GLeft,GLeft) -> and [ ]
+    (GRight,GRight) -> and [ ]
+    (GStraight,GStraight) -> and [ ]
+    (GString x, GString y) -> x == y
+    (GInt x, GInt y) -> x == y
+    (GFloat x, GFloat y) -> x == y
+    _ -> False
 
 instance Gf GAction where
   gf GBreak = mkApp (mkCId "Break") []
@@ -555,3 +641,52 @@ instance Gf GRoute where
 
 
 
+instance Compos Tree where
+  compos r a f t = case t of
+    GModAction x1 x2 -> r GModAction `a` f x1 `a` f x2
+    GMkAdjPh x1 x2 -> r GMkAdjPh `a` f x1 `a` f x2
+    GHowPhrase x1 -> r GHowPhrase `a` f x1
+    GMkAdvPh x1 x2 -> r GMkAdvPh `a` f x1 `a` f x2
+    GWherePhrase x1 -> r GWherePhrase `a` f x1
+    GModifyCommand x1 x2 x3 -> r GModifyCommand `a` f x1 `a` f x2 `a` f x3
+    GUnlessSomething x1 -> r GUnlessSomething `a` f x1
+    GMkNum x1 -> r GMkNum `a` f x1
+    GMultipleObject x1 x2 -> r GMultipleObject `a` f x1 `a` f x2
+    GObjectPlace x1 -> r GObjectPlace `a` f x1
+    GWhichObject x1 x2 -> r GWhichObject `a` f x1 `a` f x2
+    GMultiplePlaces x1 x2 -> r GMultiplePlaces `a` f x1 `a` f x2
+    GDoTil x1 x2 -> r GDoTil `a` f x1 `a` f x2
+    GMultipleRoutes x1 x2 -> r GMultipleRoutes `a` f x1 `a` f x2
+    GSimpleCom x1 -> r GSimpleCom `a` f x1
+    GAsk x1 -> r GAsk `a` f x1
+    GInNMin x1 x2 -> r GInNMin `a` f x1 `a` f x2
+    GModObj x1 x2 -> r GModObj `a` f x1 `a` f x2
+    GPhraseModObj x1 x2 -> r GPhraseModObj `a` f x1 `a` f x2
+    GListObject x1 -> r GListObject `a` foldr (a . a (r (:)) . f) (r []) x1
+    GListPlace x1 -> r GListPlace `a` foldr (a . a (r (:)) . f) (r []) x1
+    GListPosCommand x1 -> r GListPosCommand `a` foldr (a . a (r (:)) . f) (r []) x1
+    _ -> r t
+
+class Compos t where
+  compos :: (forall a. a -> m a) -> (forall a b. m (a -> b) -> m a -> m b)
+         -> (forall a. t a -> m (t a)) -> t c -> m (t c)
+
+composOp :: Compos t => (forall a. t a -> t a) -> t c -> t c
+composOp f = runIdentity . composOpM (Identity . f)
+
+composOpM :: (Compos t, Monad m) => (forall a. t a -> m (t a)) -> t c -> m (t c)
+composOpM = compos return ap
+
+composOpM_ :: (Compos t, Monad m) => (forall a. t a -> m ()) -> t c -> m ()
+composOpM_ = composOpFold (return ()) (>>)
+
+composOpMonoid :: (Compos t, Monoid m) => (forall a. t a -> m) -> t c -> m
+composOpMonoid = composOpFold mempty mappend
+
+composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
+composOpMPlus = composOpFold mzero mplus
+
+composOpFold :: Compos t => b -> (b -> b -> b) -> (forall a. t a -> b) -> t c -> b
+composOpFold z c f = unC . compos (\_ -> C z) (\(C x) (C y) -> C (c x y)) (C . f)
+
+newtype C b a = C { unC :: b }

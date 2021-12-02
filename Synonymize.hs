@@ -4,10 +4,11 @@
 module Synonymize where
 
 import qualified PGF (Tree, showExpr)
--- import PGF (Expr)
 import PGF hiding (Tree, showExpr)
--- import PGF (Tree)
 import Drive
+
+instance (Gf (Tree c)) => Show (Tree c) where
+  show = PGF.showExpr [] . gf
 
 -- idea : can canonically enforce a single AST for verification purposes given
 -- two strings with unique ASTs
@@ -15,19 +16,71 @@ import Drive
 -- need to basically create an equivalence class of synonyms, which aren't
 -- necessarily restricted to purely lexical items
 
+-- AR : almost compositional function, via composOp used here
+-- can think of this like a lens
+
+treeMapfemalePersonIsWoman :: forall a. Tree a -> Tree a
+treeMapfemalePersonIsWoman (GModObj GFemale GPerson) = GWoman
+treeMapfemalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
+treeMapfemalePersonIsWoman gp = composOp treeMapfemalePersonIsWoman gp
+
+
+
+
+-- Dante magic
+-- >>> gr <- readPGF "Drive.pgf"
+-- >>> cat = startCat gr
+-- >>> eng = head $ languages gr
+-- >>> goToTheWoman = "go to the woman and the female person"
+-- >>> goToTheWomanT1 = head $ head $ parseAll gr cat goToTheWoman
+-- >>> goToTheWomanAST = fg $ goToTheWomanT1
+-- >>> goToTheFemalePersonAST = treeMapfemalePersonIsWoman goToTheWomanAST :: GPosCommand
+-- >>> goToTheFemalePersonT1 = gf goToTheFemalePersonAST
+-- >>> linearize gr eng goToTheFemalePersonT1
+-- "go to the female person and the woman"
+
+-- main s = do
+--   gr <- readPGF "Drive.pgf"
+--   let cat = startCat gr
+--   let eng = head $ languages gr
+--   let treeS = head $ head $ parseAll gr cat s
+--   let astS goToTheWomanAST = fg $ treeS
+--   let treeS' = (treeMapfemalePersonIsWoman astS) :: GPosCommand
+--   let s' = gf treeS'
+--   return (linearize gr eng s')
+
+-- transfer :: PGF.Tree -> PGF.Tree
+-- -- transfer :: Tree a -> Tree a --Expr -> Expr
+-- -- transfer :: Expr -> Expr
+-- transfer x = gf (treeMapfemalePersonIsWoman (fg x))
+
 -- Looking at the gf code
 -- p -cat=UndetObj "female person"
 -- ModObj Female Person
 
--- AR : almost compositional function
--- can think of this like a lens
-transfer :: PGF.Tree -> PGF.Tree
-transfer = gf . femalePersonIsWoman . fg
 
-femalePersonIsWoman :: GUndetObj -> GUndetObj
+-- femalePersonIsWoman :: GUndetObj -> GUndetObj
 -- femalePersonIsWoman (GModObj GFemale GPerson) = GWoman
-femalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
-femalePersonIsWoman x                         = x
+-- femalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
+-- femalePersonIsWoman x                         = x
+
+-- -- littleMain :: String -> IO _
+-- -- littleMain :: String -> IO GProp
+-- littleMain s =
+--   do
+--     gr <- readPGF "Query.pgf"
+--     let eng = head $ languages gr
+--     let pr = mkCId "Prop"
+--     let catProp = (\x -> mkType [] x []) pr
+--     let x = fg $ head $ head $ PGF.parseAll gr catProp s
+--     let y = compressNat x
+--     return $ linearize gr eng $ gf $ y
+--   -- where parse1 x = fg $ head $ head $ PGF.parseAll gr catProp x
+
+-- main = do
+--   gr <- readPGF "Drive.pgf"
+--   cat = startCat gr
+  
 
 -- Dante magic
 -- >>> gr <- readPGF "Drive.pgf"
@@ -36,20 +89,20 @@ femalePersonIsWoman x                         = x
 -- >>> goToTheWomanT1 = head $ head $ parseAll gr cat goToTheWoman
 -- >>> goToTheWomanT1
 -- EApp (EFun SimpleCom) (EApp (EApp (EFun ModAction) (EFun Go)) (EApp (EApp (EFun MkAdvPh) (EFun To)) (EApp (EApp (EFun WhichObject) (EFun The)) (EFun Woman))))
--- >>> :t goToTheWomanT1
--- goToTheWomanT1 :: Tree
 -- >>> eng = head $ languages gr
 -- >>> goToTheWomanAST = fg $ goToTheWomanT1
 -- >>> goToTheWomanAST :: GPosCommand
--- GSimpleCom (GModAction GGo (GMkAdvPh GTo (GWhichObject GThe GWoman)))
+-- SimpleCom (ModAction Go (MkAdvPh To (WhichObject The Woman)))
+-- >>> goToTheFemalePersonAST = treeMapfemalePersonIsWoman goToTheWomanAST :: GPosCommand
+-- >>> goToTheFemalePersonAST
+-- SimpleCom (ModAction Go (MkAdvPh To (WhichObject The (ModObj Female Person))))
+-- >>> goToTheFemalePersonT1 = gf goToTheFemalePersonAST
+-- >>> linearize gr eng goToTheFemalePersonT1
+-- "go to the female person"
+
 -- >>> goToTheFemalePersonT1 = transfer goToTheWomanT1
 -- >>> :t goToTheFemalePersonT1
 -- goToTheFemalePersonT1 :: Tree
 -- >>> linearize gr eng goToTheFemalePersonT1
--- "*** Exception: no UndetObj EApp (EFun SimpleCom) (EApp (EApp (EFun ModAction) (EFun Go)) (EApp (EApp (EFun MkAdvPh) (EFun To)) (EApp (EApp (EFun WhichObject) (EFun The)) (EFun Woman))))
--- CallStack (from HasCallStack):
---   error, called at ./Drive.hs:481:12 in main:Drive
 
--- "*** Exception: no UndetObj EApp (EFun SimpleCom) (EApp (EApp (EFun ModAction) (EFun Go)) (EApp (EApp (EFun MkAdvPh) (EFun To)) (EApp (EApp (EFun WhichObject) (EFun The)) (EFun Woman))))
--- CallStack (from HasCallStack):
---   error, called at ./Drive.hs:481:12 in main:Drive
+

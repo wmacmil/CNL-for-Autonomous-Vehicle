@@ -1,0 +1,255 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{brunello_et_al}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a67d3dae2cd10c6137f40f82b7afcf23}{%
+           family={Brunello},
+           familyi={B\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f4fecc4d1a6bdd97d5809c143d71f0e4}{%
+           family={Montanari},
+           familyi={M\bibinitperiod},
+           given={Angelo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=05cc798f49b6f213e72f8d9cbb103b2d}{%
+           family={Reynolds},
+           familyi={R\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=516f16d10bfb330d27a74bc55458f5e7}{%
+           family={Gamper},
+           familyi={G\bibinitperiod},
+           given={Johann},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f52457a9c92de5cc318b407b72e931f2}{%
+           family={Pinchinat},
+           familyi={P\bibinitperiod},
+           given={Sophie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1492d1f71d35bbf6643809a1e4b87427}{%
+           family={Sciavicco},
+           familyi={S\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dagstuhl, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik}%
+      }
+      \strng{namehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{fullhash}{5106df8293195951a1cb93524ae8609a}
+      \strng{bibnamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authorbibnamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authornamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authorfullhash}{5106df8293195951a1cb93524ae8609a}
+      \strng{editorbibnamehash}{565d64e970333e5b71d61aac947a3180}
+      \strng{editornamehash}{565d64e970333e5b71d61aac947a3180}
+      \strng{editorfullhash}{565d64e970333e5b71d61aac947a3180}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Keywords: Evolutionary algorithms, Machine learning, Natural language processing, Semantic parsing, Temporal logic}
+      \field{booktitle}{26th International Symposium on Temporal Representation and Reasoning (TIME 2019)}
+      \field{isbn}{978-3-95977-127-6}
+      \field{issn}{1868-8969}
+      \field{series}{Leibniz International Proceedings in Informatics (LIPIcs)}
+      \field{title}{{Synthesis of LTL Formulas from Natural Language Texts: State of the Art and Research Directions}}
+      \field{volume}{147}
+      \field{year}{2019}
+      \field{pages}{17:1\bibrangedash 17:19}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.TIME.2019.17
+      \endverb
+      \verb{urlraw}
+      \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
+      \endverb
+      \verb{url}
+      \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
+      \endverb
+    \endentry
+    \entry{coqLTL}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2c06bffaeaf266eeb6246c332fe7422e}{%
+           family={Coupet-Grimal},
+           familyi={C\bibinithyphendelim G\bibinitperiod},
+           given={Solange},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{fullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{bibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorbibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authornamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorfullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Logic and Computation}
+      \field{number}{6}
+      \field{title}{An Axiomatization of Linear Temporal Logic in the Calculus of Inductive Constructions}
+      \field{volume}{13}
+      \field{year}{2003}
+      \field{pages}{801\bibrangedash 813}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1093/logcom/13.6.801
+      \endverb
+    \endentry
+    \entry{macmillan2021}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=9d187f35f9fb365a330825622dc93aaa}{%
+           family={Macmillan},
+           familyi={M\bibinitperiod},
+           given={Warrick},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Gothenburg}%
+      }
+      \strng{namehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{fullhash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{bibnamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authorbibnamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authornamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authorfullhash}{9d187f35f9fb365a330825622dc93aaa}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{On the Grammar of Proof}}
+      \field{type}{mathesis}
+      \field{year}{2021}
+      \field{pages}{90}
+      \range{pages}{1}
+    \endentry
+    \entry{wltl}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=9d187f35f9fb365a330825622dc93aaa}{%
+           family={Macmillan},
+           familyi={M\bibinitperiod},
+           given={Warrick},
+           giveni={W\bibinitperiod}}}%
+        {{hash=15779d310ef7ab0623a2503d62e1e5f8}{%
+           family={Kallberg},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{fullhash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{bibnamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authorbibnamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authornamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authorfullhash}{73a9981441ccc8f76d68ba816457734b}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/wmacmil/LTL-Agda}}
+      \field{title}{{LTL in Agda}}
+      \field{year}{2021}
+    \endentry
+    \entry{szegedy}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=ed568d9c3bb059e6bf22899fbf170f86}{%
+           family={Szegedy},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e9fec85bbce1b087a6ebefe26e73f7bf}{%
+           family={Zaremba},
+           familyi={Z\bibinitperiod},
+           given={Wojciech},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=c83b564e32475f10dcc91be7e66d3e81}{%
+           family={Bruna},
+           familyi={B\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8bbc4c5d96f205bada839e74e0202146}{%
+           family={Erhan},
+           familyi={E\bibinitperiod},
+           given={Dumitru},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4f74ef4c79f3bb1e51e378184d8850e}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a6784304d1cc890b2cb6c6c7f2f3fd76}{%
+           family={Fergus},
+           familyi={F\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{fullhash}{3180e20a73f95bad20fea6bdef8591c8}
+      \strng{bibnamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authorbibnamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authornamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authorfullhash}{3180e20a73f95bad20fea6bdef8591c8}
+      \strng{editorbibnamehash}{afe3c75951d1843ce2846d6c16647f41}
+      \strng{editornamehash}{afe3c75951d1843ce2846d6c16647f41}
+      \strng{editorfullhash}{afe3c75951d1843ce2846d6c16647f41}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2nd International Conference on Learning Representations, {ICLR} 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings}
+      \field{title}{Intriguing properties of neural networks}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1312.6199
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1312.6199
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
