@@ -19,6 +19,51 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{berant-liang-2014-semantic}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=59365fb6f8cc1328f2453e8fb33dfba4}{%
+           family={Berant},
+           familyi={B\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=86c032bbc45c3b616f0a1170befc0e82}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Percy},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Baltimore, Maryland}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{fullhash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{bibnamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authorbibnamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authornamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authorfullhash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}
+      \field{month}{6}
+      \field{title}{Semantic Parsing via Paraphrasing}
+      \field{year}{2014}
+      \field{pages}{1415\bibrangedash 1425}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.3115/v1/P14-1133
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P14-1133
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P14-1133
+      \endverb
+    \endentry
     \entry{brunello_et_al}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=a67d3dae2cd10c6137f40f82b7afcf23}{%
@@ -122,6 +167,97 @@
       \verb 10.1093/logcom/13.6.801
       \endverb
     \endentry
+    \entry{dong-lapata-2016-language}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d3349e5c2b2661f3b497e9f014ffcf7d}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=35b5bc53ec3fa2640225354af6ca0e1d}{%
+           family={Lapata},
+           familyi={L\bibinitperiod},
+           given={Mirella},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \strng{fullhash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \strng{bibnamehash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \strng{authorbibnamehash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \strng{authornamehash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \strng{authorfullhash}{9912f9150f7d07b0dffe8bc43a05542d}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}
+      \field{month}{8}
+      \field{title}{Language to Logical Form with Neural Attention}
+      \field{year}{2016}
+      \field{pages}{33\bibrangedash 43}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.18653/v1/P16-1004
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P16-1004
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P16-1004
+      \endverb
+    \endentry
+    \entry{he2021english}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=23b501650b17f341ebc0b12905086fb5}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=74708e55d9eea33250d8700bf6ba6a69}{%
+           family={Bartocci},
+           familyi={B\bibinitperiod},
+           given={Ezio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=049d616292f9c2194f75c2e20e1c38fb}{%
+           family={Ničković},
+           familyi={N\bibinitperiod},
+           given={Dejan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=72270187c066e12a2a4e2693a4430e4a}{%
+           family={Isakovic},
+           familyi={I\bibinitperiod},
+           given={Haris},
+           giveni={H\bibinitperiod}}}%
+        {{hash=930e6a5b5877f8e9218f144bb79af565}{%
+           family={Grosu},
+           familyi={G\bibinitperiod},
+           given={Radu},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{fullhash}{5319d1f25841e21bdbb581708e7e5406}
+      \strng{bibnamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authorbibnamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authornamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authorfullhash}{5319d1f25841e21bdbb581708e7e5406}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{From English to Signal Temporal Logic}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2109.10294
+      \endverb
+    \endentry
     \entry{macmillan2021}{thesis}{}
       \name{author}{1}{}{%
         {{hash=9d187f35f9fb365a330825622dc93aaa}{%
@@ -175,6 +311,84 @@
       \field{howpublished}{\url{https://github.com/wmacmil/LTL-Agda}}
       \field{title}{{LTL in Agda}}
       \field{year}{2021}
+    \endentry
+    \entry{fewShotSem}{article}{}
+      \name{author}{10}{}{%
+        {{hash=62a630ac09a1d16f2dfa91459b5fbb03}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fd16d4f4011e07f3c20e6f7353bf1406}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Christopher\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e5b0fa296573a8bec18b738326d547a8}{%
+           family={Thomson},
+           familyi={T\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d94bea3eaf38f3d4a49a15cfcda625bb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f4ad2d34f5bfed1aa324323c1e104cfa}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Subhro},
+           giveni={S\bibinitperiod}}}%
+        {{hash=46a959daf7b529520c4829512454008f}{%
+           family={Platanios},
+           familyi={P\bibinitperiod},
+           given={Emmanouil\bibnamedelima Antonios},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=01d23ee6c109414c8e9866437ca8d896}{%
+           family={Pauls},
+           familyi={P\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9fb237891a1517d36109c68767dd6fae}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c812a8d4324b6fd9e02dc2f87adc14f4}{%
+           family={Eisner},
+           familyi={E\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bda24e7cdf1190c6484d62e2e4898d98}{%
+           family={Durme},
+           familyi={D\bibinitperiod},
+           given={Benjamin\bibnamedelima Van},
+           giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{fullhash}{e767b75b528f48c3f446c7b5763ff788}
+      \strng{bibnamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authorbibnamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authornamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authorfullhash}{e767b75b528f48c3f446c7b5763ff788}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Constrained Language Models Yield Few-Shot Semantic Parsers}
+      \field{volume}{abs/2104.08768}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2104.08768
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2104.08768
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2104.08768
+      \endverb
     \endentry
     \entry{szegedy}{inproceedings}{}
       \name{author}{7}{}{%
@@ -250,6 +464,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{dontParse}
 \endrefsection
 \endinput
 

@@ -133,7 +133,7 @@ a real environment, etc]
 
 \subsection{Natural Language and Robots, generally}
 
-\subsection{Semantic Representations of NL}
+\subsection{Semantic Representations of NL for verification}
 
 Modal logics, specifically those dealing with time like LTL, CTL, STL, ..., have
 been used extensively in the specification and verification of properties of
@@ -152,15 +152,6 @@ be generalized in many possible directions :
 \end{itemize}
 
 
-\begin{quote}
-Overall, the typical approach followed by these studies can be summarized as follows:
-given an input English utterance, preprocess it to extract syntactical information, which may
-include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
-enrich the input with these pieces of information. Finally, run an attribute grammar-based
-parser, or rely on some hand-made rules, to derive a translation into a target logical format.
-A notable exception is the work of [89], where a fully-supervised learning setting is considered.
-\cite{brunello_et_al}
-\end{quote}
 
 
 \subsection{Foundation Models}
@@ -193,6 +184,75 @@ vehicle with respect to an utterance.
 
 \subsection{ML training/verification stuff}
 Help from Marco, Nathalia if interested?
+
+
+\section{Publications Description}
+
+Realizing that the structure of the paper is ameanable to large changes, I'm
+posting a summary of relevant publications here.
+
+\subsection{Statistical (pre-trained) Language Models}
+The first set of publ
+
+\begin{itemize}
+
+\item In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
+context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
+parsible semantic form, that one can use a large pre-trained language model as a front-end
+to filter a much wider syntax into the CNL. I postulate GF's expressivity is
+more expressive than the SCFG, at least based off a tertiary reading in the
+index, and therefore if we carved out a subset of commands to cohere with our
+LTL (and maybe some other temporal or even spatial-temporal logics in the
+future), our model would be amenable to a similar ``out-of-the box" semantic
+parser that could actually be used for verification. This paper borrows the idea
+of ``semantic parsing as paraphrasing'' from  \cite{berant-liang-2014-semantic}
+
+\item In \cite{dontParse}, the authors advocate for getting rid of parsers
+  alltogether, although this naively takes for granted large public data-sets,
+  none of which exist for an autonomous vehicle and temporal logic formalism
+
+\end{itemize}
+
+\subsection{NL to TL}
+
+Here we show mainly relevant research for NL to LTL.
+
+\begin{itemize}
+\item  The following is one of the more relevant quotes from a paper reviewing
+  the whole space of English to LTL translations \begin{quote}
+Overall, the typical approach followed by these studies can be summarized as follows:
+given an input English utterance, preprocess it to extract syntactical information, which may
+include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
+enrich the input with these pieces of information. Finally, run an attribute grammar-based
+parser, or rely on some hand-made rules, to derive a translation into a target logical format.
+A notable exception is the work of [89], where a fully-supervised learning setting is considered.
+\cite{brunello_et_al}
+\end{quote}
+\item Translating between English and STL can be done via a large language model 
+\cite{he2021english} [under review], but the domain specificity of the problems
+are still significant enough to suggest that it will be years before an
+automated semantic parser is available, if it is even possible. 
+\item Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
+  is relevant and well-cited (although they use an encoder-decoder method)
+\item
+\item
+\item
+
+\end{itemize}
+
+\subsection{Tellex}
+
+Stephanie Tellex has written extensively about natural language inputs and
+interfaces with robots. Although she has not specifically written about
+autonomous vehicles, the domains have enough intersection to warrant careful
+consideration of much of her work, especially the recent stuff.
+
+\begin{itemize}
+
+\item
+\item
+
+\end{itemize}
 
 
 \printbibliography
