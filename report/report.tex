@@ -210,6 +210,8 @@ of ``semantic parsing as paraphrasing'' from  \cite{berant-liang-2014-semantic}
 \item In \cite{dontParse}, the authors advocate for getting rid of parsers
   alltogether, although this naively takes for granted large public data-sets,
   none of which exist for an autonomous vehicle and temporal logic formalism
+\item  \cite{hauser2021bert} [under review] claims that Bert is robust, analyzing claims of four
+  papers, including the one which uses a wordnet attack
 
 \end{itemize}
 
@@ -217,9 +219,24 @@ of ``semantic parsing as paraphrasing'' from  \cite{berant-liang-2014-semantic}
 
 Here we show mainly relevant research for NL to LTL.
 
+The applications of LTL in machine learning are vast, and the scope of our
+specific application is still unclear, but nevertheless, we give a literature
+review of methods and applications relevant for our work.
+
 \begin{itemize}
+
+
+
+\item This paper \cite{5152776} from 2009 uses a categorial grammar approach, but more or less
+  can serve as an idea template for us, also nice pictures with grammar rules
+  and formulas
+\item Also, a highly relevant template combines Natural Language, LTL, with the
+  idea of having a verifiable pipeline \cite{provCorrectNatControl} 
+\item LTL formulas can be transformed into automata which can then be used as reward functions for reinforcement learners, as in \cite{ltlRein}
+
 \item  The following is one of the more relevant quotes from a paper reviewing
-  the whole space of English to LTL translations \begin{quote}
+  the whole space of English to LTL translations
+  \begin{quote}
 Overall, the typical approach followed by these studies can be summarized as follows:
 given an input English utterance, preprocess it to extract syntactical information, which may
 include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
@@ -249,8 +266,21 @@ consideration of much of her work, especially the recent stuff.
 
 \begin{itemize}
 
-\item
-\item
+\item Grounding with an intermediate symbolic state, no LTL, but possibly
+  relevant for paper generally. She also cites \cite{walkTalk}, a seminal paper in this area
+\begin{quote}
+Instruction following is a supervised learning problem
+where the agent must predict a trajectory that would satisfy an
+input natural language command. \cite{tellexInstr}
+\end{quote}
+\item The review paper \cite{MARGE2022101255} making recommendations has a
+  section on robustness, but this is mostly for the sake of allowing sharing of
+  interfaces and efficacy, no mention of verification (which is what we're
+  primarily after)
+\item They design a NL -> LTL for drones that are grounded to actual landmarks \cite{9197068}
+\item The group builds a trained pipeline that uses an object oriented
+  template-instance methodology to generalize to different ontological
+  categories in  \cite{hsiung2021generalizing} [under review]
 
 \end{itemize}
 

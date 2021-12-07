@@ -2189,9 +2189,18 @@
     <bcf:citekey order="8">fewShotSem</bcf:citekey>
     <bcf:citekey order="9">berant-liang-2014-semantic</bcf:citekey>
     <bcf:citekey order="10">dontParse</bcf:citekey>
-    <bcf:citekey order="11">brunello_et_al</bcf:citekey>
-    <bcf:citekey order="12">he2021english</bcf:citekey>
-    <bcf:citekey order="13">dong-lapata-2016-language</bcf:citekey>
+    <bcf:citekey order="11">hauser2021bert</bcf:citekey>
+    <bcf:citekey order="12">5152776</bcf:citekey>
+    <bcf:citekey order="13">provCorrectNatControl</bcf:citekey>
+    <bcf:citekey order="14">ltlRein</bcf:citekey>
+    <bcf:citekey order="15">brunello_et_al</bcf:citekey>
+    <bcf:citekey order="16">he2021english</bcf:citekey>
+    <bcf:citekey order="17">dong-lapata-2016-language</bcf:citekey>
+    <bcf:citekey order="18">walkTalk</bcf:citekey>
+    <bcf:citekey order="19">tellexInstr</bcf:citekey>
+    <bcf:citekey order="20">MARGE2022101255</bcf:citekey>
+    <bcf:citekey order="21">9197068</bcf:citekey>
+    <bcf:citekey order="22">hsiung2021generalizing</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

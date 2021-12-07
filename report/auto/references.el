@@ -2,6 +2,15 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "provCorrectNatControl"
+    "5152776"
+    "hsiung2021generalizing"
+    "9197068"
+    "hauser2021bert"
+    "MARGE2022101255"
+    "tellexInstr"
+    "walkTalk"
+    "ltlRein"
     "dontParse"
     "dong-lapata-2016-language"
     "berant-liang-2014-semantic"
