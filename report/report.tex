@@ -38,6 +38,8 @@ isbn=false, doi=false, ]{biblatex}
 
 \titlespacing\section{0pt}{4pt plus 2pt minus 2pt}{4pt plus 2pt minus 2pt}
 
+\usepackage{graphicx}
+
 % \setmainfont{Linux Libertine} % \setsansfont{Linux Biolinum} % %
 % \setmonofont[Scale=0.85]{PragmataPro Mono Liga}
 
@@ -74,6 +76,26 @@ behavior of robotics systems, particularly those with neural network components.
 We see that simple, formal systems provide a useful model for verifying systems
 with more a greater breadth of ``knowledge'' capable of more complex
 interactions.
+
+\section{Overview}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{pics/one.jpg}
+\caption{A simple caption \label{overflow}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{pics/two.jpg}
+\caption{A simple caption \label{overflow}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{pics/three.jpg}
+\caption{A simple caption \label{overflow}}
+\end{figure}
 
 \section{Introduction}
 
@@ -282,7 +304,40 @@ input natural language command. \cite{tellexInstr}
   template-instance methodology to generalize to different ontological
   categories in  \cite{hsiung2021generalizing} [under review]
 
+\item In \cite{patellearning} build learn a semantic parser from NL to LTL (so
+that the language is grounded) where they collect executions of the LTL formulas
+in different environments using a weakly-supervised training method with
+reinforcement learning Part if the paper has to do with the execution of the
+command being dependent on the path taken by the robot executing the command,
+not just meeting the goal requirements, thereby giving a complexity bonus in
+comparison to previous work. She also evaluates the model on the \cite{walkTalk}
+data set
 \end{itemize}
+
+\subsection{Robot Motion Planning}
+
+Without getting to into the weeds, for the actual planning and control of the
+robot should, at least hypothetically, be at least somewhat 
+
+\begin{quote}
+  Robot motion planning and control is the problem of automatic construction of
+robot control strategies from task specifications given in high-level, human-like language. The challenge
+in this area is the development of computationally efficient frameworks allowing for systematic, provably
+correct, control design accommodating both the robot constraints and the complexity of the environment,
+while at the same time allowing for expressive task specifications.
+\cite{4141034}
+\end{quote}
+
+There is a group at MIT (Kuo, Katz, Barbu, ..) doing seemingly similar things to
+Tellex's group.
+
+\begin{itemize}
+\item In \cite{kuo2020deep}, the authors 
+\item
+\item
+\item
+\end{itemize}
+
 
 
 \printbibliography

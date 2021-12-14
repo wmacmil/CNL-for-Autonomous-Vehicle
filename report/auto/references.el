@@ -2,6 +2,9 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "kuo2020deep"
+    "4141034"
+    "patellearning"
     "provCorrectNatControl"
     "5152776"
     "hsiung2021generalizing"

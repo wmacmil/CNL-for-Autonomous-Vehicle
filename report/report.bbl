@@ -19,6 +19,60 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{4141034}{article}{}
+      \name{author}{6}{}{%
+        {{hash=826cd766160d9baf0e344510b73d921a}{%
+           family={Belta},
+           familyi={B\bibinitperiod},
+           given={Calin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cc43c52cecb0f037579498ca80c711a1}{%
+           family={Bicchi},
+           familyi={B\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b5ca0ee4d617ad97cc150c468ef1d26}{%
+           family={Egerstedt},
+           familyi={E\bibinitperiod},
+           given={Magnus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7fe896e8ed8d5f30af73e472ebedcec9}{%
+           family={Frazzoli},
+           familyi={F\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ff389ecdbdfc5e473309c319939313c6}{%
+           family={Klavins},
+           familyi={K\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=13515e3859af5918925e99eddb9a9079}{%
+           family={Pappas},
+           familyi={P\bibinitperiod},
+           given={George\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{fullhash}{447f8323b72daac5b55c62e3b7e501dd}
+      \strng{bibnamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authorbibnamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authornamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authorfullhash}{447f8323b72daac5b55c62e3b7e501dd}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Robotics Automation Magazine}
+      \field{number}{1}
+      \field{title}{Symbolic planning and control of robot motion [Grand Challenges of Robotics]}
+      \field{volume}{14}
+      \field{year}{2007}
+      \field{pages}{61\bibrangedash 70}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/MRA.2007.339624
+      \endverb
+    \endentry
     \entry{berant-liang-2014-semantic}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=59365fb6f8cc1328f2453e8fb33dfba4}{%
@@ -572,6 +626,43 @@
       \verb 2110.05603
       \endverb
     \endentry
+    \entry{kuo2020deep}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b6e011e7e5e027d4f19c5a060ee9a982}{%
+           family={Kuo},
+           familyi={K\bibinitperiod},
+           given={Yen-Ling},
+           giveni={Y\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=582e97f66a3c848f7677fd594314028e}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2848188f1195d5db8f4551d272ab7659}{%
+           family={Barbu},
+           familyi={B\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{fullhash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{bibnamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authorbibnamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authornamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authorfullhash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{title}{Deep compositional robotic planners that follow natural language commands}
+      \field{year}{2020}
+      \field{pages}{4906\bibrangedash 4912}
+      \range{pages}{7}
+    \endentry
     \entry{provCorrectNatControl}{article}{}
       \name{author}{5}{}{%
         {{hash=37e991f377aeaa24d3530dbd062b63a5}{%
@@ -903,6 +994,37 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0885230821000620
       \endverb
       \keyw{Research agenda,Issues,Challenges,Priorities,Users}
+    \endentry
+    \entry{patellearning}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4a792196f1637b8d2a1d8d43506e633e}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Roma},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7ca6d98b9aedc0227fb0ef517ebdc65e}{%
+           family={Pavlick},
+           familyi={P\bibinitperiod},
+           given={Ellie},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{fullhash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{bibnamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authorbibnamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authornamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authorfullhash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning to Ground Language to Temporal Logical Form}
+      \field{year}{2019}
     \endentry
     \entry{dontParse}{inproceedings}{}
       \name{author}{4}{}{%
