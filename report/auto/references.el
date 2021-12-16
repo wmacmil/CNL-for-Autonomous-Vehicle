@@ -2,6 +2,9 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "7759412"
+    "plaku2016motion"
+    "ltlSemParse"
     "kuo2020deep"
     "4141034"
     "patellearning"

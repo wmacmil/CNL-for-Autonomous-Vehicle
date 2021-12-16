@@ -38,7 +38,8 @@ isbn=false, doi=false, ]{biblatex}
 
 \titlespacing\section{0pt}{4pt plus 2pt minus 2pt}{4pt plus 2pt minus 2pt}
 
-\usepackage{graphicx}
+\usepackage{graphicx} % for images
+\usepackage{float} % for figure[H]
 
 % \setmainfont{Linux Libertine} % \setsansfont{Linux Biolinum} % %
 % \setmonofont[Scale=0.85]{PragmataPro Mono Liga}
@@ -79,23 +80,92 @@ interactions.
 
 \section{Overview}
 
-\begin{figure}[ht!]
+Perhaps the most pervasive question pervading the use and application of natural
+language technologies, and one which exemplifies the boundary of the formal
+methods versus statistical methods approaches in designing such technologies,
+can be states as follows : How does one optimize for wide coverage of the system
+in addition to ensuring that system is robust?
+
+For the statistical, or data-oriented machine learning NLP methods, which have
+made enormous gains over the past three decades, often take the pragmatic
+approach : compromise robustness for wide coverage, as this means the tools can
+be used by non-experts. The formal approaches in computational linguistics,
+instead, are often more concerned with theoretical explainability, and therefore
+develop systems which have seemingly more predictable and well-defined behavior
+for specific problem domains, yet fail to generalize without an explosion in
+complexity when presented with data outside their domain. The fact that natural
+language both seems structured with respect to rules, yet continuously breaks or
+introduces exceptions to these rules, makes it exceedingly hard penetrate from
+either the data oriented or formalist approach, leading many researchers to ask
+to what degree large amounts of data can be augmented with theoretical knowledge
+about language to create optimal systems with respect to both breadth and depth
+of coverage.
+
+This problem acutely arises in when trying to design a voice assistant in the
+domain of commanding controllable robotics, specifically, autonomous vehicles.
+For the actions the vehicle takes, mostly the motion and path decisions, must be
+formally specified or at the very least controlled via some computer system
+subject to mathematical formalism. Assuming the user directing the vehicle isn't
+aware of these formalisms, it is incredibly difficult to design a controller
+capable of dealing with the breadth of language one may encounter in the wild.
+
+The instructions an arbitrary user gives are not subject to the same
+formalities. For they may leave out detail (``go into the other lane'' with
+multiple lanes on either side), say something wrong (``go into the other lane''
+on a single lane road), or give a command the controller should recognize as bad
+(``drive into the car ahead''). Additionally, the controller may need to
+recognize many ways many users may say ``the same thing'', that is the same with
+respect to some semantic formalism. Ambiguity and noise are other considerations
+to try to deal with (presumably through some dialogue system). Finally, there is
+the possibility of adversarial attacks, which we'll detail more below.
+
+We therefore analyze our big-picture question above in the following
+sub-question : how can one map the manifold ways of presenting information to an
+autonomous robot into a rigorous and formally verifiable subsystem which the
+controlled can understand? Our proposed solution is to build a semantic parser
+from natural language commands to Linear Temporal Logic, whereby we can filter
+the many possible natural language commands into a ``canoncial subset'' which
+are equivalent to (sets of) temporal logic formulas. The ``sets of'' clause
+references the inevitable ambiguity of parses even from a big enough parser, even
+if the size of the canoncial expressions is vastly smaller than the domain of
+expressions mapping to them.
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=150mm]{pics/one.jpg}
-\caption{A simple caption \label{overflow}}
+\caption{Language and Logical Spaces of Concern} \label{fig:M1}
 \end{figure}
 
-\begin{figure}[ht!]
+We begin in \autoref{fig:M1} with a high level overview of this semantic parsing
+system, whereby the space of natural language syntax can be mapped to some
+formal language semantic space (and possibly have some kind of inverse mapping).
+We note that ``Natural Language'', while an idealized notion, can be thought of
+the space of interpretable utterances. The relatively small subset of these
+utterances which one might give to a robot, labeled ``Robot Control Language'',
+is the ideal breadth our system would support, is still actually very large. We
+therefore applying another filter, to the ``Canonical Command Language'' which
+is inductively defined via some relatively thin set of grammar rules, which
+simultaneously generate and parse expressions in some logic. Although we target
+LTL because of its prominence in the literature and relatively straightforward
+implementation and interpretation, it should be noted that their are other
+temporal logics which may well be more expressive and better suited to the
+actual problem of synthesizing controllers.
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=150mm]{pics/two.jpg}
-\caption{A simple caption \label{overflow}}
+\caption{A simple caption}\label{fig:M2}
 \end{figure}
 
-\begin{figure}[ht!]
+in \autoref{fig:M2}
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=150mm]{pics/three.jpg}
-\caption{A simple caption \label{overflow}}
+\caption{A simple caption}\label{fig:M3}
 \end{figure}
+
+in \autoref{fig:M3}
 
 \section{Introduction}
 
@@ -254,6 +324,18 @@ review of methods and applications relevant for our work.
   and formulas
 \item Also, a highly relevant template combines Natural Language, LTL, with the
   idea of having a verifiable pipeline \cite{provCorrectNatControl} 
+
+\begin{quote}
+The production of an on-
+tology of common actions and the type of formulas that
+they produce—for example, safety conditions, adding goals,
+constraining the initial state—in their negated and positive
+forms would be a step toward a more general solution to
+the problem of mapping natural language to LTL. Previous
+work has relied heavily on grammar formalisms to ease...
+\cite{provCorrectNatControl} 
+\end{quote}
+
 \item LTL formulas can be transformed into automata which can then be used as reward functions for reinforcement learners, as in \cite{ltlRein}
 
 \item  The following is one of the more relevant quotes from a paper reviewing
@@ -328,14 +410,36 @@ while at the same time allowing for expressive task specifications.
 \cite{4141034}
 \end{quote}
 
+\begin{itemize}
+\item For instance, in \cite{plaku2016motion} the authors indicate how to actually
+ground basic propositions from the language to paths in a space, while our
+model, outputting formulas un-grounded base predicates, is merely concerned with
+the logical structure.
+
+\item 
+\item In \cite{7759412}, the authors borrow the English to LTL pipeline from the
+  aforementioned \cite{provCorrectNatControl}, and synthesize grounded controllers 
+\end{itemize}
+
 There is a group at MIT (Kuo, Katz, Barbu, ..) doing seemingly similar things to
 Tellex's group.
 
 \begin{itemize}
-\item In \cite{kuo2020deep}, the authors 
-\item
-\item
-\item
+\item In \cite{kuo2020deep}, the authors do the most general end-to-end task
+  without intermediary states,
+  namely, map natural language commands to navigation and manipulation tasks.
+  While this ``cutting out the middle man'' mentality may be an idealistic
+  long-term vision, it makes the system much too much of a black box - for the
+  fine-tuned verification conditions we desire to express and impose via the
+  intermediate symbolic representations, the intermediate states, we imagine
+  give us a more explainable, predictable, and regulatable system
+\item More similar to Tellex et al's approach \cite{patellearning},
+  \cite{ltlSemParse} seek to train a model via images in a simulated world.
+  Their work also uses a SCFG (to generate semantically inadequate sentences
+  with corresponding LTL formulas) from which they can direct machines to
+  follow the instructions, and then have users describe the instructions in more
+  natural form. 
+\item One of the 
 \end{itemize}
 
 

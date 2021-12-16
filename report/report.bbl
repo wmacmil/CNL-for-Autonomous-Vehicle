@@ -170,6 +170,48 @@
       \verb 10.1109/ICRA40945.2020.9197068
       \endverb
     \endentry
+    \entry{7759412}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=7a3760d9352e190a9404e5513da767b4}{%
+           family={Boteanu},
+           familyi={B\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e0c87a683e3fe8441004fcc394da2da0}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c7894da64967ad5e1af536dec40ce56e}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{fullhash}{16932bc4d1bc1df7f121c46ebc7a1636}
+      \strng{bibnamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authorbibnamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authornamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authorfullhash}{16932bc4d1bc1df7f121c46ebc7a1636}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+      \field{title}{A model for verifiable grounding and execution of complex natural language instructions}
+      \field{year}{2016}
+      \field{pages}{2649\bibrangedash 2654}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IROS.2016.7759412
+      \endverb
+    \endentry
     \entry{brunello_et_al}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=a67d3dae2cd10c6137f40f82b7afcf23}{%
@@ -1026,6 +1068,40 @@
       \field{title}{Learning to Ground Language to Temporal Logical Form}
       \field{year}{2019}
     \endentry
+    \entry{plaku2016motion}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3cb636c8c3c2e19eede483d26b5f5f15}{%
+           family={Plaku},
+           familyi={P\bibinitperiod},
+           given={Erion},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ca50b61c6d4e6ff567664ac59d4d3837}{%
+           family={Karaman},
+           familyi={K\bibinitperiod},
+           given={Sertac},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{fullhash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{bibnamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authorbibnamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authornamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authorfullhash}{478de9609bc43047ed23cbac13c6c387}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AI communications}
+      \field{number}{1}
+      \field{title}{Motion planning with temporal-logic specifications: Progress and challenges}
+      \field{volume}{29}
+      \field{year}{2016}
+      \field{pages}{151\bibrangedash 162}
+      \range{pages}{12}
+    \endentry
     \entry{dontParse}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=d7c87895715a271177851daf67ab6e8f}{%
@@ -1232,6 +1308,59 @@
       \endverb
       \verb{url}
       \verb http://arxiv.org/abs/1312.6199
+      \endverb
+    \endentry
+    \entry{ltlSemParse}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f5a8fc4ce8c3e5df2c4d74eb71b8c743}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2330300c09e258fbf1b4ab45c8adb8a2}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Candace},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b6e011e7e5e027d4f19c5a060ee9a982}{%
+           family={Kuo},
+           familyi={K\bibinitperiod},
+           given={Yen-Ling},
+           giveni={Y\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=582e97f66a3c848f7677fd594314028e}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2848188f1195d5db8f4551d272ab7659}{%
+           family={Barbu},
+           familyi={B\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{fullhash}{9d42cbcf604cce113f1fb1d61fced275}
+      \strng{bibnamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authorbibnamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authornamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authorfullhash}{9d42cbcf604cce113f1fb1d61fced275}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Learning a natural-language to {LTL} executable semantic parser for grounded robotics}
+      \field{volume}{abs/2008.03277}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2008.03277
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2008.03277
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2008.03277
       \endverb
     \endentry
   \enddatalist

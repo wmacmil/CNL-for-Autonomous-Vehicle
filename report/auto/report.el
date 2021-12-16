@@ -30,9 +30,12 @@
     ""
     "fontspec"
     "titlesec"
-    "graphicx")
+    "graphicx"
+    "float")
    (LaTeX-add-labels
-    "overflow")
+    "fig:M1"
+    "fig:M2"
+    "fig:M3")
    (LaTeX-add-bibliographies
     "references")
    (LaTeX-add-xparse-macros
