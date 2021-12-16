@@ -151,7 +151,7 @@ implementation and interpretation, it should be noted that their are other
 temporal logics which may well be more expressive and better suited to the
 actual problem of synthesizing controllers.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[width=150mm]{pics/two.jpg}
 \caption{A simple caption}\label{fig:M2}
@@ -159,20 +159,116 @@ actual problem of synthesizing controllers.
 
 Due to the recent influx of transformer based language models like Bert and
 GPT3, we take for granted that the easiest way to target our ``Robot Control
-Language'' will be through fine-tuning one of these models, as shown in \autoref{fig:M2}. These transformers, trained on a
-separate corpus like Wikepdia, can be mapped to some suitable set of robot commands, even
-though these types of expressions will have a sparse presence in the corpus the
-model was initially trained on
-(presumably Marco will know more about this than me). In this context, we can
-then further refine the language to something less natural, but more canonical.
+Language'' will be through fine-tuning one of these models, as shown in
+\autoref{fig:M2}. These transformers, trained on a separate corpus like
+Wikepdia, can be mapped to some suitable set of robot commands, even though
+these types of expressions will have a sparse presence in the corpus the model
+was initially trained on (presumably Marco will know more about this than me).
 
-\begin{figure}[H]
+In this context, we can then further refine the language to something less
+natural, but more canonical. The whole proposed pipeline in \autoref{fig:M3},
+indicates the methodology as interpreted from \cite{fewShotSem}, whereby the
+semantic parser should ideally be able to taking any command from the Robot
+Control Language and turn it into a set of temporal logic formulas, distributed
+according to most likely interpretation.
+
+Ideally, the downstream system should either be able to (i) ask for
+clarification if two formulas are determined to be of some relative likelihood,
+reject a formula that is not determined to be achievable (for whatever reason),
+or synthesize a sequence of actions according to the possibly modified current
+path. 
+
+\begin{figure}
 \centering
 \includegraphics[width=150mm]{pics/three.jpg}
 \caption{A simple caption}\label{fig:M3}
 \end{figure}
 
-in \autoref{fig:M3}
+In theory, we can embed clauses which in turn reflect all of natural language :
+``Stop at the man who is watching the tv show on his phone about time traveler
+who goes back to the 12th century Mongolia, whereby the man, not speaking
+Mongolian ...'' This is clearly outside the boundary of what the robot control
+language should support, and ideally would be accepted or rejected by the
+computer prior to the commands completion depending if there was a man looking
+at a phone. Our parser currently accepts strings in our primitive canonical
+language such as
+
+\begin{verbatim}
+  p "drive to the store , turn right and stop at the dog"
+
+  MultipleRoutes And (ConsPosCommand (SimpleCom (ModAction Drive (MkAdvPh To
+  (WhichObject The Store)))) (BasePosCommand (SimpleCom (ModAction Turn
+  (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvPh At (WhichObject The
+  Dog))))))
+\end{verbatim}
+
+However, we may envision our system being able to accept an expression in the
+Robot Control Language like ``hit the petal till we come up to the store, hang a
+right, and halt when you see a cute little puppy''. We could certainly adjust
+our parser to accomodate this, but it would be one of many possible edge cases
+unlikely to be uttered. To accomodate many more such edge cases would cause an
+exponential blowup in the parser size (thereby slowing down parsing), but more
+importantly, cause the programmer a headache when needing to map the parser to
+the logical form. If we treat $F$ as the operating expressing the existence a
+future state, $X$ as the next state, and $G$ meaning the universal future, our
+desired LTL formula would most likely treat this as $F\ (store \land\ (X\
+turn\_right\ \land\ (F\ (G\ dog))))$, although we propose that the actual
+grounding of these to images or controllable actions to some downstream system.
+
+LTL has been a popular logic for specifying controllable robot behaviors,
+particularly with respect to verification of their behaviors. In
+\cite{verifiedMotion}, Rizaldi et al. prove logical correctness of a motion
+planner with respect to LTL formulas over maneuver automata formulas in the
+Isabelle/HOL theorem prover, a non-dependent cousin of Agda. We are choosing to
+deeply embed LTL in Agda for a few reasons, although the syntax of the embedding
+could easily be translated to any other dependently typed theorem prover, and
+with a little more effort probably any functional programming language. The
+composition of a ``weakly verified'' natural language front-end with a formally
+verified back-end such as in Rizaldi's work would pave the way for a fully
+verified, utterance to vehicle path streamline for the autonomous vehicles.
+
+The big question to address is what kind of verification conditions the natural
+language component should be subjected to, and what kind of attacks would be
+most important to preemptively anticipate. Substitution based attacks
+\cite{substAttacks}, for instance, have been consistently emphasized throughout
+our discussions so far. The question is, \emph{where} in the pipeline it would
+be best to filter out the vulnerabilities, as well as \emph{how}.
+
+One possibility would be to define words modulo equivalent meanings using
+Wordnet \cite{wordnet} in the syntactic phase, either via training
+\cite{ren-etal-2019-generating} (presumably during the fine-tuning to the Robot
+Command Language or our ``canonicalization'' from that). It has been suggested
+that Bert is already relatively robust against such attacks
+\cite{hauser2021bert}, but we nonetheless feel that even higher sensitivities of
+robustness may be better done at other phases in the pipeline.
+
+Alternatively, one could just map these equivalent Wordnet forms to equivalent
+parse trees using the Portable Grammar Format (PGF) Haskell library, which
+essentially deeply embeds a GF grammar into a Generalized Algebraic Datatype
+(GADT).
+
+For instance, if we abstract over all abstract syntax trees for our grammar
+using this library, we can define the following Haskell functions to equate a
+``female human'' with a ``woman''. 
+
+\begin{verbatim}
+treeMapfemalePersonIsWoman :: forall a. Tree a -> Tree a
+treeMapfemalePersonIsWoman (GModObj GFemale GPerson) = GWoman
+treeMapfemalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
+treeMapfemalePersonIsWoman gp = composOp treeMapfemalePersonIsWoman gp
+\end{verbatim}
+
+There has been work integrating multiple language Wordnets with GF
+\cite{virk2014developing}, so it would presumably be easy to integrate with our
+system, depending on how large we want the grammar to get.
+
+We could also try to classify similar trees at the semantic level, i.e. cluster
+similar LTL formulas. Katya has suggested we could do something in line with her
+and Heras' work on Machine Learning for Proof General (ML4PG) \cite{ml4pg}. 
+
+As it is unclear what the best direction for this is, and how the attacker model
+in the context of an autonomous vehicle might work, all these decisions need to
+be made in the context of discussions within the group.
 
 \section{Introduction}
 
@@ -249,8 +345,6 @@ be generalized in many possible directions :
 \item other syntax -> semantic formalisms
 \item other robotics domains
 \end{itemize}
-
-
 
 
 \subsection{Foundation Models}

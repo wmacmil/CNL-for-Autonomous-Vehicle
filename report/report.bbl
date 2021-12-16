@@ -668,6 +668,55 @@
       \verb 2110.05603
       \endverb
     \endentry
+    \entry{ml4pg}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c25b8448f1c4602d8797e51739f4cbe8}{%
+           family={Heras},
+           familyi={H\bibinitperiod},
+           given={Jónathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=99d28f2101f8c9867265ddcefa8f0c8c}{%
+           family={Grov},
+           familyi={G\bibinitperiod},
+           given={Gudmund},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Open Publishing Association}%
+      }
+      \strng{namehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{fullhash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{bibnamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authorbibnamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authornamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authorfullhash}{623ece393acd62b9150d003eeaefe0be}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2075-2180}
+      \field{journaltitle}{Electronic Proceedings in Theoretical Computer Science}
+      \field{month}{7}
+      \field{title}{Machine Learning in Proof General: Interfacing Interfaces}
+      \field{volume}{118}
+      \field{year}{2013}
+      \field{pages}{15\bibrangedash 41}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.4204/eptcs.118.2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.4204/EPTCS.118.2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.4204/EPTCS.118.2
+      \endverb
+    \endentry
     \entry{kuo2020deep}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=b6e011e7e5e027d4f19c5a060ee9a982}{%
@@ -1037,6 +1086,50 @@
       \endverb
       \keyw{Research agenda,Issues,Challenges,Priorities,Users}
     \endentry
+    \entry{wordnet}{article}{}
+      \name{author}{1}{}{%
+        {{hash=52cf88006a41a8cd9aab3bcb5e428b80}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={George\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{fullhash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{bibnamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authorbibnamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authornamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authorfullhash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Because meaningful sentences are composed of meaningful words, any system that hopes to process natural languages as people do must have information about words and their meanings. This information is traditionally provided through dictionaries, and machine-readable dictionaries are now widely available. But dictionary entries evolved for the convenience of human readers, not for machines. WordNet1 provides a more effective combination of traditional lexicographic information and modern computing. WordNet is an online lexical database designed for use under program control. English nouns, verbs, adjectives, and adverbs are organized into sets of synonyms, each representing a lexicalized concept. Semantic relations link the synonym sets [4].}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{WordNet: A Lexical Database for English}
+      \field{volume}{38}
+      \field{year}{1995}
+      \field{pages}{39\bibrangedash 41}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1145/219717.219748
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/219717.219748
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/219717.219748
+      \endverb
+    \endentry
     \entry{patellearning}{article}{}
       \name{author}{3}{}{%
         {{hash=4a792196f1637b8d2a1d8d43506e633e}{%
@@ -1102,6 +1195,124 @@
       \field{pages}{151\bibrangedash 162}
       \range{pages}{12}
     \endentry
+    \entry{ren-etal-2019-generating}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=138626d1adbe607b34699718dd377319}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shuhuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9e48e778d5cd373a68481261d90dcc04}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Yihe},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a328f63ba0e78525a27b105bb17fe87e}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cb0803882fba28a6c7ecb519069a89de}{%
+           family={Che},
+           familyi={C\bibinitperiod},
+           given={Wanxiang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Florence, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{14b01d4236e824603b02873af157428f}
+      \strng{fullhash}{95503987bc0659e8b806df783f04ffc7}
+      \strng{bibnamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authorbibnamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authornamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authorfullhash}{95503987bc0659e8b806df783f04ffc7}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the problem of adversarial attacks on text classification, which is rarely studied comparing to attacks on image classification. The challenge of this task is to generate adversarial examples that maintain lexical correctness, grammatical correctness and semantic similarity. Based on the synonyms substitution strategy, we introduce a new word replacement order determined by both the word saliency and the classification probability, and propose a greedy algorithm called probability weighted word saliency (PWWS) for text adversarial attack. Experiments on three popular datasets using convolutional as well as LSTM models show that PWWS reduces the classification accuracy to the most extent, and keeps a very low word substitution rate. A human evaluation study shows that our generated adversarial examples maintain the semantic similarity well and are hard for humans to perceive. Performing adversarial training using our perturbed datasets improves the robustness of the models. At last, our method also exhibits a good transferability on the generated adversarial examples.}
+      \field{booktitle}{Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Generating Natural Language Adversarial Examples through Probability Weighted Word Saliency}
+      \field{year}{2019}
+      \field{pages}{1085\bibrangedash 1097}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.18653/v1/P19-1103
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P19-1103
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P19-1103
+      \endverb
+    \endentry
+    \entry{verifiedMotion}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=57dba6427ad3454b675f2b86cadc1be0}{%
+           family={Rizaldi},
+           familyi={R\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d0b0722da31cffb37f836c379a269a38}{%
+           family={Immler},
+           familyi={I\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=620b9f4fa70e4ed1ce03b4a790f54a87}{%
+           family={Sch{ü}rmann},
+           familyi={S\bibinitperiod},
+           given={Bastian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6212f49fc6e2ed8c269aa77471508561}{%
+           family={Althoff},
+           familyi={A\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=9a06920f8645e691220f4461275d91f3}{%
+           family={Lahiri},
+           familyi={L\bibinitperiod},
+           given={Shuvendu\bibnamedelima K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=3ad93e4c675a68a22a9c2c52b38e2751}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{fullhash}{f28f64758dacb12e29e92cc5bfb67a33}
+      \strng{bibnamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authorbibnamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authornamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authorfullhash}{f28f64758dacb12e29e92cc5bfb67a33}
+      \strng{editorbibnamehash}{7625318d7320174ab5094a59635a0d3c}
+      \strng{editornamehash}{7625318d7320174ab5094a59635a0d3c}
+      \strng{editorfullhash}{7625318d7320174ab5094a59635a0d3c}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Autonomous vehicles are safety-critical cyber-physical systems. To ensure their correctness, we use a proof assistant to prove safety properties deductively. This paper presents a formally verified motion planner based on manoeuvre automata in Isabelle/HOL. Two general properties which we ensure are numerical soundness (the absence of floating-point errors) and logical correctness (satisfying a plan specified in linear temporal logic). From these two properties, we obtain a motion planner whose correctness only depends on the validity of the models of the ego vehicle and its environment.}
+      \field{booktitle}{Automated Technology for Verification and Analysis}
+      \field{isbn}{978-3-030-01090-4}
+      \field{title}{A Formally Verified Motion Planner for Autonomous Vehicles}
+      \field{year}{2018}
+      \field{pages}{75\bibrangedash 90}
+      \range{pages}{16}
+    \endentry
     \entry{dontParse}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=d7c87895715a271177851daf67ab6e8f}{%
@@ -1158,6 +1369,44 @@
       \verb https://doi.org/10.1145/3366423.3380064
       \endverb
       \keyw{Natural Language Understanding,Sequence to Sequence models,Voice Assistants,Semantic Parsing}
+    \endentry
+    \entry{substAttacks}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9470198fa62c53a76873a24efa114622}{%
+           family={Samanta},
+           familyi={S\bibinitperiod},
+           given={Suranjana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fb378fc897441f58f0b87c994b6cf0c3}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Sameep},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{fullhash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{bibnamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authorbibnamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authornamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authorfullhash}{4941f8349bd964a0411996c0c2a4c606}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Towards Crafting Text Adversarial Samples}
+      \field{volume}{abs/1707.02812}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1707.02812
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1707.02812
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1707.02812
+      \endverb
     \endentry
     \entry{fewShotSem}{article}{}
       \name{author}{10}{}{%
@@ -1309,6 +1558,45 @@
       \verb{url}
       \verb http://arxiv.org/abs/1312.6199
       \endverb
+    \endentry
+    \entry{virk2014developing}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=3cc4d08c137cd8e17a5d5588d4875965}{%
+           family={Virk},
+           familyi={V\bibinitperiod},
+           given={Shafqat\bibnamedelima Mumtaz},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bdfaa46444b8b7e7248f3c8707c2ed8a}{%
+           family={Prasad},
+           familyi={P\bibinitperiod},
+           given={KVS},
+           giveni={K\bibinitperiod}}}%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{fullhash}{33a3a6ce847b531a8aa0a69262bf76cb}
+      \strng{bibnamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authorbibnamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authornamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authorfullhash}{33a3a6ce847b531a8aa0a69262bf76cb}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Fifth Workshop on South and Southeast Asian Natural Language Processing}
+      \field{title}{Developing an interlingual translation lexicon using WordNets and Grammatical Framework}
+      \field{year}{2014}
+      \field{pages}{55\bibrangedash 64}
+      \range{pages}{10}
     \endentry
     \entry{ltlSemParse}{article}{}
       \name{author}{5}{}{%

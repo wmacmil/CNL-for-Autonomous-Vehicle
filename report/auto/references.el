@@ -2,6 +2,12 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "ml4pg"
+    "virk2014developing"
+    "ren-etal-2019-generating"
+    "wordnet"
+    "substAttacks"
+    "verifiedMotion"
     "7759412"
     "plaku2016motion"
     "ltlSemParse"
