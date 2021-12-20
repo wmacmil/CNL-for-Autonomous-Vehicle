@@ -272,6 +272,21 @@ As it is unclear what the best direction for this is, and how the attacker model
 in the context of an autonomous vehicle might work, all these decisions need to
 be made in the context of discussions within the group.
 
+[ Addendum before meeting : ]
+
+The TOUCHDOWN data set \cite{chen2019touchdown} seems like the most
+comprehensive and relevant data we'll find to fine-tune via one of these
+pre-trained models. Please see https://github.com/lil-lab/touchdown
+
+
+The idea of domain specific pre-training can be traced to
+\cite{gururangan-etal-2020-dont}, where the authors introduce the concepts of
+\emph{domain-adpative pretraining} and \emph{task-adpative pretraining}, whereby
+this additional pre-training phase greatly improves efficacy of the LM on
+corpus and task data not well represented in the training data.
+
+% Warricks personal (confessed) confusions
+
 \section{Introduction}
 
 While the evaluation of machine learning systems provides assurances using

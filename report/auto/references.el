@@ -2,6 +2,8 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "gururangan-etal-2020-dont"
+    "chen2019touchdown"
     "ml4pg"
     "virk2014developing"
     "ren-etal-2019-generating"

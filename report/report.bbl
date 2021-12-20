@@ -343,6 +343,48 @@
       \verb https://doi.org/10.24963/ijcai.2019/840
       \endverb
     \endentry
+    \entry{chen2019touchdown}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=5e2afaa4949ebeb4930a13e8aa4dc4bc}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7d05bdee06932b6ca64e9f047c136958}{%
+           family={Suhr},
+           familyi={S\bibinitperiod},
+           given={Alane},
+           giveni={A\bibinitperiod}}}%
+        {{hash=abbd24aa7343e80a254d07dc87f433ac}{%
+           family={Misra},
+           familyi={M\bibinitperiod},
+           given={Dipendra},
+           giveni={D\bibinitperiod}}}%
+        {{hash=691a70527bf15623328097c061ad1940}{%
+           family={Snavely},
+           familyi={S\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=bda57b6734e461152eada7e447798ca8}{%
+           family={Artzi},
+           familyi={A\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{fullhash}{235da6855e740a012a9a58a74a19582f}
+      \strng{bibnamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authorbibnamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authornamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authorfullhash}{235da6855e740a012a9a58a74a19582f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{TOUCHDOWN: Natural Language Navigation and Spatial Reasoning in Visual Street Environments}
+      \field{year}{2019}
+    \endentry
     \entry{coqLTL}{article}{}
       \name{author}{1}{}{%
         {{hash=2c06bffaeaf266eeb6246c332fe7422e}{%
@@ -523,6 +565,77 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.15607/RSS.2020.XVI.102
+      \endverb
+    \endentry
+    \entry{gururangan-etal-2020-dont}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=d1d3c4c5376249f5a5ed8c43c6585e47}{%
+           family={Gururangan},
+           familyi={G\bibinitperiod},
+           given={Suchin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4af36fd5ea1c6068988c8ff0efce7a84}{%
+           family={Marasovi{ć}},
+           familyi={M\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=17a53fd167ccca7245cb9e8082ccb3a7}{%
+           family={Swayamdipta},
+           familyi={S\bibinitperiod},
+           given={Swabha},
+           giveni={S\bibinitperiod}}}%
+        {{hash=647a3130d4b4f62c11d9a9f9a15d1af1}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ad932527c4d078ff96e5f0b189c66c61}{%
+           family={Beltagy},
+           familyi={B\bibinitperiod},
+           given={Iz},
+           giveni={I\bibinitperiod}}}%
+        {{hash=fa7715d3fe113b4856fbe5933ea9c7aa}{%
+           family={Downey},
+           familyi={D\bibinitperiod},
+           given={Doug},
+           giveni={D\bibinitperiod}}}%
+        {{hash=76caee508bed7d0995f7c21cc5e6208c}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Noah\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Online}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{fullhash}{bf75487d1965aa9381775eb548534a95}
+      \strng{bibnamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authorbibnamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authornamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authorfullhash}{bf75487d1965aa9381775eb548534a95}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Language models pretrained on text from a wide variety of sources form the foundation of today's NLP. In light of the success of these broad-coverage models, we investigate whether it is still helpful to tailor a pretrained model to the domain of a target task. We present a study across four domains (biomedical and computer science publications, news, and reviews) and eight classification tasks, showing that a second phase of pretraining in-domain (domain-adaptive pretraining) leads to performance gains, under both high- and low-resource settings. Moreover, adapting to the task's unlabeled data (task-adaptive pretraining) improves performance even after domain-adaptive pretraining. Finally, we show that adapting to a task corpus augmented using simple data selection strategies is an effective alternative, especially when resources for domain-adaptive pretraining might be unavailable. Overall, we consistently find that multi-phase adaptive pretraining offers large gains in task performance.}
+      \field{booktitle}{Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Don't Stop Pretraining: Adapt Language Models to Domains and Tasks}
+      \field{year}{2020}
+      \field{pages}{8342\bibrangedash 8360}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.18653/v1/2020.acl-main.740
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/2020.acl-main.740
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2020.acl-main.740
       \endverb
     \endentry
     \entry{hauser2021bert}{misc}{}
