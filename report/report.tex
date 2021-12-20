@@ -192,7 +192,7 @@ Mongolian ...'' This is clearly outside the boundary of what the robot control
 language should support, and ideally would be accepted or rejected by the
 computer prior to the commands completion depending if there was a man looking
 at a phone. Our parser currently accepts strings in our primitive canonical
-language such as
+language, designed in Grammatical Framework (GF), such as :
 
 \begin{verbatim}
   p "drive to the store , turn right and stop at the dog"
@@ -204,17 +204,18 @@ language such as
 \end{verbatim}
 
 However, we may envision our system being able to accept an expression in the
-Robot Control Language like ``hit the petal till we come up to the store, hang a
+Robot Control Language like ``hit the petal till we reach the store, hang a
 right, and halt when you see a cute little puppy''. We could certainly adjust
 our parser to accomodate this, but it would be one of many possible edge cases
 unlikely to be uttered. To accomodate many more such edge cases would cause an
 exponential blowup in the parser size (thereby slowing down parsing), but more
-importantly, cause the programmer a headache when needing to map the parser to
-the logical form. If we treat $F$ as the operating expressing the existence a
-future state, $X$ as the next state, and $G$ meaning the universal future, our
-desired LTL formula would most likely treat this as $F\ (store \land\ (X\
-turn\_right\ \land\ (F\ (G\ dog))))$, although we propose that the actual
-grounding of these to images or controllable actions to some downstream system.
+importantly, cause the programmer a headache in building the parser, and then
+mapping the NL ASTs to a LTL form. If we treat $F$ as the operating
+expressing the existence a future state, $X$ as the next state, and $G$ meaning
+the universal future, our desired LTL formula would most likely treat this as
+$F\ (store \land\ (X\ turn\_right\ \land\ (F\ (G\ dog))))$, although we propose
+that the actual grounding of these to images or controllable actions to some
+downstream system.
 
 LTL has been a popular logic for specifying controllable robot behaviors,
 particularly with respect to verification of their behaviors. In
@@ -226,7 +227,7 @@ could easily be translated to any other dependently typed theorem prover, and
 with a little more effort probably any functional programming language. The
 composition of a ``weakly verified'' natural language front-end with a formally
 verified back-end such as in Rizaldi's work would pave the way for a fully
-verified, utterance to vehicle path streamline for the autonomous vehicles.
+verified, utterance-to-vehicle-path pipeline for the autonomous vehicles.
 
 The big question to address is what kind of verification conditions the natural
 language component should be subjected to, and what kind of attacks would be
