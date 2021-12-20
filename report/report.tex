@@ -103,28 +103,28 @@ optimal and practical systems with respect to both breadth and depth of
 coverage of language phenomena.
 
 This problem acutely arises in when trying to design a voice assistant in the
-domain of commanding controllable robotics, specifically, autonomous vehicles.
-For the actions the vehicle takes, mostly the motion and path decisions, must be
+domain of commanding controllable robots, specifically, autonomous vehicles.
+For the actions a vehicle takes, mostly the motion and path decisions, must be
 formally specified or at the very least controlled via some computer system
 subject to mathematical formalism. Assuming the user directing the vehicle isn't
 aware of these formalisms, it is incredibly difficult to design a controller
 capable of dealing with the breadth of language one may encounter in the wild.
 
-The instructions an arbitrary user gives are not subject to the same
-formalities. For they may leave out detail (``go into the other lane'' with
-multiple lanes on either side), say something wrong (``go into the other lane''
-on a single lane road), or give a command the controller should recognize as bad
-(``drive into the car ahead''). Additionally, the controller may need to
+The instructions an arbitrary user gives are not subject to the same formalities
+the system requires. For her commands may leave out detail (``go into the other lane''
+with multiple lanes on either side), say something wrong (``go into the other
+lane'' on a single lane road), or give a command the controller should recognize
+as bad (``drive directly into the car ahead''). Additionally, the controller may need to
 recognize many ways many users may say ``the same thing'', that is the same with
 respect to some semantic formalism. Ambiguity and noise are other considerations
 to try to deal with (presumably through some dialogue system). Finally, there is
-the possibility of adversarial attacks, which we'll detail more below.
+the possibility of an adversarial attacks, which we'll detail more below.
 
-We therefore analyze our big-picture question above in the following
-sub-question : how can one map the manifold ways of presenting information to an
-autonomous robot into a rigorous and formally verifiable subsystem which the
-controlled can understand? Our proposed solution is to build a semantic parser
-from natural language commands to Linear Temporal Logic, whereby we can filter
+We therefore analyze our ``big-picture'' question above in the following
+``sub-question'' : how can one map the manifold ways of presenting information to an
+autonomous robot into a rigorous and formally verifiable kernel which the
+controller can understand? Our proposed solution is to build a semantic parser
+from natural language commands to Linear Temporal Logic (LTL), whereby we can filter
 the many possible natural language commands into a ``canoncial subset'' which
 are equivalent to (sets of) temporal logic formulas. The ``sets of'' clause
 references the inevitable ambiguity of parses even from a big enough parser, even
@@ -155,11 +155,11 @@ actual problem of synthesizing controllers.
 \begin{figure}
 \centering
 \includegraphics[width=150mm]{pics/two.jpg}
-\caption{A simple caption}\label{fig:M2}
+\caption{Transformer to Robot Control Language}\label{fig:M2}
 \end{figure}
 
 Due to the recent influx of transformer based language models like Bert and
-GPT3, we take for granted that the easiest way to target our ``Robot Control
+GPT-3, we take for granted that the easiest way to target our ``Robot Control
 Language'' will be through fine-tuning one of these models, as shown in
 \autoref{fig:M2}. These transformers, trained on a separate corpus like
 Wikepdia, can be mapped to some suitable set of robot commands, even though
@@ -167,22 +167,22 @@ these types of expressions will have a sparse presence in the corpus the model
 was initially trained on (presumably Marco will know more about this than me).
 
 In this context, we can then further refine the language to something less
-natural, but more canonical. The whole proposed pipeline in \autoref{fig:M3},
-indicates the methodology as interpreted from \cite{fewShotSem}, whereby the
-semantic parser should ideally be able to taking any command from the Robot
+natural, but more well-behaved. The whole proposed pipeline in \autoref{fig:M3},
+indicates using the methodology as used in \cite{fewShotSem}, whereby the
+semantic parser should ideally be able to take any command from the Robot
 Control Language and turn it into a set of temporal logic formulas, distributed
 according to most likely interpretation.
 
-Ideally, the downstream system should either be able to (i) ask for
+Ideally, the downstream dialogue system should either be able to ask for
 clarification if two formulas are determined to be of some relative likelihood,
 reject a formula that is not determined to be achievable (for whatever reason),
-or synthesize a sequence of actions according to the possibly modified current
-path. 
+or synthesize a sequence of actions (and express those in the CNL) according to
+the possibly modified current path.
 
 \begin{figure}
 \centering
 \includegraphics[width=150mm]{pics/three.jpg}
-\caption{A simple caption}\label{fig:M3}
+\caption{Pipeline from NL to LTL}\label{fig:M3}
 \end{figure}
 
 In theory, we can embed clauses which in turn reflect all of natural language :
