@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  20 DEC 2021 11:34
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  20 DEC 2021 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,18 +1024,18 @@ LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
 (Font)              size <5> substituted on input line 213.
 
 [3] [4]
-Overfull \hbox (6.93199pt too wide) in paragraph at lines 260--260
+Overfull \hbox (6.93199pt too wide) in paragraph at lines 261--261
 []\TU/lmtt/m/n/10.95 treeMapfemalePersonIsWoman GWoman                    = (GM
 odObj GFemale GPerson)[] 
  []
 
 [5] [6] [7] [8] [9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 552.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 553.
  [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 552.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 553.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 552.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 552.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 553.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 553.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 3ADC7FD284F1A48865EFE4BBB6EAE5D8;1370.
 
@@ -1056,4 +1056,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  52i,5n,109p,1483b,4873s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (12 pages, 317944 bytes).
+Output written on report.xdv (12 pages, 318460 bytes).
