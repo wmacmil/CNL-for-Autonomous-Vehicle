@@ -4,6 +4,7 @@
 
 module Data where
 
+-- import Utils.Misc
 import Data.Maybe
 import Data.Attoparsec
 import Data.List
@@ -11,59 +12,32 @@ import GHC.Generics
 import Data.Aeson -- as JSON
 import Data.Aeson.Lens -- as JSON
 import Control.Lens-- as JSON
--- import Network.HTTP.Conduit (simpleHttp)
 import qualified Data.ByteString.Lazy as B
 import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
+-- import qualified Data.Map as M
+import qualified Data.List as D
+
 -- import qualified Data.ByteString.Internal as I
 -- import qualified Data.ByteString.Lazy.UTF8 as U
 
 -- -- import qualified Data.ByteString.Lazy as B
 
 jsonFile :: FilePath
--- jsonFile = "train.json"
 jsonFile = "train.json"
-
-getJSON :: IO B.ByteString
-getJSON = B.readFile jsonFile
-
--- a = fmap decode getJSON :: 
-
-s = "{ \"foo\": \"bar\", \"baz\": 42 }\n{ \"foo\": \"freak\", \"baz\": 11112 }"
-
--- v = decode "{ \"foo\": \"bar\", \"baz\": 42 }" :: Maybe Value
--- v' :: _ -> Maybe Value
-
-v' v = v >>= (^? key "foo")
-
--- b = (\s -> case parse json s of (Done s' o) -> Just (o,s'); _ -> Nothing) s
-
--- b :: Internal.ByteString -> Maybe (Value, Data.ByteString.Internal.ByteString)
-
-b :: [Value]
-b = unfoldr (\s -> case parse json s of (Done s' o) -> Just (o,s'); _ -> Nothing) s
-
-
--- -- b' :: B.ByteString -> [MaybeValue]
--- aa' s = unfoldr decode s
-
-b' :: B.ByteString -> [Value]
-b' s = unfoldr (\s -> case parse json s of (Done s' o) -> Just (o,s'); _ -> Nothing) (B.toStrict s)
-
-asdf v = v >>= (^? key "foo") >>= (^? _String)
-
--- >>> :t (^? _String)
--- (^? _String) :: AsPrimitive s => s -> Maybe Data.Text.Internal.Text
 
 outputFileName :: FilePath
 outputFileName = "justSentences.txt"
 
--- b'' :: IO B.ByteString -> IO [Value]
+getJSON :: IO B.ByteString
+getJSON = B.readFile jsonFile
 
--- b'' :: Monad m => m B.ByteString -> m [T.Text]
+b' :: B.ByteString -> [Value]
+b' s = unfoldr (\s -> case parse json s of (Done s' o) -> Just (o,s'); _ -> Nothing) (B.toStrict s)
+
+-- how to do this without fromJust
 b'' = do
   s' <- getJSON
-  -- s' <- s
   let x = b' s'
   let y = fmap (^? key "full_text") x
   let z = map fromJust y
@@ -71,94 +45,149 @@ b'' = do
   let v = map fromJust w :: [T.Text]
   let concatV = T.concat v :: T.Text
   TIO.writeFile outputFileName concatV
-  -- return ()
 
--- writeListText :: [T.Text] -> IO ()
--- writeListText  = _
+-- >>> D.take 4 [1..10]
+-- [1,2,3,4]
+-- >>> D.tail [1..10]
+-- [2,3,4,5,6,7,8,9,10]
 
-c = b'' 
+-- ngrams
 
--- main = printAnswer =<< pure . programLogic =<< readFile "name"
+-- >>> ngrams 5 "ask"
+-- ["ask"]
+-- >>> ngrams 4 [1..4]
+-- [[1,2,3,4]]
 
--- b''' :: IO a -> (a -> [b]) -> [b]
--- b''' ioa f = do
---   a <- ioa
---   _
+-- ngrams n xs = (D.take n xs) : ngrams n (tail xs)
+-- isomorphic
+ngrams :: Int -> [a] -> [[a]]
+ngrams n xs
+  | (length xs) < n = [] -- [xs]
+  | (length xs) == n = [xs]
+  | otherwise = (D.take n xs) : ngrams n (tail xs)
 
--- >>> :t (<<=)
--- <interactive>:1:1-5: error:
---     • Variable not in scope: <<=
---     • Perhaps you meant ‘<=’ (imported from Prelude)
+startSymbol = "_START "
 
-result = parse json s
+ngrams_Sent n x = ngrams n (startSymbol:x)
 
--- result' = do
---   train <- getJSON
---   b' train
---   _
---   -- b' train
+bigrams = ngrams_Sent 2
 
--- >>> :t unfoldr
--- unfoldr :: (b -> Maybe (a, b)) -> b -> [a]
--- >>> b
--- [Object (fromList [("foo",String "bar"),("baz",Number 42.0)]),Object (fromList [("foo",String "freak"),("baz",Number 11112.0)])]
+-- frequency
+frequency :: (Eq a0, Ord a0) => [a0] -> [(a0, Int)]
+frequency s = map (\x -> (head x, length x)) . group . sort $ s
 
--- repeatb s = b s
+tagged :: FilePath
+tagged = "taggedSentences.txt"
 
+taggedBidirec :: FilePath
+taggedBidirec = "bidectionalSentences.txt"
 
+-- do
+-- getWords :: FilePath -> IO [String]
+getWords path =
+  do
+    contents <- readFile path
+    let sents = lines contents
+    let splitSents = map words sents
+    let bigramFreqs = concat $ map bigrams splitSents
+    let frequencies = frequency bigramFreqs
+    let sortedFrequencies = reverse $ sortBy (\(_,a) (_,b) -> compare a b) frequencies
+    return (D.take 50 sortedFrequencies)
 
+z = getWords tagged
+z' = getWords taggedBidirec
 
--- >>> b s
--- <interactive>:2444:2-4: error:
---     • Couldn't match expected type ‘Data.ByteString.Internal.ByteString
---                                     -> t’
---                   with actual type ‘[Value]’
---     • The function ‘b’ is applied to one argument,
---       but its type ‘[Value]’ has none
---       In the expression: b s
---       In an equation for ‘it’: it = b s
---     • Relevant bindings include it :: t (bound at <interactive>:2444:2)
+-- myWords :: String -> Char -> String -> [String]
+-- myWords (x:xs) c s = 
+--   | x == c = s
 
--- "{\"city\": \"nyc\", \"full_text\": \"Follow traffic to the light and go left, then left again at the next light. Don't cross the cross way, but turn to look left at the blue-grey building with the red awning.  There's a black hydrant with a silver cap between two silver bollards on the sidewalk.\\n\\nTouchdown is on the cap of the hydrant.\"}\n{\"city\": \"nyc\", \"full_text\": \"Turn so the nearby intersection is at your back, and the building with the murals is on your right.  Go forward, and move straight through the first two intersections you come to.  Now the median strip won't have plants and a green stripe in it on this block.  Go forward, and look for a closed garage/security gate on your right side that is black with a yellow mural of a face on it.  Stop when you've just passed that mural.  The bear is on the right eye of the face in the mural. \"}\n\n"
+-- parts of speech shown here
+-- https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
+-- how to let these inform design of our programming language :
+-- we should make sure that it parses n-grams of some large size, (which will allow us to build the corpus which matches best our corpus
+-- i.e. write a helper function to GF to allow every
+-- noun in the corpus to recieve a GF word
+-- we could do this at the abstract sytnax level, or at the linearization level
+-- if we just have a record for all the nouns one anticipates
 
--- -- trainLists :: _
--- trainLists =
---   do train <- getJSON
---      decode train -- :: (Maybe Value)-- getJSON 
---   -- do train <- getJSON
---   --    decode <$> getJSON -- getJSON 
-
--- data Routes = Routes
---   {
---     navigation_text :: String
---   }
---   deriving (Eq, Show, Generic)
-
--- instance FromJSON Routes where
---   parseJSON = genericParseJSON $ jsonOptions
-
--- jsonOptions :: Options
--- jsonOptions = defaultOptions
-
--- trainLists :: IO (Either String [Routes])
--- trainLists =
---   do -- train <- getJSON
---      eitherDecode <$> getJSON -- getJSON 
-
-     -- _
-     -- let x = U.toString train
-     -- -- let x = B.unpack train
-     -- putStrLn x
-
--- getText :: [Routes]
--- getText = do
---   trainData <- getJSON
---   _
-
--- -- toString from Data.ByteString.Lazy.UTF8
--- main = do
---   trainData <- getJSON
---   _
+-- write a words 
 
 
+
+-- >>> bg = bigrams "askldfjas;ldkjasdl;fkajklweqrjklasdlk;jasld;fjasdlk;fjasd;lfkjasdl;fkjasdfl;kasdfl;asdjkfals;kdfas;ldkfjas;lkdjasdkasdfasdfasdfjkasldfjasld;kfjasdlfj"
+-- <interactive>:7500:7-13: error:
+--     • Variable not in scope: bigrams :: [Char] -> t
+--     • Perhaps you meant ‘ngrams’ (line 64)
+-- >>> frequency bg
+-- <interactive>:7501:12-13: error:
+--     • Variable not in scope: bg :: [a0]
+--     • Perhaps you meant ‘b'’ (line 36)
+
+-- >>> ff = (let f = frequency "asdjkfl;asfjdlsksjldkfljasdjkl" in f ++ f)
+-- >>> map ff
+-- [(";",1),("a",3),("d",4),("f",3),("j",5),("k",4),("l",5),("s",5),(";",1),("a",3),("d",4),("f",3),("j",5),("k",4),("l",5),("s",5)]
+-- >>> frequency (let f = frequency "asdjkfl;asfjdlsksjldkfljasdjkl" in f ++ f)
+-- [([(";",1)],2),([("a",3)],2),([("d",4)],2),([("f",3)],2),([("j",5)],2),([("k",4)],2),([("l",5)],2),([("s",5)],2)]
+
+-- need to pre-append StartSentence tag
+-- approximately 45000 sentences
+-- idea : run bigram and trigam data per sentence,
+-- then sort over set of all bigrams and trigrams
+-- construct a map
+
+-- constructMap :: [x] -> Map x Int
+
+-- updateValOrConstuctKey :: (Ord x) => x -> M.Map x Int -> M.Map x Int
+-- updateValOrConstuctKey x m =
+--   let queryXM = M.lookup x m
+--   in
+--     if M.member x m
+--       then M.insert x 1 m
+--       else M.adjust (+1) x m
+
+    -- case queryXM of
+    --   Nothing -> M.insert x 1 m
+    --   Just something -> _
+
+
+-- or just build a dictionary between a list of items and its count
+-- >>> sort [("abc","bc"),("cb","df"),("bd,"bd")]
+-- <interactive>:1545:44: error:
+--     lexical error in string/character literal at end of input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--BOILERPLATE
+
+-- bigrams :: [x] -> [(x,x)]
+-- bigrams (x:y:xs) = (x,y) : (bigrams (y:xs))
+-- bigrams _         = []
+
+-- trigrams :: [x] -> [(x,x,x)]
+-- trigrams (x:y:z:xs) = (x,y,z) : (trigrams (y:z:xs))
+-- trigrams _         = []
+
+-- quadgrams :: [x] -> [(x,x,x,x)]
+-- quadgrams (x:y:z:z':xs) = (x,y,z,z') : (quadgrams (y:z:z':xs))
+-- quadgrams _         = []
+
+-- fivegrams :: [x] -> [(x,x,x,x,x)]
+-- fivegrams (x:y:z:z':z'':xs) = (x,y,z,z',z'') : (fivegrams (y:z:z':z'':xs))
+-- fivegrams _         = []
+
+-- bigrams_Sent x = bigrams (startSymbol:x)
+-- trigrams_Sent x = trigrams (startSymbol:x)
+-- quadgrams_Sent x = quadgrams (startSymbol:x)
+-- fivegrams_Sent x = fivegrams (startSymbol:x)
