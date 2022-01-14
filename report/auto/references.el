@@ -2,6 +2,7 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "bioBert"
     "gururangan-etal-2020-dont"
     "chen2019touchdown"
     "ml4pg"
