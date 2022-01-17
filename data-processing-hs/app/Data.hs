@@ -97,6 +97,9 @@ getWords path =
 z = getWords tagged
 z' = getWords taggedBidirec
 
+main :: IO ()
+main = putStrLn "Hello, Haskell!"
+
 -- myWords :: String -> Char -> String -> [String]
 -- myWords (x:xs) c s = 
 --   | x == c = s
