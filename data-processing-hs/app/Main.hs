@@ -5,7 +5,6 @@
 module Main where
 
 -- import Utils.Misc
--- import qualified Basement.String as Basement
 import Data.Maybe
 import Data.Attoparsec
 import Data.List
@@ -18,11 +17,6 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
 -- import qualified Data.Map as M
 import qualified Data.List as D
-
--- import qualified Data.ByteString.Internal as I
--- import qualified Data.ByteString.Lazy.UTF8 as U
-
--- -- import qualified Data.ByteString.Lazy as B
 
 jsonFile :: FilePath
 jsonFile = "text/train.json"
@@ -68,37 +62,68 @@ json2Sentences = do
   let textEntries     = map fromJust justTextEntries
   let justText        = map (^? _String) textEntries
   let text            = map fromJust justText :: [T.Text]
-  -- let concatV         = T.concat text :: T.Text
-  let concatV         = T.intercalate " " text :: T.Text
+  let concatV         = T.intercalate " " text :: T.Text -- weird concat probs
   TIO.writeFile outputFileName' concatV
 
 -- do
 -- getWords :: FilePath -> IO [String]
 -- so now we want to be able to do SQL type queries, as in sort by most frequent the followed by a given part of speech
-getWords path =
+-- would be nice to have Ngrams record which n in the type
+
+-- what is the right abstraction?
+-- lets say get the lists of ngrams, i.e. bigramFreqs below
+
+-- count
+
+
+getNGramWords n path =
+  do
+    contents <- readFile path
+    let sents             = lines contents
+        splitSents        = map words sents
+        splitPOS          = fmap (fmap splitAtUnderscore) splitSents
+        bigramFreqs       = concat $ map (ngrams n) splitPOS  :: [[(String,String)]]
+    return bigramFreqs
+
+twoGrams = getNGramWords 2 taggedCaseless
+oneGrams = getNGramWords 1 taggedCaseless
+
+-- 48 unigrams 
+
+-- sortNGramFreqs :: IO [[(String,String)]] -> IO [[(([String], [String]), Int)]]
+sortNGramFreqs ngramsM =
+  do
+    ngrams <- ngramsM
+    let unzippedGrams = map unzip ngrams :: [([String],[String])]
+    let sortedNGrams = sortBy (\(_,a) (_,b) -> compare a b)  unzippedGrams
+    let groupedsortedNGrams = groupBy (\(_,a) (_,b) -> a == b) sortedNGrams :: [[([String], [String])]]
+    let groupedFrequencies = map frequency groupedsortedNGrams
+    let sortedGroupFreqs = map (\x -> reverse $ sortBy (\(_,a) (_,b) -> compare a b) x) groupedFrequencies
+    -- return sortedNGrams
+    -- return (map (D.take 3) sortedGroupFreqs) -- groupedsortedNGrams
+    mapM putStrLn $ map show (map (D.take 5) sortedGroupFreqs) -- groupedsortedNGrams
+
+
+-- one could sort by a given n gram, some kind of general pattern, like the _NN
+-- or what is the most frequent verb
+
+getOne2NGramWords n path =
   do
     contents <- readFile path
     let sents             = lines contents
     let splitSents        = map words sents
     let splitPOS          = fmap (fmap splitAtUnderscore) splitSents
-    let bigramFreqs       = concat $ map bigrams splitPOS -- splitSents
-    let frequencies       = frequency bigramFreqs
-    let sortedFrequencies = reverse $ sortBy (\(_,a) (_,b) -> compare a b) frequencies
-    -- return (D.take 50 splitPOS)
-    return (D.take 50 sortedFrequencies)
+    let oneTo5Grams = map ngrams [1..n]
+    let bigramFreqs       = map concat $ map (\f -> map f splitPOS) oneTo5Grams
+    let frequencies       = map frequency bigramFreqs
+    let sortedFrequencies = map (\x -> reverse $ sortBy (\(_,a) (_,b) -> compare a b) x) frequencies
+    return sortedFrequencies
+    -- return (map (D.take 10) sortedFrequencies) -- to visualize
 
-z = getWords tagged
-z' = getWords taggedBidirec
-z'' = getWords taggedCaseless
+z = getOne2NGramWords 5 tagged
+z' = getOne2NGramWords 5 taggedBidirec
+z'' = getOne2NGramWords 5 taggedCaseless
 
--- >>> :t Basement.breakElem 
--- Basement.breakElem
---   :: Char -> Basement.String -> (Basement.String, Basement.String)
-
-
--- splitAtUnderscore :: String -> (String,String)
--- splitAtUnderscore = _
---   where
 
 splitAtUnderscore :: String -> (String,String)
 splitAtUnderscore (x:xs)
