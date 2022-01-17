@@ -66,6 +66,7 @@ ngrams n xs
   | (length xs) == n = [xs]
   | otherwise = (D.take n xs) : ngrams n (tail xs)
 
+startSymbol :: String
 startSymbol = "_START "
 
 ngrams_Sent n x = ngrams n (startSymbol:x)

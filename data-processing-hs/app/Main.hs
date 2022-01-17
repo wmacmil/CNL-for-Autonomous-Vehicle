@@ -5,6 +5,7 @@
 module Main where
 
 -- import Utils.Misc
+-- import qualified Basement.String as Basement
 import Data.Maybe
 import Data.Attoparsec
 import Data.List
@@ -32,6 +33,13 @@ getJSON = B.readFile jsonFile
 outputFileName :: FilePath
 outputFileName = "text/justSentences.txt"
 
+outputFileName' :: FilePath
+outputFileName' = "text/justSentences.txt"
+
+
+taggedCaseless :: FilePath
+taggedCaseless = "text/caseless2.txt"
+
 tagged :: FilePath
 tagged = "text/taggedSentences.txt"
 
@@ -51,6 +59,8 @@ parseMultipleJSON s = unfoldr (\s -> case parse json s of
   This function takes the json file with a full_text field and extracts the
   values from that field into a seperate text file
 -}
+-- >>> :t T.concat
+-- T.concat :: [T.Text] -> T.Text
 json2Sentences = do
   jsonFile <- getJSON
   let values          = parseMultipleJSON jsonFile
@@ -58,31 +68,53 @@ json2Sentences = do
   let textEntries     = map fromJust justTextEntries
   let justText        = map (^? _String) textEntries
   let text            = map fromJust justText :: [T.Text]
-  let concatV         = T.concat text :: T.Text
-  TIO.writeFile outputFileName concatV
-
-
+  -- let concatV         = T.concat text :: T.Text
+  let concatV         = T.intercalate " " text :: T.Text
+  TIO.writeFile outputFileName' concatV
 
 -- do
 -- getWords :: FilePath -> IO [String]
+-- so now we want to be able to do SQL type queries, as in sort by most frequent the followed by a given part of speech
 getWords path =
   do
     contents <- readFile path
-    let sents = lines contents
-    let splitSents = map words sents
-    let bigramFreqs = concat $ map bigrams splitSents
-    let frequencies = frequency bigramFreqs
+    let sents             = lines contents
+    let splitSents        = map words sents
+    let splitPOS          = fmap (fmap splitAtUnderscore) splitSents
+    let bigramFreqs       = concat $ map bigrams splitPOS -- splitSents
+    let frequencies       = frequency bigramFreqs
     let sortedFrequencies = reverse $ sortBy (\(_,a) (_,b) -> compare a b) frequencies
+    -- return (D.take 50 splitPOS)
     return (D.take 50 sortedFrequencies)
 
 z = getWords tagged
 z' = getWords taggedBidirec
+z'' = getWords taggedCaseless
+
+-- >>> :t Basement.breakElem 
+-- Basement.breakElem
+--   :: Char -> Basement.String -> (Basement.String, Basement.String)
+
+
+-- splitAtUnderscore :: String -> (String,String)
+-- splitAtUnderscore = _
+--   where
+
+splitAtUnderscore :: String -> (String,String)
+splitAtUnderscore (x:xs)
+  | x == '_' = ("",xs)
+  | otherwise = cons2Pairs (x,[])  (splitAtUnderscore xs)-- (x, : splitAtUnderscoreHelper xs
+  where
+    cons2Pairs :: (x,[x]) -> ([x],[x]) -> ([x],[x])
+    cons2Pairs (x,y) (xs,ys) = (x:xs,y ++ ys)
+
+pos = ["CC","CD","CDZ","DT","EX","FW","IN","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNSZ","NNZ","NP","NPS","NPSZ","NPZ","PDT","PP","PPZ","RB","RBR","RBS","RP","SENT","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","VH","VHD","VHG","VHN","VHP","VHZ","VV","VVD","VVG","VVN","VVP","VVZ","WDT","WP","WPZ","WRB","Z","#","$","\"","'","(",")",",",":"]
+
 
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
 
 -- ngrams
-
 -- >>> ngrams 5 "ask"
 -- ["ask"]
 -- >>> ngrams 4 [1..4]
@@ -97,15 +129,17 @@ ngrams n xs
   | (length xs) == n = [xs]
   | otherwise = (D.take n xs) : ngrams n (tail xs)
 
-startSymbol = "_START "
+startSymbol :: String
+startSymbol = "START_START "
 
-ngrams_Sent n x = ngrams n (startSymbol:x)
+ngrams_Sent n x = ngrams n (("START","START"):x)
 
 bigrams = ngrams_Sent 2
 
 -- frequency
 frequency :: (Eq a0, Ord a0) => [a0] -> [(a0, Int)]
 frequency s = map (\x -> (head x, length x)) . group . sort $ s
+
 
 -- myWords :: String -> Char -> String -> [String]
 -- myWords (x:xs) c s =
@@ -122,62 +156,6 @@ frequency s = map (\x -> (head x, length x)) . group . sort $ s
 -- if we just have a record for all the nouns one anticipates
 
 -- write a words
-
-
-
--- >>> bg = bigrams "askldfjas;ldkjasdl;fkajklweqrjklasdlk;jasld;fjasdlk;fjasd;lfkjasdl;fkjasdfl;kasdfl;asdjkfals;kdfas;ldkfjas;lkdjasdkasdfasdfasdfjkasldfjasld;kfjasdlfj"
--- <interactive>:7500:7-13: error:
---     • Variable not in scope: bigrams :: [Char] -> t
---     • Perhaps you meant ‘ngrams’ (line 64)
--- >>> frequency bg
--- <interactive>:7501:12-13: error:
---     • Variable not in scope: bg :: [a0]
---     • Perhaps you meant ‘b'’ (line 36)
-
--- >>> ff = (let f = frequency "asdjkfl;asfjdlsksjldkfljasdjkl" in f ++ f)
--- >>> map ff
--- [(";",1),("a",3),("d",4),("f",3),("j",5),("k",4),("l",5),("s",5),(";",1),("a",3),("d",4),("f",3),("j",5),("k",4),("l",5),("s",5)]
--- >>> frequency (let f = frequency "asdjkfl;asfjdlsksjldkfljasdjkl" in f ++ f)
--- [([(";",1)],2),([("a",3)],2),([("d",4)],2),([("f",3)],2),([("j",5)],2),([("k",4)],2),([("l",5)],2),([("s",5)],2)]
-
--- need to pre-append StartSentence tag
--- approximately 45000 sentences
--- idea : run bigram and trigam data per sentence,
--- then sort over set of all bigrams and trigrams
--- construct a map
-
--- constructMap :: [x] -> Map x Int
-
--- updateValOrConstuctKey :: (Ord x) => x -> M.Map x Int -> M.Map x Int
--- updateValOrConstuctKey x m =
---   let queryXM = M.lookup x m
---   in
---     if M.member x m
---       then M.insert x 1 m
---       else M.adjust (+1) x m
-
-    -- case queryXM of
-    --   Nothing -> M.insert x 1 m
-    --   Just something -> _
-
-
--- or just build a dictionary between a list of items and its count
--- >>> sort [("abc","bc"),("cb","df"),("bd,"bd")]
--- <interactive>:1545:44: error:
---     lexical error in string/character literal at end of input
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 --BOILERPLATE
 
