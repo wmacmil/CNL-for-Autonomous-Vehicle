@@ -50,6 +50,16 @@
   (major1) == 0 && (major2) <  10 || \
   (major1) == 0 && (major2) == 10 && (minor) <= 12)
 #endif /* MIN_VERSION_bytestring */
+/* package extra-1.7.10 */
+#ifndef VERSION_extra
+#define VERSION_extra "1.7.10"
+#endif /* VERSION_extra */
+#ifndef MIN_VERSION_extra
+#define MIN_VERSION_extra(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  7 || \
+  (major1) == 1 && (major2) == 7 && (minor) <= 10)
+#endif /* MIN_VERSION_extra */
 /* package lens-5.1 */
 #ifndef VERSION_lens
 #define VERSION_lens "5.1"
