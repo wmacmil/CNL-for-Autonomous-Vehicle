@@ -31,6 +31,9 @@ outputFileName = "text/justSentences.txt"
 outputFileName' :: FilePath
 outputFileName' = "text/justSentences.txt"
 
+justNav :: FilePath
+justNav = "text/justNavigation.txt"
+
 
 taggedCaseless :: FilePath
 taggedCaseless = "text/caseless2.txt"
@@ -49,6 +52,9 @@ parseMultipleJSON s = unfoldr (\s -> case parse json s of
                                   _ -> Nothing)
                       (B.toStrict s)
 
+-- fullText = "full_text"
+
+-- maybe just do this for the navigation text
 -- super duper ugly, how to do this without fromJust?
 {-
   This function takes the json file with a full_text field and extracts the
@@ -59,12 +65,14 @@ parseMultipleJSON s = unfoldr (\s -> case parse json s of
 json2Sentences = do
   jsonFile <- getJSON
   let values          = parseMultipleJSON jsonFile
-      justTextEntries = fmap (^? key "full_text") values
+      justTextEntries = fmap (^? key "navigation_text") values
       textEntries     = map fromJust justTextEntries
       justText        = map (^? _String) textEntries
       text            = map fromJust justText :: [T.Text]
-      concatV         = T.intercalate " " text :: T.Text -- weird concat probs
-  TIO.writeFile outputFileName' concatV
+      concatV         = T.intercalate " Finish.\n\n" text :: T.Text -- weird concat probs
+  -- return text
+  -- return concatV
+  TIO.writeFile justNav concatV
 
 -- 1. Get the tagged sentences line by line (roughtly 50k)
 -- 2. Tokenize every line via whitespace (punctuation was already deal with POS tagger)
@@ -146,7 +154,7 @@ z'' = getOne2NGramWords 5 taggedCaseless
 splitAtUnderscore :: String -> (String,String)
 splitAtUnderscore (x:xs)
   | x == '_' = ("",xs)
-  | otherwise = cons2Pairs (x,[])  (splitAtUnderscore xs)-- (x, : splitAtUnderscoreHelper xs
+  | otherwise = cons2Pairs (x,[])  (splitAtUnderscore xs)
   where
     cons2Pairs :: (x,[x]) -> ([x],[x]) -> ([x],[x])
     cons2Pairs (x,y) (xs,ys) = (x:xs,y ++ ys)
