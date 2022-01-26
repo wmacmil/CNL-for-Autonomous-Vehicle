@@ -70,13 +70,26 @@ orient should maybe be a function taking an argument (i.e. its a verb which desc
 
 straight is assumed
 
+in some sense were only going to be mapping to a normal form
 
 proceed == go
 
 Next : see if we can get our grammar to parse this, so that we can actuall begin defining a formal semantics
 
-Orient yourself with parked cars, proceed, and turn right at the light. Turn right at the next light. Go straight at the stop sign then turn right at the light. Stop when you would be outside a cosmic smiley face painted on the right sidewalk buildings. Finish.
+one could refactor the grammar to alight more-so with the temporal logic formalism, but lets just try to keet it vanilla for now
 
+
+the design of the grammar (and therefore the parser) should coincide with the 
+
+  (i) domain itself, as witnessed in the data
+  (ii) syntactic (linguistic) usage in the domain 
+  (iii) the semantic space (in this case, ltl)
+
+The type of logic is very contingent upon the type of verification needed (i.e., this is left to the formal verificationists)
+
+The data itself is not taken from the real world, but a simulated world - slow down is used infrequently (never speed up), and walk is a frequent word, despite the fact that driving is the principle action. Then we should generally substitute walk for drive (but not always)
+
+"Orient yourself with parked cars, proceed, and turn right at the light. Turn right at the next light. Go straight at the stop sign then turn right at the light. Stop when you would be outside a cosmic smiley face painted on the right sidewalk buildings. Finish."
 
 X orient(parked_cars) /\ F (light ^ (X turn_right ^ F (stop-sign ^ F ( light  ^ X turn_right ^ F (G outside-cosmic_smiley... )))))
 

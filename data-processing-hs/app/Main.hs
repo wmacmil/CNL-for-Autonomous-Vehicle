@@ -31,9 +31,16 @@ outputFileName = "text/justSentences.txt"
 outputFileName' :: FilePath
 outputFileName' = "text/justSentences.txt"
 
+-- all the sentences, ending in "Finish."
 justNav :: FilePath
 justNav = "text/justNavigation.txt"
 
+taggedNav :: FilePath
+taggedNav = "text/justNav.txt"
+
+-- abbreviated corpus size for testing purposes
+taggedNav' :: FilePath
+taggedNav' = "text/justNavShort.txt"
 
 taggedCaseless :: FilePath
 taggedCaseless = "text/caseless2.txt"
@@ -54,14 +61,12 @@ parseMultipleJSON s = unfoldr (\s -> case parse json s of
 
 -- fullText = "full_text"
 
--- maybe just do this for the navigation text
 -- super duper ugly, how to do this without fromJust?
 {-
+  Preprocessing, prior to external POS Tagging
   This function takes the json file with a full_text field and extracts the
-  values from that field into a seperate text file
+    values from that field into a seperate text file
 -}
--- >>> :t T.concat
--- T.concat :: [T.Text] -> T.Text
 json2Sentences = do
   jsonFile <- getJSON
   let values          = parseMultipleJSON jsonFile
@@ -69,15 +74,21 @@ json2Sentences = do
       textEntries     = map fromJust justTextEntries
       justText        = map (^? _String) textEntries
       text            = map fromJust justText :: [T.Text]
-      concatV         = T.intercalate " Finish.\n\n" text :: T.Text -- weird concat probs
-  -- return text
-  -- return concatV
+      concatV         = T.intercalate " Finish.\n\n" text :: T.Text
   TIO.writeFile justNav concatV
+
+
+type Wrd = String -- Word is redundant
+type POS = String
+type TaggedWord = (Wrd,POS)
+type NgramWord = [Wrd]
+type NgramTaggedWord = [TaggedWord]
+type SentenceTaggedWord = [TaggedWord]
 
 -- 1. Get the tagged sentences line by line (roughtly 50k)
 -- 2. Tokenize every line via whitespace (punctuation was already deal with POS tagger)
 -- 3. Separate the words from the POS tags for every word on every line
-tokenizeAndSplitPOS :: FilePath -> IO [[(String,String)]]
+tokenizeAndSplitPOS :: FilePath -> IO [SentenceTaggedWord]
 tokenizeAndSplitPOS path =
   let f = map (map splitAtUnderscore) . map words . lines
   in liftM f (readFile path)
@@ -88,18 +99,16 @@ rawTokenizedSents = liftM f tokenizedPOSsents
   where f = map (map fst)
 
 -- get the Ngrams for all the sentences
--- note that the sentence structure distinction has been with concat
-nGramify :: Int -> IO [[(String,String)]] -> IO [[(String,String)]]
+-- note that the sentence distinction has been eliminated with concat
+nGramify :: Int -> IO [SentenceTaggedWord] -> IO [NgramTaggedWord]
 nGramify n = liftM (\s -> concat $ map (ngrams n) s)
 
-tokenizedPOSsents = tokenizeAndSplitPOS taggedCaseless
+tokenizedPOSsents = tokenizeAndSplitPOS taggedNav' -- taggedCaseless
 
 oneGrams   = nGramify 1 tokenizedPOSsents
 twoGrams   = nGramify 2 tokenizedPOSsents
 threeGrams = nGramify 3 tokenizedPOSsents
 
--- >>> :t id
--- id :: a -> a
 
 -- could do a better job of controlling for optimization/complexity
 -- 1. Seperate word and POS Ngrams : [(Word,POS)] to into ([Word],[POS])
@@ -108,7 +117,7 @@ threeGrams = nGramify 3 tokenizedPOSsents
 -- 3. find the most common ngrams for every POS-ngram
 -- 4. get the most common word Ngrams for all POS-ngrams
 -- 5. Return all given POS-ngrams sorted by ngram frequency in descending order
-sortNGramFreqs :: IO [[(String,String)]] ->  IO [([([String], Int)], [String])]
+sortNGramFreqs :: IO [NgramTaggedWord] ->  IO [([(NgramWord, Int)], [POS])]
 sortNGramFreqs ngrams =
   let sortNGramFreqs' =
         map (reverse . sortBy (\(_,a) (_,b) -> compare a b) E.*** id)
@@ -119,9 +128,29 @@ sortNGramFreqs ngrams =
         . map unzip
   in liftM sortNGramFreqs' ngrams
 
+posFreqs :: [POS] -> [([(NgramWord, Int)], [POS])] -> [(NgramWord, Int)]
+posFreqs pos [] = error "POS not visible"
+posFreqs pos ((x,pos'):xss)
+  | pos == pos' = x
+  | otherwise = posFreqs pos xss
+
+ -- :: [POS] -
+topPOS n x pos =
+  let f = D.take n
+          . (posFreqs pos)
+  in liftM f x
+
+
+-- showTopMGrams m sortedGroupFreqs =
+--   do
+--     sortedGroupFreqs' <- sortedGroupFreqs
+
+-- seperate this logic for the showing
 showTopMGrams m sortedGroupFreqs =
   do
     sortedGroupFreqs' <- sortedGroupFreqs
+    -- let filtered = filter (\x -> (snd x == "DT")) sortedGroupFreqs'
+    -- (mapM putStrLn $ map show (map ((D.take m) E.*** id) filtered))
     (mapM putStrLn $ map show (map ((D.take m) E.*** id) sortedGroupFreqs'))
 
 oneGramFreqs = sortNGramFreqs oneGrams
