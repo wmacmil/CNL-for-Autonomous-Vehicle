@@ -1,0 +1,97 @@
+
+
+
+Limitations of the data set 
+
+
+- no long term routes
+- not explicitly related to relevant factors because its a street view
+  + (doesn't account for speed - "watch out for the maniac driving 100")
+  + go into the left lane once the van passes
+- Allows the user to actually pan around, it only approximates what it means to be driving
+
+- That reading the instructions without grounding, actually is impossible
+  (e.g., the NLP component still requires some assumptions about the kind of
+  grounded data we will encouncter)
+
+- "you will see" directly needs to be interpreted (not like other verbs)
+ - drive, turn, are all imperative verbs, will see is just describing a future state
+ - relative clauses with verbs can be really tricky
+
+
+go straight vs just go.
+
+"Go to the next traffic light, but don't go through it or turn."
+
+like, do we make the assumption that as we fold down the left, something happening deep on the right won't effect previous behavior?
+
+its easy to get quite degenerate behavior  - 
+
+p -cat=ListPosCommand "drive to the minute , break now , Finish or Finish"
+BasePosCommand (CompoundCommand Or (ConsPosCommand (DoTil Drive (InNMin The To)) (ConsPosCommand (DoTil Break Now) (BasePosCommand Finish Finish)))) ?16
+ConsPosCommand (DoTil Drive (InNMin The To)) (BasePosCommand (CompoundCommand Or (ConsPosCommand (DoTil Break Now) (BasePosCommand Finish Finish))) ?15)
+ConsPosCommand (DoTil Drive (InNMin The To)) (ConsPosCommand (DoTil Break Now) (BasePosCommand (CompoundCommand Or (BasePosCommand Finish Finish)) ?14))
+
+
+observation : OneCommand always terminates a Many Commands, and a Simple Command always terminates a Compound
+
+
+
+object and place should just be treated as primitive in the logical language
+
+
+ p "go to the person with the dog"
+
+<> (person_with_dog)
+
+-  maybe have these generated in an ad-hoc manner with template haskell?
+or, we can have a constructor  mk
+
+
+p "go to the person with the dog and turn right"
+
+<> (person_with_dog N )
+
+
+Drive> l (MkAdvPh To (WhichObject The Store))
+to the store
+
+WhichObject : linearize and just insert underscores instead of spaces
+
+p "turn left after the person"
+SimpleCom (ModAction (ModAction Turn (WherePhrase Left)) (MkAdvPh After (WhichObject The Person)))
+
+go through the red tunnel to the store
+
+go on the bridge 
+
+- for distinguishing between instantaneous events versus interval (signal temporal logic)
+- coming up with a more comprehensive way of dealing with "objects", and the modalities of communication (instruction, description, QA) all of which interact,but are to be considered independent for the scope of this work
+(verification that a description and an image are compatible is downstream)
+
+
+go to the (person with the dog)
+SimpleCom (ModAction Go (MkAdvPh To (WhichObject The (PhraseModObj Person (MkAdjPh With (WhichObject The Dog))))))
+correct parse -- ambiguous parses are tricky
+
+(go to the person) with the dog
+SimpleCom (ModAction (ModAction Go (MkAdvPh To (WhichObject The Person))) (MkAdvPh With (WhichObject The Dog)))
+
+the latter is semantically unlikely - there is no model in which with the dog would be realistic, unless the point is transport a dog. but in that case, is the car to know that it has a dog (it would not walk a dog)
+
+"go to the overpass with the dog" is less likely
+
+go to the
+
+Go to the intersection just ahead and turn right.
+
+
+p "turn right at the big store after the cafe"
+SimpleCom (ModAction (ModAction Turn (WherePhrase Right)) (MkAdvPh At (WhichObject The (ModObj Big (PhraseModObj Store (MkAdjPh After (WhichObject The Cafe))))))) 
+SimpleCom (ModAction (ModAction Turn (WherePhrase Right)) (MkAdvPh At (WhichObject The (PhraseModObj (ModObj Big Store) (MkAdjPh After (WhichObject The Cafe))))))
+SimpleCom (ModAction (ModAction (ModAction Turn (WherePhrase Right)) (MkAdvPh At (WhichObject The (ModObj Big Store)))) (MkAdvPh After (WhichObject The Cafe)))
+
+p "turn right at the big (store after the cafe)"
+-- either need 
+p "turn right at the (big store after the cafe)"
+p "turn right (at the big store) after the cafe)"

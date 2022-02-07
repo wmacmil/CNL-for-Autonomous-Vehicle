@@ -10,7 +10,9 @@ concrete DriveEng of Drive = open
 
 lincat
 
-  Route        = Text ;
+  -- Route        = Text ;
+  [Commands]   = Text ;
+  Commands     = Text ;
   Polarity     = Pol ;
   Keyword      = Utt ;
   -- ListCommand  = Utt ;
@@ -48,15 +50,24 @@ lin
 
   -- SimpleCom : Action -> PosCommand ;
   SimpleCom a = mkImp a ;
+  Finish = mkImp (mkV "Finish") ; -- make consistent with End of sentence in corpus
 
   --removed
   -- DriveTo : Action -> Way -> Place -> PosCommand ;
   -- DriveTo a w p = mkImp (mkVP a (C.mkAdv w p)) ;
 
+  ConsCommands x xs = ss (x.s ++ xs.s) ;
+  BaseCommands x = x ;
+
+  -- OneCommand   : PosCommand -> Commands ;
+  OneCommand pc = mkText (mkPhr (mkUtt pc)) fullStopPunct;
+  -- ManyCommands : PosCommand -> Commands -> Commands ;
+  -- ManyCommands pc cs = mkText (mkUtt pc) fullStopPunct cs ;
+
   -- MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
-  MultipleRoutes = ConjImp ;
-  MultipleObject = ConjNP ;
-  MultiplePlaces = ConjNP ;
+  CompoundCommand = ConjImp ;
+  MultipleObject  = ConjNP ;
+  MultiplePlaces  = ConjNP ;
   -- MultipleObject s1 s2 = mkNP and_Conj (mkListNP s1 s2) ;
 
   -- UnlessSomething : UndetObj -> Condition ;
@@ -104,6 +115,7 @@ lin
   MkNum int =
     let sym : Symb = mkSymb int.s ; -- mkSymb : Str -> Symb ;
         card : Card = symb sym ;    -- symb : Symb -> Card ;
+
         det : Det = mkDet card ;
     in det ;
 

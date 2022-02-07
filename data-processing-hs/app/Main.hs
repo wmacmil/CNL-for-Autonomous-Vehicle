@@ -214,7 +214,6 @@ bigrams = ngrams_Sent 2
 frequency :: (Eq a0, Ord a0) => [a0] -> [(a0, Int)]
 frequency s = map (\x -> (head x, length x)) . group . sort $ s
 
-
 -- parts of speech shown here
 -- https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 

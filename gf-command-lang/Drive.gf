@@ -1,6 +1,7 @@
 abstract Drive = {
 
-flags startcat = PosCommand ;
+flags startcat = ListCommands ;
+-- flags startcat = PosCommand ;
 
 cat
   Command ;
@@ -20,8 +21,12 @@ cat
   Object ; --the cafe
   Number ;
   Conjunct ;
+
   Condition ;
   Descript ; --adjective
+
+  Commands ;
+  [Commands]{1} ; -- just for basic list infastructure
 
   -- GF supports lists
   -- [Command]{2} ;
@@ -30,7 +35,7 @@ cat
   [Object]{2} ; --the cafe and the store
 
   -- TODO
-  Route ;
+  -- Route ;
   Keyword ; --Kinda meta-category, so that the user can unambiguously say something
   --QA, not relevant yet
   Question ;
@@ -44,12 +49,19 @@ fun
   -- ControlledCom : Conjunct -> Condition -> PosCommand -> PosCommand ;
 
   ModifyCommand : Conjunct -> Condition -> PosCommand -> Command ; -- add polarity
-
   UnlessSomething : UndetObj -> Condition ;
 
-  MultipleRoutes : Conjunct -> [PosCommand] -> PosCommand ;
+  -- for multiple sentences with periods
+  OneCommand   : PosCommand -> Commands ; -- coercion
+  -- ManyCommands : PosCommand -> Commands -> Commands ;
+
+  -- have a list for sentence like structures
+
+  -- time, position, speed
+  CompoundCommand : Conjunct -> [PosCommand] -> PosCommand ;
   DoTil          : Action   -> Time         -> PosCommand ;
   SimpleCom      : Action   -> PosCommand ;
+  Finish         : PosCommand ;
 
   ModAction : Action -> AdvPh -> Action ;
 
@@ -147,7 +159,7 @@ fun
 
   -- BEGIN META Stuff, Ignore for now
   StartRoute : Keyword ;
-  EndRoute : Keyword ;
+  EndRoute : Keyword ; -- Finish in corpus
   -- ModifyRoute : Keyword ;
   -- SetRoute : Keyword -> [Command] -> Keyword -> Route ;
 
