@@ -287,6 +287,36 @@ corpus and task data not well represented in the training data.
 
 The language models have been show \cite{bioBert}
 
+\subsection{Ambiguity}
+
+What happens when we encounter ambiguity? For instance, in p "go to the person
+with the dog ." The prepositional phrase "with the dog" can either modify person
+(as an adjectival clause) or it can modify go (as an adverbial clause). Because
+the parser is designed to accommodate simple cases of both types of clauses,
+these ambiguities, even in simple sentences from our corpus, will grow quickly. 
+
+In the case of a vehicle, however, knowing the correct parse is dependent on
+the context in which the driver is going to the person : is the language
+grounded in the fact that there a dog in the car, or a person in the purview
+with a dog (or, most confusingly, perhaps both conditions are met, in which case
+more contextual information is required to disambiguate the correct parse).
+
+For we can actually program the semantics to accommodate both scenarios, whereby
+
+F (man_with_dog /\ G Finish)
+F (man /\ G Finish) /\ G with_dog
+
+We can define our semantics to accommodate both interpretations, whereby the
+parses produce unique semantic conditions, and the LTL solver will have to see
+which condition is more easily satisfied. While this edge case may seem overly
+pedantic to consider, as one's intuition might suggest the first case to be
+overwhelmingly more natural, the
+
+We should just make simplifying assumptions, though, at least for the purpose of
+a grammar like ours.
+
+
+
 % Warricks personal (confessed) confusions
 
 \section{Introduction}

@@ -71,43 +71,67 @@ semantics x =
       q@(GSimpleCom a) -> astToAtom q
       (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
 
+-- turn left at the store, at the store is the outermost
+
 listCommand2LTL :: [GPosCommand] -> Phi
 listCommand2LTL [] = error "empty tree"
 listCommand2LTL [GFinish] = G (Atom "FINISHED")
 listCommand2LTL [q@(GSimpleCom x)] = F (astToAtom q)
+listCommand2LTL (GSimpleCom (GModAction l (GWherePhrase left)):xs) =
+  let
+    x' = (astToAtom left)
+    xs' = listCommand2LTL xs
+    in X (Meet x' xs')
 listCommand2LTL (q@(GSimpleCom x):xs) =
   let
-    x'  = astToAtom (q)
+    x'  = astToAtom' (getPossibleObj q)
+    -- x'  = astToAtom (getPossibleObj q)
     xs' = listCommand2LTL xs
     in F (Meet x' xs')
-listCommand2LTL (q@(GDoTil a x):xs) =
+listCommand2LTL (q@(GDoTil a x):xs) = -- need to customize for this
   let
-    x'  = astToAtom (q)
+    -- x'  = astToAtom (q)
+    x'  = astToAtom' (getPossibleObj q)
     xs' = listCommand2LTL xs
     in F (Meet x' xs')
 
+-- maybe the easiest way is just to break it up at the AST level?
+-- the more complicated we make it there, though, the less clean the grammar
+-- ideally want a small grammar
 
-  -- ModAction : Action -> AdvPh -> Action ;
-  -- MkAdvPh     : Way   -> Object -> AdvPh ;
-  -- HowPhrase   : How   -> AdvPh ;
-  -- WherePhrase : Where -> AdvPh ;
+-- [[go left at the store...]] = F (store /\ X (is_left ...))
+-- [[go left after the store...]] = F (store /\ F (is_left ...))
+-- [[go left before the store...]] = F (is_left /\ G (Neg store) ...))
 
--- turn :: GAction -> Phi
--- turn (GModAction (GLeft) l) = X _
--- turn (GModAction l (GWherePhrase wh)) = X _
--- -- turn (GModAction GRight l) = _
--- -- turn :: (GSimpleCom (GModAction action (GMkAdvPh way obj)))
-
--- (GSimpleCom (GModAction action (GMkAdvPh way obj))) = obj
--- getAction :: forall a . (Gf (Tree a)) => GPosCommand -> Tree a
-
--- -- getPossibleObj :: GPosCommand -> GObject
--- getPossibleObj :: (Gf a) => GPosCommand -> a
--- getPossibleObj (GSimpleCom (GModAction action (GMkAdvPh way obj))) = obj
--- getPossibleObj x = x
--- -- getAction (GSimpleCom _) = _
+-- go left soon after the store
+-- go left before the store
 
 
+-- whereCommand :: GPosCommand -> Bool
+whereCommand :: GAction -> Bool
+whereCommand (GModAction action phrase) =
+  if hasWhere phrase then True else whereCommand action
+whereCommand _ = False
+
+-- hasWhere :: Tree a -> Bool
+hasWhere :: GAdvPh -> Bool
+hasWhere (GWherePhrase _) = True
+hasWhere _ = False
+
+-- maybe need to make everyhthing a continuation to be compatible with
+-- so the question is if there is now a wherephrase, we have to notify our system
+getPossibleWhere :: GAction -> Phi -> Phi
+-- turn (GModAction action (GLeft)) = X (Atom "is_left")
+getPossibleWhere (GModAction l (GWherePhrase left)) = \x -> X (Meet (astToAtom left) x )
+
+-- Inari's wrapper solution
+data SomeGf f = forall a. Gf (f a) => SomeGf (f a)
+
+getPossibleObj :: GPosCommand -> SomeGf Tree
+getPossibleObj (GSimpleCom (GModAction action (GMkAdvPh way obj))) = SomeGf obj
+getPossibleObj (GDoTil action time) = SomeGf time
+getPossibleObj x = SomeGf x
+-- getAction (GSimpleCom _) = _
 
 replace x1 x2 [] = []
 replace x1 x2 (x:xs) | x == x1 = x2 : (replace x1 x2 xs)
@@ -115,6 +139,11 @@ replace x1 x2 (x:xs) | otherwise = x : (replace x1 x2 xs)
 
 -- >>> :t astToAtom
 -- astToAtom :: Gf a => a -> Phi
+
+astToAtom' :: SomeGf Tree -> Phi
+astToAtom' (SomeGf x) =
+  let x' = gf x in
+  Atom (replace ' ' '_' $ linearize gr' eng x')
 
 -- astToAtom :: forall a. (Gf (Tree a)) => Tree a -> Phi
 astToAtom x =
@@ -153,7 +182,7 @@ getListPosCommands (GListPosCommand x) = x
 
 --STANDALONE PIPELINE--
 
-
+-- lets us just view the modified tree
 transformAST :: (GListCommands -> GListCommands) -> String -> String
 transformAST f s = do
   let firstParse = head $ head $ parseAll gr' cat s
@@ -177,21 +206,36 @@ femalePersonIsWoman (GModObj GFemale GPerson) = GWoman
 femalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
 femalePersonIsWoman gp = composOp femalePersonIsWoman gp
 
-directions = "turn left in 5 minutes , go to the store and turn left then turn right and turn right and go straight . go and turn left at the woman , turn right and stop . Finish ."
+
+directions = "turn left at the store , go to the store and turn left then turn right and turn right and go straight . go and turn left at the woman , turn right and stop . Finish ."
+-- not entirely correct
+
+-- >>> applySem directions
+-- F (Meet (Atom "the_store") (F (Meet (Atom "the_store") (X (Meet (Atom "left") (X (Meet (Atom "right") (X (Meet (Atom "right") (X (Meet (Atom "straight") (F (Meet (Atom "go") (F (Meet (Atom "the_woman") (X (Meet (Atom "right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
+
 goToTheWoman = "go to the woman then go to the female person . stop at the woman ."
 bigCafe = GWhichObject GThe (GModObj GBig GCafe)
 goToTheBigCafe = (GSimpleCom (GModAction GGo (GMkAdvPh GTo bigCafe))) :: GPosCommand
 
--- >>> applySem directions -- <interactive>:605:11-18: error:
--- F (Meet (Atom "turn_left_in_5_minutes") (F (Meet (Atom "go_to_the_store") (F (Meet (Atom "turn_left") (F (Meet (Atom "turn_right") (F (Meet (Atom "turn_right") (F (Meet (Atom "go_straight") (F (Meet (Atom "go") (F (Meet (Atom "turn_left_at_the_woman") (F (Meet (Atom "turn_right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
-
 -- >>> phi = head $ head $ parseAll gr' cat directions
 -- >>> phi' = fg $ phi
 -- >>> phi' :: GListCommands
--- ConsCommands (OneCommand (CompoundCommand And (ConsPosCommand (DoTil (ModAction Turn (WherePhrase Left)) (InNMin (MkNum 5) In)) (BasePosCommand (SimpleCom (ModAction Go (MkAdvPh To (WhichObject The Store)))) (CompoundCommand Then (BasePosCommand (SimpleCom (ModAction Turn (WherePhrase Left))) (CompoundCommand And (BasePosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (CompoundCommand And (BasePosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (SimpleCom (ModAction Go (WherePhrase Straight))))))))))))) (ConsCommands (OneCommand (CompoundCommand And (BasePosCommand (SimpleCom Go) (CompoundCommand And (ConsPosCommand (SimpleCom (ModAction (ModAction Turn (WherePhrase Left)) (MkAdvPh At (WhichObject The Woman)))) (BasePosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (SimpleCom Stop))))))) (BaseCommands (OneCommand Finish)))
 -- >>> normalizeList phi'
--- BaseCommands (OneCommand (CompoundCommand And (ConsPosCommand (DoTil (ModAction Turn (WherePhrase Left)) (InNMin (MkNum 5) In)) (ConsPosCommand (SimpleCom (ModAction Go (MkAdvPh To (WhichObject The Store)))) (ConsPosCommand (SimpleCom (ModAction Turn (WherePhrase Left))) (ConsPosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (ConsPosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (ConsPosCommand (SimpleCom (ModAction Go (WherePhrase Straight))) (ConsPosCommand (SimpleCom Go) (ConsPosCommand (SimpleCom (ModAction (ModAction Turn (WherePhrase Left)) (MkAdvPh At (WhichObject The Woman)))) (ConsPosCommand (SimpleCom (ModAction Turn (WherePhrase Right))) (BasePosCommand (SimpleCom Stop) Finish))))))))))))
-
 
 -- >>> replace ' ' '_' "the man was cool"
 -- "the_man_was_cool"
+
+-- Big thing to notice : that different prepositions carry different semantic content, particulary in a logic meant to describe spatial and temporal relations
+
+-- What do we want to verify? This then gives us into what we need to specify,
+-- how to build the specification into our semantic space, and how to fit our
+-- semantic space with the grammar. presumably, we to think of our semantic
+-- space as like a typechecker, where we can filter out the possible meanings to
+-- just one semantically, we might want to design the logic to turn, accelerate,
+-- break (local vehicle controlers) are all next operations before gives an
+-- interpretation of Not being in a state
+-- turn needs to be grounded (i.e., if there is only one option, then we can only turn
+
+-- would be really nice to have a partially quantified tree type, whereby one is only able to reach into subtrees (obviously certain types of clauses eliminate this)
+
+-- turn left before the store and pull over to talk to the guy. then go back to the store.
