@@ -2,7 +2,6 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# LANGUAGE FlexibleContexts #-}
 
-
 module Synonymize where
 
 import Data.Maybe
@@ -12,6 +11,7 @@ import LTL
 import System.IO.Unsafe
 import qualified PGF (Tree, showExpr)
 import PGF hiding (Tree, showExpr)
+
 {-
 This file is intentended to do a quick semantic interpretation as a model and
 example for a larger grammar being implemented. The limitations of this
@@ -51,7 +51,6 @@ two strings with unique ASTs
 
 -}
 
-
 instance (Gf (Tree c)) => Show (Tree c) where
   show = PGF.showExpr [] . gf
 
@@ -62,7 +61,6 @@ gr'   = unsafePerformIO $ readPGF "pgf/Drive.pgf"
 cat   = startCat gr'
 langs = languages gr'
 eng   = head langs
-
 
 semantics :: GListCommands -> Phi
 semantics x =
@@ -95,18 +93,7 @@ listCommand2LTL (q@(GDoTil a x):xs) = -- need to customize for this
     xs' = listCommand2LTL xs
     in F (Meet x' xs')
 
--- maybe the easiest way is just to break it up at the AST level?
--- the more complicated we make it there, though, the less clean the grammar
--- ideally want a small grammar
-
--- [[go left at the store...]] = F (store /\ X (is_left ...))
--- [[go left after the store...]] = F (store /\ F (is_left ...))
--- [[go left before the store...]] = F (is_left /\ G (Neg store) ...))
-
--- go left soon after the store
--- go left before the store
-
-
+{-
 -- whereCommand :: GPosCommand -> Bool
 whereCommand :: GAction -> Bool
 whereCommand (GModAction action phrase) =
@@ -121,8 +108,8 @@ hasWhere _ = False
 -- maybe need to make everyhthing a continuation to be compatible with
 -- so the question is if there is now a wherephrase, we have to notify our system
 getPossibleWhere :: GAction -> Phi -> Phi
--- turn (GModAction action (GLeft)) = X (Atom "is_left")
 getPossibleWhere (GModAction l (GWherePhrase left)) = \x -> X (Meet (astToAtom left) x )
+-}
 
 -- Inari's wrapper solution
 data SomeGf f = forall a. Gf (f a) => SomeGf (f a)
@@ -131,14 +118,10 @@ getPossibleObj :: GPosCommand -> SomeGf Tree
 getPossibleObj (GSimpleCom (GModAction action (GMkAdvPh way obj))) = SomeGf obj
 getPossibleObj (GDoTil action time) = SomeGf time
 getPossibleObj x = SomeGf x
--- getAction (GSimpleCom _) = _
 
 replace x1 x2 [] = []
 replace x1 x2 (x:xs) | x == x1 = x2 : (replace x1 x2 xs)
 replace x1 x2 (x:xs) | otherwise = x : (replace x1 x2 xs)
-
--- >>> :t astToAtom
--- astToAtom :: Gf a => a -> Phi
 
 astToAtom' :: SomeGf Tree -> Phi
 astToAtom' (SomeGf x) =
@@ -179,7 +162,6 @@ normalizeListPosCommand (GListPosCommand xs) = GListPosCommand (concatMap flatte
 getListPosCommands :: GListPosCommand -> [GPosCommand]
 getListPosCommands (GListPosCommand x) = x
 
-
 --STANDALONE PIPELINE--
 
 -- lets us just view the modified tree
@@ -199,7 +181,6 @@ applySem s = do
       in ltlAST
 
 -- >>> transformAST femalePersonIsWoman goToTheWoman
--- "go to the female person then go to the woman . stop at the female person ."
 -- example synonym transformation
 femalePersonIsWoman :: forall a. Tree a -> Tree a
 femalePersonIsWoman (GModObj GFemale GPerson) = GWoman
@@ -237,5 +218,15 @@ goToTheBigCafe = (GSimpleCom (GModAction GGo (GMkAdvPh GTo bigCafe))) :: GPosCom
 -- turn needs to be grounded (i.e., if there is only one option, then we can only turn
 
 -- would be really nice to have a partially quantified tree type, whereby one is only able to reach into subtrees (obviously certain types of clauses eliminate this)
-
 -- turn left before the store and pull over to talk to the guy. then go back to the store.
+
+-- maybe the easiest way is just to break it up at the AST level?
+-- the more complicated we make it there, though, the less clean the grammar
+-- ideally want a small grammar
+
+-- [[go left at the store...]] = F (store /\ X (is_left ...))
+-- [[go left after the store...]] = F (store /\ F (is_left ...))
+-- [[go left before the store...]] = F (is_left /\ G (Neg store) ...))
+
+-- go left soon after the store
+-- go left before the store

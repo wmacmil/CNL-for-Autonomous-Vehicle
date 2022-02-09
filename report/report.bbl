@@ -867,6 +867,76 @@
       \field{pages}{4906\bibrangedash 4912}
       \range{pages}{7}
     \endentry
+    \entry{bioBert}{article}{}
+      \name{author}{7}{}{%
+        {{hash=5ba41d910cff5f2417435f020e345d96}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jinhyuk},
+           giveni={J\bibinitperiod}}}%
+        {{hash=58a0d6f9fccd5ea8488a019da5baa102}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Wonjin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ce454f52d2f9592778865d720c09fbbb}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sungdong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4ac8f93c52821069e0cae2242d744139}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Donghyeon},
+           giveni={D\bibinitperiod}}}%
+        {{hash=20cd68102eda3d1ec498b7de2e0d5b10}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sunkyu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e8306d6251506a9021489bbce638e259}{%
+           family={So},
+           familyi={S\bibinitperiod},
+           given={Chan\bibnamedelima Ho},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e78ec4678faa85f642776c14d3877113}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={Jaewoo},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{fullhash}{0ab177fd2cb9c7641ac3e66f20dd1dac}
+      \strng{bibnamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authorbibnamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authornamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authorfullhash}{0ab177fd2cb9c7641ac3e66f20dd1dac}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{09}
+      \field{number}{4}
+      \field{title}{{BioBERT: a pre-trained biomedical language representation model for biomedical text mining}}
+      \field{volume}{36}
+      \field{year}{2019}
+      \field{pages}{1234\bibrangedash 1240}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btz682
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/36/4/1234/32527770/btz682.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/btz682
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/btz682
+      \endverb
+    \endentry
     \entry{provCorrectNatControl}{article}{}
       \name{author}{5}{}{%
         {{hash=37e991f377aeaa24d3530dbd062b63a5}{%
