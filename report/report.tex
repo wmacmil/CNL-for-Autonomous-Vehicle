@@ -107,7 +107,7 @@ The primary contributions during this project are as follows :
 directives to a driving agent
 \item A Haskell mapping trees of our grammar a particularly well-behaved subset of LTL
 \item An Agda implementation of LTL with a standard semantic interpretation
-\item A refinement of the TOUCHDOWN Dataset, suited to our needs of designing a
+\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown}, suited to our needs of designing a
 better grammar
 \end{itemize}
 
@@ -123,7 +123,7 @@ around the world.
 
 Perhaps the most pervasive question in the use and application of natural
 language technologies, and one which exemplifies the boundary of the
-``formalist'', verification-minded and ``empericst'', data-oriented camps in
+``formalist'', verification-minded and ``empiricist'', data-oriented camps in
 designing such technologies, can be stated as follows : How does one optimize
 the system to provide for wide coverage of the domain while ensuring that system
 is robust?
@@ -199,88 +199,249 @@ satisfies verification properties (and to determine to what extent the
 properties can even be stated).
 
 The approach taken therefore sets out to build a semantic parser, even if
-primitive, that serves as a petri dish through which many of the deeper questions
+primitive, that serves as a Petri dish through which many of the deeper questions
 in this space may be viewed.
 
 \subsection{GF, Parsers, and Personal Work}
 
-\subsubsection{Grammatical Framework}
-
-The questions of designing a suitable formal language, with roots in Frege,
-manifested more recently in the natural language semantics of Montague, who
-proposed an interpretation of English in a typed higher order logic with a focus
-on quantifiers. Aarne Ranta, a student of Martin-Löf, attempted to reformulate
-Montague's work in an intuitionistic setting. In implementing a parser from
-natural language to a dependent type theory, Ranta discovered that dual sugaring
-(or pretty printing) transformation of a formal tree to a string way of going
-could allow for a general mechanism of purely syntax-based translation.
+The questions of designing a suitable formal language, with roots in Frege
+\cite{frege79}, manifested more recently in the natural language semantics of
+Montague \cite{Montague1973}, who proposed an interpretation of English in a
+typed higher order logic with a focus on quantifiers. Aarne Ranta, a student of
+Martin-Löf, attempted to reformulate Montague's work in an intuitionistic
+setting \cite{ranta1994type}. In implementing a parser from natural language to
+a dependent type theory, Ranta discovered that dual sugaring (or pretty
+printing) transformation of a formal tree to a string way of going could allow
+for a general mechanism of purely syntax-based translation. This work culminated
+in Grammatical Framework (GF) \cite{ranta_2004}.
 
 Grammatical Framework became a full research project, allowing for the simple
 specification of a parser using a statically typed programming language whereby
 the grammar rules could be seen as types, and separate concrete syntax's
 cohering with a given abstract syntax allowed for language-specific parsing. The
-GF ``standard library'', the Resource Grammar Library, allows one to get
-off-the-shelf grammatical constructions for more than 30 languages, with English
-being the most comprehensive. The RGL therefore allows the grammar writer to
-focus on the semantic domain of the application the grammar is being developed
-for. In addition to this, one can embed grammar abstract syntax as GADTs in
-Haskell, whereby one can get run-time support for parsing and linearization, in
-addition to manipulating the trees by pattern matching over them as Haskell
-programs.
+GF ``standard library'', the Resource Grammar Library (RGL) \cite{ranta2009rgl},
+allows one to get off-the-shelf grammatical constructions for more than 30
+languages, with English being the most comprehensive. The RGL therefore allows
+the grammar writer to focus on the semantic domain of the application the
+grammar is being developed for. In addition to this, one can embed grammar
+abstract syntax as Generalized Algebraic Datatypes (GADTs) in Haskell via the
+Portable Grammar Format (PGF) \cite{angelov2010pgf}, whereby one can get
+run-time support for parsing and linearization, in addition to manipulating the
+trees by pattern matching over them as Haskell programs.
 
+A reflection on these historical developments reveals that GF is intimately tied
+to both the formal/informal distinction, in addition to the syntactical and
+semantical approaches in computational linguistics. These dual characteristics
+very much inform out problem as well. In the context of designing a voice
+assistant for an autonomous vehicle, whereby one can give commands like ``turn
+right after the woman with the big dog'', we desire that the intensional belief a
+user has about her utterance is consistent with the extensional behavior of the
+vehicle. This can be done through an intermediary mapping to a formal semantic
+representation. Ensuring that the syntactic content of a voice director's
+(well-formed) utterance maps predictably to the logical form is important from
+the verificationist perspective : one wants to maximize the \emph{syntactic
+completeness} of the system \cite{macmillan2021}.
 
-In the context of designing a voice assistant for an autonomous vehicle, whereby
-one can give commands like ``turn right after the woman with the big dog",
-we desire that the intensional belief a user has about her utterance is
-consistent with the extensional behavior of the vehicle. This can be done
-through an intermediary mapping to a formal semantic representation. Ensuring
-that the syntactic content of a voice director's (well-formed) utterance maps predictably to
-the logical form is important from the verificationist perspective : one wants
-to maximize the ``syntactic completeness" of the system \cite{macmillan2021}.
+In a dual situation which we don't address but briefly mention, we can imagine
+our voice assistant as giving the user feedback, responding with clarifications
+(``we will turn after the big cafe even though the other route may have less
+traffic''), questions (``do you mean this or that person?''), or even possible
+illocutionary directives (``we won't drive over the speed limit in a school
+zone''), requires the computer to generate an utterance after it has made some
+internal determination. We can vaguely consider this internal deliberation to
+be a program, possibly inside or outside our semantical space, like
+having identified multiple routes, or multiple possible states in the situation
+with two people, or constraints based off external circumstances. In each case,
+the formation of a natural language utterance requires the computer to generate
+natural language which must conform to both the programs structure, but also be
+clear and recognizable to the user. Independently of how the robot determines a
+program whose meaning it needs to convey to a user, the property of providing a
+natural language utterance which fluently conveys meaning to a native speaker is
+called \emph{semantic adequacy}. Determining a reasonable syntax and semantics
+for a controlled natural language should most certainly conform to both
+standards of syntactic completeness and semantic adequacy, if the voice assistant
+is to be held to any kind of regulatable standard.
 
-\subsection{Voice assistants for autonomous vehicles}
+\subsection{Semantical Representations}
 
-The public company Cerence \cite{} is already designing voice assistants for autonomous
-vehicles, for which it has a large software stack between the voice processing
-to actual control of current automative components. In addition to its 
-technologies, many of which aren't accessible to external researchers due to
-intellectual property restrictions, Cerence has contracts with large automakers
-[..]. It is therefore natural to inquire, what a small team with varied
-backgrounds and not nearly the same expertise nor experience within the
-technological team at Cerence can provide.
+\subsubsection{Robot Motion Planning}
 
-First, we believe that the focus on verification, insofar as we envision it, is
-unlikely to be of current concern at Cerence due to the fact that their products
-are still being developed, and the primary goal of producing a working product
-is likely to precedence over preventing non-existent hostile actors.
+The challenge of designing a system which generates robot control strategies
+from human language has to balance the expressiveness of task specification,
+complexity of environment, and provable correctness \cite{4141034}. In this
+context, we assume that expressivity of the language itself should reflect the
+complexity of the environments, thereby being adequately descriptive. The
+correctness has two facets in here : that the language itself is
+well-represented in the LTL semantics - the system is syntactically complete -
+and that is the focus of these investigations.
 
-Additionally, it is going to have to be determined by 
-[verification of self-driving cars generally : software, hardware, behavior in
-a real environment, etc]
+Just as important, but not explored is here, is that the evaluation of a formula
+in one's semantic domain gives a faithful solution to navigating a complex
+environment. For instance, in \cite{plaku2016motion} the authors indicate how to
+actually ground basic propositions from the language to paths in a space, while
+our model, outputting formulas un-grounded base predicates, is merely concerned
+with the logical structure.
 
+Similarly, in \cite{7759412}, the authors develop a Verifiable Distributed
+Correspondence Graph (V-DCG) model whereby LTL formulas are used to ensure
+grounded instruction sequences are consistent. This work builds on other work of
+Kress-Gazit's \cite{provCorrectNatControl}, whereby the The Situated Language
+Understanding Robot Platform (SLURP) allows translation of arbitrary natural
+language into LTL - with less reliance on grammar formalisms - and also supports
+.
 
-\subsection{Natural Language and Robots, generally}
+Our GF implementation differentiates itself from these programs in that it sees
+the grammar as a necessary part of the verifiability (in that we can
+systematically map our sequences of commands to logical formulas representing
+sequences of states) in a way that's easy to support multi-linguality (which our
+system does not support, but can easily be adjusted to so with the help of the
+RGL). The lack of wide-coverage support of our grammar is possible to remediate
+through possible fine-tuning of a large language model to a data-set which
+coheres to the language our GF grammar generates, and we detail this in our
+discussion below [TODO : link].
 
-\subsection{Semantic Representations of NL for verification}
+--
+In \cite{kuo2020deep}, the authors do the most general end-to-end task without
+intermediary states, namely, map natural language commands to navigation and
+manipulation tasks. While this ``cutting out the middle man'' mentality may be
+an idealistic long-term vision, it makes the system much too much of a black box
+- for the fine-tuned verification conditions we desire to express and impose via
+the intermediate symbolic representations, the intermediate states, we imagine
+give us a more explainable, predictable, and regulatable system
 
-Modal logics, specifically those dealing with time like LTL, CTL, STL, ..., have
-been used extensively in the specification and verification of properties of
-robotics systems, including autonomous vehicles [cite]
-
-With verification being a core motivation of our work, we take for granted that
-these different logics have many manifestations in different systems. However,
-we hope that by choosing a domain with a lot of attention, that our system can
-be generalized in many possible directions :
+% There is a group at MIT (Kuo, Katz, Barbu, ..) doing seemingly similar things to
+% Tellex's group.
 
 \begin{itemize}
-\item other logics
-\item other parsing formalisms (perhaps dependency for wide-coverage)
-\item other syntax -> semantic formalisms
-\item other robotics domains
+\item
+
+\item More similar to Tellex et al's approach \cite{patellearning},
+  \cite{ltlSemParse} seek to train a model via images in a simulated world.
+  Their work also uses a SCFG (to generate semantically inadequate sentences
+  with corresponding LTL formulas) from which they can direct machines to
+  follow the instructions, and then have users describe the instructions in more
+  natural form. 
+\item One of the 
+\end{itemize}
+
+\subsubsection{Temporal Logic for NL verification}
+
+Modal logics, specifically those dealing with stateful staging of events like
+Linear Temporal Logic (LTL), Computation Tree Logic (CTL), Signal Temporal Logic
+(STL), have been used extensively in the specification and verification of properties
+of robotics systems, including autonomous vehicles \cite{}.
+
+With verification being a core motivation of our work, we take for granted that
+these different logics have differing interpretations, utilities, or
+manifestations in their different applied settings. As LTL is often seen as one
+of the ``primitive'' temporal logic, we chose it as a our semantic space despite
+its limitations. We appreciate that future work will need to expand the scope of 
+which logic (or possibly \emph{logics}) the machine may use to verify behavior,
+in addition to the mathematical models most amenable to verification of a logical formula.
+
+We recognize that there are many degrees of freedom in the both the syntactic
+and semantic formalisms chosen, as well as their evaluation or grounding within
+physical environments.
+
+\begin{itemize}
+\item Parsing formalisms - phrase-based grammars (GF), categorial grammars, or
+  even perhaps dependency grammars for wide-coverage usage
+\item Semantic formalisms including spatial logics and vector space semantics
+\item Mechanisms for evaluating and syntactic and semantic choices 
+\item Robotics domains outside of the autonomous vehicle space, for which
+  natural language is still an ideal interface. Ideally we'd like one system to
+  be generally applicable to many areas, independent of certain nuances in a
+  given space
+\end{itemize}
+
+\subsubsection{NL to TL}
+
+Here we show mainly relevant research for NL to LTL.
+
+The applications of LTL in machine learning are vast, and the scope of our
+specific application is still unclear, but nevertheless, we give a literature
+review of methods and applications relevant for our work.
+
+\begin{itemize}
+
+\item This paper \cite{5152776} from 2009 uses a categorial grammar approach, but more or less
+  can serve as an idea template for us, also nice pictures with grammar rules
+  and formulas
+\item Also, a highly relevant template combines Natural Language, LTL, with the
+  idea of having a verifiable pipeline \cite{provCorrectNatControl} 
+
+\begin{quote}
+The production of an on-
+tology of common actions and the type of formulas that
+they produce—for example, safety conditions, adding goals,
+constraining the initial state—in their negated and positive
+forms would be a step toward a more general solution to
+the problem of mapping natural language to LTL. Previous
+work has relied heavily on grammar formalisms to ease...
+\cite{provCorrectNatControl} 
+\end{quote}
+
+\item LTL formulas can be transformed into automata which can then be used as reward functions for reinforcement learners, as in \cite{ltlRein}
+
+\item  The following is one of the more relevant quotes from a paper reviewing
+  the whole space of English to LTL translations
+  \begin{quote}
+Overall, the typical approach followed by these studies can be summarized as follows:
+given an input English utterance, preprocess it to extract syntactical information, which may
+include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
+enrich the input with these pieces of information. Finally, run an attribute grammar-based
+parser, or rely on some hand-made rules, to derive a translation into a target logical format.
+A notable exception is the work of [89], where a fully-supervised learning setting is considered.
+\cite{brunello_et_al}
+\end{quote}
+\item Translating between English and STL can be done via a large language model 
+\cite{he2021english} [under review], but the domain specificity of the problems
+are still significant enough to suggest that it will be years before an
+automated semantic parser is available, if it is even possible. 
+\item Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
+  is relevant and well-cited (although they use an encoder-decoder method)
+\item
+\item
+\item
+
+\end{itemize}
+
+\subsubsection{Tellex}
+
+Stephanie Tellex has written extensively about natural language inputs and
+interfaces with robots. Although she has not specifically written about
+autonomous vehicles, the domains have enough intersection to warrant careful
+consideration of much of her work, especially the recent stuff.
+
+\begin{itemize}
+
+\item Grounding with an intermediate symbolic state, no LTL, but possibly
+  relevant for paper generally. She also cites \cite{walkTalk}, a seminal paper in this area
+\begin{quote}
+Instruction following is a supervised learning problem
+where the agent must predict a trajectory that would satisfy an
+input natural language command. \cite{tellexInstr}
+\end{quote}
+\item The review paper \cite{MARGE2022101255} making recommendations has a
+  section on robustness, but this is mostly for the sake of allowing sharing of
+  interfaces and efficacy, no mention of verification (which is what we're
+  primarily after)
+\item They design a NL -> LTL for drones that are grounded to actual landmarks \cite{9197068}
+\item The group builds a trained pipeline that uses an object oriented
+  template-instance methodology to generalize to different ontological
+  categories in  \cite{hsiung2021generalizing} [under review]
+
+\item In \cite{patellearning} build learn a semantic parser from NL to LTL (so
+that the language is grounded) where they collect executions of the LTL formulas
+in different environments using a weakly-supervised training method with
+reinforcement learning Part if the paper has to do with the execution of the
+command being dependent on the path taken by the robot executing the command,
+not just meeting the goal requirements, thereby giving a complexity bonus in
+comparison to previous work. She also evaluates the model on the \cite{walkTalk}
+data set
 \end{itemize}
 
 
-\subsection{Foundation Models}
 
 \section{Work} 
 
@@ -341,140 +502,26 @@ of ``semantic parsing as paraphrasing'' from  \cite{berant-liang-2014-semantic}
 
 \end{itemize}
 
-\subsection{NL to TL}
+\subsection{Voice assistants for autonomous vehicles}
 
-Here we show mainly relevant research for NL to LTL.
+The public company Cerence \cite{} is already designing voice assistants for autonomous
+vehicles, for which it has a large software stack between the voice processing
+to actual control of current automative components. In addition to its 
+technologies, many of which aren't accessible to external researchers due to
+intellectual property restrictions, Cerence has contracts with large automakers
+[..]. It is therefore natural to inquire, what a small team with varied
+backgrounds and not nearly the same expertise nor experience within the
+technological team at Cerence can provide.
 
-The applications of LTL in machine learning are vast, and the scope of our
-specific application is still unclear, but nevertheless, we give a literature
-review of methods and applications relevant for our work.
+First, we believe that the focus on verification, insofar as we envision it, is
+unlikely to be of current concern at Cerence due to the fact that their products
+are still being developed, and the primary goal of producing a working product
+is likely to precedence over preventing non-existent hostile actors.
 
-\begin{itemize}
+Additionally, it is going to have to be determined by 
+[verification of self-driving cars generally : software, hardware, behavior in
+a real environment, etc]
 
-
-
-\item This paper \cite{5152776} from 2009 uses a categorial grammar approach, but more or less
-  can serve as an idea template for us, also nice pictures with grammar rules
-  and formulas
-\item Also, a highly relevant template combines Natural Language, LTL, with the
-  idea of having a verifiable pipeline \cite{provCorrectNatControl} 
-
-\begin{quote}
-The production of an on-
-tology of common actions and the type of formulas that
-they produce—for example, safety conditions, adding goals,
-constraining the initial state—in their negated and positive
-forms would be a step toward a more general solution to
-the problem of mapping natural language to LTL. Previous
-work has relied heavily on grammar formalisms to ease...
-\cite{provCorrectNatControl} 
-\end{quote}
-
-\item LTL formulas can be transformed into automata which can then be used as reward functions for reinforcement learners, as in \cite{ltlRein}
-
-\item  The following is one of the more relevant quotes from a paper reviewing
-  the whole space of English to LTL translations
-  \begin{quote}
-Overall, the typical approach followed by these studies can be summarized as follows:
-given an input English utterance, preprocess it to extract syntactical information, which may
-include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
-enrich the input with these pieces of information. Finally, run an attribute grammar-based
-parser, or rely on some hand-made rules, to derive a translation into a target logical format.
-A notable exception is the work of [89], where a fully-supervised learning setting is considered.
-\cite{brunello_et_al}
-\end{quote}
-\item Translating between English and STL can be done via a large language model 
-\cite{he2021english} [under review], but the domain specificity of the problems
-are still significant enough to suggest that it will be years before an
-automated semantic parser is available, if it is even possible. 
-\item Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
-  is relevant and well-cited (although they use an encoder-decoder method)
-\item
-\item
-\item
-
-\end{itemize}
-
-\subsection{Tellex}
-
-Stephanie Tellex has written extensively about natural language inputs and
-interfaces with robots. Although she has not specifically written about
-autonomous vehicles, the domains have enough intersection to warrant careful
-consideration of much of her work, especially the recent stuff.
-
-\begin{itemize}
-
-\item Grounding with an intermediate symbolic state, no LTL, but possibly
-  relevant for paper generally. She also cites \cite{walkTalk}, a seminal paper in this area
-\begin{quote}
-Instruction following is a supervised learning problem
-where the agent must predict a trajectory that would satisfy an
-input natural language command. \cite{tellexInstr}
-\end{quote}
-\item The review paper \cite{MARGE2022101255} making recommendations has a
-  section on robustness, but this is mostly for the sake of allowing sharing of
-  interfaces and efficacy, no mention of verification (which is what we're
-  primarily after)
-\item They design a NL -> LTL for drones that are grounded to actual landmarks \cite{9197068}
-\item The group builds a trained pipeline that uses an object oriented
-  template-instance methodology to generalize to different ontological
-  categories in  \cite{hsiung2021generalizing} [under review]
-
-\item In \cite{patellearning} build learn a semantic parser from NL to LTL (so
-that the language is grounded) where they collect executions of the LTL formulas
-in different environments using a weakly-supervised training method with
-reinforcement learning Part if the paper has to do with the execution of the
-command being dependent on the path taken by the robot executing the command,
-not just meeting the goal requirements, thereby giving a complexity bonus in
-comparison to previous work. She also evaluates the model on the \cite{walkTalk}
-data set
-\end{itemize}
-
-\subsection{Robot Motion Planning}
-
-Without getting to into the weeds, for the actual planning and control of the
-robot should, at least hypothetically, be at least somewhat 
-
-\begin{quote}
-  Robot motion planning and control is the problem of automatic construction of
-robot control strategies from task specifications given in high-level, human-like language. The challenge
-in this area is the development of computationally efficient frameworks allowing for systematic, provably
-correct, control design accommodating both the robot constraints and the complexity of the environment,
-while at the same time allowing for expressive task specifications.
-\cite{4141034}
-\end{quote}
-
-\begin{itemize}
-\item For instance, in \cite{plaku2016motion} the authors indicate how to actually
-ground basic propositions from the language to paths in a space, while our
-model, outputting formulas un-grounded base predicates, is merely concerned with
-the logical structure.
-
-\item 
-\item In \cite{7759412}, the authors borrow the English to LTL pipeline from the
-  aforementioned \cite{provCorrectNatControl}, and synthesize grounded controllers 
-\end{itemize}
-
-There is a group at MIT (Kuo, Katz, Barbu, ..) doing seemingly similar things to
-Tellex's group.
-
-\begin{itemize}
-\item In \cite{kuo2020deep}, the authors do the most general end-to-end task
-  without intermediary states,
-  namely, map natural language commands to navigation and manipulation tasks.
-  While this ``cutting out the middle man'' mentality may be an idealistic
-  long-term vision, it makes the system much too much of a black box - for the
-  fine-tuned verification conditions we desire to express and impose via the
-  intermediate symbolic representations, the intermediate states, we imagine
-  give us a more explainable, predictable, and regulatable system
-\item More similar to Tellex et al's approach \cite{patellearning},
-  \cite{ltlSemParse} seek to train a model via images in a simulated world.
-  Their work also uses a SCFG (to generate semantically inadequate sentences
-  with corresponding LTL formulas) from which they can direct machines to
-  follow the instructions, and then have users describe the instructions in more
-  natural form. 
-\item One of the 
-\end{itemize}
 
 
 \section{Future Work}
@@ -775,8 +822,6 @@ overwhelmingly more natural, the
 
 We should just make simplifying assumptions, though, at least for the purpose of
 a grammar like ours.
-
-
 
 probably scrap
 \section{Alternative ideas}

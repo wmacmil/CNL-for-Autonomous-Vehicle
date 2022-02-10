@@ -19,6 +19,54 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{angelov2010pgf}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ffb461893727ef6bf3f8cca2de6c610c}{%
+           family={Bringert},
+           familyi={B\bibinitperiod},
+           given={Bj{ö}rn},
+           giveni={B\bibinitperiod}}}%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{fullhash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{bibnamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authorbibnamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authornamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authorfullhash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Portable Grammar Format (PGF) is a core language for type-theoretical grammars. It is the target language to which grammars written in the high-level formalism Grammatical Framework (GF) are compiled. Low-level and simple, PGF is easy to reason about, so that its language-theoretic properties can be established. It is also easy to write interpreters that perform parsing and generation with PGF grammars, and compilers converting PGF to other formats. This paper gives a concise description of PGF, covering syntax, semantics, and parser generation. It also discusses the technique of embedded grammars, where language processing tasks defined by PGF grammars are integrated in larger systems.}
+      \field{issn}{1572-9583}
+      \field{journaltitle}{Journal of Logic, Language and Information}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{{PGF: A Portable Run-time Format for Type-theoretical Grammars}}
+      \field{volume}{19}
+      \field{year}{2010}
+      \field{pages}{201\bibrangedash 228}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1007/s10849-009-9112-y
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10849-009-9112-y
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10849-009-9112-y
+      \endverb
+    \endentry
     \entry{4141034}{article}{}
       \name{author}{6}{}{%
         {{hash=826cd766160d9baf0e344510b73d921a}{%
@@ -500,6 +548,30 @@
       \verb{doi}
       \verb 10.1109/ROBOT.2009.5152776
       \endverb
+    \endentry
+    \entry{frege79}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1c468d5fce77082669983ce899030b96}{%
+           family={Frege},
+           familyi={F\bibinitperiod},
+           given={Gottlob},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Halle}%
+      }
+      \strng{namehash}{1c468d5fce77082669983ce899030b96}
+      \strng{fullhash}{1c468d5fce77082669983ce899030b96}
+      \strng{bibnamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authorbibnamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authornamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authorfullhash}{1c468d5fce77082669983ce899030b96}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Begrisschrift}
+      \field{year}{1879}
     \endentry
     \entry{tellexInstr}{inproceedings}{}
       \name{author}{4}{}{%
@@ -1313,6 +1385,67 @@
       \verb https://doi.org/10.1145/219717.219748
       \endverb
     \endentry
+    \entry{Montague1973}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=7c6ba51ce7aee268ca16ba50bb7f44f2}{%
+           family={Montague},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=e479ded1d684815dc3a6bd451e9a6aea}{%
+           family={Hintikka},
+           familyi={H\bibinitperiod},
+           given={K.\bibnamedelimi J.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8463e4ea3a7d7ff0bbb823294678b205}{%
+           family={Moravcsik},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi M.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=9016de0aaea4a11f15e82dc2bed9dd1c}{%
+           family={Suppes},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Springer Netherlands}%
+      }
+      \strng{namehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{fullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{bibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorbibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authornamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorfullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{editorbibnamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editornamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editorfullhash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The aim of this paper is to present in a rigorous way the syntax and semantics of a certain fragment of a certain dialect of English. For expository purposes the fragment has been made as simple and restricted as it can be while accommodating all the more puzzling cases of quantification and reference with which I am acquainted.1}
+      \field{booktitle}{Approaches to Natural Language: Proceedings of the 1970 Stanford Workshop on Grammar and Semantics}
+      \field{isbn}{978-94-010-2506-5}
+      \field{title}{The Proper Treatment of Quantification in Ordinary English}
+      \field{year}{1973}
+      \field{pages}{221\bibrangedash 242}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+    \endentry
     \entry{patellearning}{article}{}
       \name{author}{3}{}{%
         {{hash=4a792196f1637b8d2a1d8d43506e633e}{%
@@ -1377,6 +1510,94 @@
       \field{year}{2016}
       \field{pages}{151\bibrangedash 162}
       \range{pages}{12}
+    \endentry
+    \entry{ranta1994type}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3ac20553fd2564add973c6e7d55fb05b}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{fullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{bibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorbibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authornamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorfullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Type Theoretical Grammar}}
+      \field{year}{1994}
+    \endentry
+    \entry{ranta_2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Functional Programming}
+      \field{number}{2}
+      \field{title}{{Grammatical Framework}}
+      \field{volume}{14}
+      \field{year}{2004}
+      \field{pages}{145\bibrangedash 189}
+      \range{pages}{45}
+      \verb{doi}
+      \verb 10.1017/S0956796803004738
+      \endverb
+    \endentry
+    \entry{ranta2009rgl}{article}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{3}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Linguistics in Language Technology}}
+      \field{title}{{The GF Resource Grammar Library}}
+      \field{volume}{2}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb http://elanguage.net/journals/index.php/lilt/article/viewFile/214/158
+      \endverb
+      \verb{url}
+      \verb http://elanguage.net/journals/index.php/lilt/article/viewFile/214/158
+      \endverb
     \endentry
     \entry{ren-etal-2019-generating}{inproceedings}{}
       \name{author}{4}{}{%

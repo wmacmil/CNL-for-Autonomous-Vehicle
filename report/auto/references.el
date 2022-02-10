@@ -2,6 +2,12 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "ranta2009rgl"
+    "angelov2010pgf"
+    "ranta_2004"
+    "ranta1994type"
+    "frege79"
+    "Montague1973"
     "bioBert"
     "gururangan-etal-2020-dont"
     "chen2019touchdown"

@@ -1,21 +1,22 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'report.blg'
-[79] biber:322> INFO - === Wed Feb  9, 2022, 20:53:53
-[92] Biber.pm:415> INFO - Reading 'report.bcf'
-[161] Biber.pm:943> INFO - Found 34 citekeys in bib section 0
-[175] Biber.pm:4256> INFO - Processing section 0
-[175] Utils.pm:75> INFO - Globbing data source 'references.bib'
-[176] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
-[186] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
-[190] bibtex.pm:1653> INFO - LaTeX decoding ...
-[263] bibtex.pm:1471> INFO - Found BibTeX data source 'references.bib'
-[289] Utils.pm:293> WARN - month field 'Jul' in entry 'ml4pg' is not an integer - this will probably not sort properly.
-[341] Utils.pm:293> WARN - month field 'nov' in entry 'wordnet' is not an integer - this will probably not sort properly.
-[439] Utils.pm:293> WARN - month field 'jan' in entry 'provCorrectNatControl' is not an integer - this will probably not sort properly.
-[610] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[610] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[610] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[610] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[662] bbl.pm:652> INFO - Writing 'report.bbl' with encoding 'UTF-8'
-[704] bbl.pm:755> INFO - Output to report.bbl
-[704] Biber.pm:128> INFO - WARNINGS: 3
+[82] biber:322> INFO - === Thu Feb 10, 2022, 14:20:45
+[97] Biber.pm:415> INFO - Reading 'report.bcf'
+[169] Biber.pm:943> INFO - Found 40 citekeys in bib section 0
+[183] Biber.pm:4256> INFO - Processing section 0
+[184] Utils.pm:75> INFO - Globbing data source 'references.bib'
+[184] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
+[196] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
+[200] bibtex.pm:1653> INFO - LaTeX decoding ...
+[286] bibtex.pm:1471> INFO - Found BibTeX data source 'references.bib'
+[323] Utils.pm:293> WARN - month field 'Jul' in entry 'ml4pg' is not an integer - this will probably not sort properly.
+[384] Utils.pm:293> WARN - month field 'Apr' in entry 'angelov2010pgf' is not an integer - this will probably not sort properly.
+[424] Utils.pm:293> WARN - month field 'jan' in entry 'provCorrectNatControl' is not an integer - this will probably not sort properly.
+[614] Utils.pm:293> WARN - month field 'nov' in entry 'wordnet' is not an integer - this will probably not sort properly.
+[727] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[727] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[727] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[727] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[783] bbl.pm:652> INFO - Writing 'report.bbl' with encoding 'UTF-8'
+[843] bbl.pm:755> INFO - Output to report.bbl
+[844] Biber.pm:128> INFO - WARNINGS: 4
