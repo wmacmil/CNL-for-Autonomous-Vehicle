@@ -188,11 +188,13 @@ femalePersonIsWoman GWoman                    = (GModObj GFemale GPerson)
 femalePersonIsWoman gp = composOp femalePersonIsWoman gp
 
 
-directions = "turn left at the store , go to the store and turn left then turn right and turn right and go straight . go and turn left at the woman , turn right and stop . Finish ."
--- not entirely correct
+directions = "turn left at the cafe , go to the store and turn left then turn right and turn right and go straight . go and turn left at the woman , turn right and stop . Finish ."
+  
+simple = "go to the store and turn left . Finish ."
 
 -- >>> applySem directions
--- F (Meet (Atom "the_store") (F (Meet (Atom "the_store") (X (Meet (Atom "left") (X (Meet (Atom "right") (X (Meet (Atom "right") (X (Meet (Atom "straight") (F (Meet (Atom "go") (F (Meet (Atom "the_woman") (X (Meet (Atom "right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
+-- >>> applySem simple
+-- F (Meet (Atom "the_cafe") (F (Meet (Atom "the_store") (X (Meet (Atom "left") (X (Meet (Atom "right") (X (Meet (Atom "right") (X (Meet (Atom "straight") (F (Meet (Atom "go") (F (Meet (Atom "the_woman") (X (Meet (Atom "right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
 
 goToTheWoman = "go to the woman then go to the female person . stop at the woman ."
 bigCafe = GWhichObject GThe (GModObj GBig GCafe)

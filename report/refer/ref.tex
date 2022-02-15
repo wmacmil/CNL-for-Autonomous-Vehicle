@@ -1,0 +1,53 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[ mincrossrefs=999, style=numeric, backend=biber, url=false,
+isbn=false, doi=false, ]{biblatex}
+
+\addbibresource{references.bib}
+
+\usepackage[margin=1in]{geometry} \usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks]{hyperref} \usepackage{enumitem} \usepackage{amsfonts}
+
+% \usepackage{enumitem}
+
+\usepackage[parfill]{parskip}
+
+\begin{document} \pagenumbering{gobble}
+
+\section{References} 
+
+\subsection{Semantic Parsing} 
+
+Original paper \cite{berant-liang-2014-semantic}. 
+
+Main idea for fine-tuning a semantic parser  \cite{fewShotSem}.
+% code : https://github.com/microsoft/semantic_parsing_with_constrained_lm
+
+
+A similar approach \cite{wu-etal-2021-paraphrasing}
+code : https://github.com/lingoWu/SSD
+
+\subsection{Data Set} 
+
+TOUCHDOWN dataset, annotated directions  \cite{chen2019touchdown}
+code : https://github.com/lil-lab/touchdown
+
+\subsection{Grounded LTL for Robots} 
+
+Kress-Gazit Lab at Cornell \cite{provCorrectNatControl} \cite{7759412}. They are actually concerned with grounding the LTL formulas
+
+LTL in reinforcement learning \cite{ltlRein} 
+
+Tellex lab it Brown \cite{patellearning} \cite{9197068} \cite{hsiung2021generalizing} \cite{tellexInstr} (additional survey paper \cite{MARGE2022101255})
+
+Group at MIT doing similar things \cite{ltlSemParse} \cite{kuo2020deep}
+
+General survey on LTL from natural language \cite{brunello_et_al}
+
+Verifying motion planning for autonomous vehicles in Isabelle, another theorem prover \cite{verifiedMotion}
+\printbibliography
+
+\end{document}
+
+
+% LocalWords:  CNLs
