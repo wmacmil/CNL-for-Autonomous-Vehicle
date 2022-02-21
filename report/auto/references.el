@@ -2,6 +2,11 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "word2vec"
+    "winograd"
+    "hudak"
+    "10.1145/358438.349331"
+    "wu-etal-2021-paraphrasing"
     "ranta2009rgl"
     "angelov2010pgf"
     "ranta_2004"

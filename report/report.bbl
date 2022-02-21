@@ -1341,6 +1341,58 @@
       \endverb
       \keyw{Research agenda,Issues,Challenges,Priorities,Users}
     \endentry
+    \entry{word2vec}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=a2d359b12ca2fadf0b40136a73f021bb}{%
+           family={Mikolov},
+           familyi={M\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ee3f7d7b96add98106db907e189d6c13}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3d11e6f2a0d0a1183b2cf62996525afc}{%
+           family={Corrado},
+           familyi={C\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lake Tahoe, Nevada}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates Inc.}%
+      }
+      \strng{namehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{fullhash}{de32714a52f717caeb5f99165092caf6}
+      \strng{bibnamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authorbibnamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authornamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authorfullhash}{de32714a52f717caeb5f99165092caf6}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling.An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of "Canada" and "Air" cannot be easily combined to obtain "Air Canada". Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible.}
+      \field{booktitle}{Proceedings of the 26th International Conference on Neural Information Processing Systems - Volume 2}
+      \field{series}{NIPS'13}
+      \field{title}{Distributed Representations of Words and Phrases and Their Compositionality}
+      \field{year}{2013}
+      \field{pages}{3111\bibrangedash 3119}
+      \range{pages}{9}
+    \endentry
     \entry{wordnet}{article}{}
       \name{author}{1}{}{%
         {{hash=52cf88006a41a8cd9aab3bcb5e428b80}{%
@@ -2002,6 +2054,53 @@
       \field{pages}{55\bibrangedash 64}
       \range{pages}{10}
     \endentry
+    \entry{hudak}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b16728073956f239e9a00ad4c1f33be8}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Zhanyong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ebfbf9d5ed6e5a1698b8fe9fb2b322a4}{%
+           family={Hudak},
+           familyi={H\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vancouver, British Columbia, Canada}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{fullhash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{bibnamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authorbibnamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authornamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authorfullhash}{eddc34de1b5f1903a008509a09991acd}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Functional Reactive Programming, or FRP, is a general framework for programming hybrid systems in a high-level, declarative manner. The key ideas in FRP are its notions of behaviors and events. Behaviors are time-varying, reactive values, while events are time-ordered sequences of discrete-time event occurrences. FRP is the essence of Fran, a domain-specific language embedded in Haskell for programming reactive animations, but FRP is now also being used in vision, robotics and other control systems applications. In this paper we explore the formal semantics of FRP and how it relates to an implementation based on streams that represent (and therefore only approximate) continuous behaviors. We show that, in the limit as the sampling interval goes to zero, the implementation is faithful to the formal, continuous semantics, but only when certain constraints on behaviors are observed. We explore the nature of these constraints, which vary amongst the FRP primitives. Our results show both the power and limitations of this approach to language design and implementation. As an example of a limitation, we show that streams are incapable of representing instantaneous predicate events over behaviors.}
+      \field{booktitle}{Proceedings of the ACM SIGPLAN 2000 Conference on Programming Language Design and Implementation}
+      \field{isbn}{1581131992}
+      \field{series}{PLDI '00}
+      \field{title}{Functional Reactive Programming from First Principles}
+      \field{year}{2000}
+      \field{pages}{242\bibrangedash 252}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/349299.349331
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/349299.349331
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/349299.349331
+      \endverb
+    \endentry
     \entry{ltlSemParse}{article}{}
       \name{author}{5}{}{%
         {{hash=f5a8fc4ce8c3e5df2c4d74eb71b8c743}{%
@@ -2055,7 +2154,37 @@
       \verb https://arxiv.org/abs/2008.03277
       \endverb
     \endentry
+    \entry{winograd}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9270c737346819f33742a35de2661f82}{%
+           family={Winograd},
+           familyi={W\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=be48454d81535ef1779bf1d024f2a06e}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{fullhash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{bibnamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authorbibnamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authornamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authorfullhash}{78e4f99c6cdaef538acf68a688ac444d}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding Computers and Cognition: A New Foundation for Design}
+      \field{year}{1987}
+    \endentry
   \enddatalist
+  \missing{ml79}
 \endrefsection
 \endinput
 

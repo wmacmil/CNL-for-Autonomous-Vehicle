@@ -193,12 +193,14 @@ directions = "turn left at the cafe , go to the store and turn left then turn ri
 simple = "go to the store and turn left . Finish ."
 
 -- >>> applySem directions
--- >>> applySem simple
 -- F (Meet (Atom "the_cafe") (F (Meet (Atom "the_store") (X (Meet (Atom "left") (X (Meet (Atom "right") (X (Meet (Atom "right") (X (Meet (Atom "straight") (F (Meet (Atom "go") (F (Meet (Atom "the_woman") (X (Meet (Atom "right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
+-- >>> applySem simple
+-- F (Meet (Atom "the_store") (X (Meet (Atom "left") (G (Atom "FINISHED")))))
 
 goToTheWoman = "go to the woman then go to the female person . stop at the woman ."
 bigCafe = GWhichObject GThe (GModObj GBig GCafe)
 goToTheBigCafe = (GSimpleCom (GModAction GGo (GMkAdvPh GTo bigCafe))) :: GPosCommand
+
 
 -- >>> phi = head $ head $ parseAll gr' cat directions
 -- >>> phi' = fg $ phi

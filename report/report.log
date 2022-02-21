@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  10 FEB 2022 14:20
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  21 FEB 2022 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,7 +688,15 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
 
-(./report.bbl)
+(./report.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                ml79
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 47.
 Package biblatex Info: Reference segment=0 on input line 47.
 
@@ -977,67 +985,67 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 )
 [1
 
-] [1] [2] [3] [4] [5] [6]
+] [1] [2] [3] [4] [5] [6] [7] [8]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
- [7]
+ [9]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
- [8]
+ [10]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 
-Overfull \hbox (1.18326pt too wide) in paragraph at lines 604--604
+Overfull \hbox (1.18326pt too wide) in paragraph at lines 734--734
 []  \TU/lmtt/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvP
 h At (WhichObject The[] 
  []
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 613.
+(Font)              scaled to size 10.95116pt on input line 743.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 613.
+(Font)              scaled to size 7.6658pt on input line 743.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 613.
+(Font)              scaled to size 5.47559pt on input line 743.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 613.
+(Font)              scaled to size 10.94882pt on input line 743.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 613.
+(Font)              scaled to size 7.66417pt on input line 743.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 613.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 613
+(Font)              scaled to size 5.47441pt on input line 743.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 743
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 613
+LaTeX Font Info:    Trying to load font information for U+msb on input line 743
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
-13.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
+43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 613.
+(Font)              size <5> substituted on input line 743.
 
-[9] [10]
-Overfull \hbox (6.93199pt too wide) in paragraph at lines 661--661
+[11] [12]
+Overfull \hbox (6.93199pt too wide) in paragraph at lines 791--791
 []\TU/lmtt/m/n/10.95 treeMapfemalePersonIsWoman GWoman                    = (GM
 odObj GFemale GPerson)[] 
  []
 
-[11] [12] [13] [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 857.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 857.
+[13] [14] [15] [16] [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 987.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 987.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 857.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 857.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 987.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 987.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 9DD0A903C2D725D39E0A45369442032B;1694.
+(rerunfilecheck)             Checksum: 61912BADACA5DC9E0CE0F21F72B689DD;1801.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1048,12 +1056,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24705 strings out of 479819
- 449020 string characters out of 5895846
- 1191322 words of memory out of 5000000
- 41560 multiletter control sequences out of 15000+600000
+ 24713 strings out of 479819
+ 449283 string characters out of 5895846
+ 1192461 words of memory out of 5000000
+ 41568 multiletter control sequences out of 15000+600000
  536487 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  52i,6n,109p,1483b,4871s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (16 pages, 486356 bytes).
+Output written on report.xdv (19 pages, 573036 bytes).
