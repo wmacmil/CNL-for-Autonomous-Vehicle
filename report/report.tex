@@ -204,7 +204,7 @@ We therefore analyze our ``big-picture question'' above in the following
 ``sub-question'' : how can one map the manifold ways of presenting information
 to an autonomous robot into a rigorous and formally verifiable kernel which the
 controller can understand? Our proposed solution is to build a semantic parser
-from natural language commands to Linear Temporal Logic, whereby we can filter
+from natural language commands to linear temporal logic, whereby we can filter
 the many empirical natural language commands into a ``canonical subset'' defined
 by our CNL which are equivalent to (sets of) temporal logic formulas. We detail
 here both the progress to these ends, as well as the challenges.
@@ -408,24 +408,67 @@ these investigations. Our work additionally, is the only work we know of which
 actually seeks autonomous vehicles as the central motivation, rather than more
 general robotics applications.
 
-Just as important as producing a well-formed and meaningful LTL formula, but not
-explored is here, is that the evaluation gives a faithful controller to
-navigating a complex environment. For instance, in \cite{plaku2016motion} the
-authors indicate how to actually ground basic propositions from language to
-paths in a space, while our model, outputting formulas with non-grounded base
-predicates, is merely concerned with logical structure.
+\subsubsection{Temporal Logic for Robot Verification}
+
+
+Modal logics, specifically those dealing with stateful staging of events like
+LTL \cite{ltl95}, Computation Tree Logic (CTL) \cite{yooCTL}, Signal Temporal
+Logic (STL) \cite{stlAut} , have been used extensively in the specification and
+verification of properties of robotics systems, including autonomous vehicles .
+As LTL is often seen as one of the ``primitive'' temporal logic, we chose it as
+a our semantic space despite its limitations (the lack of numerical precision,
+predicates for spatial relations, etc). We appreciate that future work will need
+to expand the scope of which logic (or possibly \emph{logics}) the machine may
+use to verify behavior, in addition to the mathematical models most amenable to
+verification of a logical formula.
+
+% ugg
+% Additionally, LTL  formulas can be transformed into automata which can then be used as reward
+% functions for reinforcement learners, as in \cite{ltlRein}.
+
+We recognize that there are many degrees of freedom in the both the syntactic
+and semantic formalisms chosen, as well as their evaluation or grounding within
+physical environments. With respect to parsing, one could choose a categorial
+grammar approach \cite{5152776}, or even forego using phrase-structure
+formalisms and use dependency grammars - of which there has been recent work in
+using dependency formalisms in conjunction with GF \cite{ranta2017cross}.
+Additionally, many of our ideas should be applicable to robotics applications
+outside of the autonomous vehicle space, although syntactic, semantic, and
+data-specific nuances will have to be reconsidered for each domain.
+
+\subsubsection{Natural Language and LTL verification}
+
+\begin{quote}
+Overall, the typical approach followed by these studies can be summarized as follows:
+given an input English utterance, preprocess it to extract syntactical information, which may
+include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
+enrich the input with these pieces of information. Finally, run an attribute grammar-based
+parser, or rely on some hand-made rules, to derive a translation into a target logical format.
+\cite{brunello_et_al}
+\end{quote}
+
+Brunello et al. give a thorough literature review of the many ways of
+translating natural language to LTL. Just as important as producing a
+well-formed and meaningful LTL formula, but not explored in our work, is the
+translation from a logical formula a trustworthy controller meant for navigating
+a complex environment. For instance, in \cite{plaku2016motion} the authors
+indicate how to actually ground basic propositions from language to paths in a
+space, while our model, outputting formulas with non-grounded base predicates,
+is merely concerned with logical structure.
 
 Similarly, in \cite{7759412}, the authors develop a Verifiable Distributed
 Correspondence Graph (V-DCG) model whereby LTL formulas are used to ensure
 grounded instruction sequences are consistent. This work builds on other work of
 Kress-Gazit et al. \cite{provCorrectNatControl}, whereby the The Situated
 Language Understanding Robot Platform (SLURP) allows translation of arbitrary
-natural language into LTL - with less reliance on grammar formalisms - and also
-supports a notion of feedback. Our work is directly focused on the
-\emph{centrality of the grammar} (which we will emphasize continuously) as the
-key intermediary phase when balancing formal and empirical interests, whereas
-this work is more concerned with the controllers generated as the end result of
-a pipeline where the intermediary grammatical structure may not be so relevant.
+natural language into LTL. They suggest an ``ontology of common actions and the
+type of formulas that they produce'' is of critical importance. Our work is
+directly focused on the \emph{centrality of the grammar}, where a GF abstract
+syntax design allows one to give a precise ontology. We therefore see our work as
+a key intermediary phase when balancing formal and empirical interests.
+Kress-Gazit's work is more concerned with the controllers generated as the end
+result of a pipeline where the intermediary grammatical structure may not be so
+relevant.
 
 Our GF implementation, seeing the grammar as a necessary part of the
 verifiability (in that we can systematically map our sequences of commands to
@@ -462,82 +505,10 @@ about the linguistic utterances our work explores, the intermediate symbolic
 representations give a more explainable, predictable, and regulatable system.
 
 ----- 
-% \begin{itemize}
-% \item
-% \item More similar to Tellex et al's approach \cite{patellearning},
-% \item One of the 
-% \end{itemize}
 
-\subsubsection{Temporal Logic for NL verification}
 
-Modal logics, specifically those dealing with stateful staging of events like
-Linear Temporal Logic (LTL), Computation Tree Logic (CTL), Signal Temporal Logic
-(STL), have been used extensively in the specification and verification of properties
-of robotics systems, including autonomous vehicles \cite{}.
 
-With verification being a core motivation of our work, we take for granted that
-these different logics have differing interpretations, utilities, or
-manifestations in their different applied settings. As LTL is often seen as one
-of the ``primitive'' temporal logic, we chose it as a our semantic space despite
-its limitations. We appreciate that future work will need to expand the scope of 
-which logic (or possibly \emph{logics}) the machine may use to verify behavior,
-in addition to the mathematical models most amenable to verification of a logical formula.
 
-We recognize that there are many degrees of freedom in the both the syntactic
-and semantic formalisms chosen, as well as their evaluation or grounding within
-physical environments.
-
-\begin{itemize}
-\item Parsing formalisms - phrase-based grammars (GF), categorial grammars, or
-  even perhaps dependency grammars for wide-coverage usage
-\item Semantic formalisms including spatial logics and vector space semantics
-\item Mechanisms for evaluating and syntactic and semantic choices 
-\item Robotics domains outside of the autonomous vehicle space, for which
-  natural language is still an ideal interface. Ideally we'd like one system to
-  be generally applicable to many areas, independent of certain nuances in a
-  given space
-\end{itemize}
-
-\subsubsection{NL to TL}
-
-Here we show mainly relevant research for NL to LTL.
-
-The applications of LTL in machine learning are vast, and the scope of our
-specific application is still unclear, but nevertheless, we give a literature
-review of methods and applications relevant for our work.
-
-\begin{itemize}
-
-\item This paper \cite{5152776} from 2009 uses a categorial grammar approach, but more or less
-  can serve as an idea template for us, also nice pictures with grammar rules
-  and formulas
-\item Also, a highly relevant template combines Natural Language, LTL, with the
-  idea of having a verifiable pipeline \cite{provCorrectNatControl} 
-
-\begin{quote}
-The production of an on-
-tology of common actions and the type of formulas that
-they produce—for example, safety conditions, adding goals,
-constraining the initial state—in their negated and positive
-forms would be a step toward a more general solution to
-the problem of mapping natural language to LTL. Previous
-work has relied heavily on grammar formalisms to ease...
-\cite{provCorrectNatControl} 
-\end{quote}
-
-\item LTL formulas can be transformed into automata which can then be used as reward functions for reinforcement learners, as in \cite{ltlRein}
-
-\item  The following is one of the more relevant quotes from a paper reviewing
-  the whole space of English to LTL translations
-  \begin{quote}
-Overall, the typical approach followed by these studies can be summarized as follows:
-given an input English utterance, preprocess it to extract syntactical information, which may
-include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
-enrich the input with these pieces of information. Finally, run an attribute grammar-based
-parser, or rely on some hand-made rules, to derive a translation into a target logical format.
-A notable exception is the work of [89], where a fully-supervised learning setting is considered.
-\cite{brunello_et_al}
-\end{quote}
 \item Translating between English and STL can be done via a large language model 
 \cite{he2021english} [under review], but the domain specificity of the problems
 are still significant enough to suggest that it will be years before an
