@@ -1,0 +1,260 @@
+\message{ !name(project.tex)}\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+
+\usepackage{verbatim}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+
+
+\usepackage{geometry}
+\usepackage{setspace}
+
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\mathnormal\to}}
+\newunicodechar{ℕ}{\ensuremath{\mathnormal\bN}}
+
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}%per barrare parole
+\usepackage{soul} %barrare numeri
+% \usepackage{booktabs}%per tabelle
+\usepackage{amsmath} %leqno mette elenchi in align a sx
+\usepackage{amssymb}
+% \usepackage{enumitem} %personalizza gli elenchi
+% \usepackage{amsthm} %teoremi e definizioni
+
+\usepackage{multirow}%più righe nella stessa cella in tabella
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{bussproofs}
+
+\usetheme{Antibes}
+\usecolortheme{beaver}
+\useinnertheme{rounded}
+\useoutertheme{infolines}
+
+%\titlegraphic{\includegraphics[width=25mm]{gottingen1.png}}
+\title{Notions of syntax and semantics for voice assistants in autonomous vehicles }
+\author{Warrick Macmillan}
+\date{$14^{th}$ February 2022}
+
+
+\begin{document}
+
+\message{ !name(project.tex) !offset(3) }
+\section{Overview}
+
+% \subsection{Quick Recapitulation}
+
+\begin{frame}
+\frametitle{Big Picture}
+
+\begin{exampleblock}{Manifold Ideas}
+This project contains bits and pieces of :
+\end{exampleblock}
+
+\begin{enumerate}
+\item Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
+\item Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
+\item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+
+\begin{exampleblock}{}
+This project is quite multifaceted, still in a somewhat primordial state (and therefore may be taken in many directions).
+\end{exampleblock}
+
+\begin{block}{}
+Goal : Design a controlled natural language which is 
+\end{block}
+
+\begin{itemize}
+\item Suitable as an ``approximation'' for a voice assistant for an autonomous vehicle
+\item Has a well defined semantics in temporal logic
+\item Seeking to balance breadth and depth of our system
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Trade-offs}
+
+\begin{itemize}
+\item Breadth : Wide coverage, usable by non-experts (where ML comes in)
+\item Depth   : Well-behaved, verifiable (where FP comes in)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideal Pipeline}
+
+\begin{equation} % \label{eq1}
+\begin{split}
+\text{Utterance} & \xrightarrow{\mathit{Speech\ Recognizer}} \text{String}\\
+ & \xrightarrow{\mathit{Canonicalization_{BERT}}} \text{String}\\
+ & \xrightarrow{\mathit{Parsing\ (GF)}} \text{Abstract Syntax Tree (NL)}\\
+ & \xrightarrow{\llbracket - \rrbracket_{Haskell}} \text{Abstract Syntax Tree (LTL)}\\
+ & \xrightarrow{\vDash} \text{Verifiable Path}
+\end{split}
+\end{equation} 
+\end{frame}
+
+\begin{frame}
+\frametitle{What we have so far...}
+
+\begin{equation} % \label{eq1}
+\begin{split}
+\text{String} & \xrightarrow{\mathit{Parsing\ (GF)}} \text{Abstract Syntax Tree (NL)}\\
+ & \xrightarrow{\llbracket - \rrbracket_{Haskell}} \text{Abstract Syntax Tree (LTL)}\\
+ & \xrightarrow{\vDash}_{Agda} \text{``Standard Semantics''}
+\end{split}
+\end{equation} 
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Example AST}
+``go to the store and turn left'' $\mapsto$
+\begin{verbatim}
+CompoundCommand
+    * And
+      BasePosCommand
+        * SimpleCom
+            * ModAction
+                * Go
+                  MkAdvPh
+                    * To
+                      WhichObject
+                        * The
+                          Store
+          SimpleCom
+            * ModAction
+                * Turn
+                  WherePhrase (Left)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example Cont..}
+${\llbracket  \text{``go to the store and turn left . Finish .''}_{AST} \rrbracket_{Haskell}}$
+\begin{verbatim}
+F
+  (Meet
+    (Atom "the_store") 
+    (X 
+      (Meet 
+        (Atom "left") 
+        (G (Atom "FINISHED")))))
+\end{verbatim}
+
+\begin{exampleblock}{Interpretation}
+  
+Eventually be in a state where you are at the store. Directly after, you are in
+a state where you are left. From thereon, you are forever finished.
+
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Functional Programming}
+\begin{block}{}
+Types, and type-checking is a fundamental way to seperate the process of
+programming into two phases
+\begin{itemize}
+\item Static  : Specification, Types 
+\item Dynamic : Implentation, Programs 
+\end{itemize}
+\end{block}
+
+% \begin{exampleblock}{}
+\begin{itemize}
+\item Correct-by-construction mentality - ``verification technique''
+\item Constraints are baked into user-defined types.
+\item Specification guides implementation. Functional
+  programmers spend almost all their time thinking about types.
+\item Focus energy on high-level (abstract) details
+\item It is convenient to implement programming languages
+(i.e. write interpreters and compilers)
+\end{itemize}
+% \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Grammatical Framework}
+
+\begin{itemize}
+\item Functional programming language
+\item Implementing natural language parsers and linearizes
+\item Separation of abstract syntax and concrete syntax.
+\item Intended for translation, multilingual support
+\item One designs a grammar, Parallel Multiple CFGs (PMCFG)
+\item Chomsky Hierarchy : $\text{CFG} < \text{PMCFG} < \text{Context Sensitive Grammar}$
+\item Standard Libarary : Resource Grammar Library (RGL)
+\item Embedding in Haskell : Portable Grammar Format (PGF)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{GF Example}
+
+BNFC (traditional treatment of fixity)
+
+\begin{verbatim}
+Lam. Exp  ::= "\\" [PTele] "->" Exp ;
+App. Exp2 ::= Exp2 Exp3 ;
+\end{verbatim}
+
+Abstract :
+
+\begin{verbatim}
+fun
+  Lam : [Tele] -> Exp -> Exp ;
+  App : Exp -> Exp -> Exp ;
+\end{verbatim}
+
+Concrete :
+
+\begin{verbatim}
+lin
+  Lam pt e = mkPrec 0 ("\\" ++ pt ++ "->" ++ usePrec 0 e) ;
+  App = infixl 2 "" ;
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Haskell and Agda}
+
+\begin{itemize}
+\item One of the main FP languages - deep ties in Scotland & Sweden
+\item GADTs and pattern matching make for first-class tree transformations
+\item Defining and reasoning about logics and programming languages
+\end{itemize}
+
+\begin{exampleblock}{Agda}
+\item ``Dependently typed Haskell''
+\item Interactive Theorem Prover
+\item Programs as proofs, propositions as types
+\begin{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+
+\message{ !name(project.tex) !offset(0) }
+
+\end{document}

@@ -408,7 +408,79 @@ these investigations. Our work additionally, is the only work we know of which
 actually seeks autonomous vehicles as the central motivation, rather than more
 general robotics applications.
 
+\subsubsection{Semantic Parsing}
+
+The problem of semantic parsing consists of mapping natural language utterances
+not just to syntactic trees, but to semantic ones. A sub-field of Natural
+Language Understanding (NLU), building automated systems for mapping syntax to
+semantic forms can be traced back to Winograd's SHRDLU
+\cite{winograd1971procedures}. Although seen as a success at the time, SHRDLU
+was also incredibly brittle, and apparently led Winograd to step away from NLU,
+believing the problem too difficult.
+
+The largest strain of contemporary interest in semantic parsers emerged during
+the resurgence applying deep neural networks to a variety of problems in NLP.
+An important observation, to view ``semantic parsing as paraphrasing''
+\cite{berant-liang-2014-semantic}, has greatly influenced the contemporary
+statistical approaches to semantic parsing. Much of this work has still used
+grammars as a central component in their  pipeline, often to generate sentences
+randomly for the construction of a corpus to train with.
+
+Towards the extreme of the data-centered perspective, it has been advocated to
+get rid of the parser in semantic parsers altogether. In \cite{dontParse}, the
+authors naively takes for granted large public data-sets with syntactic and
+semantic forms, neither of which exist for autonomous vehicle syntax and
+temporal logic semantic formalism. Our approach takes for granted that the
+parser is one of the most controllable and easily understood components of a NL
+pipeline.
+
 \subsubsection{Temporal Logic for Robot Verification}
+
+\begin{quote}
+Overall, the typical approach followed by these studies can be summarized as follows:
+given an input English utterance, preprocess it to extract syntactical information, which may
+include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
+enrich the input with these pieces of information. Finally, run an attribute grammar-based
+parser, or rely on some hand-made rules, to derive a translation into a target logical format.
+\cite{brunello_et_al}
+\end{quote}
+
+Brunello et al. give a thorough literature review of the many ways of
+translating natural language to LTL, indicating the interest and need of
+suitable semantic parsers.
+
+An interesting result published more recently attempts to translate between
+English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
+advantage of not just treating Boolean, but real-valued signals. From this
+perceptive, STL vs LTL can be understood as a quantitative versus qualitative
+way of analyzing events. The fact that STL gives the specifications a higher
+expressiveness in terms of how the order of events takes place, but also comes
+with a higher computational cost [ref needed], but more importantly, a
+potentially unnecessary complication for the system designer, The more
+granularity view of time may be unnecessary in many cases - our data set doesn't
+cover time at all (a defect, [reference below]), but even in a more naturally
+derived corpus, might only crop up as an ``edge case'' relative to other more
+important or likely phenomena that engineers may wish to capture.
+
+% ``3 streets versus 3 minutes''
+
+
+ican be done via a large language model 
+ but these techniques still only give
+aggregate improvements to the depth of phrases covered, and they haven't been
+explored in more specific domains. Additionally
+addressed here mean this researc
+
+We recognize that there are many degrees of freedom in the both the syntactic
+and semantic formalisms chosen, as well as their evaluation or grounding within
+physical environments. With respect to parsing, one could choose a categorial
+grammar approach \cite{5152776}, or even forego using phrase-structure
+formalisms and use dependency grammars - of which there has been recent work in
+using dependency formalisms in conjunction with GF \cite{ranta2017cross}.
+Additionally, many of our ideas should be applicable to robotics applications
+outside of the autonomous vehicle space, although syntactic, semantic, and
+data-specific nuances will have to be reconsidered for each domain.
+
 
 
 Modal logics, specifically those dealing with stateful staging of events like
@@ -426,29 +498,10 @@ verification of a logical formula.
 % Additionally, LTL  formulas can be transformed into automata which can then be used as reward
 % functions for reinforcement learners, as in \cite{ltlRein}.
 
-We recognize that there are many degrees of freedom in the both the syntactic
-and semantic formalisms chosen, as well as their evaluation or grounding within
-physical environments. With respect to parsing, one could choose a categorial
-grammar approach \cite{5152776}, or even forego using phrase-structure
-formalisms and use dependency grammars - of which there has been recent work in
-using dependency formalisms in conjunction with GF \cite{ranta2017cross}.
-Additionally, many of our ideas should be applicable to robotics applications
-outside of the autonomous vehicle space, although syntactic, semantic, and
-data-specific nuances will have to be reconsidered for each domain.
-
 \subsubsection{Natural Language and LTL verification}
 
-\begin{quote}
-Overall, the typical approach followed by these studies can be summarized as follows:
-given an input English utterance, preprocess it to extract syntactical information, which may
-include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
-enrich the input with these pieces of information. Finally, run an attribute grammar-based
-parser, or rely on some hand-made rules, to derive a translation into a target logical format.
-\cite{brunello_et_al}
-\end{quote}
 
-Brunello et al. give a thorough literature review of the many ways of
-translating natural language to LTL. Just as important as producing a
+Just as important as producing a
 well-formed and meaningful LTL formula, but not explored in our work, is the
 translation from a logical formula a trustworthy controller meant for navigating
 a complex environment. For instance, in \cite{plaku2016motion} the authors
@@ -504,22 +557,30 @@ through the use of attention maps. For the fine-tuned verification conditions
 about the linguistic utterances our work explores, the intermediate symbolic
 representations give a more explainable, predictable, and regulatable system.
 
+
+Formal Requirements Elicitation Tool (Fret) {fret}
+
+Use in aircraft, where there are many more controls, and the types of
+descriptions are inherently much more ``structured'', i.e. the pilots are
+assumed to have expertise and aren't just taking ad-hoc flights, but perhaps
+still don't have engineering, verification, or logical knowledge to give precise
+LTL specifications
+
+In \cite{fret} they use the Prototype Verification System (PVS) theorem prover
+to verify that 
+
+[Problem] There are two major challenges in making structured natural language
+amenable to formal analysis: (1) associating requirements with formulas that can
+be processed by analysis tools and (2) ensuring that the formulas conform to the
+language semantics. \cite{fretish}
+
 ----- 
 
 
 
+% Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
+%   is relevant and well-cited (although they use an encoder-decoder method)
 
-\item Translating between English and STL can be done via a large language model 
-\cite{he2021english} [under review], but the domain specificity of the problems
-are still significant enough to suggest that it will be years before an
-automated semantic parser is available, if it is even possible. 
-\item Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
-  is relevant and well-cited (although they use an encoder-decoder method)
-\item
-\item
-\item
-
-\end{itemize}
 
 \subsubsection{Tellex}
 
@@ -564,54 +625,41 @@ data set
 
 \section{TODO} 
 
-\subsection{Grammar modulo wordnet}
-
 \subsection{LTL in Agda}
 
 Along with colleagues from Singapore Management University, we have begun an
-Agda implementation \cite{wltl} of LTL which will serve as the semantic space
+Agda implementation \cite{wltl} [refer appendix] of LTL which will serve as the semantic space
 for our parsed utterances. Our method, uses a deep embedding, as opposed to the
 shallow embedding in \cite{coqLTL}, although the temporal encoding of paths as
 streams was directly adapted from this paper.
 
-This implementation will hopefully allow us to prove decidability of LTL in a
-relatively straightforward manner. Other than the assurance that our
-implementation is correct, we hope this will allow us to feed the formula into
-some SAT or SMT solver so-as to actually allow verification of the behavior of a
-vehicle with respect to an utterance.
-
-[TODO : Help from Matthew?]
-
-\subsection{AST -> Agda}
-
-\subsection{ML training/verification stuff}
-Help from Marco, Nathalia if interested?
-
+The details of the implementation, as well as a brief introduction to LTL, have
+been left to the appendix. Although this component of the project might be seen
+as independent from the main course, it serves to illustrate the
+an idea of compositionality with respect to verifiability, that is, the degree
+to which a ``verified system'' can be build from ``verified components'', in
+addition to ``verified transformations'' between the various components, with
+the notion of verification here loosely referring to anything which incorporates
+at least some classical verification technique. [TODO : maybe a section on verification?]
 
 \section{Publications Description}
 
-Realizing that the structure of the paper is ameanable to large changes, I'm
-posting a summary of relevant publications here.
-
 \subsection{Statistical (pre-trained) Language Models}
-The first set of publ
+
+
 
 \begin{itemize}
 
 \item In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
 context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
 parsible semantic form, that one can use a large pre-trained language model as a front-end
-to filter a much wider syntax into the CNL. I postulate GF's expressivity is
+to filter a much wider syntax into the CNL. GF's expressivity is
 more expressive than the SCFG, at least based off a tertiary reading in the
 index, and therefore if we carved out a subset of commands to cohere with our
-LTL (and maybe some other temporal or even spatial-temporal logics in the
-future), our model would be amenable to a similar ``out-of-the box" semantic
-parser that could actually be used for verification. This paper borrows the idea
-of ``semantic parsing as paraphrasing'' from  \cite{berant-liang-2014-semantic}
+LTL,
 
-\item In \cite{dontParse}, the authors advocate for getting rid of parsers
-  alltogether, although this naively takes for granted large public data-sets,
-  none of which exist for an autonomous vehicle and temporal logic formalism
+our model would be amenable to a similar
+
 \item  \cite{hauser2021bert} [under review] claims that Bert is robust, analyzing claims of four
   papers, including the one which uses a wordnet attack
 
@@ -736,7 +784,13 @@ LTL has been a popular logic for specifying controllable robot behaviors,
 particularly with respect to verification of their behaviors. In
 \cite{verifiedMotion}, Rizaldi et al. prove logical correctness of a motion
 planner with respect to LTL formulas over maneuver automata formulas in the
-Isabelle/HOL theorem prover, a non-dependent cousin of Agda. We are choosing to
+Isabelle/HOL theorem prover, a non-dependent cousin of Agda.
+
+They adopt a
+modified semantics to \cite{fainekos2005temporal}, where they consider multiple
+paths instead of one. They use a model checker to generate the plan
+
+We are choosing to
 deeply embed LTL in Agda for a few reasons, although the syntax of the embedding
 could easily be translated to any other dependently typed theorem prover, and
 with a little more effort probably any functional programming language. The

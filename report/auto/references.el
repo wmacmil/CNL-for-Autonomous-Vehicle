@@ -2,6 +2,13 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "10.1145/3497775.3503685"
+    "fainekos2005temporal"
+    "winograd1971procedures"
+    "ranta2017cross"
+    "ltl95"
+    "stlAut"
+    "yooCTL"
     "word2vec"
     "winograd"
     "hudak"

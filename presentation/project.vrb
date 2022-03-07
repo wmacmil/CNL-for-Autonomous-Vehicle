@@ -1,0 +1,24 @@
+\frametitle{GF Example}
+
+BNFC (traditional treatment of fixity)
+
+\begin{verbatim}
+Lam. Exp  ::= "\\" [PTele] "->" Exp ;
+App. Exp2 ::= Exp2 Exp3 ;
+\end{verbatim}
+
+Abstract :
+
+\begin{verbatim}
+fun
+  Lam : [Tele] -> Exp -> Exp ;
+  App : Exp -> Exp -> Exp ;
+\end{verbatim}
+
+Concrete :
+
+\begin{verbatim}
+lin
+  Lam pt e = mkPrec 0 ("\\" ++ pt ++ "->" ++ usePrec 0 e) ;
+  App = infixl 2 "" ;
+\end{verbatim}

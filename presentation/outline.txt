@@ -1,0 +1,121 @@
+
+
+This project is quite multifaceted, still in a somewhat primordial state (and therefore may be taken in many directions).
+
+----
+
+Big picture
+
+At the core are ideas from :
+
+Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
+Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
+Natural Language Processing : Semantic Parsing, Controlled Natural Languages
+
+----
+
+Goal : Design a controlled natural language which is 
+
+\item Suitable as an ``approximation'' for a voice assistant for an autonomous vehicle
+\item Has a well defined semantics in temporal logic
+\item Seeking to balance breadth and depth of our system
+
+Breadth : Wide coverage, usable by non-experts (where ML comes in)
+Depth   : Well-behaved, verifiable (where FP comes in)
+
+----
+
+Voice Utterance -Voice Recognition-> String -ML-> String -GF- > AST -> AST (LTL) -> Mathematical Instructions (Route)
+
+So Far :
+String -GF- > AST -> AST (LTL) 
+Corpus
+
+----
+
+Example 
+
+Go ...
+
+
+----
+
+Breakdown, piece by piece 
+
+----
+
+Functional programming : 
+
+Types, and type-checking is a fundamental way to seperate the process of programming into two phases 
+
+Static  : Specification, Types 
+Dynamic : Implentation, Programs 
+
+
+It focuses on correct-by-construction mentality for programming, and therefore
+is an inherent "verification technique", as, when a user defines one's own
+types it enforces the rules that you bake into your types.
+
+You want the specification to guide the implementation. Good functional
+programmers spend almost all their time thinking about types, and using a
+type-system productively allows often you to focus on high-level details 
+
+It is convenient to implement and model our own programming languages with, (i.e. write compilers)
+
+----
+
+Grammatical Framework 
+
+A functional programming language for implementing natural language parsers and
+linearizers Seperation of abstract sytnax and concrete syntax.
+
+One designs a context free grammar (CFG) (which is actually Parallel Multiple CFGs (PMCFG), 
+  CFG < PMCFG < Context Sensitive Grammar
+
+Support from a Resource Grammar Library (grammatical details are outsourced to a standard libary)
+
+Embedding in Haskell via Portable Grammar Format
+
+----
+
+Haskell : 
+
+One of the main FP lanauages - deep ties in Scotland & Sweden
+
+General programming, but also useful for defining and reasoning about logics and programming languages
+
+----
+
+Agda : 
+
+Dependently typed
+
+
+----
+
+Linear Temporal Logic 
+
+\item Modal logic (temporal modality)
+\item Decidable 
+\item allows one to reason about sequential (and temporality)
+
+Complexity (and expressivity)
+Propositional Logic < Temporal Logic <_undecidable First order logic
+
+- Main operators are 
+X phi - in the next state, phi holds
+<> phi (exists a future state such that phi holds)
+[] phi (phi holds for every future state)
+
+----
+
+LTL for verification
+
+- General
+- ML
+
+----
+
+Questions :
+
+
