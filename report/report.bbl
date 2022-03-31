@@ -67,6 +67,66 @@
       \verb https://doi.org/10.1007/s10849-009-9112-y
       \endverb
     \endentry
+    \entry{ltl95}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=dc4e08d258c7c573965400f9ec1ca1db}{%
+           family={Antoniotti},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1df01036362e1005668068de689ab734}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{fullhash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{bibnamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authorbibnamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authornamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authorfullhash}{ba5922ee65a9022ce19818e7b1c514af}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of 1995 IEEE International Conference on Robotics and Automation}
+      \field{title}{Discrete event models+temporal logic=supervisory controller: automatic synthesis of locomotion controllers}
+      \field{volume}{2}
+      \field{year}{1995}
+      \field{pages}{1441\bibrangedash 1446 vol.2}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/ROBOT.1995.525480
+      \endverb
+    \endentry
+    \entry{stlAut}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=2b1aab107799f541e2c3a1f005bc09dd}{%
+           family={Aréchiga},
+           familyi={A\bibinitperiod},
+           given={Nikos},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{fullhash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{bibnamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authorbibnamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authornamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authorfullhash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE Intelligent Vehicles Symposium (IV)}
+      \field{title}{Specifying Safety of Autonomous Vehicles in Signal Temporal Logic}
+      \field{year}{2019}
+      \field{pages}{58\bibrangedash 63}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IVS.2019.8813875
+      \endverb
+    \endentry
     \entry{4141034}{article}{}
       \name{author}{6}{}{%
         {{hash=826cd766160d9baf0e344510b73d921a}{%
@@ -334,63 +394,6 @@
       \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
       \endverb
     \endentry
-    \entry{ltlRein}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=b6bf3b37af60368035a03df97f25c49a}{%
-           family={Camacho},
-           familyi={C\bibinitperiod},
-           given={Alberto},
-           giveni={A\bibinitperiod}}}%
-        {{hash=4d8d1c1efefeb9c1757fc7d576c4cda8}{%
-           family={Toro\bibnamedelima Icarte},
-           familyi={T\bibinitperiod\bibinitdelim I\bibinitperiod},
-           given={Rodrigo},
-           giveni={R\bibinitperiod}}}%
-        {{hash=9b7c89136c9d998576bf147e6e7854ae}{%
-           family={Klassen},
-           familyi={K\bibinitperiod},
-           given={Toryn\bibnamedelima Q.},
-           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
-        {{hash=f74a91dbe44cdd5596967deb87490e54}{%
-           family={Valenzano},
-           familyi={V\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-        {{hash=a502f0250e544fbb725c646170ab1dc2}{%
-           family={McIlraith},
-           familyi={M\bibinitperiod},
-           given={Sheila\bibnamedelima A.},
-           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {International Joint Conferences on Artificial Intelligence Organization}%
-      }
-      \strng{namehash}{437d1a4866d540a01785c45ad9ab10b2}
-      \strng{fullhash}{6e88f154588ef0dc70f33ae0c8e07449}
-      \strng{bibnamehash}{437d1a4866d540a01785c45ad9ab10b2}
-      \strng{authorbibnamehash}{437d1a4866d540a01785c45ad9ab10b2}
-      \strng{authornamehash}{437d1a4866d540a01785c45ad9ab10b2}
-      \strng{authorfullhash}{6e88f154588ef0dc70f33ae0c8e07449}
-      \field{sortinit}{C}
-      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, {IJCAI-19}}
-      \field{month}{7}
-      \field{title}{LTL and Beyond: Formal Languages for Reward Function Specification in Reinforcement Learning}
-      \field{year}{2019}
-      \field{pages}{6065\bibrangedash 6073}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.24963/ijcai.2019/840
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.24963/ijcai.2019/840
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.24963/ijcai.2019/840
-      \endverb
-    \endentry
     \entry{chen2019touchdown}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=5e2afaa4949ebeb4930a13e8aa4dc4bc}{%
@@ -462,51 +465,6 @@
       \verb 10.1093/logcom/13.6.801
       \endverb
     \endentry
-    \entry{dong-lapata-2016-language}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=d3349e5c2b2661f3b497e9f014ffcf7d}{%
-           family={Dong},
-           familyi={D\bibinitperiod},
-           given={Li},
-           giveni={L\bibinitperiod}}}%
-        {{hash=35b5bc53ec3fa2640225354af6ca0e1d}{%
-           family={Lapata},
-           familyi={L\bibinitperiod},
-           given={Mirella},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Berlin, Germany}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computational Linguistics}%
-      }
-      \strng{namehash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \strng{fullhash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \strng{bibnamehash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \strng{authorbibnamehash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \strng{authornamehash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \strng{authorfullhash}{9912f9150f7d07b0dffe8bc43a05542d}
-      \field{sortinit}{D}
-      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}
-      \field{month}{8}
-      \field{title}{Language to Logical Form with Neural Attention}
-      \field{year}{2016}
-      \field{pages}{33\bibrangedash 43}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.18653/v1/P16-1004
-      \endverb
-      \verb{urlraw}
-      \verb https://aclanthology.org/P16-1004
-      \endverb
-      \verb{url}
-      \verb https://aclanthology.org/P16-1004
-      \endverb
-    \endentry
     \entry{5152776}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=9a0e2a3575b0dd32a3e68f70031e1e85}{%
@@ -548,6 +506,43 @@
       \verb{doi}
       \verb 10.1109/ROBOT.2009.5152776
       \endverb
+    \endentry
+    \entry{fainekos2005temporal}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=84ddd8e6d20ce8d222e2daa90d5fa2b3}{%
+           family={Fainekos},
+           familyi={F\bibinitperiod},
+           given={Georgios\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+        {{hash=13515e3859af5918925e99eddb9a9079}{%
+           family={Pappas},
+           familyi={P\bibinitperiod},
+           given={George\bibnamedelima J},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{fullhash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{bibnamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authorbibnamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authornamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authorfullhash}{085b189f0491b4901ddc9da2f9850e88}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2005 IEEE International Conference on Robotics and Automation}
+      \field{title}{Temporal logic motion planning for mobile robots}
+      \field{year}{2005}
+      \field{pages}{2020\bibrangedash 2025}
+      \range{pages}{6}
     \endentry
     \entry{frege79}{book}{}
       \name{author}{1}{}{%
@@ -1651,6 +1646,40 @@
       \verb http://elanguage.net/journals/index.php/lilt/article/viewFile/214/158
       \endverb
     \endentry
+    \entry{ranta2017cross}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=edc679982f1595754fba996949b28b95}{%
+           family={Kolachina},
+           familyi={K\bibinitperiod},
+           given={Prasanth},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e251a55bef1641f453938651c979ba38}{%
+           family={Hallgren},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{fullhash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{bibnamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authorbibnamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authornamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authorfullhash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st Nordic Conference on Computational Linguistics}
+      \field{title}{Cross-lingual syntax: Relating grammatical framework with Universal Dependencies}
+      \field{year}{2017}
+      \field{pages}{322\bibrangedash 325}
+      \range{pages}{4}
+    \endentry
     \entry{ren-etal-2019-generating}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=138626d1adbe607b34699718dd377319}{%
@@ -2154,6 +2183,31 @@
       \verb https://arxiv.org/abs/2008.03277
       \endverb
     \endentry
+    \entry{winograd1971procedures}{report}{}
+      \name{author}{1}{}{%
+        {{hash=9270c737346819f33742a35de2661f82}{%
+           family={Winograd},
+           familyi={W\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {MASSACHUSETTS INST OF TECH CAMBRIDGE PROJECT MAC}%
+      }
+      \strng{namehash}{9270c737346819f33742a35de2661f82}
+      \strng{fullhash}{9270c737346819f33742a35de2661f82}
+      \strng{bibnamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authorbibnamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authornamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authorfullhash}{9270c737346819f33742a35de2661f82}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Procedures as a representation for data in a computer program for understanding natural language}
+      \field{type}{techreport}
+      \field{year}{1971}
+    \endentry
     \entry{winograd}{book}{}
       \name{author}{2}{}{%
         {{hash=9270c737346819f33742a35de2661f82}{%
@@ -2183,7 +2237,70 @@
       \field{title}{Understanding Computers and Cognition: A New Foundation for Design}
       \field{year}{1987}
     \endentry
+    \entry{yooCTL}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=91b2687b39e42d9c845ff339c82a5692}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={Chanyeol},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a253c89a5ace0bf9866a979a84a73311}{%
+           family={Fitch},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6a2a4be8cea359c4052c49887b76d57e}{%
+           family={Sukkarieh},
+           familyi={S\bibinitperiod},
+           given={Salah},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=6ccc9c6aff1883595048aadc565f08db}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ca24e95476e264dad412fe7e4302db16}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a77cf8d8e3ec4a0f44508c534df6e5af}{%
+           family={Srinivasa},
+           familyi={S\bibinitperiod},
+           given={Siddhartha\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{fullhash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{bibnamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authorbibnamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authornamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authorfullhash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{editorbibnamehash}{9a566fb4250fc4e8c648e30689a2c576}
+      \strng{editornamehash}{9a566fb4250fc4e8c648e30689a2c576}
+      \strng{editorfullhash}{9a566fb4250fc4e8c648e30689a2c576}
+      \field{sortinit}{Y}
+      \field{sortinithash}{6ae2ff5458ff901249c2745238c951b7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics: Science and Systems VIII, University of Sydney, Sydney, NSW, Australia, July 9-13, 2012}
+      \field{title}{Probabilistic Temporal Logic for Motion Planning with Resource Threshold Constraints}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.15607/RSS.2012.VIII.058
+      \endverb
+      \verb{urlraw}
+      \verb http://www.roboticsproceedings.org/rss08/p58.html
+      \endverb
+      \verb{url}
+      \verb http://www.roboticsproceedings.org/rss08/p58.html
+      \endverb
+    \endentry
   \enddatalist
+  \missing{fret}
+  \missing{fretish}
   \missing{ml79}
 \endrefsection
 \endinput

@@ -2131,4 +2131,154 @@
       </bcf:constraint>
     </bcf:constraints>
     <bcf:constraints>
-      <bcf:entrytype>rep
+      <bcf:entrytype>report</bcf:entrytype>
+      <bcf:constraint type="mandatory">
+        <bcf:field>author</bcf:field>
+        <bcf:field>title</bcf:field>
+        <bcf:field>type</bcf:field>
+        <bcf:field>institution</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+    <bcf:constraints>
+      <bcf:entrytype>thesis</bcf:entrytype>
+      <bcf:constraint type="mandatory">
+        <bcf:field>author</bcf:field>
+        <bcf:field>title</bcf:field>
+        <bcf:field>type</bcf:field>
+        <bcf:field>institution</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+    <bcf:constraints>
+      <bcf:entrytype>unpublished</bcf:entrytype>
+      <bcf:constraint type="mandatory">
+        <bcf:field>author</bcf:field>
+        <bcf:field>title</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+    <bcf:constraints>
+      <bcf:constraint type="data" datatype="isbn">
+        <bcf:field>isbn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="issn">
+        <bcf:field>issn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="ismn">
+        <bcf:field>ismn</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="date">
+        <bcf:field>date</bcf:field>
+        <bcf:field>eventdate</bcf:field>
+        <bcf:field>origdate</bcf:field>
+        <bcf:field>urldate</bcf:field>
+      </bcf:constraint>
+      <bcf:constraint type="data" datatype="pattern" pattern="(?:sf|sm|sn|pf|pm|pn|pp)">
+        <bcf:field>gender</bcf:field>
+      </bcf:constraint>
+    </bcf:constraints>
+  </bcf:datamodel>
+  <!-- CITATION DATA -->
+  <!-- SECTION 0 -->
+  <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
+  </bcf:bibdata>
+  <bcf:section number="0">
+    <bcf:citekey order="1">ml4pg</bcf:citekey>
+    <bcf:citekey order="2">chen2019touchdown</bcf:citekey>
+    <bcf:citekey order="3">frege79</bcf:citekey>
+    <bcf:citekey order="4">Montague1973</bcf:citekey>
+    <bcf:citekey order="5">ranta1994type</bcf:citekey>
+    <bcf:citekey order="6">ml79</bcf:citekey>
+    <bcf:citekey order="7">ranta_2004</bcf:citekey>
+    <bcf:citekey order="8">ranta2009rgl</bcf:citekey>
+    <bcf:citekey order="9">angelov2010pgf</bcf:citekey>
+    <bcf:citekey order="10">macmillan2021</bcf:citekey>
+    <bcf:citekey order="11">macmillan2021</bcf:citekey>
+    <bcf:citekey order="12">word2vec</bcf:citekey>
+    <bcf:citekey order="13">winograd</bcf:citekey>
+    <bcf:citekey order="14">hudak</bcf:citekey>
+    <bcf:citekey order="15">verifiedMotion</bcf:citekey>
+    <bcf:citekey order="16">7759412</bcf:citekey>
+    <bcf:citekey order="17">kuo2020deep</bcf:citekey>
+    <bcf:citekey order="18">4141034</bcf:citekey>
+    <bcf:citekey order="19">winograd1971procedures</bcf:citekey>
+    <bcf:citekey order="20">berant-liang-2014-semantic</bcf:citekey>
+    <bcf:citekey order="21">dontParse</bcf:citekey>
+    <bcf:citekey order="22">brunello_et_al</bcf:citekey>
+    <bcf:citekey order="23">he2021english</bcf:citekey>
+    <bcf:citekey order="24">5152776</bcf:citekey>
+    <bcf:citekey order="25">ranta2017cross</bcf:citekey>
+    <bcf:citekey order="26">ltl95</bcf:citekey>
+    <bcf:citekey order="27">yooCTL</bcf:citekey>
+    <bcf:citekey order="28">stlAut</bcf:citekey>
+    <bcf:citekey order="29">plaku2016motion</bcf:citekey>
+    <bcf:citekey order="30">7759412</bcf:citekey>
+    <bcf:citekey order="31">provCorrectNatControl</bcf:citekey>
+    <bcf:citekey order="32">ltlSemParse</bcf:citekey>
+    <bcf:citekey order="33">kuo2020deep</bcf:citekey>
+    <bcf:citekey order="34">fret</bcf:citekey>
+    <bcf:citekey order="35">fretish</bcf:citekey>
+    <bcf:citekey order="36">walkTalk</bcf:citekey>
+    <bcf:citekey order="37">tellexInstr</bcf:citekey>
+    <bcf:citekey order="38">MARGE2022101255</bcf:citekey>
+    <bcf:citekey order="39">9197068</bcf:citekey>
+    <bcf:citekey order="40">hsiung2021generalizing</bcf:citekey>
+    <bcf:citekey order="41">patellearning</bcf:citekey>
+    <bcf:citekey order="42">walkTalk</bcf:citekey>
+    <bcf:citekey order="43">wltl</bcf:citekey>
+    <bcf:citekey order="44">coqLTL</bcf:citekey>
+    <bcf:citekey order="45">fewShotSem</bcf:citekey>
+    <bcf:citekey order="46">hauser2021bert</bcf:citekey>
+    <bcf:citekey order="48">fewShotSem</bcf:citekey>
+    <bcf:citekey order="49">verifiedMotion</bcf:citekey>
+    <bcf:citekey order="50">fainekos2005temporal</bcf:citekey>
+    <bcf:citekey order="51">substAttacks</bcf:citekey>
+    <bcf:citekey order="52">wordnet</bcf:citekey>
+    <bcf:citekey order="53">ren-etal-2019-generating</bcf:citekey>
+    <bcf:citekey order="54">hauser2021bert</bcf:citekey>
+    <bcf:citekey order="55">virk2014developing</bcf:citekey>
+    <bcf:citekey order="56">chen2019touchdown</bcf:citekey>
+    <bcf:citekey order="57">gururangan-etal-2020-dont</bcf:citekey>
+    <bcf:citekey order="58">bioBert</bcf:citekey>
+    <bcf:citekey order="59">chen2019touchdown</bcf:citekey>
+    <bcf:citekey order="60">szegedy</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="nty">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>
