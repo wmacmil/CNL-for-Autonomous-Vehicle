@@ -39,6 +39,7 @@
     "grffile"
     "etoolbox")
    (LaTeX-add-labels
+    "fig:A1"
     "fig:M1"
     "fig:M2"
     "fig:M3")

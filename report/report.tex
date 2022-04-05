@@ -95,28 +95,18 @@ for natural language-controlled robots, and semantic parsing.
 
 \section{Test Diagrams}
 
-% 
-% 
-   % \psset{unit=\linewidth}
-\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
-{
-\begin{pspicture}(0,-4.614626)(15.512415,4.614626)
-\psbezier[linecolor=black, linewidth=0.04](7.2,-0.18537398)(8.1761875,0.031556483)(14.492893,0.5217328)(15.2,-0.18537397601201291)(15.907106,-0.89248073)(12.1138115,-3.7792356)(11.2,-4.185374)(10.286188,-4.5915127)(8.8,-3.985374)(8.0,-3.385374)(7.2,-2.785374)(8.242536,-2.7555165)(8.0,-1.7853739)(7.7574644,-0.8152315)(6.223813,-0.40230444)(7.2,-0.18537398)
-\pscustom[linecolor=black, linewidth=0.04]
-{
-\newpath
-\moveto(11.6,1.014626)
-}
-\rput[bl](11.2,0.61462605){Human Problem}
-\psbezier[linecolor=black, linewidth=0.04](9.2,-0.985374)(10.13633,-0.6342505)(12.575305,-0.20450516)(13.2,-0.9853739760120129)(13.824695,-1.7662427)(11.736329,-2.6342506)(10.8,-2.985374)(9.86367,-3.3364973)(10.624695,-2.9662428)(10.0,-2.185374)(9.375305,-1.4045051)(8.263671,-1.3364974)(9.2,-0.985374)
-\rput[bl](10.0,-1.385374){Machine Problem}
-\end{pspicture}
-}
 
-\begin{pspicture}[showgrid,framesep=0pt](6,3)
-    \psdot(3,2)     % The dot appears at 3,2
-    \rput(3,2){X}   % The X is expected at 3,2 but appears at 0,1
-\end{pspicture}
+\begin{figure}
+\centering
+\includegraphics[width=150mm]{pics/selfDriving.png}
+\caption{Self Driving Car}\label{fig:A1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=150mm]{pics/diagramTrial1.png}
+\caption{Vehicle Route}\label{fig:A1}
+\end{figure}
 
 \section{Contributions}
 
@@ -179,15 +169,15 @@ therefore naive to assume that many of the questions posed below are answerable.
 Perhaps the most pervasive question in the use and application of natural
 language technologies can be stated as follows : How does one optimize the
 system to provide for wide coverage of the domain while ensuring that system is
-robust? This question exemplifies the boundary of the ``formalist'',
-verification-minded and ``empiricist'', data-oriented camps in designing such
-technologies,
+robust? This question exemplifies the boundary of the verification-minded
+``formalist'' and data-oriented ``empiricist'' camps in designing such
+technologies.
 
 The statistical and machine learning methods applied to Natural Language
-Processing (NLP) tasks have made enormous gains over the past three decades.
+Processing (NLP) tasks have produced impressive results over the past three decades.
 They take a more pragmatic approach : compromise robustness for wide coverage,
 as this means the tools will be usable and by non-experts. The belief espoused
-is that the machines should ``learn'' from us. Somewhat orthogonal techniques
+is that the machines should ``learn'' from (and possibly like) us. Somewhat orthogonal techniques
 prioritize the formal approaches of the computational linguistics communities.
 These methodologies are often more concerned with theoretical justification and
 explainability.
@@ -204,7 +194,7 @@ Natural language is difficult because it is both structured with respect to
 ``rules'', perhaps more descriptively titled \emph{logical behaviors} which
 admit lots of predictability. Yet natural language continuously breaks or
 introduces exceptions to these rules, necessitating empirical and observational
-understanding. This makes it exceedingly hard to penetrate from exclusively the
+understanding. This makes it exceedingly hard to penetrate with exclusively the
 empirical or formalist approach. Many are led to wonder about the degree to
 which large amounts of linguistic data can be augmented with theoretical
 linguistic knowledge to create optimal and practical systems with respect to
@@ -212,28 +202,27 @@ both breadth and depth of coverage of language phenomena. The ultimate question
 seeking compromise from both camps asks : how can we build machines which
 ``understand'' us (or at least our data), and which are comprehensible by us.
 
-This problem acutely arises in when trying to design a voice assistant in the
+This problem acutely arises when trying to design a voice assistant in the
 domain of commanding controllable robots, specifically, autonomous vehicles. For
-the actions a vehicle takes, mostly the motion and path decisions, must be
-formally specified or at the very least controlled via some computer system
-subject to mathematical formalism. Assuming the user directing the vehicle isn't
-aware of these formalisms, it is incredibly difficult to design a verifiable
-controller capable of dealing with the breadth of language one may encounter in
-the wild.
+the actions a vehicle takes, the motion and path decisions, must be formally
+specified and controlled via some computer system subject to mathematical
+formalism. Assuming the user directing the vehicle isn't aware of these
+formalisms, it is incredibly difficult to design a verifiable controller capable
+of dealing with the breadth of language one may encounter in the wild.
 
 The instructions an arbitrary user gives are not subject to the same formalities
 the system requires. For her commands may leave out necessary detail (``go into
 the other lane'' with multiple lanes on either side), say something wrong with
 respect to reality (``go into the other lane'' on a single lane road), or give a
-command the controller should recognize as possible but bad (``drive directly
-into the car ahead''). Additionally, the controller may need to recognize many
+command the driver should recognize as possible but bad (``drive directly
+into the car ahead''). Additionally, the driver may need to recognize many
 ways many users may say ``the same thing'', that is the same with respect to
 some semantic formalism. In a dual sense, the same utterance may admit two
 perfectly meaningful interpretations in two situations or contexts. The phrase
 ``drive to the store with the dog'' should account for whether the dog is inside
 of the car. It is obviously worrisome that a nefarious actor may somehow
-interfere with the controls at any stage by exploiting the manifold issues
-arising as stated above. A failure to adequately deal with these issues in the
+interfere with the controls at any stage by exploiting these manifold issues,
+and indeed many more. A failure to adequately deal with these circumstances in the
 vast majority of cases is not reassuring if one believes many verifiability
 criteria are critical for such technologies to see adoption.
 
@@ -251,34 +240,35 @@ here both the progress to these ends, as well as the challenges.
 This research broaches many different fields, many of which were
 unknown to the author prior to this work. Indeed, voice assistants may
 encompass almost any natural language processing task, and autonomous vehicles are
-one of the premier emerging robotics technologies (and certainly the most talked
-about in the popular zeitgeist). The cyberphysical systems at their intersection is
-likewise incredibly broad.
+seen as one a premier emerging robotics technology (and certainly the most talked
+about in the popular zeitgeist).
 
 Limiting the scope of work in this context can be challenging, as so many
 different tools and ideas can be seen as relevant. We therefore try to very
 explicitly narrow our focus to investigate how feasible it is to build a
 language for an autonomous vehicle that exhibits predictable behavior and also
 satisfies verification properties - this includes a determination to what extent
-the properties can even be stated.
+the properties can even be stated. As the full development of such as a system
+is a grandiose vision, we hope to highlight many of the difficulties already
+arising, and also those one may anticipate.
 
-The approach taken therefore sets out to build a semantic parser, even if
-primitive, that serves as a Petri dish through which many of the deeper questions
+The approach taken sets out to build a semantic parser, which, despite its
+primitivity, serves as a Petri dish through which many of the deeper questions
 in this space may be viewed.
 
 \subsection{GF, Parsers, and Personal Work}
 
-The questions of designing an expressive formal language, with roots in Frege
-\cite{frege79}, manifested more recently in the natural language semantic
-tradition of Montague \cite{Montague1973}, who proposed an interpretation of
-English in a typed higher order logic with a focus on quantifiers. Aarne Ranta,
-a student of Martin-Löf, attempted to reformulate Montague's work in an
-intuitionistic setting \cite{ranta1994type}, thereby amenable to a natural
-treatment via computer programs \cite{ml79}. In implementing a parser from
-natural language to a dependent type theory, Ranta discovered that dual sugaring
-(pretty printing) transformation of a tree to a string could allow for a general
-mechanism of purely syntax-based translation. This work culminated in
-Grammatical Framework (GF) \cite{ranta_2004}.
+The questions of designing an idealized and expressive formal language, with
+roots in Frege \cite{frege79}, manifested more recently in the natural language
+semantic tradition of Montague \cite{Montague1973}, who proposed an
+interpretation of English in a typed higher order logic with a focus on
+quantifiers. Aarne Ranta, a student of Martin-Löf, attempted to reformulate
+Montague's work in an intuitionistic setting \cite{ranta1994type}, thereby
+amenable to a natural treatment via computer programs \cite{ml79}. In
+implementing a parser from natural language to a dependent type theory, Ranta
+discovered that the dual sugaring (pretty printing) transformation of a tree to
+a string could allow for a general mechanism of purely syntax-based translation.
+This work culminated in Grammatical Framework (GF) \cite{ranta_2004}.
 
 Grammatical Framework became a full research project, allowing for the simple
 specification of a parser using a statically typed programming language whereby
@@ -286,10 +276,10 @@ the grammar rules could be seen as types. Separate concrete syntaxes cohering
 with a given abstract syntax allowed for language-specific parsing, sugaring,
 and translation. The GF ``standard library'', the Resource Grammar Library (RGL)
 \cite{ranta2009rgl}, allows one to get off-the-shelf grammatical constructions
-for more than 30 languages, with English being the most comprehensive. The RGL
+for more than 30 languages, with English being the most comprehensively covered. The RGL
 therefore allows the grammar writer to focus on the semantic domain of the
 application the grammar is being developed for. In addition to this, one can
-embed a grammar as a Generalized Algebraic Datatypes (GADTs) in Haskell via the
+embed a grammar as a Generalized Algebraic Datatype (GADT) in Haskell via the
 Portable Grammar Format (PGF) \cite{angelov2010pgf}. One can get run-time
 support for parsing and linearization directly in Haskell, in addition to
 manipulating the trees by pattern matching over them as Haskell programs.
@@ -302,7 +292,7 @@ assistant for, whereby one can give commands like ``turn
 right after the woman with the big dog'', we desire that the intensional belief a
 user has about her utterance is consistent with the extensional behavior of the
 vehicle. This can be done through an intermediary mapping to a formal semantic
-representation. Ensuring that the syntactic content of a voice director's
+representation. Ensuring that the syntactic content of a speaker's
 (well-formed) utterance maps predictably to the logical form is important from
 the verificationist perspective : one wants to maximize the \emph{syntactic
 completeness} of the system \cite{macmillan2021}.
@@ -314,20 +304,22 @@ the big cafe even though the other route may have less traffic''), questions
 directives (``we won't drive over the speed limit in a school zone''), requiring
 the computer to generate an utterance after it has made some internal
 determination. This internal deliberation must be a program, possibly expressed
-inside or outside our semantical space, identifying multiple routes in the
-clarification, multiple possible states in the question regarding two people, or
-constraints based off external circumstances like speed limits. In each case,
-the formation of a natural language utterance requires the computer to generate
-natural language which must conform to both a program's structure and behavior,
-but which also may be clear and recognizable to the user.
+inside or outside our semantical space. It should be capable of identifying
+multiple routes in the clarification, multiple objects in a given state in the
+question regarding two people, or constraints based off external circumstances
+such as speed limits in school zones. In each case, the formation of a natural
+language utterance requires the computer to generate natural language which must
+conform to both a program's structure and behavior, but which also may be clear
+and recognizable to the user.
 
 Independently of \emph{how} the robot determines a program whose meaning it
 needs to convey to a user, the property of providing a natural language
-utterance which fluently conveys meaning to a native speaker is called
-\emph{semantic adequacy} \cite{macmillan2021}. Determining a reasonable syntax
-and semantics for a controlled natural language should most certainly conform to
-the dual standards of syntactic completeness and semantic adequacy, if the voice
-assistant is to be held to any kind of regulatable standard.
+utterance which fluently conveys meaning in a natural language to some native
+speaker is called \emph{semantic adequacy} \cite{macmillan2021}. Determining a
+reasonable syntax and semantics for a controlled natural language should most
+certainly conform to the dual standards of syntactic completeness and semantic
+adequacy, if the voice assistant is to be held to any kind of regulatable
+standard.
 
 \subsection{Semantical Representations}
 
