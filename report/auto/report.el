@@ -40,6 +40,7 @@
     "etoolbox")
    (LaTeX-add-labels
     "fig:A1"
+    "fig:A2"
     "fig:M1"
     "fig:M2"
     "fig:M3")
