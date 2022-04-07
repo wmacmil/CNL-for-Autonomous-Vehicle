@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  7 APR 2022 19:19
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  7 APR 2022 23:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1296,34 +1296,34 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
 (Font)              size <5> substituted on input line 590.
 
-[8] [9] [10]
+[8] [9] [10] [11]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
- [11]
+ [12]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
- [12]
+ [13]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 
-Overfull \hbox (1.18326pt too wide) in paragraph at lines 924--924
+Overfull \hbox (1.18326pt too wide) in paragraph at lines 1027--1027
 []  \TU/lmtt/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvP
 h At (WhichObject The[] 
  []
 
-[13] [14]
-Overfull \hbox (6.93199pt too wide) in paragraph at lines 987--987
+[14] [15]
+Overfull \hbox (6.93199pt too wide) in paragraph at lines 1090--1090
 []\TU/lmtt/m/n/10.95 treeMapfemalePersonIsWoman GWoman                    = (GM
 odObj GFemale GPerson)[] 
  []
 
-[15] [16] [17] [18] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1180.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1180.
+[16] [17] [18] [19] [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1283.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1283.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1180.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1283.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 81B09AB8B283B973847A6BD89A61FE3E;1516.
@@ -1340,12 +1340,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33504 strings out of 481749
- 614584 string characters out of 5935475
- 1404994 words of memory out of 5000000
- 50083 multiletter control sequences out of 15000+600000
+ 33511 strings out of 481749
+ 614833 string characters out of 5935475
+ 1406096 words of memory out of 5000000
+ 50090 multiletter control sequences out of 15000+600000
  536487 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  52i,6n,109p,2157b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (21 pages, 642340 bytes).
+Output written on report.xdv (22 pages, 713252 bytes).

@@ -622,13 +622,103 @@ cases in which the route taken didn't conform to a command. We envision that
 developing a complete calculus of specification patterns in the specific domain
 of autonomous vehicles should very much inform how the CNL should be designed.
 
-\paragraph{Grounding}
+\paragraph{Environment and Grounding}
+
+The historical development of logic in mathematics ultimately served to
+partition the mathematical expressions so that one could abstract the high level
+reasoning, the proposition and a proof structure, from the purely mathematical
+constructions. The interpretation of types in programming as logical
+propositions emanating from constructivist circles questioned this partitioning,
+allowing one to construct computer programs with mixed and indistinguishable
+``logical'' and ``mathematical''. In the case of temporal logics for
+cyberphysical systems, however, the atomic propositions like ``is-green-light'',
+``truck-ahead'', or ``grocery-store'' have no simple encoding in programming
+languages. This is because they aren't mathematical precise concepts, being
+empirically fastened to the environment in which the computer program operates.
+This is an incredibly important realization : how we witness the world is
+captured by some possibly faithful but incomplete mathematical abstraction.
+
+For the atomic propositions in a temporal sentence to have meaning, we must
+ground them to the physical world. This grounding involves both the sensors
+collecting data from the physical environment, as well as the mathematical
+approximations we make of the environment. In \cite{synthGazit}, the authors
+review the many ways one can take propositions in various temporal logics and
+synthesize `` correct-by-construction robot controllers'', in the case there is no
+contradictory evidence about a specification's feasibility. Although this
+synthesis process exceeds the boundaries of the work, it is important to discuss
+because how one models the external environment and the events in it, should
+cohere to the internal environment - the natural language instructions. 
+When building a system, reasoning about it from both directions is paramount.
+
+Explicitly, how one chooses to approximate the external environment, and what a
+vehicle can and should \emph{do} in it, should inform the constraints what
+one can say in the internal environment. In the case of a QA system where the
+car needs to inform the passenger of why the vehicle can't obey such
+instructions, or ask for clarification, the Natural Language Generation (NLG)
+phase will need to perform some kind of ``reverse synthesis'', and this process
+may well be much more difficult than the synthesis process to begin with.
+
+The paper details three main ways of approximating the continuous external
+environment, modeled as a dynamical system specified by a first order
+differential equation, by a state transition system. These abstractions are from
+the dynamical system to a symbolic model represented by a transition system are
+partitions, motion primitives, and motion planners with trajectories. The partitioning generates a
+discrete transition system from a continuous state space, where actions
+represent movements between areas, and is contingent upon the dynamics of the
+differential equation. The motion primitives approach defines the primitives as
+maps between a different kind partition of the state space, and it is noted that
+they definitionally satisfy invariance and liveness properties, ideal for our application.
+To generate paths without regard to the dynamics of the system, motion planners
+deal with a geometric partition and builds robot trajectories based off where
+the robot is at a given time.
+
+Once the abstraction from the external environment to a transition system has
+been realized, the translation of a logical formula into a Buchi Automata (or
+some other automata) can decided true or false relative to the Kripke model
+which has been generated. Unfortunately, the generation of an automata is doubly
+exponential in the size of the LTL sentence.
+
+Using a tame fragment of LTL, Generalized Reactivity (1) (GR(1)), one may use
+game-theoretic approaches to that reduce the complexity of controller synthesis
+to polynomial in the size of the external environment's transition system
+\cite{BLOEM2012911}. The GR(1) fragment partitions the atomic propositions into
+two sets based of the environment and the state. Those formulas $\phi_e$ which
+represent environmental sensor data, and those propositions tied to the robot
+state, $\phi_s$, grounded to actions and physical positions. The fragment deals
+with sentences of the form $\phi_e \implies \phi_s$, where both sets of formulas
+can be seen as a conjunctions of initial conditions, safety assumptions, and
+liveness conditions. In our example, this would mean that the command like
+``turn right at the fire hydrant'' could enable (constructive) validation of the
+condition by ensuring that a camera takes a photo which shows a fire hydrant
+within some distance, then the car must be at a GPS certain coordinate on some
+map which has a fire hydrant, and that this should precede a state where the car
+sense a turn coupled with the steering wheel turning.
+
+Unfortunately, the liveness conditions only allow for formulas of the form
+$\underset{i}{\bigwedge}\;G\; F\; \phi_i$ with $\phi_i$ restricted to using
+Boolean connectives. Nonetheless, by isolating environmental sensor data from
+the position certain and action primitives, and additionally separating out the liveness
+and safety properties, we see a clear methodology that can greatly simplify our
+specific problem. It is not known to the author if there has been work
+investigating synthesis coverage properties the fragment of LTL for the coverage
+properties, but it is well worth investigating, because despite the nesting of
+the $F$ operators, we can certainly anticipate a reduction in the complexity of
+these types of formulas.
 
 
+% for a distinction between Planning Domain Definition Language (PDDL)
+% The differences between synthesis approaches and those pursued in the planning community
+% span the way the problem is formulated, the complexity of the algorithms, the expressive-
+% ness of the specifications and system models, and the type of feedback that is possible when
+% the synthesis/planning problem can and cannot be solved.
 
-\paragraph{Environment and Vehicluar Modeling}
-\paragraph{External }
 
+% \paragraph{Environment and Vehicluar Modeling}
+\paragraph{External and Other Constraints}
+
+Linear logic, resource sharing, etc
+
+The review \cite{synthGazit} forgoes dealing with multi-agent systems, 
 
 % A property φ is a safety property for a set of models if for every model σ that
 % violates φ, i.e., σ |= φ, there exists an i such that for every σ  that agrees with σ

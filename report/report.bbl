@@ -278,6 +278,65 @@
       \verb 10.1109/ICRA40945.2020.9197068
       \endverb
     \endentry
+    \entry{BLOEM2012911}{article}{}
+      \name{author}{5}{}{%
+        {{hash=9865af1b742410e6dee8ca813e1ec733}{%
+           family={Bloem},
+           familyi={B\bibinitperiod},
+           given={Roderick},
+           giveni={R\bibinitperiod}}}%
+        {{hash=89bdd0d9ad97b88862ff21be0cb00f3b}{%
+           family={Jobstmann},
+           familyi={J\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod}}}%
+        {{hash=44b607e69215c95a802a277379799980}{%
+           family={Piterman},
+           familyi={P\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48771ab1876a9bd3472621189d78fe6f}{%
+           family={Pnueli},
+           familyi={P\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=30a6b6adf57d6e71bff7d9d7bf27838a}{%
+           family={Saʼar},
+           familyi={S\bibinitperiod},
+           given={Yaniv},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{fullhash}{383e33b1311f47df7ad3b8e45c1f7dc1}
+      \strng{bibnamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authorbibnamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authornamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authorfullhash}{383e33b1311f47df7ad3b8e45c1f7dc1}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the problem of automatically synthesizing digital designs from linear-time specifications. We consider various classes of specifications that can be synthesized with effort quadratic in the number of states of the reactive system, where we measure effort in symbolic steps. The synthesis algorithm is based on a novel type of game called General Reactivity of rank 1 (gr(1)), with a winning condition of the form(□ ◊p1∧⋯∧□ ◊pm)→(□ ◊q1∧⋯∧□ ◊qn), where each pi and qi is a Boolean combination of atomic propositions. We show symbolic algorithms to solve this game, to build a winning strategy and several ways to optimize the winning strategy and to extract a system from it. We also show how to use gr(1) games to solve the synthesis of ltl specifications in many interesting cases. As empirical evidence to the generality and efficiency of our approach we include a significant case study. We describe the formal specifications and the synthesis process applied to a bus arbiter, which is a realistic industrial hardware specification of modest size.}
+      \field{issn}{0022-0000}
+      \field{journaltitle}{Journal of Computer and System Sciences}
+      \field{note}{In Commemoration of Amir Pnueli}
+      \field{number}{3}
+      \field{title}{Synthesis of Reactive(1) designs}
+      \field{volume}{78}
+      \field{year}{2012}
+      \field{pages}{911\bibrangedash 938}
+      \range{pages}{28}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jcss.2011.08.007
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022000011000869
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022000011000869
+      \endverb
+      \keyw{Property synthesis,Realizability,Game theory}
+    \endentry
     \entry{7759412}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=7a3760d9352e190a9404e5513da767b4}{%
@@ -866,6 +925,55 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.4204/EPTCS.118.2
+      \endverb
+    \endentry
+    \entry{synthGazit}{article}{}
+      \name{author}{3}{}{%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a84d914744c0ce5048c15cd0b853fc28}{%
+           family={Lahijanian},
+           familyi={L\bibinitperiod},
+           given={Morteza},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c69d2eebf29ed4409e96c5537de28cde}{%
+           family={Raman},
+           familyi={R\bibinitperiod},
+           given={Vasumathi},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{fullhash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{bibnamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authorbibnamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authornamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authorfullhash}{7cd53ed00dd4f5554933802378931f52}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Robot control for tasks such as moving around obstacles or grasping objects has advanced significantly in the last few decades. However, controlling robots to perform complex tasks is still accomplished largely by highly trained programmers in a manual, time-consuming, and error-prone process that is typically validated only through extensive testing. Formal methods are mathematical techniques for reasoning about systems, their requirements, and their guarantees. Formal synthesis for robotics refers to frameworks for specifying tasks in a mathematically precise language and automatically transforming these specifications into correct-by-construction robot controllers or into a proof that the task cannot be done. Synthesis allows users to reason about the task specification rather than its implementation, reduces implementation error, and provides behavioral guarantees for the resulting controller. This article reviews the current state of formal synthesis for robotics and surveys the landscape of abstractions, specifications, and synthesis algorithms that enable it.}
+      \field{journaltitle}{Annual Review of Control, Robotics, and Autonomous Systems}
+      \field{number}{1}
+      \field{title}{Synthesis for Robots: Guarantees and Feedback for Robot Behavior}
+      \field{volume}{1}
+      \field{year}{2018}
+      \field{pages}{211\bibrangedash 236}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
       \endverb
     \endentry
     \entry{kuo2020deep}{inproceedings}{}
