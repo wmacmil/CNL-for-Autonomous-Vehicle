@@ -338,22 +338,22 @@ be gained through trial and error.
 
 \subsubsection{Notions of Semantics}
 
-We also note that a notion semantics, having many connotations and interpretations in
-different fields, is subject to many interpretations. When we say semantics
+We also note that the notion ``semantics'', having many connotations and interpretations in
+different fields, is subject to many interpretations. Here are some examples :
 
 \begin{itemize}
-\item In linguistics, semantics, in its most natural understanding, should be
-interpreted as intended meaning. Different theoretical branches of meaning may
-include a logical meaning, as in the case of Montague semantics, or a meaning as
-it arises in the use and context of culture, as is the case of Cognitive
-Semantics.
+
+\item In linguistics, semantics may be interpreted as intended meaning.
+Different theoretical notions of meaning may include a logical meaning, as in
+the case of Montague semantics, or a meaning as it arises in the use and context
+of culture, as is the case of cognitive semantics.
 \item In programming languages, the semantics of a syntactic entity most
-commonly means the mathematical behavior ( denotational semantics) and behavior
-during execution (operational semantics)
+commonly means the mathematical behavior (denotational semantics) or behavior
+during execution (operational semantics).
 \item In statistical notions of semantics, one often seeks the ability of one to
 capture meaning via language use, most common in contemporary contexts, its
 practical uses. Frequently Word2Vec \cite{word2vec} is referenced in this context,
-although the advent of transformers in recent years has largely usurped this technology
+although the advent of transformers in recent years has largely usurped this. 
 \end{itemize}
 
 The problem presented in our work, of speaking to a machine, presents challenges
@@ -362,7 +362,7 @@ themselves have little overlap (at least as treated in the existing literature).
 This is because we are attempting to witness an utterance as a natural, native
 linguistic phenomena with an indented speaker meaning, a program whose syntax is
 defined via the CNL, and a statistical observation defined over some probability
-distribution. More concretely we ask :
+distribution of ``sayable things''. More concretely we ask :
 
 \begin{itemize}
 \item How is the speakers meaning interpreted as if intended to be understood by
@@ -378,40 +378,40 @@ Although the inter-relatedness of various semantic theories is a much bigger
 project than we can give space to here, it should be granted that problem we
 address forces one, both implicitly and explicitly, to try to grapple with them.
 We chose \emph{the syntax of LTL} as the \emph{semantics of our CNL} which is
-defined by filtering a ``naturally observed'' corpus to a primitive grammar and
-then be used to fit unseen utterances by fine-tuning a transformer-based
-language model to the corpus and grammar. We can then seek specific formalisms
-in which to analyze our problem domain :
+defined by filtering a ``naturally observed'' corpus to a primitive grammar. We
+propose to fit unseen utterances by fine-tuning a transformer-based language
+model to the corpus and grammar. We can then seek specific formalisms in which
+to analyze our problem domain :
 
 \begin{itemize}
 \item The meaning for a passenger-speaker can be analyzed in a variety of ways :
   \begin{itemize}
     \item The meaning of an utterance is a logical formula following Montague's
-    lead, with temporal operators taking precedence over generalized quantifiers.
+    lead, substituting temporal operators for generalized quantifiers.
     \item That the passenger's utterance should be determined as a speech act
       which carries illocutionary force and intention. The computer's
       response can be seen as conforming to or negotiating with the desires of
       the user, subject to the computers internal constraints and possible
       contextual information about which user may be unaware. Applying speech
       act theory in the context of human computer interaction has a long history
-      \cite{winograd}
+      \cite{winograd}.
   \end{itemize}
 % from wikipedia
 % The key insight provided by Winograd and Flores is that the state-transition diagram representing the social (Illocutionary) negotiation of the two parties involved is generally much, much simpler than any model representing the world in which those parties are making claims; in short, the system tracking the status of the conversation for action need not be concerned with modeling all of the realities of the external world
 \item The meaning of the syntactic formula, can be interpreted in many possible ways
   \begin{itemize}
-    \item A possible program to be evaluated. In a case where
+    \item A type specification. In a case where
       temporal logic formulas are interpreted as types, Functional Reactive
-      Programming \cite{hudak}. One could then see the
-      evaluation of a program conforming to some operational semantics coherent
-      with the type system.
+      Programming (FRP), provides a functional programming context with which to
+      interpret temporal formulas
+      \cite{hudak}.
     \item A (possibly verifiable) motion planner  \cite{verifiedMotion} \cite{7759412} \cite{kuo2020deep}
-    \item A dialogue state, in the envisioned Question/Answer context, whereby
+    \item A dialogue state, in the envisioned Question Answer (QA) context, whereby
       the computer must provide feedback to the user based of contextual information
   \end{itemize}
 \item The meaning from the mostly unseen utterances is given a canonical form,
   and the canonicalization process is a transformation via the vector-space and
-  distributional notions of meaning implicit in the transformer neural networks structure
+  distributional notions of meaning implicit in an attention-based neural network 
 \end{itemize}
 
 We don't intend to exhaust the list of possibilities here, neither in our
@@ -423,8 +423,7 @@ communities of researchers. We suggest that working towards a unified view of
 what kinds of semantic notions we want to deal in this particular domain may
 inform better solutions to the problem at hand.
 
-
-\subsection{Robot Motion Planning from Natural Language}
+\subsection{Robot Motion and Natural Language}
 
 The challenge of designing a system which generates robot control strategies
 from human language has to balance the expressiveness of task specification,
@@ -476,7 +475,140 @@ parser, or rely on some hand-made rules, to derive a translation into a target l
 
 Brunello et al. give a thorough literature review of the many ways of
 translating natural language to LTL, indicating the interest and need of
-suitable semantic parsers.
+suitable semantic parsers in this domain. We give a refined perspective on the
+problems below, deferring a formal treatment of LTL to the appendix [TODO :
+reference].
+
+We need a comprehensive view of the robot control problem as it pertains to
+temporal logics. Our considerations should include :
+
+\begin{itemize}
+\item The kinds of logical behavior one may wish to capture
+\item The sorts of missions we want our autonomous agent to accomplish
+\item The types of atomic grounded conditions one may want to include
+\item How do we model both the vehicle and the environment
+\item How do these logical behaviors interface with other components of the
+  larger system
+\end{itemize}
+
+\paragraph{Temporal Logics}
+
+As regards the logical behavior, there are an array of logics available.
+
+\begin{itemize}
+\item Linear Temporal Logic (LTL)
+\begin{itemize}
+\item 
+\item
+\end{itemize}
+\item Metric Temporal Logic (MTL)
+  go to the store within 5 minutes
+  modal operators can express timing constraints
+\item Signal Temporal Logic (STL)
+  the paths and models are now signals
+  can be appended with a metric semantics, to show how well a formula satisfies
+\item Computation Tree Logic (CTL)
+  follow the car in front of us 
+\item CTL*
+\item Probabilistic Computation Tree Logic (PCTL) 
+  go to the store if its unlikely we'll hit bad traffic
+\end{itemize}
+
+% Co-safe LTL (non-reactive): (¬Deliver ) U(Deliver ∧(Office B ∨Office C )) expresses “deliver
+% a package to one of offices B or C but not anywhere else” .
+% GR(1) fragment (reactive):  
+%  (SensePackage → (Deliver ∧ (Office B ∨ OfficeC ))) ∧
+%  
+%  (¬SensePackage → Mailroom) expresses “If you sense a package then deliver it to
+% Office B or Office C, otherwise go to the mail room” (only part of the formula is shown).
+% PCTL: P>0.95 ( 
+%  (Deliver ∧ (Office B ∨ Office C ))) expresses “The robot should deliver the
+% package to Office B or C with probability greater than 0.95”.
+% STL: 
+%  [0,5](Deliver ∧ (Office B ∨ Office C )) expresses “Deliver the package to Office B or
+% Office C within 5 time units”
+
+
+% LTL satisfiability is decidable in polynomial space.
+% LTL validity is decidable in polynomial space.
+% LTL model checking is decidable in polynomial space
+
+% CTL model checking is decidable in polynomial time.
+% CTL satisfiability is decidable in exponential time.
+
+% CTL∗ model checking is decidable in polynomial space.
+% CTL∗ satisfiability is decidable in doubly exponential time.
+
+%  Model checking and satisfiability for MTL in the point-
+% wise semantics over finite words are decidable but non-primitive recursive. Over
+% infinite words, both problems are undecidable.
+
+%  Model checking and satisfiability for MTL in the continuous
+% semantics (over both finite and infinite signals) are undecidable.
+
+\paragraph{Missions Types}
+
+In the literature, there are two main properties of concern
+when specifying robot behaviors to be checked by models : \emph{safety} and \emph{liveness}.
+These are intimately related to the temporal modalities. Safety
+properties say ``nothing bad ever happens'', that is, a specification is
+satisfied globally by some model. Liveness conditions, on the other hand, mean
+that ``something good eventually happens''. An important theoretical result is
+that safety and liveness are expressively adequate : every property of interest can be
+decomposed into safety and liveness components \cite{Piterman2018}.
+
+This distinction is particularly relevant for our analysis, because we suggest
+that for the most part, directions given by a human (at least in our fragmented
+treatment) should be interpreted as liveness conditions. The
+expression of the desire to reach of a sequence of destinations, says that
+eventually we arrive at each such destination.
+
+On the other hand, when we account for behaviors of the vehicle that are
+generally not intended to be instructed by the driver, these should be
+interpreted as safety properties. Obeying all traffic laws can be treated as a
+global condition that the neither passenger, nor an adversarial attacker should
+be able to override. Additionally, ``comfort properties'', like assuring the
+vehicle never accelerates too quickly or takes turns too quickly could also be
+encoded in this way. While there may be other mechanisms of enforcing or
+verifying that a vehicle meets these standards, we envision that the route
+planner (and the verifier) should treat the linguistic utterance as saying that
+do something good while simultaneously always never behaving badly.
+
+We now discuss the missions that a user would want to instruct a vehicle to
+carry out, in the context of satisfying a stack of safety property
+preconditions. In \cite{specPat}, the authors empirically analyze an array of
+literature about robots and the types of missions they are typically employed
+for, filter out a subset of generalized LTL formulas which appear frequently,
+and design a tool PsA1M capable of building template missions over these formulas.
+We pay particular attention to what they call ``core movement patterns'', which
+include coverage (mainly what we're concerned with) and surveillance (which
+could be relevant, if, for instance, one wanted to design a autonomous-taxi that
+surveils a region of interest for passengers).
+
+The coverage properties consist of 
+
+\paragraph{Grounding}
+
+
+
+\paragraph{Environment and Vehicluar Modeling}
+\paragraph{External }
+
+
+% A property φ is a safety property for a set of models if for every model σ that
+% violates φ, i.e., σ |= φ, there exists an i such that for every σ  that agrees with σ
+% up to position i, i.e., ∀0 ≤ j ≤ i, σi  = σi , σ  also violates φ. As mentioned, safety
+% properties specify bad things that should never happen. Thus, once an error has
+% occurred (in location i), it is impossible to undo it. Every possible extension also
+% includes the same error and is unsafe.
+% A property φ is a liveness property for a set of models if for every prefix of a
+% model w0 , . . . , wi there exists an infinite model σ that starts with w0, . . . , wi and
+% σ |= φ. As mentioned liveness properties specify good things that should occur.
+% Thus, regardless of the history of the computation, it is still possible to find an
+% extension that will fulfill the specification.
+
+% Theorem 2 Every language L ⊆ (2P )ω is expressible as the intersection Ls ∩ Ll ,
+% where Ls is a safety property and Ll is a liveness property.
 
 An interesting result published more recently attempts to translate between
 English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
@@ -646,35 +778,9 @@ comparison to previous work. She also evaluates the model on the \cite{walkTalk}
 data set
 \end{itemize}
 
-
-
-\section{Work} 
-
-\subsection{GF Grammar}
-
-\section{TODO} 
-
-\subsection{LTL in Agda}
-
-Along with colleagues from Singapore Management University, we have begun an
-Agda implementation \cite{wltl} [refer appendix] of LTL which will serve as the semantic space
-for our parsed utterances. Our method, uses a deep embedding, as opposed to the
-shallow embedding in \cite{coqLTL}, although the temporal encoding of paths as
-streams was directly adapted from this paper.
-
-The details of the implementation, as well as a brief introduction to LTL, have
-been left to the appendix. Although this component of the project might be seen
-as independent from the main course, it serves to illustrate the
-an idea of compositionality with respect to verifiability, that is, the degree
-to which a ``verified system'' can be build from ``verified components'', in
-addition to ``verified transformations'' between the various components, with
-the notion of verification here loosely referring to anything which incorporates
-at least some classical verification technique. [TODO : maybe a section on verification?]
-
 \section{Publications Description}
 
 \subsection{Statistical (pre-trained) Language Models}
-
 
 
 \begin{itemize}
@@ -1018,10 +1124,7 @@ which condition is more easily satisfied. While this edge case may seem overly
 pedantic to consider, as one's intuition might suggest the first case to be
 overwhelmingly more natural, the
 
-We should just make simplifying assumptions, though, at least for the purpose of
-a grammar like ours.
 
-probably scrap
 \section{Alternative ideas}
 
 While the evaluation of machine learning systems provides assurances using

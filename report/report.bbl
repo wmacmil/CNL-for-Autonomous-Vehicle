@@ -436,35 +436,6 @@
       \field{title}{TOUCHDOWN: Natural Language Navigation and Spatial Reasoning in Visual Street Environments}
       \field{year}{2019}
     \endentry
-    \entry{coqLTL}{article}{}
-      \name{author}{1}{}{%
-        {{hash=2c06bffaeaf266eeb6246c332fe7422e}{%
-           family={Coupet-Grimal},
-           familyi={C\bibinithyphendelim G\bibinitperiod},
-           given={Solange},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \strng{fullhash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \strng{bibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \strng{authorbibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \strng{authornamehash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \strng{authorfullhash}{2c06bffaeaf266eeb6246c332fe7422e}
-      \field{sortinit}{C}
-      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Logic and Computation}
-      \field{number}{6}
-      \field{title}{An Axiomatization of Linear Temporal Logic in the Calculus of Inductive Constructions}
-      \field{volume}{13}
-      \field{year}{2003}
-      \field{pages}{801\bibrangedash 813}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1093/logcom/13.6.801
-      \endverb
-    \endentry
     \entry{5152776}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=9a0e2a3575b0dd32a3e68f70031e1e85}{%
@@ -1137,33 +1108,6 @@
       \field{year}{2021}
       \field{pages}{90}
       \range{pages}{1}
-    \endentry
-    \entry{wltl}{misc}{}
-      \name{author}{2}{}{%
-        {{hash=9d187f35f9fb365a330825622dc93aaa}{%
-           family={Macmillan},
-           familyi={M\bibinitperiod},
-           given={Warrick},
-           giveni={W\bibinitperiod}}}%
-        {{hash=15779d310ef7ab0623a2503d62e1e5f8}{%
-           family={Kallberg},
-           familyi={K\bibinitperiod},
-           given={Andreas},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{73a9981441ccc8f76d68ba816457734b}
-      \strng{fullhash}{73a9981441ccc8f76d68ba816457734b}
-      \strng{bibnamehash}{73a9981441ccc8f76d68ba816457734b}
-      \strng{authorbibnamehash}{73a9981441ccc8f76d68ba816457734b}
-      \strng{authornamehash}{73a9981441ccc8f76d68ba816457734b}
-      \strng{authorfullhash}{73a9981441ccc8f76d68ba816457734b}
-      \field{sortinit}{M}
-      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://github.com/wmacmil/LTL-Agda}}
-      \field{title}{{LTL in Agda}}
-      \field{year}{2021}
     \endentry
     \entry{MARGE2022101255}{article}{}
       \name{author}{28}{}{%
@@ -2299,9 +2243,11 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{Piterman2018}
   \missing{fret}
   \missing{fretish}
   \missing{ml79}
+  \missing{specPat}
 \endrefsection
 \endinput
 
