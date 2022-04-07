@@ -585,7 +585,42 @@ include coverage (mainly what we're concerned with) and surveillance (which
 could be relevant, if, for instance, one wanted to design a autonomous-taxi that
 surveils a region of interest for passengers).
 
-The coverage properties consist of 
+The coverage properties consist of visiting a set of locations, where various
+extra conditions like sequencing, ordering, and strictly ordering governs how.
+Specifically, given a finite (or incomplete) set of locations or events $\{l_i\}$
+where $i \in \{1..n\}$ we can say a baseline coverage is of the form 
+$\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of conjunction,
+doesn't distinguish between the order in which the locations are visited. To
+ensure that for every location $l_i$ follows its predecessor $l_{i-1}$, we
+nest the locations in future temporal operators, essentially building a linked
+list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$ with an extra $F$
+operator appended at every node. To induce the ordering, we can conjoin a predicate
+which restricts how the locations are sequenced by imposing the condition that location
+$l_{i}$ must be visited prior to its successor $l_{i+1}$, namely
+$\underset{i}{\bigwedge}\; (\neg l_{i+1})\; U\; l_i$.
+If one wants to also ensure that the locations aren't redundantly visited, we
+can add the strictness condition. A bit confusing, 
+
+$\underset{i}{\bigwedge}\; (\neg l_{i})\; U\; (l_i \wedge X\; (\neg l_i\; U\;
+l_{i+1}))$, this property ensures that one cannot revisit location $l_i$ until
+after it has been initially visited and, in the next time increment, it hasn't
+been visited until its successor location $l_{i+1}$ has. To see how these syntax
+trees are encoded in Agda, please see the appendix [TODO:REF]. 
+
+As concerns directing autonomous vehicles, one anticipates that the user
+generally would want a sequential visit, with the order condition presumably but
+not necessarily intended in most situations. The strict order condition seems
+like it would need to be induced by the system almost automatically for
+efficiency reasons. We therefore chose to target the vanilla sequential visit
+with our Haskell program, although it merits a close investigation in which
+circumstances other logical predicates should be inferred, both based of
+specific language of the passenger and other contextual constraints.
+
+Other movement patterns may reference past tense temporal operators, which may
+indeed prove very useful to verify that a users needs have been met, or the
+cases in which the route taken didn't conform to a command. We envision that
+developing a complete calculus of specification patterns in the specific domain
+of autonomous vehicles should very much inform how the CNL should be designed.
 
 \paragraph{Grounding}
 

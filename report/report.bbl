@@ -1280,6 +1280,64 @@
       \endverb
       \keyw{Research agenda,Issues,Challenges,Priorities,Users}
     \endentry
+    \entry{specPat}{article}{}
+      \name{author}{5}{}{%
+        {{hash=68385e5d019db45e211b8a2d8a541a5a}{%
+           family={Menghi},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bdcc4df962d0fabffab1c7333f7073e3}{%
+           family={Tsigkanos},
+           familyi={T\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5a7e482a2db87465bc343138234aba36}{%
+           family={Pelliccione},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=80d7a82348e6e97a8c02edb3abe51bc4}{%
+           family={Ghezzi},
+           familyi={G\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7f3e28fb81a360079c8013f200d0c1a0}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Los Alamitos, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{fullhash}{d7eee7094fdea3a5220b2b70f9043a23}
+      \strng{bibnamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authorbibnamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authornamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authorfullhash}{d7eee7094fdea3a5220b2b70f9043a23}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1939-3520}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Specification Patterns for Robotic Missions}
+      \field{volume}{47}
+      \field{year}{2021}
+      \field{pages}{2208\bibrangedash 2224}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1109/TSE.2019.2945329
+      \endverb
+      \keyw{software;service robots;natural languages;software engineering;tools;task analysis}
+    \endentry
     \entry{word2vec}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=a2d359b12ca2fadf0b40136a73f021bb}{%
@@ -1467,6 +1525,77 @@
       \field{labeltitlesource}{title}
       \field{title}{Learning to Ground Language to Temporal Logical Form}
       \field{year}{2019}
+    \endentry
+    \entry{Piterman2018}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=44b607e69215c95a802a277379799980}{%
+           family={Piterman},
+           familyi={P\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48771ab1876a9bd3472621189d78fe6f}{%
+           family={Pnueli},
+           familyi={P\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=1822cd554880ea55fd66357a96bca03e}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Edmund\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=eeb928073fbee58751f87d401a62561a}{%
+           family={Henzinger},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5ac94523768e8fc4adb7a926b36d83e0}{%
+           family={Veith},
+           familyi={V\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9865af1b742410e6dee8ca813e1ec733}{%
+           family={Bloem},
+           familyi={B\bibinitperiod},
+           given={Roderick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{fullhash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{bibnamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authorbibnamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authornamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authorfullhash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{editorbibnamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editornamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editorfullhash}{eea0cb89759dac86c5d80411829d95b2}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Temporal logic has been used by philosophers to reason about the way the world changes over time. Its modern use in specification and verification of systems describes the evolution of states of a program/design giving rise to descriptions of executions. Temporal logics can be classified by their view of the evolution of time as either linear or branching. In the linear-time view, we see time ranging over a linear total order and executions are sequences of states. When the system has multiple possible executions (due to nondeterminism or reading input) we view them as separate possible evolutions and the system has a set of possible behaviors. In the branching-time view, a point in time may have multiple possible successors and accordingly executions are tree-like structures. According to this view, a system has exactly one execution, which takes the form of a tree. We start this chapter by introducing Fair Discrete Structures, the model on which we evaluate the truth and falsity of temporal logic formulas. Fair Discrete Structures describe the states of a system and their possible evolution. We then proceed with the linear-time view and introduce Propositional Linear Temporal Logic (LTL). We explain the distinction between safety and liveness properties and introduce a hierarchy of liveness properties of increasing expressiveness. We study the expressive power of full LTL and cover extensions that increase its expressive power. We introduce algorithms for checking the satisfiability of LTL and model checking LTL. We turn to the branching-time framework and introduce Computation Tree Logic (CTL). As before, we discuss its expressive power, consider extensions, and cover satisfiability and model checking. We then dedicate some time to examples of formulas in both LTL and CTL and stress the differences between the two. We end with a formal comparison of LTL and CTL and, in view of this comparison, introduce CTL*, a hybrid of LTL and CTL that combines the linear and branching views into one logic.}
+      \field{booktitle}{Handbook of Model Checking}
+      \field{isbn}{978-3-319-10575-8}
+      \field{title}{Temporal Logic and Fair Discrete Systems}
+      \field{year}{2018}
+      \field{pages}{27\bibrangedash 73}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1007/978-3-319-10575-8_2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_2
+      \endverb
     \endentry
     \entry{plaku2016motion}{article}{}
       \name{author}{2}{}{%
@@ -2243,11 +2372,9 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{Piterman2018}
   \missing{fret}
   \missing{fretish}
   \missing{ml79}
-  \missing{specPat}
 \endrefsection
 \endinput
 

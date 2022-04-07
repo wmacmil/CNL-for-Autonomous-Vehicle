@@ -257,9 +257,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 OUTPUT report.xdv
 INPUT pics/selfDriving.png
 INPUT pics/diagramTrial1.png
-INPUT pics/one.jpg
-INPUT pics/two.jpg
-INPUT pics/three.jpg
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm
@@ -278,6 +275,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
+INPUT pics/one.jpg
+INPUT pics/two.jpg
+INPUT pics/three.jpg
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out

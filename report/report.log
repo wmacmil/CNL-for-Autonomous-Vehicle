@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  7 APR 2022 08:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  7 APR 2022 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -951,13 +951,6 @@ Package biblatex Info: ... file 'report.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                Piterman2018
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                fret
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -973,13 +966,6 @@ Package biblatex Warning: The following entry could not be found
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
 (biblatex)                ml79
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                specPat
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1277,64 +1263,67 @@ File: pics/selfDriving.png Graphic file (type bmp)
 <pics/selfDriving.png>
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
- [1] [2] [3] [4] [5] [6] [7] [8] [9] [10]
-File: pics/one.jpg Graphic file (type bmp)
-<pics/one.jpg>
-File: pics/two.jpg Graphic file (type bmp)
-<pics/two.jpg>
- [11]
-File: pics/three.jpg Graphic file (type bmp)
-<pics/three.jpg>
- [12]
-Overfull \hbox (1.18326pt too wide) in paragraph at lines 902--902
-[]  \TU/lmtt/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvP
-h At (WhichObject The[] 
- []
-
+ [1] [2] [3] [4] [5] [6] [7]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 911.
+(Font)              scaled to size 10.95116pt on input line 590.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 911.
+(Font)              scaled to size 7.6658pt on input line 590.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 911.
+(Font)              scaled to size 5.47559pt on input line 590.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 911.
+(Font)              scaled to size 10.94882pt on input line 590.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 911.
+(Font)              scaled to size 7.66417pt on input line 590.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 911.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 911
+(Font)              scaled to size 5.47441pt on input line 590.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 590
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 911
+LaTeX Font Info:    Trying to load font information for U+msb on input line 590
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
-11.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 911.
+(Font)              size <5> substituted on input line 590.
 
-[13]
-Overfull \hbox (6.93199pt too wide) in paragraph at lines 965--965
+[8] [9] [10]
+File: pics/one.jpg Graphic file (type bmp)
+<pics/one.jpg>
+ [11]
+File: pics/two.jpg Graphic file (type bmp)
+<pics/two.jpg>
+ [12]
+File: pics/three.jpg Graphic file (type bmp)
+<pics/three.jpg>
+
+Overfull \hbox (1.18326pt too wide) in paragraph at lines 924--924
+[]  \TU/lmtt/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvP
+h At (WhichObject The[] 
+ []
+
+[13] [14]
+Overfull \hbox (6.93199pt too wide) in paragraph at lines 987--987
 []\TU/lmtt/m/n/10.95 treeMapfemalePersonIsWoman GWoman                    = (GM
 odObj GFemale GPerson)[] 
  []
 
-[14] [15] [16] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1158.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1158.
+[15] [16] [17] [18] [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1180.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1180.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1158.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1158.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1180.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 81B09AB8B283B973847A6BD89A61FE3E;1516.
@@ -1351,12 +1340,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33499 strings out of 481749
- 614323 string characters out of 5935475
- 1402940 words of memory out of 5000000
- 50078 multiletter control sequences out of 15000+600000
+ 33504 strings out of 481749
+ 614584 string characters out of 5935475
+ 1404994 words of memory out of 5000000
+ 50083 multiletter control sequences out of 15000+600000
  536487 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 52i,6n,109p,1483b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,6n,109p,2157b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (20 pages, 624924 bytes).
+Output written on report.xdv (21 pages, 642340 bytes).

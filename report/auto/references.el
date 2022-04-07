@@ -2,6 +2,7 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "Piterman2018"
     "synthGazit"
     "10.1145/3497775.3503685"
     "fainekos2005temporal"
