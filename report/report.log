@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  7 APR 2022 23:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  12 APR 2022 01:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,11 +906,7 @@ line 40.
 )
 \@quotelevel=\count462
 \@quotereset=\count463
- (./report.aux
-
-LaTeX Warning: Label `fig:A1' multiply defined.
-
-)
+ (./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -935,7 +931,8 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
@@ -1261,91 +1258,88 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 ]
 File: pics/selfDriving.png Graphic file (type bmp)
 <pics/selfDriving.png>
+ [1]
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
- [1] [2] [3] [4] [5] [6] [7]
+ [2] [3] [4] [5] [6] [7] [8]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 590.
+(Font)              scaled to size 10.95116pt on input line 678.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 590.
+(Font)              scaled to size 7.6658pt on input line 678.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 590.
+(Font)              scaled to size 5.47559pt on input line 678.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 590.
+(Font)              scaled to size 10.94882pt on input line 678.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 590.
+(Font)              scaled to size 7.66417pt on input line 678.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 590.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 590
+(Font)              scaled to size 5.47441pt on input line 678.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 678
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 590
+LaTeX Font Info:    Trying to load font information for U+msb on input line 678
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
-90.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
+78.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 590.
+(Font)              size <5> substituted on input line 678.
 
-[8] [9] [10] [11]
+[9] [10] [11] [12]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
- [12]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
  [13]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 
-Overfull \hbox (1.18326pt too wide) in paragraph at lines 1027--1027
+Overfull \hbox (1.18326pt too wide) in paragraph at lines 1002--1002
 []  \TU/lmtt/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction Stop (MkAdvP
 h At (WhichObject The[] 
  []
 
 [14] [15]
-Overfull \hbox (6.93199pt too wide) in paragraph at lines 1090--1090
+Overfull \hbox (6.93199pt too wide) in paragraph at lines 1065--1065
 []\TU/lmtt/m/n/10.95 treeMapfemalePersonIsWoman GWoman                    = (GM
 odObj GFemale GPerson)[] 
  []
 
-[16] [17] [18] [19] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1283.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1283.
+[16] [17] [18] [19] [20] [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1337.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1337.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1283.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1283.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1337.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1337.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 81B09AB8B283B973847A6BD89A61FE3E;1516.
+(rerunfilecheck)             Checksum: 0F158697D6293C48360365976E9D5B9E;1876.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.475pt have occurred.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33511 strings out of 481749
- 614833 string characters out of 5935475
- 1406096 words of memory out of 5000000
- 50090 multiletter control sequences out of 15000+600000
+ 33516 strings out of 481749
+ 614890 string characters out of 5935475
+ 1405093 words of memory out of 5000000
+ 50095 multiletter control sequences out of 15000+600000
  536487 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 52i,6n,109p,2157b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,5n,109p,2157b,4915s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (22 pages, 713252 bytes).
+Output written on report.xdv (23 pages, 755360 bytes).

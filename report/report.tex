@@ -62,15 +62,12 @@ isbn=false, doi=false, ]{biblatex}
 
 \vspace*{1cm}
 
-\begin{center} \Large Notions of syntax and semantics
+\begin{center} \Large On syntax and semantics
   for voice assistants in autonomous vehicles  \\ 
-
-% gurantess robustness? 
-% autonomous vehicles ?
 
 \vspace{1.5cm}
 
-\large Warrick Macmillan  \\
+\large Warrick Scott Macmillan  \\
 \large Developed with the support of Ekaterina Komendantskaya
 \end{center}
 
@@ -93,7 +90,7 @@ vehicles behavior. This work contributes to a large existing literature,
 connecting the somewhat disparate research spaces including CNLs, verification
 for natural language-controlled robots, and semantic parsing.
 
-\section{Problem Statement}
+\section{Introduction}
 
 A central question in the philosophy of language concerns how language relates
 to the world. That is, how do our semantical notions relate to the physical
@@ -101,9 +98,18 @@ world we perceive? How do we internalize and externalize our experience with
 linguistic structures? This question manifests concretely in the problem of
 designing a voice directed command system for an autonomous vehicle.
 
+\subsection{Problem Statement}
+
 We imagine the most simplified vision possible vision of an autonomous
 vehicle, a computer controlling the mechanical components of the vehicle to
 navigate based of sensor data from the environment, as seen in \autoref{fig:A1}.
+It is natural to partition the environment internally and externally : whereby
+the external setting may be captured by cameras, LiDar sensors, and a myriad of other
+sensors, and the internal environment may consist of a microphone to capture
+verbal commands given by a human. The goal of this project is then to connect
+the intentions of the human to the actuators controlling the
+mechanical vehicle relative to their shared perception of the environment
+through the modality of language.
 
 \begin{figure}
 \centering
@@ -111,69 +117,35 @@ navigate based of sensor data from the environment, as seen in \autoref{fig:A1}.
 \caption{Self Driving Car}\label{fig:A1}
 \end{figure}
 
+We can refine this picture, as is seen in \autoref{fig:A2}. Imagine making an
+initial voice command to the vehicle like ``drive to San Francisco'', which the
+google voice assistant on my phone can already recognize, and plan the
+\emph{initial path}. Then suppose that during the route, I get hungry and
+realize I need to refuel. I can utter ``go to the grocery store after the next
+exit, and then go to fuel station, but stop at so I can take a picture of that
+crazy sign, first.'' This is how a passenger might direct a human driver to take
+a \emph{modified path}, and we take for granted that the passenger would find it
+the easiest to communicate this as if the computational agent is human. Finally,
+we know that neither the idealized nor the modified path can be met without
+local perturbations, and that the \emph{actual path} should be optimized to
+conform to the modified path relative to some metric.
+
+The many sub-problems under this grandiose vision are themselves grandiose.
+Training a neural network to accurately capture the meaning of natural language
+utterances (even in a domain specific setting), the ability to synthesize a path
+and a controller that meets the meaning specification, and the possibility of
+following the path in an unpredictable environment - these all have large
+communities working on them, and while there is certainly progress, a reliable
+end-to-end system should be treated with skepticism until some kind of empirical
+validation of such a system exists.
+
 \begin{figure}
 \centering
 \includegraphics[width=150mm]{pics/diagramTrial1.png}
 \caption{Vehicle Route}\label{fig:A2}
 \end{figure}
 
-\section{Contributions}
-
-Initially motivated to give the system assurances against so-called
-substitution-based attacks, whereby impose ``meaning equivalence'' for synonymic
-expressions by imposing posterior conditions on the parse trees. Clustering via
-the tree structure to provide some the equivalence to meaningfully similar
-sentences was an initially enticing direction, as had been done with
-Komendantskaya and Heras' work on Machine Learning for Proof General (ML4PG)
-\cite{ml4pg}. However, this work had the advantage that there are multiple
-large, well-maintained Coq libraries which were amenable to clustering.
-Successful clustering results could give rise to proof developers seeking
-suggestions in their developments.
-
-Our use case, the design of a non-existent language, left us with the conundrum
-of an impoverished data set to train over. There was no empirical data source
-from which to observe ``natural ASTs'', and generating trees in an ad-hoc random basis would
-not likely provide real-world applicability. What has followed should be seen as
-a response to these constraints. Our intention was to find a data set suitable
-to give examples of non-trivial natural language utterances, in addition to
-finding a suitable semantic language with utility and applicability which is
-amenable to translation from sentences parsed by our grammar. Working from both
-the empirical and semantic directions seemed the most reasonable way to build a
-robust least prototype of a CNL .
-
-The primary contributions of this undertaking so far are as follows :
-
-\begin{itemize}[noitemsep]
-\item A Grammatical Framework (GF) grammar providing the definition of a CNL for
-suitable directives from a passenger to a driving agent
-\item A Haskell library mapping trees generated by our grammar a particularly well-behaved subset of LTL
-\item An Agda implementation of LTL with a standard semantic interpretation
-\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown} suited to our needs of designing a
-better grammar
-\end{itemize}
-
-We suggest that while each of these components are still relatively primitive,
-they define a pipeline which has potential to provide both theoretical insights
-to researchers and suggest possible practical steps that can be taken to
-constructing robust voice applications in industrial settings. In addition to
-discussing our own contributions, we give a relevant and comprehensive literature
-review that embeds our work in the context of ongoing studies about these
-topics.
-
-This work should be seen as a stepping stone, specifically we view it as :
-
-\begin{itemize}[noitemsep]
-\item A survey of existing literature about this problem 
-\item A preliminary work attempting to fit in pieces of a solution to the problem  
-\item A framework and prescription for how to fit this preliminary work carried
-  out here with existing work from elsewhere in attempt to build a comprehensive solution
-\end{itemize}
-
-The feasibility of a realistic solution will doubtless rely on the future work
-of many collaborators and years of research, engineering, and testing. It is
-therefore naive to assume that many of the questions posed below are answerable.
-
-\section{Overview}
+\subsection{Overview}
 
 Perhaps the most pervasive question in the use and application of natural
 language technologies can be stated as follows : How does one optimize the
@@ -244,7 +216,67 @@ the many empirical natural language commands into a ``canonical subset'' defined
 by our CNL which are equivalent to (sets of) temporal logic formulas. We detail
 here both the progress to these ends, as well as the challenges.
 
-\section{Previous Work} 
+\section{Contributions}
+
+Initially
+motivated to give the system assurances against so-called
+substitution-based attacks, whereby impose ``meaning equivalence'' for synonymic
+expressions by imposing posterior conditions on the parse trees. Clustering via
+the tree structure to provide some the equivalence to meaningfully similar
+sentences was an initially enticing direction, as had been done with
+Komendantskaya and Heras' work on Machine Learning for Proof General (ML4PG)
+\cite{ml4pg}. However, this work had the advantage that there are multiple
+large, well-maintained Coq libraries which were amenable to clustering.
+Successful clustering results could give rise to proof developers seeking
+suggestions in their developments.
+
+Our use case, the design of a non-existent language, left us with the conundrum
+of an impoverished data set to train over. There was no empirical data source
+from which to observe ``natural ASTs'', and generating trees in an ad-hoc random basis would
+not likely provide real-world applicability. What has followed should be seen as
+a response to these constraints. Our intention was to find a data set suitable
+to give examples of non-trivial natural language utterances, in addition to
+finding a suitable semantic language with utility and applicability which is
+amenable to translation from sentences parsed by our grammar. Working from both
+the empirical and semantic directions seemed the most reasonable way to build a
+robust least prototype of a CNL .
+
+The primary contributions of this undertaking so far are as follows :
+
+\begin{itemize}[noitemsep]
+\item A Grammatical Framework (GF) grammar providing the definition of a CNL for
+suitable directives from a passenger to a driving agent
+\item A Haskell library mapping trees generated by our grammar a particularly well-behaved subset of LTL
+\item An Agda implementation of LTL with a standard semantic interpretation
+\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown} suited to our needs of designing a
+better grammar
+\end{itemize}
+
+  [TODO : ref sectionions]
+
+We suggest that while each of these components are still relatively primitive,
+they define a pipeline which has potential to provide both theoretical insights
+to researchers and suggest possible practical steps that can be taken to
+constructing robust voice applications in industrial settings. In addition to
+discussing our own contributions, we give a relevant and comprehensive literature
+review that embeds our work in the context of ongoing studies about these
+topics.
+
+This work should be seen as a stepping stone, specifically we view it as :
+
+\begin{itemize}[noitemsep]
+\item A survey of existing literature about this problem 
+\item A preliminary work attempting to fit in pieces of a solution to the problem  
+\item A framework and prescription for how to fit this preliminary work carried
+  out here with existing work from elsewhere in attempt to build a comprehensive solution
+\end{itemize}
+
+The feasibility of a realistic solution will doubtless rely on the future work
+of many collaborators and years of research, engineering, and testing. It is
+therefore naive to assume that many of the questions posed below are answerable.
+
+
+\section{Preliminaries} 
 
 This research broaches many different fields, many of which were
 unknown to the author prior to this work. Indeed, voice assistants may
@@ -265,7 +297,9 @@ The approach taken sets out to build a semantic parser, which, despite its
 primitivity, serves as a Petri dish through which many of the deeper questions
 in this space may be viewed.
 
-\subsection{GF, Parsers, and Personal Work}
+\subsection{Linguistic} 
+
+\subsubsection{GF, Parsers, and Personal Work}
 
 The questions of designing an idealized and expressive formal language, with
 roots in Frege \cite{frege79}, manifested more recently in the natural language
@@ -321,6 +355,16 @@ language utterance requires the computer to generate natural language which must
 conform to both a program's structure and behavior, but which also may be clear
 and recognizable to the user.
 
+We recognize that there are many degrees of freedom in the both the syntactic
+and semantic formalisms chosen. With respect to parsing, one could choose a
+categorial grammar approach \cite{5152776}, or even forego using
+phrase-structure formalisms and use dependency grammars - of which there has
+been recent work in using dependency formalisms in conjunction with GF
+\cite{ranta2017cross}. Additionally, many of our ideas should be applicable to
+robotics applications outside of the autonomous vehicle space, although
+syntactic, semantic, and data-specific nuances will have to be reconsidered for
+each domain.
+
 Independently of \emph{how} the robot determines a program whose meaning it
 needs to convey to a user, the property of providing a natural language
 utterance which fluently conveys meaning in a natural language to some native
@@ -330,7 +374,8 @@ certainly conform to the dual standards of syntactic completeness and semantic
 adequacy, if the voice assistant is to be held to any kind of regulatable
 standard.
 
-\subsection{Semantical Representations}
+
+\subsubsection{Semantical Representations}
 
 We choose LTL as our semantic form in large part due to its relative
 expressivity for the kinds of verification conditions one might anticipate an
@@ -345,7 +390,7 @@ autonomous navigator responding to a human agent can go wrong, and the most
 amenable set of verification conditions to prevent this, will ultimately have to
 be gained through trial and error.
 
-\subsubsection{Notions of Semantics}
+\paragraph{Notions of Semantics}
 
 We also note that the notion ``semantics'', having many connotations and interpretations in
 different fields, is subject to many interpretations. Here are some examples :
@@ -432,20 +477,7 @@ communities of researchers. We suggest that working towards a unified view of
 what kinds of semantic notions we want to deal in this particular domain may
 inform better solutions to the problem at hand.
 
-\subsection{Robot Motion and Natural Language}
-
-The challenge of designing a system which generates robot control strategies
-from human language has to balance the expressiveness of task specification,
-complexity of environment, and provable correctness \cite{4141034}. In this
-context, we assume that expressivity of the language itself should reflect the
-complexity of the environments, thereby being adequately descriptive. The
-criteria of correctness : that the language itself is well-represented in the
-LTL semantics - the system being is syntactically complete - is the focus of
-these investigations. Our work additionally, is the only work we know of which
-actually seeks autonomous vehicles as the central motivation, rather than more
-general robotics applications.
-
-\subsubsection{Semantic Parsing}
+\paragraph{Semantic Parsing}
 
 The problem of semantic parsing consists of mapping natural language utterances
 not just to syntactic trees, but to semantic ones. A sub-field of Natural
@@ -471,10 +503,9 @@ temporal logic semantic formalism. Our approach takes for granted that the
 parser is one of the most controllable and easily understood components of a NL
 pipeline.
 
-\subsubsection{Temporal Logic for Robot Verification}
+\paragraph{Semantic Parsing for Temporal Logics}
 
 \begin{quote}
-Overall, the typical approach followed by these studies can be summarized as follows:
 given an input English utterance, preprocess it to extract syntactical information, which may
 include part of speech tagging, dependency parsing, semantic role labelling, and so on. Then,
 enrich the input with these pieces of information. Finally, run an attribute grammar-based
@@ -487,6 +518,37 @@ translating natural language to LTL, indicating the interest and need of
 suitable semantic parsers in this domain. We give a refined perspective on the
 problems below, deferring a formal treatment of LTL to the appendix [TODO :
 reference].
+
+An interesting result published more recently attempts to translate between
+English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
+advantage of not just treating Boolean, but real-valued signals. From this
+perceptive, STL vs LTL can be understood as a quantitative versus qualitative
+way of analyzing events. The fact that STL gives the specifications a higher
+expressiveness in terms of how the order of events takes place, but also comes
+with a higher computational cost [ref needed], but more importantly, a
+potentially unnecessary complication for the system designer, The more
+granularity view of time may be unnecessary in many cases - our data set doesn't
+cover time at all (a defect, [reference below]), but even in a more naturally
+derived corpus, might only crop up as an ``edge case'' relative to other more
+important or likely phenomena that engineers may wish to capture.
+
+
+\subsection{Robot Motion Planning and Verification}
+
+The challenge of designing a system which generates robot control strategies
+from human language has to balance the expressiveness of task specification,
+complexity of environment, and provable correctness \cite{4141034}. In this
+context, we assume that expressivity of the language itself should reflect the
+complexity of the environments, thereby being adequately descriptive. The
+criteria of correctness : that the language itself is well-represented in the
+LTL semantics - the system being is syntactically complete - is the focus of
+these investigations. Our work additionally, is the only work we know of which
+actually seeks autonomous vehicles as the central motivation, rather than more
+general robotics applications.
+
+
+\subsubsection{Temporal Logic for Robot Verification}
+
 
 We need a comprehensive view of the robot control problem as it pertains to
 temporal logics. Our considerations should include :
@@ -502,6 +564,22 @@ temporal logics. Our considerations should include :
 
 \paragraph{Temporal Logics}
 
+
+
+Modal logics, specifically those dealing with stateful staging of events like
+LTL \cite{ltl95}, Computation Tree Logic (CTL) \cite{yooCTL}, Signal Temporal
+Logic (STL) \cite{stlAut} , have been used extensively in the specification and
+verification of properties of robotics systems, including autonomous vehicles .
+As LTL is often seen as one of the ``primitive'' temporal logic, we chose it as
+a our semantic space despite its limitations (the lack of numerical precision,
+predicates for spatial relations, etc). We appreciate that future work will need
+to expand the scope of which logic (or possibly \emph{logics}) the machine may
+use to verify behavior, in addition to the mathematical models most amenable to
+verification of a logical formula.
+
+% ugg
+% Additionally, LTL  formulas can be transformed into automata which can then be used as reward
+% functions for reinforcement learners, as in \cite{ltlRein}.
 As regards the logical behavior, there are an array of logics available.
 
 \begin{itemize}
@@ -522,6 +600,7 @@ As regards the logical behavior, there are an array of logics available.
 \item Probabilistic Computation Tree Logic (PCTL) 
   go to the store if its unlikely we'll hit bad traffic
 \end{itemize}
+
 
 % Co-safe LTL (non-reactive): (¬Deliver ) U(Deliver ∧(Office B ∨Office C )) expresses “deliver
 % a package to one of offices B or C but not anywhere else” .
@@ -729,234 +808,121 @@ Linear logic, resource sharing, etc
 
 The review \cite{synthGazit} forgoes dealing with multi-agent systems, 
 
-% A property φ is a safety property for a set of models if for every model σ that
-% violates φ, i.e., σ |= φ, there exists an i such that for every σ  that agrees with σ
-% up to position i, i.e., ∀0 ≤ j ≤ i, σi  = σi , σ  also violates φ. As mentioned, safety
-% properties specify bad things that should never happen. Thus, once an error has
-% occurred (in location i), it is impossible to undo it. Every possible extension also
-% includes the same error and is unsafe.
-% A property φ is a liveness property for a set of models if for every prefix of a
-% model w0 , . . . , wi there exists an infinite model σ that starts with w0, . . . , wi and
-% σ |= φ. As mentioned liveness properties specify good things that should occur.
-% Thus, regardless of the history of the computation, it is still possible to find an
-% extension that will fulfill the specification.
+\section{Our Pipeline}
 
-% Theorem 2 Every language L ⊆ (2P )ω is expressible as the intersection Ls ∩ Ll ,
-% where Ls is a safety property and Ll is a liveness property.
+As mentioned in the [TODO : Ref contributions], this work makes a proposal for
+how to create a general semantic parser from arbitrary voice commands to the
+coverage and sequencing subset of LTL, maximizing both coverage and robustness
+of the system. We outline the work done with respect to the following pieces, of
+our system, and conclude with the proposal which envisions a synthesis of all
+these pieces.
 
-An interesting result published more recently attempts to translate between
-English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
-advantage of not just treating Boolean, but real-valued signals. From this
-perceptive, STL vs LTL can be understood as a quantitative versus qualitative
-way of analyzing events. The fact that STL gives the specifications a higher
-expressiveness in terms of how the order of events takes place, but also comes
-with a higher computational cost [ref needed], but more importantly, a
-potentially unnecessary complication for the system designer, The more
-granularity view of time may be unnecessary in many cases - our data set doesn't
-cover time at all (a defect, [reference below]), but even in a more naturally
-derived corpus, might only crop up as an ``edge case'' relative to other more
-important or likely phenomena that engineers may wish to capture.
+\begin{itemize}[noitemsep]
+\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown}
+\item A refined version of the touchdown dataset
+\item A GF Grammar
+\item A PGF Haskell embedding of the Grammar
+\item An Agda implementation of LTL [TODO: see appendix]
+\end{itemize}
 
-% ``3 streets versus 3 minutes''
+\subsection{Touchdown Data Set}
 
+The most comprehensive known data source relevant to this problem is the
+TOUCHDOWN data set \cite{chen2019touchdown}. The authors' used Amazon Mechanical
+Turk workers and an ``interactive visual navigation environment based on Google
+Street View'' based off images collected in New York City to generate English
+Language instructions to describe a route based off the visible environment to
+find a ``touchdown object''. Once the object is visible, the task is complete.
 
-ican be done via a large language model 
- but these techniques still only give
-aggregate improvements to the depth of phrases covered, and they haven't been
-explored in more specific domains. Additionally
-addressed here mean this researc
+An intention of the work is a seemingly natural dataset which accounts for
+``resolving the spatial descriptions'', but we focus only extracting the
+navigation instruction part of the task, knowing that the image classifier and
+the grounding mechanism is outside the scope of our work. Although the data
+comes equipped as JSON files with the text itself, a coordinate mapping
+instructions compatible with streetview, and other metadata, we just focus on
+the natural language text. The text samples consist sequence of constructions with
+visible cues, terminating with a description of where to find the ``touchdown''.
+A typical of the text is :
 
-We recognize that there are many degrees of freedom in the both the syntactic
-and semantic formalisms chosen, as well as their evaluation or grounding within
-physical environments. With respect to parsing, one could choose a categorial
-grammar approach \cite{5152776}, or even forego using phrase-structure
-formalisms and use dependency grammars - of which there has been recent work in
-using dependency formalisms in conjunction with GF \cite{ranta2017cross}.
-Additionally, many of our ideas should be applicable to robotics applications
-outside of the autonomous vehicle space, although syntactic, semantic, and
-data-specific nuances will have to be reconsidered for each domain.
-
-
-
-Modal logics, specifically those dealing with stateful staging of events like
-LTL \cite{ltl95}, Computation Tree Logic (CTL) \cite{yooCTL}, Signal Temporal
-Logic (STL) \cite{stlAut} , have been used extensively in the specification and
-verification of properties of robotics systems, including autonomous vehicles .
-As LTL is often seen as one of the ``primitive'' temporal logic, we chose it as
-a our semantic space despite its limitations (the lack of numerical precision,
-predicates for spatial relations, etc). We appreciate that future work will need
-to expand the scope of which logic (or possibly \emph{logics}) the machine may
-use to verify behavior, in addition to the mathematical models most amenable to
-verification of a logical formula.
-
-% ugg
-% Additionally, LTL  formulas can be transformed into automata which can then be used as reward
-% functions for reinforcement learners, as in \cite{ltlRein}.
-
-\subsubsection{Natural Language and LTL verification}
-
-
-Just as important as producing a
-well-formed and meaningful LTL formula, but not explored in our work, is the
-translation from a logical formula a trustworthy controller meant for navigating
-a complex environment. For instance, in \cite{plaku2016motion} the authors
-indicate how to actually ground basic propositions from language to paths in a
-space, while our model, outputting formulas with non-grounded base predicates,
-is merely concerned with logical structure.
-
-Similarly, in \cite{7759412}, the authors develop a Verifiable Distributed
-Correspondence Graph (V-DCG) model whereby LTL formulas are used to ensure
-grounded instruction sequences are consistent. This work builds on other work of
-Kress-Gazit et al. \cite{provCorrectNatControl}, whereby the The Situated
-Language Understanding Robot Platform (SLURP) allows translation of arbitrary
-natural language into LTL. They suggest an ``ontology of common actions and the
-type of formulas that they produce'' is of critical importance. Our work is
-directly focused on the \emph{centrality of the grammar}, where a GF abstract
-syntax design allows one to give a precise ontology. We therefore see our work as
-a key intermediary phase when balancing formal and empirical interests.
-Kress-Gazit's work is more concerned with the controllers generated as the end
-result of a pipeline where the intermediary grammatical structure may not be so
-relevant.
-
-Our GF implementation, seeing the grammar as a necessary part of the
-verifiability (in that we can systematically map our sequences of commands to
-logical formulas representing sequences of states), also makes the possibility of
-supporting multi-lingual verifiability more immediate. Our system does not
-support this currently, but can easily be adjusted to so with the help of GF's
-functors (roughly adapted from Standard ML's functors) and the RGL. The lack of wide-coverage
-support of our grammar is possible to remediate through possible fine-tuning of
-a large language model to a data-set which coheres to the language our GF
-grammar generates, and we detail this in our discussion below [TODO : link].
-
-Another approach seeks to train a natural language to LTL planner using both NNs
-and reinforcement learning \cite{ltlSemParse}. Their work also uses a
-simultaneous CFG to generate \emph{semantically inadequate} sentences with
-corresponding LTL formulas from which they can direct machines to follow the
-instructions, and then have users describe the robot behavior in a more natural
-form. Despite this, their approach uses the machine to generate sentences and
-corresponding situations, most of which are ``nonsense'' and need to be filtered
-out, thereby leaving the narrations upon which their system leaves devoid of a
-genuine empirical data source. In addition, their corpus only contains 266
-words, still not the size one would need for our system. Finally, our suggested
-use of a pre-trained language model fine-tuned to the semantic parsing task
-gives us more flexibility in that the neural network and the verifiable grammar
-and semantics in the kernel could allow us to focus on the problems of breadth
-and depth somewhat independently.
-
-The same group, in \cite{kuo2020deep}, explore the most general possible
-end-to-end utterance to planner pipeline without intermediary states, namely, a
-symbolic representation. While this ``cutting out the middle woman'' mentality
-may be an idealistic long-term vision, it makes the system much too much of a
-black box - even though they are able to reason about their system's behavior
-through the use of attention maps. For the fine-tuned verification conditions
-about the linguistic utterances our work explores, the intermediate symbolic
-representations give a more explainable, predictable, and regulatable system.
-
-
-Formal Requirements Elicitation Tool (Fret) {fret}
-
-Use in aircraft, where there are many more controls, and the types of
-descriptions are inherently much more ``structured'', i.e. the pilots are
-assumed to have expertise and aren't just taking ad-hoc flights, but perhaps
-still don't have engineering, verification, or logical knowledge to give precise
-LTL specifications
-
-In \cite{fret} they use the Prototype Verification System (PVS) theorem prover
-to verify that 
-
-[Problem] There are two major challenges in making structured natural language
-amenable to formal analysis: (1) associating requirements with formulas that can
-be processed by analysis tools and (2) ensuring that the formulas conform to the
-language semantics. \cite{fretish}
-
------ 
-
-
-
-% Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
-%   is relevant and well-cited (although they use an encoder-decoder method)
-
-
-\subsubsection{Tellex}
-
-Stephanie Tellex has written extensively about natural language inputs and
-interfaces with robots. Although she has not specifically written about
-autonomous vehicles, the domains have enough intersection to warrant careful
-consideration of much of her work, especially the recent stuff.
-
-\begin{itemize}
-
-\item Grounding with an intermediate symbolic state, no LTL, but possibly
-  relevant for paper generally. She also cites \cite{walkTalk}, a seminal paper in this area
 \begin{quote}
-Instruction following is a supervised learning problem
-where the agent must predict a trajectory that would satisfy an
-input natural language command. \cite{tellexInstr}
+Orient yourself so you are following the flow of traffic, Continue straight
+until you reach the intersection and take a left, You should see a red bus lane
+to your right and a bus stop, Continue straight until you are just past the bus
+stop, look to your right and you will see a tree with yellow foliage, click the base of the tree to find touchdown.  
 \end{quote}
-\item The review paper \cite{MARGE2022101255} making recommendations has a
-  section on robustness, but this is mostly for the sake of allowing sharing of
-  interfaces and efficacy, no mention of verification (which is what we're
-  primarily after)
-\item They design a NL -> LTL for drones that are grounded to actual landmarks \cite{9197068}
-\item The group builds a trained pipeline that uses an object oriented
-  template-instance methodology to generalize to different ontological
-  categories in  \cite{hsiung2021generalizing} [under review]
 
-\item In \cite{patellearning} build learn a semantic parser from NL to LTL (so
-that the language is grounded) where they collect executions of the LTL formulas
-in different environments using a weakly-supervised training method with
-reinforcement learning Part if the paper has to do with the execution of the
-command being dependent on the path taken by the robot executing the command,
-not just meeting the goal requirements, thereby giving a complexity bonus in
-comparison to previous work. She also evaluates the model on the \cite{walkTalk}
-data set
-\end{itemize}
-
-\section{Publications Description}
-
-\subsection{Statistical (pre-trained) Language Models}
-
+When filtering the dataset, we can choose to uniformly replace the last sentence
+reference the ``touchdown'' with the word finish. We first indicate some of the
+advantages of this data set with regards to our application.
 
 \begin{itemize}
-
-\item In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
-context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
-parsible semantic form, that one can use a large pre-trained language model as a front-end
-to filter a much wider syntax into the CNL. GF's expressivity is
-more expressive than the SCFG, at least based off a tertiary reading in the
-index, and therefore if we carved out a subset of commands to cohere with our
-LTL,
-
-our model would be amenable to a similar
-
-\item  \cite{hauser2021bert} [under review] claims that Bert is robust, analyzing claims of four
-  papers, including the one which uses a wordnet attack
-
+\item The size is reasonably large with approximately 10000 multi-command instruction sequences
+\item The descriptions are full of linguistic nuance and diversity 
+\item The data is collected from multiple users, and is methodically produced
+\item The non-linguistic data may be of interest to those investigating
+how to grounding the utterances to the Street View panoramas
 \end{itemize}
 
-\subsection{Voice assistants for autonomous vehicles}
+We imagine to a first approximation, these sequences are a great starting point
+when trying to build a robust system with respect to the linguistic environment.
 
-The public company Cerence \cite{} is already designing voice assistants for autonomous
-vehicles, for which it has a large software stack between the voice processing
-to actual control of current automative components. In addition to its 
-technologies, many of which aren't accessible to external researchers due to
-intellectual property restrictions, Cerence has contracts with large automakers
-[..]. It is therefore natural to inquire, what a small team with varied
-backgrounds and not nearly the same expertise nor experience within the
-technological team at Cerence can provide.
+\begin{itemize}
+\item Finding the touchdown only coarsely approximates general navigating in a city.
+\item The workers
+  aren't in a place they know, so everything the reference is in their immediate
+  visual environment
+\item and this is a ``short-term'' task, it requires no long-distance navigation
+  and reasoning 
+\item Limited to NYC, hectic urban environments (also, daytime)
+\item Working with panoramas is not necessarily a great simulation to a real environment
+\item ``They are not per- mitted to write instructions that refer to text in the
+images, including street names, store names, or numbers''
+\item No temporal reasoning (as spatio-temporal is assumed)
+\end{itemize}
 
-First, we believe that the focus on verification, insofar as we envision it, is
-unlikely to be of current concern at Cerence due to the fact that their products
-are still being developed, and the primary goal of producing a working product
-is likely to precedence over preventing non-existent hostile actors.
+Ideally our data set would then have the properties
 
-Additionally, it is going to have to be determined by 
-[verification of self-driving cars generally : software, hardware, behavior in
-a real environment, etc]
+\begin{itemize}
+\item Long and short-term tasks
+\item Different cities, different languages (this will be dependent on the
+  context of the data collected), for instance, where there are dirt roads
+\item Updates over time (the user can update a context locally or globally) on
+  the road
+\item Users with various degrees of contextual information
+  Contextual information
+  - street place, names (named entity recognition) accessible to google
+  - people's names (mom's house)
+\end{itemize}
+
+That the data collection task in an objective way is inherently tied to the way we approximate it in
+collecting data, thereby limited by our experimental apparatus and assumptions
+in designing the data set.
+
+What is the actual feasibility of this stuff?
+
+how well does a given logic allow us to reason about a space of instructions.
+What is the logic grounded to, how it is verified , all of these may effect the
+choice of formulas
+
+we can't just design a perfect language to capture our meaning - goes back to
+the wishful thinking of Frege, but we can try to approximate it
+
+next intersection (and next left?) versus next gas station versus ``next to''
+ will be a store on your left with stars next to the name.
+
+That having the data grounded is both incredibly beneficial, but also makes
+designing the syntax and semantics tricky.
+
+\section{GF Grammar}
 
 
 
-\section{Future Work}
+\section{PGF Embedding}
+
+simplifying assumptions
+amgbiguity
+
+\subsection{Pipeline Proposal}
 
 The ``sets of'' clause
 references the inevitable ambiguity of parses even from a big enough parser, even
@@ -1122,87 +1088,6 @@ corpus and task data not well represented in the training data.
 
 The language models have been show \cite{bioBert}
 
-\subsection{Data Set}
-
-The most comprehensive data set known to us is the TOUCHDOWN data set
-\cite{chen2019touchdown}, which can simultaneously serve as a data source to
-inform the actual grammar (ideally, we'd like to be able to generate a grammar
-from a data source)
-
-authors use ``interactive visual navigation environment based on Google Street
-View''
-
-position of the agent relative to an object, and the position of two objects
-relative to one another
-``resolving the spatial descriptions'', but we focus only on the navigation part
-of the task
-
-Positive
-
-\begin{itemize}
-\item Real-world observations
-\item Real descriptions of these observations
-\item Diverse, relatively large
-\item
-\end{itemize}
-
-Follows ``instruction writing, target propagation to panoramas, validation, and
-workers and qualification'', the validation here 
-
-That having the data grounded is both incredibly beneficial, but also makes
-designing the syntax and semantics tricky.
-
-\begin{itemize}
-\item Finding the touchdown only coarsely approximates general navigating in a city.
-\item The workers
-  aren't in a place they know, so everything the reference is in their immediate
-  visual environment
-\item and this is a ``short-term'' task, it requires no long-distance navigation
-  and reasoning 
-\item Limited to NYC, hectic urban environments (also, daytime)
-\item Working with panoramas is not necessarily a great simulation to a real environment
-\item ``They are not per- mitted to write instructions that refer to text in the
-images, including street names, store names, or numbers''
-\item No temporal reasoning (as spatio-temporal is assumed)
-\end{itemize}
-
-Ideally our data set would then have the properties
-
-\begin{itemize}
-\item Long and short-term tasks
-\item Different cities, different languages (this will be dependent on the
-  context of the data collected), for instance, where there are dirt roads
-\item Updates over time (the user can update a context locally or globally) on
-  the road
-\item Users with various degrees of contextual information
-  Contextual information
-  - street place, names (named entity recognition) accessible to google
-  - people's names (mom's house)
-\end{itemize}
-
-That the data collection task in an objective way is inherently tied to the way we approximate it in
-collecting data, thereby limited by our experimental apparatus and assumptions
-in designing the data set.
-
-What is the actual feasibility of this stuff?
-
-how well does a given logic allow us to reason about a space of instructions.
-What is the logic grounded to, how it is verified , all of these may effect the
-choice of formulas
-
-we can't just design a perfect language to capture our meaning - goes back to
-the wishful thinking of Frege, but we can try to approximate it
-
-next intersection (and next left?) versus next gas station versus ``next to''
- will be a store on your left with stars next to the name.
-
-there is could either be 
-``all of the apartment buildings on your left''
-
-if you are going the correct way.
-logical content
-You will know you're on the correct road if to your left there are planters in the middle of the street
-
 
 \subsection{Syntax and Semantics}
 
@@ -1259,7 +1144,144 @@ pedantic to consider, as one's intuition might suggest the first case to be
 overwhelmingly more natural, the
 
 
-\section{Alternative ideas}
+\section{Related Work}
+
+\subsection{End-to-End Systems}
+
+\subsubsection{Natural Language and LTL verification}
+
+
+Just as important as producing a well-formed and meaningful LTL formula, but not
+explored in our work, is the translation from a logical formula a trustworthy
+controller meant for navigating a complex environment. For instance, in
+\cite{plaku2016motion} the authors indicate how to actually ground basic
+propositions from language to paths in a space, while our model, outputting
+formulas with non-grounded base predicates, is merely concerned with logical
+structure.
+
+Similarly, in \cite{7759412}, the authors develop a Verifiable Distributed
+Correspondence Graph (V-DCG) model whereby LTL formulas are used to ensure
+grounded instruction sequences are consistent. This work builds on other work of
+Kress-Gazit et al. \cite{provCorrectNatControl}, whereby the The Situated
+Language Understanding Robot Platform (SLURP) allows translation of arbitrary
+natural language into LTL. They suggest an ``ontology of common actions and the
+type of formulas that they produce'' is of critical importance. Our work is
+directly focused on the \emph{centrality of the grammar}, where a GF abstract
+syntax design allows one to give a precise ontology. We therefore see our work as
+a key intermediary phase when balancing formal and empirical interests.
+Kress-Gazit's work is more concerned with the controllers generated as the end
+result of a pipeline where the intermediary grammatical structure may not be so
+relevant.
+
+Our GF implementation, seeing the grammar as a necessary part of the
+verifiability (in that we can systematically map our sequences of commands to
+logical formulas representing sequences of states), also makes the possibility of
+supporting multi-lingual verifiability more immediate. Our system does not
+support this currently, but can easily be adjusted to so with the help of GF's
+functors (roughly adapted from Standard ML's functors) and the RGL. The lack of wide-coverage
+support of our grammar is possible to remediate through possible fine-tuning of
+a large language model to a data-set which coheres to the language our GF
+grammar generates, and we detail this in our discussion below [TODO : link].
+
+Another approach seeks to train a natural language to LTL planner using both NNs
+and reinforcement learning \cite{ltlSemParse}. Their work also uses a
+simultaneous CFG to generate \emph{semantically inadequate} sentences with
+corresponding LTL formulas from which they can direct machines to follow the
+instructions, and then have users describe the robot behavior in a more natural
+form. Despite this, their approach uses the machine to generate sentences and
+corresponding situations, most of which are ``nonsense'' and need to be filtered
+out, thereby leaving the narrations upon which their system leaves devoid of a
+genuine empirical data source. In addition, their corpus only contains 266
+words, still not the size one would need for our system. Finally, our suggested
+use of a pre-trained language model fine-tuned to the semantic parsing task
+gives us more flexibility in that the neural network and the verifiable grammar
+and semantics in the kernel could allow us to focus on the problems of breadth
+and depth somewhat independently.
+
+The same group, in \cite{kuo2020deep}, explore the most general possible
+end-to-end utterance to planner pipeline without intermediary states, namely, a
+symbolic representation. While this ``cutting out the middle woman'' mentality
+may be an idealistic long-term vision, it makes the system much too much of a
+black box - even though they are able to reason about their system's behavior
+through the use of attention maps. For the fine-tuned verification conditions
+about the linguistic utterances our work explores, the intermediate symbolic
+representations give a more explainable, predictable, and regulatable system.
+
+
+Formal Requirements Elicitation Tool (Fret) {fret}
+
+Use in aircraft, where there are many more controls, and the types of
+descriptions are inherently much more ``structured'', i.e. the pilots are
+assumed to have expertise and aren't just taking ad-hoc flights, but perhaps
+still don't have engineering, verification, or logical knowledge to give precise
+LTL specifications
+
+In \cite{fret} they use the Prototype Verification System (PVS) theorem prover
+to verify that 
+
+[Problem] There are two major challenges in making structured natural language
+amenable to formal analysis: (1) associating requirements with formulas that can
+be processed by analysis tools and (2) ensuring that the formulas conform to the
+language semantics. \cite{fretish}
+
+----- 
+
+% Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
+%   is relevant and well-cited (although they use an encoder-decoder method)
+
+
+\subsubsection{Tellex}
+
+Stephanie Tellex has written extensively about natural language inputs and
+interfaces with robots. Although she has not specifically written about
+autonomous vehicles, the domains have enough intersection to warrant careful
+consideration of much of her work, especially the recent stuff.
+
+\begin{itemize}
+
+\item Grounding with an intermediate symbolic state, no LTL, but possibly
+  relevant for paper generally. She also cites \cite{walkTalk}, a seminal paper in this area
+\begin{quote}
+Instruction following is a supervised learning problem
+where the agent must predict a trajectory that would satisfy an
+input natural language command. \cite{tellexInstr}
+\end{quote}
+\item The review paper \cite{MARGE2022101255} making recommendations has a
+  section on robustness, but this is mostly for the sake of allowing sharing of
+  interfaces and efficacy, no mention of verification (which is what we're
+  primarily after)
+\item They design a NL -> LTL for drones that are grounded to actual landmarks \cite{9197068}
+\item The group builds a trained pipeline that uses an object oriented
+  template-instance methodology to generalize to different ontological
+  categories in  \cite{hsiung2021generalizing} [under review]
+
+\item In \cite{patellearning} build learn a semantic parser from NL to LTL (so
+that the language is grounded) where they collect executions of the LTL formulas
+in different environments using a weakly-supervised training method with
+reinforcement learning Part if the paper has to do with the execution of the
+command being dependent on the path taken by the robot executing the command,
+not just meeting the goal requirements, thereby giving a complexity bonus in
+comparison to previous work. She also evaluates the model on the \cite{walkTalk}
+data set
+\end{itemize}
+
+\subsubsection{Commericial}
+
+The public company Cerence \cite{} is already designing voice assistants for autonomous
+vehicles, for which it has a large software stack between the voice processing
+to actual control of current automative components. In addition to its 
+technologies, many of which aren't accessible to external researchers due to
+intellectual property restrictions, Cerence has contracts with large automakers
+[..]. It is therefore natural to inquire, what a small team with varied
+backgrounds and not nearly the same expertise nor experience within the
+technological team at Cerence can provide.
+
+First, we believe that the focus on verification, insofar as we envision it, is
+unlikely to be of current concern at Cerence due to the fact that their products
+are still being developed, and the primary goal of producing a working product
+is likely to precedence over preventing non-existent hostile actors.
+
+\subsubsection{Alternative ideas}
 
 While the evaluation of machine learning systems provides assurances using
 different scores and metrics on different tasks assures one they may on average
@@ -1284,12 +1306,32 @@ of data, our system is narrowly focused as a proof-of-concept, from which it
 could either be extended by hand, or different components modified using
 other techniques and tools.
 
+TODO : other ml stuff, like ravi's publication
 
+\section{Publications Description}
+
+\subsection{Statistical (pre-trained) Language Models}
+
+
+\begin{itemize}
+
+\item In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
+context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
+parsible semantic form, that one can use a large pre-trained language model as a front-end
+to filter a much wider syntax into the CNL. GF's expressivity is
+more expressive than the SCFG, at least based off a tertiary reading in the
+index, and therefore if we carved out a subset of commands to cohere with our
+LTL,
+
+our model would be amenable to a similar
+
+\item  \cite{hauser2021bert} [under review] claims that Bert is robust, analyzing claims of four
+  papers, including the one which uses a wordnet attack
+
+\end{itemize}
+
+\section{LTL Intro In Agda}
 
 \printbibliography
 
-
 \end{document}
-
-
-% LocalWords:  CNLs
