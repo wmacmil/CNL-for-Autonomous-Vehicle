@@ -4,6 +4,7 @@
 
 module Main where
 
+--
 -- import Utils.Misc
 import Data.Maybe
 import Data.Attoparsec
@@ -103,11 +104,12 @@ rawTokenizedSents = liftM f tokenizedPOSsents
 nGramify :: Int -> IO [SentenceTaggedWord] -> IO [NgramTaggedWord]
 nGramify n = liftM (\s -> concat $ map (ngrams n) s)
 
-tokenizedPOSsents = tokenizeAndSplitPOS taggedNav' -- taggedCaseless
+tokenizedPOSsents = tokenizeAndSplitPOS taggedNav -- taggedCaseless
 
 oneGrams   = nGramify 1 tokenizedPOSsents
 twoGrams   = nGramify 2 tokenizedPOSsents
 threeGrams = nGramify 3 tokenizedPOSsents
+nineGrams = nGramify 9 tokenizedPOSsents
 
 
 -- could do a better job of controlling for optimization/complexity
@@ -156,6 +158,7 @@ showTopMGrams m sortedGroupFreqs =
 oneGramFreqs = sortNGramFreqs oneGrams
 twoGramFreqs = sortNGramFreqs twoGrams
 threeGramFreqs = sortNGramFreqs threeGrams
+nineGramFreqs = sortNGramFreqs nineGrams
 
 -- TODO : allow one to incquire verbs, maybe create a dictionary for key value pairs
 -- Really need to just turn this into some kind of data structure so that one can analyze it better

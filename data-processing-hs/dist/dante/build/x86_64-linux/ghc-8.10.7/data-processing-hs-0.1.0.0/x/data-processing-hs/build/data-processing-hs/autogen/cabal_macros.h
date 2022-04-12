@@ -70,15 +70,15 @@
   (major1) == 5 && (major2) <  1 || \
   (major1) == 5 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_lens */
-/* package lens-aeson-1.1.3 */
+/* package lens-aeson-1.2 */
 #ifndef VERSION_lens_aeson
-#define VERSION_lens_aeson "1.1.3"
+#define VERSION_lens_aeson "1.2"
 #endif /* VERSION_lens_aeson */
 #ifndef MIN_VERSION_lens_aeson
 #define MIN_VERSION_lens_aeson(major1,major2,minor) (\
   (major1) <  1 || \
-  (major1) == 1 && (major2) <  1 || \
-  (major1) == 1 && (major2) == 1 && (minor) <= 3)
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 0)
 #endif /* MIN_VERSION_lens_aeson */
 /* package text-1.2.4.1 */
 #ifndef VERSION_text

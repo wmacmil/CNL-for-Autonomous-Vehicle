@@ -865,59 +865,102 @@ how to grounding the utterances to the Street View panoramas
 
 We imagine to a first approximation, these sequences are a great starting point
 when trying to build a robust system with respect to the linguistic environment.
+Nonetheless, there are many potential drawbacks, both with the data collection
+process itself, and the application we have in mind. These include :
 
 \begin{itemize}
 \item Finding the touchdown only coarsely approximates general navigating in a city.
-\item The workers
-  aren't in a place they know, so everything the reference is in their immediate
-  visual environment
-\item and this is a ``short-term'' task, it requires no long-distance navigation
-  and reasoning 
-\item Limited to NYC, hectic urban environments (also, daytime)
+\item The data is limited to New York City, which is mostly a hectic urban environments,
+  and takes streetview images from only the day.
+\item The workers don't necessarily know New York, so everything the reference is in their immediate
+  visual environment.
+\item This is a ``short-term'' task, it requires no long-distance navigation
+  and reasoning. 
 \item Working with panoramas is not necessarily a great simulation to a real environment
-\item ``They are not per- mitted to write instructions that refer to text in the
-images, including street names, store names, or numbers''
-\item No temporal reasoning (as spatio-temporal is assumed)
+\item ``The workers are not permitted to write instructions that refer to text in the
+images, including street names, store names, or numbers''  \cite{chen2019touchdown}
+\item No explicit temporal reasoning with regards to actual and relative times,
+  i.e. ``noon'' and ``in 5 minutes'', respectively
+\item The limitations of using panoramic image data
+\item The fact that Amazon Turk workers are exploited. This may influence how they
+  do the work (they try to meet the standard that makes them the most amount of
+  money), and also not be a representative sample of the population.
 \end{itemize}
 
-Ideally our data set would then have the properties
+A truly ideal data set would resolve these issues and meet the following
+criteria :
 
 \begin{itemize}
-\item Long and short-term tasks
-\item Different cities, different languages (this will be dependent on the
-  context of the data collected), for instance, where there are dirt roads
-\item Updates over time (the user can update a context locally or globally) on
-  the road
-\item Users with various degrees of contextual information
-  Contextual information
-  - street place, names (named entity recognition) accessible to google
-  - people's names (mom's house)
+\item The instructions would consist of long and short distance driving tasks,
+  preferably interspersed.
+\item The data set would include different urban and rural areas, different
+  languages, non-paved environments, different weather and lighting conditions, and possibly multiple speakers in the car
+\item The passengers would be more diverse and have vary degrees of contextual
+  information like street place, public names like ``the opera'' and 
+  private names like ``mom's house'' (whereby a named entity recognition would
+  be very important component)
+\item Collecting the data ``in the wild'', envisioning a cab with a human
+  drivers equipped with sensors and microphones
 \end{itemize}
 
-That the data collection task in an objective way is inherently tied to the way we approximate it in
-collecting data, thereby limited by our experimental apparatus and assumptions
-in designing the data set.
+That the data collection task in an objective way is inherently tied to the way
+we collect the data, approximating the world and environment. This limitation is
+over our whole experimental apparatus and assumptions in designing the data set. 
 
-What is the actual feasibility of this stuff?
+\subsubsection{Filtering the data set}
 
-how well does a given logic allow us to reason about a space of instructions.
-What is the logic grounded to, how it is verified , all of these may effect the
-choice of formulas
+Once the natural language commands were extracted from the touchdown JSON file as a preprocessing stage,
+we sought to curate the data so that it is more compatible with our GF grammar. We ran the Stanford part-of-speech tagger
+\cite{toutanova-etal-2003-feature} over the command sequences, modified with a
+``Finish'' sentence substituted for the touchdown phrase to indicate command
+termination.
 
-we can't just design a perfect language to capture our meaning - goes back to
-the wishful thinking of Frege, but we can try to approximate it
+We to process the data so that it enables both generation of a GF grammar which
+parses at least a minimal skeleton of the linguistic diversity found in the
+corpus. As GF grammar is not capable of directly interfacing with out-of-the-box
+part-of-speech-taggers at the \emph{concrete syntax level} when using the RGL
+because of a mismatch of grammatical categories, it is at the \emph{abstract
+syntax level}. While this is a potentially important line of research - to 
+interface GF deal with tagged data-sets - the n-gram language model over
+the corpus  lexicon is very capable of informing the GF grammar.
 
-next intersection (and next left?) versus next gas station versus ``next to''
- will be a store on your left with stars next to the name.
+The processing of the data in Haskell was simple : we simply ordered the n-grams
+of the whole words of the corpus by frequency and (n-gram) POS label, and this
+was easily done with basic functional programming techniques utilizing lists and
+tuples, although in the future it would certainly be better to use a Lens
+library interface. For instance, one can quickly filter the most common
+POS-ngrams to discover that ``go'', ``be'', and ``turn'' are the most frequent
+verbs, and that the most frequent POS-trigrams of the form \emph{(preposition,
+cardinal number, singular or mass noun)}, are ``through one intersection'', ``for
+one block'', and ``between two silver''.
 
-That having the data grounded is both incredibly beneficial, but also makes
-designing the syntax and semantics tricky.
+One interesting facet of this data set is the high count of certain ``big n''
+n-grams : the 9-gram ``so you are moving with the flow of traffic'' occurs 311
+times in the corpus. This regularity indicates how domain specific the corpus
+is, and also indicates the most important phrases to include in the grammar.
 
-\section{GF Grammar}
+[TODO : maybe move to GF section]
+
+There is still work to be done to actually integrate this corpus with our
+grammar so-as to maximize ratio of parsible expression relative to the size of the
+grammar. We sketch a strategy for this integration. Once can presumably define a
+threshold to choose the most frequent nouns and adjectives, and verbs too.
+
+One challenge for the LTL 
 
 
 
-\section{PGF Embedding}
+
+% [(["so_RB","you_PRP","are_VBP","moving_VBG","with_IN","the_DT","flow_NN","of_IN","traffic_NN"],311),
+
+
+[Todo : link]
+
+
+\subsection{GF Grammar}
+
+
+\subsubsection{PGF Embedding}
 
 simplifying assumptions
 amgbiguity
