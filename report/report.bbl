@@ -2225,6 +2225,51 @@
       \verb http://arxiv.org/abs/1312.6199
       \endverb
     \endentry
+    \entry{toutanova-etal-2003-feature}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=b92aa283415413bb8d2a1548716d0c7d}{%
+           family={Toutanova},
+           familyi={T\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9fb237891a1517d36109c68767dd6fae}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=300d4990e626d975e0c28630444f63c3}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={Yoram},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{fullhash}{61c9e289a54a17659dffa92aea909ea9}
+      \strng{bibnamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authorbibnamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authornamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authorfullhash}{61c9e289a54a17659dffa92aea909ea9}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2003 Human Language Technology Conference of the North {A}merican Chapter of the Association for Computational Linguistics}
+      \field{title}{Feature-Rich Part-of-Speech Tagging with a Cyclic Dependency Network}
+      \field{year}{2003}
+      \field{pages}{252\bibrangedash 259}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://aclanthology.org/N03-1033
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/N03-1033
+      \endverb
+    \endentry
     \entry{virk2014developing}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=3cc4d08c137cd8e17a5d5588d4875965}{%

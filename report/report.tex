@@ -33,6 +33,7 @@ isbn=false, doi=false, ]{biblatex}
 \hypersetup{ citecolor=RoyalBlue }
 
 \usepackage{fontspec}
+\usepackage{tikz-cd}
 
 \usepackage{titlesec}
 
@@ -905,14 +906,14 @@ criteria :
 
 That the data collection task in an objective way is inherently tied to the way
 we collect the data, approximating the world and environment. This limitation is
-over our whole experimental apparatus and assumptions in designing the data set. 
+over one's whole experimental apparatus and assumptions in designing the data set. 
 
 \subsubsection{Filtering the data set}
 
 Once the natural language commands were extracted from the touchdown JSON file as a preprocessing stage,
 we sought to curate the data so that it is more compatible with our GF grammar. We ran the Stanford part-of-speech tagger
 \cite{toutanova-etal-2003-feature} over the command sequences, modified with a
-``Finish'' sentence substituted for the touchdown phrase to indicate command
+``Finish.'' sentence substituted for the touchdown phrase to indicate command
 termination.
 
 We to process the data so that it enables both generation of a GF grammar which
@@ -926,9 +927,9 @@ the corpus  lexicon is very capable of informing the GF grammar.
 
 The processing of the data in Haskell was simple : we simply ordered the n-grams
 of the whole words of the corpus by frequency and (n-gram) POS label, and this
-was easily done with basic functional programming techniques utilizing lists and
-tuples, although in the future it would certainly be better to use a Lens
-library interface. For instance, one can quickly filter the most common
+was easily done with basic functional programming techniques operating over
+nested lists and tuples, although in the future it would certainly be better to use a lens
+interface. For instance, one can quickly filter the most common
 POS-ngrams to discover that ``go'', ``be'', and ``turn'' are the most frequent
 verbs, and that the most frequent POS-trigrams of the form \emph{(preposition,
 cardinal number, singular or mass noun)}, are ``through one intersection'', ``for
@@ -939,16 +940,128 @@ n-grams : the 9-gram ``so you are moving with the flow of traffic'' occurs 311
 times in the corpus. This regularity indicates how domain specific the corpus
 is, and also indicates the most important phrases to include in the grammar.
 
+\subsection{GF Grammar}
+
+\subsubsection{Brief Intro To Gf}
+
+A grammar specification in GF is an abstract syntax, where one specifies trees,
+and a concrete syntax, where one says how the trees compositionally evaluate to
+strings. Multiple concrete syntaxes may be attached to a given abstract syntax,
+and these different concrete syntaxes represent different languages. An AST may
+then be linearized to a string for each concrete syntax. Conversely, given a
+string admitted by the language being defined, GF's parser will generate all the
+ASTs which linearize to that tree. The composition of parsing and linearization
+amounts to machine translation.
+
+When defining a GF pipeline, one has to merely to construct an abstract syntax
+file and a concrete syntax file such that they are coherent. In the abstract,
+one specifies the \emph{semantics} of the domain one wants to translate over,
+which is ironic, because we normally associate abstract syntax with \emph{just
+syntax}. However, because GF was intended for implementing the natural language
+phenomena, the types of semantic categories (or sorts) can grow much bigger than
+is desirable in a programming language, where minimalism is generally favored.
+
+The two functions displayed in \autoref{fig:N2}, $Parse : \{Strings\}
+\rightarrow \{\{ASTs\}\}$ and $Linearize : \{ASTs\} \rightarrow \{Strings\}$, obey
+the important property that :
+
+ $$\forall s \in \{Strings\}. \forall x \in (Parse(s)). Linearize(x) \equiv s$$
+
+Both the $\{Strings\}$ and $\{\{ASTs\}\}$ are really parameterized by a grammar
+$G$.
+
+\begin{figure}
+\centering
+\begin{tikzcd}
+Strings \ar[r,"Lexical\ Analysis"] \ar[rr,bend right,"GF\ Parser"'] &[10em] Lexemes
+\ar[r,"Parsing"] &[10em] ASTs \ar[ll,bend right, "GF\ Linearization"] 
+\end{tikzcd}
+\caption{GF in a nutshell} \label{fig:N2}
+\end{figure}
+
+\subsubsection{Our Drive Grammar}
+
+We present a simple proof-of-concept grammar, to illustrate these ideas above.
+
+The abstract syntax consists of two declarations, where one defines
+\emph{categories} with ``cat'' and simply typed function signatures over those
+categories, denoted by the ``fun'' keyword. GF has support for dependent types
+as well, although they make general parsing undecidable and are relatively
+unmaintained.
+
+linguistic analysis
+
+We try to give 
+
+\begin{verbatim}
+cat
+  Command      ; -- don't go to the store
+  Polarity     ; -- don't
+  PosCommand   ; -- go to the store
+  Place        ; -- the store
+  Time         ; -- in 5 minutes
+  Action       ; -- drive
+  Way          ; -- to
+  How          ; -- quickly
+  Where        ; -- left
+  AdvPh        ; -- to the store
+  AdjPh        ; -- 
+  UndetObj     ; -- store
+  Determ       ; -- the
+  Object       ; -- the store
+  Number       ; -- a
+  Conjunct     ; -- and
+  Condition    ;
+  Descript     ; -- 
+\end{verbatim}
+
+\begin{verbatim}
+\end{verbatim}
+
+
+ 
+The concrete syntax introduces two complimentary declarations. The first is
+linearization types ``lincat'', which essentially consist of strings and finite
+number types, and products (manifest as records). From this calculus one can
+encode coproducts as well, which are built. The function bodies are given
+via the ``lin'' declaration. There are operator and parameter delcarations which
+serve as auxiliary 
+
+ways
+of generating 
+
+
+% We 
+% The first,
+% syntactic completeness, means that a construction contains all the syntactic infor-
+% mation necessary to verify its correctness. It says that a term type-checks in the
+% PL case, or some natural language form can be deterministically transformed to
+% a term that does type-check.
+
+\paragraph{other ideas}
 [TODO : maybe move to GF section]
 
 There is still work to be done to actually integrate this corpus with our
 grammar so-as to maximize ratio of parsible expression relative to the size of the
-grammar. We sketch a strategy for this integration. Once can presumably define a
-threshold to choose the most frequent nouns and adjectives, and verbs too.
+grammar. We sketch a strategy for this integration.
+
+Once can presumably define a
+threshold to choose the most frequent nouns, adjectives, and verbs too.
+
+One of the difficulties is distinguishing between places and actions, and this
+will become even 
+
+However,
+many verbs don't 
 
 One challenge for the LTL 
 
 
+While the role of large language models is certainly concerned with cutting out
+a lot of the intermediary processing and time with creating natural language
+applications, we don't imagine verifiability, as we see it coming through the
+formal methods community, as feasible without some kind of intermediary logical
+specification of the behavior. 
 
 
 % [(["so_RB","you_PRP","are_VBP","moving_VBG","with_IN","the_DT","flow_NN","of_IN","traffic_NN"],311),
@@ -957,7 +1070,6 @@ One challenge for the LTL
 [Todo : link]
 
 
-\subsection{GF Grammar}
 
 
 \subsubsection{PGF Embedding}

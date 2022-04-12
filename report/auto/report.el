@@ -29,6 +29,7 @@
     "xspace"
     ""
     "fontspec"
+    "tikz-cd"
     "titlesec"
     "graphicx"
     "float"
@@ -41,6 +42,7 @@
    (LaTeX-add-labels
     "fig:A1"
     "fig:A2"
+    "fig:N2"
     "fig:M1"
     "fig:M2"
     "fig:M3")
