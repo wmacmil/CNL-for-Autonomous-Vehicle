@@ -123,13 +123,13 @@ initial voice command to the vehicle like ``drive to San Francisco'', which the
 google voice assistant on my phone can already recognize, and plan the
 \emph{initial path}. Then suppose that during the route, I get hungry and
 realize I need to refuel. I can utter ``go to the grocery store after the next
-exit, and then go to fuel station, but stop at so I can take a picture of that
-crazy sign, first.'' This is how a passenger might direct a human driver to take
-a \emph{modified path}, and we take for granted that the passenger would find it
-the easiest to communicate this as if the computational agent is human. Finally,
-we know that neither the idealized nor the modified path can be met without
-local perturbations, and that the \emph{actual path} should be optimized to
-conform to the modified path relative to some metric.
+exit, and then go to fuel station, but stop by the fire hydrant so I can take a
+picture of that crazy sign, first.'' This is how a passenger might direct a
+human driver to take a \emph{modified path}, and we take for granted that the
+passenger would find it the easiest to communicate this as if the computational
+agent is human. Finally, we know that neither the idealized nor the modified
+path can be met without local perturbations, and that the \emph{actual path}
+should be optimized to conform to the modified path relative to some metric.
 
 The many sub-problems under this grandiose vision are themselves grandiose.
 Training a neural network to accurately capture the meaning of natural language
@@ -680,7 +680,7 @@ Specifically, given a finite (or incomplete) set of locations or events $\{l_i\}
 where $i \in \{1..n\}$ we can say a baseline coverage is of the form 
 $\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of conjunction,
 doesn't distinguish between the order in which the locations are visited. To
-ensure that for every location $l_i$ follows its predecessor $l_{i-1}$, we
+ensure that for every location $l_i$ eventually follows its predecessor $l_{i-1}$, we
 nest the locations in future temporal operators, essentially building a linked
 list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$ with an extra $F$
 operator appended at every node. To induce the ordering, we can conjoin a predicate
@@ -877,7 +877,9 @@ process itself, and the application we have in mind. These include :
   visual environment.
 \item This is a ``short-term'' task, it requires no long-distance navigation
   and reasoning. 
-\item Working with panoramas is not necessarily a great simulation to a real environment
+\item Working with panoramas is not necessarily a great simulation to a real
+  environment. This manifests in, for example, frequent use of the word choice
+  of ``walk'' instead of ``drive''.
 \item ``The workers are not permitted to write instructions that refer to text in the
 images, including street names, store names, or numbers''  \cite{chen2019touchdown}
 \item No explicit temporal reasoning with regards to actual and relative times,
@@ -989,9 +991,46 @@ categories, denoted by the ``fun'' keyword. GF has support for dependent types
 as well, although they make general parsing undecidable and are relatively
 unmaintained.
 
-linguistic analysis
+The first thing we want to recognize before delving into the details of our
+Grammar is that the directive-style commands, being informed by the intended
+downstream LTL semantics sequencing, namely, the car visiting a series of
+locations $l_i$ in some not necessarily strict order, given the form $F\; (l_1
+\wedge F\; (l_{2} \wedge ... F\; l_{n}))$.
 
-We try to give 
+As the core driving controls of the vehicle are limited to an accelerator,
+break, and steering wheel, we can look at verbs from the corpus, to the
+recognize that only present tense, base-form verbs ``VB'' inform these. Other
+POS verb classifications - past -tense ``VBD'', gerund ``VBG'', past participle
+``VBN'', singular present, 3rd person or not, ``VBP'' and ``VBZ'' respectively -
+either seem to describe a scene or object in the peripheral environment or the viewers
+relationship to some such happening. We show the counts of the top verbs
+processed by our Haskell script.
+
+
+\begin{verbatim}
+  ([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
+  ([(["left"],228),(["came"],59),(["made"],47),(["started"],44)],["VBD"])
+  ([(["going"],1684),(["facing"],939),(["moving"],849),(["passing"],617)],["VBG"])
+  ([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced"],263)],["VBN"])
+  ([(["are"],3554),(["'re"],1185),(["reach"],1100),(["get"],770)],["VBP"])
+  ([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],["VBZ"])
+\end{verbatim}
+
+The exception is the base-form ``be'', which
+typically denotes things are relative to you. So if one says ``go to the store
+and there should be a mailbox on your right...'', the logical condition could be
+indicated as $F\; (theStore \wedge aMailboxOnRight \wedge ...)$, whereby being
+at the store is next to a mailbox are simultaneous properties to verify.
+
+One recognizes that the relationships of the driver to the scenarios described is to
+be understood with respect to the camera and the sensors, with the vehicles spatial/temporal relationship to
+them dealt with by the grounding mechanism. We therefore organize our commands
+based off the most frequent verbs : go, turn, stop, ...)
+
+We now indicate the main ``semantic'' content of our parser, whereby our
+primitive ontological categories are listed alongside example strings which
+are grammatical examples parsible and linearizable with respect to the
+linearization.
 
 \begin{verbatim}
 cat
@@ -1005,32 +1044,254 @@ cat
   How          ; -- quickly
   Where        ; -- left
   AdvPh        ; -- to the store
-  AdjPh        ; -- 
   UndetObj     ; -- store
   Determ       ; -- the
   Object       ; -- the store
   Number       ; -- a
   Conjunct     ; -- and
-  Condition    ;
-  Descript     ; -- 
+  Condition    ; -- there is a museum
+  Descript     ; -- big
 \end{verbatim}
+
+These categories form the core calculus for building imperative commands. To
+construct them we must specify the functions, of which we only sample a few. We
+first notice that categories like ``Descript'', ``Conjunct'', ``Where'' are all
+limited to single words, whereas the phrases must be syntactically composed - and
+this composition is given by plugging in sub-expressions in the AST, typable via
+simple functions over the categories. We list a subset of the grammar ordered by
+relative proximity to the root of the tree.
 
 \begin{verbatim}
+  DoTil     : Action   -> Time         -> PosCommand ;
+  SimpleCom : Action   -> PosCommand ;
+  Finish    : PosCommand ;
+
+  ModAction : Action -> AdvPh -> Action ;
+
+  MkAdvPh     : Way   -> Object -> AdvPh ;
+  HowPhrase   : How   -> AdvPh ;
+  WherePhrase : Where -> AdvPh ;
+
+  WhichObject : Determ -> UndetObj -> Object ;
+  ObjectPlace : Place  -> Object ;
+
+  ModObj : Descript -> UndetObj -> UndetObj ;
+
+  InNMin : Determ -> Way -> Time ;
+
+  MkNum  : Int -> Determ ;
+
+  Quickly : How      ;
+  Left    : Where    ;
+  Around  : Where    ;
+  To      : Way      ;
+  After   : Way      ;
+  Store   : UndetObj ;
+  Traffic : UndetObj ;
+  Car     : UndetObj ;
+  Person  : UndetObj ;
+  London  : Place    ;
+  Drive   : Action   ;
+  Turn    : Action   ;
+  Big     : Descript ;
+  A       : Determ   ;
 \end{verbatim}
 
+We since the sequence consists of multiple locations, each of which may satisfy multiple
+conditions, we need to \emph{listify} certain categories. We can include 
+judgments like \term{cat [PosCommand]{n}}.
+GF natively supports list categories, the judgment \term{cat [C] {n}} can be
+desugared to
 
+\begin{verbatim}
+  cat ListC ;
+  fun BaseC : C -> ... -> C -> ListC ; -- n C ’s
+  fun ConsC : C -> ListC -> ListC
+\end{verbatim}
+
+This introduces new categories and functions : for instance, one may induce
+lists of positive commands by introducing a list of positive commands which can
+be which, can then be coerced back into a ``single command'' so that the string
+``go to the store and turn left'' can be parsed by adding including the
+following judgments, noting the last two are automatically generated at compile-time :
+
+\begin{verbatim}
+  cat [PosCommand]{2}; 
+  fun 
+    CompoundCommand : Conjunct   -> [PosCommand] -> PosCommand   ;
+    BasePosCommand  : PosCommand -> PosCommand   -> [PosCommand] ;
+    ConsPosCommand  : PosCommand -> [PosCommand] -> [PosCommand] ;
+\end{verbatim}
  
+One can include an explicit \term{cat Commands;} to enable punctuation denoting
+full sentence structure, which should also be listified. We reveal a parse tree
+example from the GF REPL.
+
+\begin{verbatim}
+p " go to the store , turn left  and stop . Finish ." | tt
+* ConsCommands
+    * OneCommand
+        * CompoundCommand
+            * And
+              ConsPosCommand
+                * SimpleCom
+                    * ModAction
+                        * Go
+                          MkAdvPh
+                            * To
+                              WhichObject
+                                * The
+                                  Store
+                  BasePosCommand
+                    * SimpleCom
+                        * ModAction
+                            * Turn
+                              WherePhrase
+                                * Left
+                      SimpleCom
+                        * Stop
+      BaseCommands
+        * OneCommand
+            * Finish
+\end{verbatim}
+
+One should notice that the tree is not subject to arbitrary branching. In fact,
+this is evident that if one starts walking around the exterior of the tree, that
+the leaves consist of expressions which linearize to ``the store'', ``left'',
+``stop'' and ``Finish.''. Indeed, these are exactly and only the sequence of
+places and conditions one imagines the vehicle going to and satisfying during 
+a trip. Our grammar is designed such that the abstract syntax reflects a linear
+ordering of the atomic conditions, and therefore allows for a straightforward
+denotation as a canonical template formula $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$.
+
+\paragraph{Linearization}
+
+While the abstract syntax is a sort of ``neutral syntax'', attempting to specify
+and capture the structure, meaning, and ontology of a given domain, the concrete
+syntax realizes this via different models, manifest as languages : sets of
+strings whose concrete form must cohere to the abstract structure. 
+
 The concrete syntax introduces two complimentary declarations. The first is
-linearization types ``lincat'', which essentially consist of strings and finite
+linearization types ``lincat'', which essentially consist of strings, finite
 number types, and products (manifest as records). From this calculus one can
-encode coproducts as well, which are built. The function bodies are given
-via the ``lin'' declaration. There are operator and parameter delcarations which
-serve as auxiliary 
+encode coproducts as well, which one has access to as well. The function bodies
+are given via the ``lin'' declaration. There are operator and parameter
+declarations which serve as auxiliary means of prettifying one's code.
 
-ways
-of generating 
+We utilize the RGL, with the API guiding most of the implementation details.
+This allows us to focus on any particular domain specific or syntactic
+phenomena, delegating morphological details like tense, aspect, and number to the RGL
+authors. This does raise an interesting point : the RGL, enabling more
+expressive grammars ``out the box'' can actually hide morphological detail which
+may be semantically relevant for a given situation. Therefore, one would need to
+account for number in designing the above abstract syntax if one wants the
+references ``person'' versus ``people'' to be distinguished as atomic elements
+which may be grounded differently.
 
+Importing from the RGL, we show the linearization categories coherent with those above.
 
+\begin{verbatim}
+lincat
+  Commands     = Text        ;
+  Polarity     = Pol         ;
+  Command      = Utt         ; 
+  [PosCommand] = [Imp]       ;
+  PosCommand   = Imp         ;
+  Conjunct     = Conj        ;
+  Action       = VP          ;
+  Way          = Prep        ; 
+  AdvPh        = Adv         ;
+  How          = Adv         ;
+  Where        = Adv         ;
+  Time         = Adv         ;
+  Place        = NP          ;
+  Object       = NP          ;
+  Determ       = Det         ;
+  Number       = Det         ;
+  UndetObj     = CN          ;
+  Descript     = SyntaxEng.A ;
+  Condition    = Cl          ; 
+\end{verbatim}
+
+If one goes into the RGL source, we can see a sample of the linearization
+categories. For instance, in English an common noun \term{CN} has an inherent
+gender given by a field \term{g : Gender}, which is just a ternary parameter
+type with three constructors but may manifest differently
+depending on if its singular or plural, and whether the case argument indicates
+a possessive relation. We quote the relevant parts of the RGL :
+
+\begin{verbatim}
+  lincat
+    CN = {s : Number => Case => Str ; g : Gender} ;
+  param    
+    Gender = Neutr | Masc | Fem ;
+    Number = Sg | Pl ;
+    Case = Nom | Gen ;
+\end{verbatim}
+
+By abstracting away these details within our domain-specific grammar, we can
+just focus on capturing relevant semantic features. We can then assign function
+bodies coherent with the abstraction functions, which are assured to be
+well-typed with the linearization types thanks to GF's type-checker. One can
+then utilize both the syntactic function \term{mkCN} and the lexical operator
+\term{mkN} to build the concrete item for \term{Person} which is irregular with regards
+to its plural form. We show the operational implementation of \term{mkN}, which
+reveals how one can pattern match on string structure to implement the
+morphological possessive.
+
+\begin{verbatim}
+  lin Person  = mkCN (mkN "person" "people") ;
+
+  ---- Below from RGL ----
+
+  oper
+    mkN : (man,men : Str) -> N = mk2N ;
+    mk2N = \man,men ->
+      let mens = case last men of {
+        "s" => men + "'" ;
+        _   => men + "'s"
+        }
+      in
+      mk4N man men (man + "'s") mens ;
+\end{verbatim}
+
+The interested reader should reference the source code for this project, or
+other more comprehesive resources across the GF literature [TODO : cite].
+
+\paragraph{Why GF?}
+
+A key insight of GF is approximate a [fragment of] natural language as a
+programming language. This arose from considerations in the distinction between
+syntax and semantics in natural language, and the realization that the abstract
+meaning of an utterance should be preserved when translating between two
+languages. This is of great utility when translating between a CNL and a PL,
+because ideas from compiler literature and programming language research may
+influence how we design a CNL so that they may succinctly express ideas from
+some formal system. One uses basic ideas from denotational semantics when
+translating between ASTs, morphing GF's trees into Haskell objects, which may be
+evaluated down-stream with regards to some abstract system model coupled with
+grounding strategies.
+
+Although there are innumerable syntactic and grammatical theories, many
+equipped with computational tools like parsers, of which other relevant
+literature cited here [TODO, reference] has taken advantage, we suggest using GF
+introduces new perspectives on this problem. 
+
+\begin{itemize}
+\item Multilingual support from the RGL
+\item Native support embedding GF ASTs into Haskell GADTS
+\item Separation of abstract (semantic) and concrete (syntactic and
+  morphological) considerations
+\item Sleek but simple type system where standard functional programming
+  intuition and practices abound
+\item Many morphological phenomena can be accounted for at the concrete level as
+  GF allows more interesting languages than those admitted by CFGs 
+\item Cubic time parsing with respect to the size of the grammar
+\end{itemize}
+
+These perspectives reflect our own predispositions aimed at functional
+programming as a verification paradigm.
+  
 % We 
 % The first,
 % syntactic completeness, means that a construction contains all the syntactic infor-
