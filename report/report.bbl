@@ -19,6 +19,28 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{angelovApi}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{fullhash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{bibnamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authorbibnamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authornamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authorfullhash}{5b50822fb5130e00603d8b53547e6247}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://hackage.haskell.org/package/gf-3.11.0/docs/PGF.html}}
+      \field{title}{{PGF}}
+      \field{year}{2010}
+    \endentry
     \entry{angelov2010pgf}{article}{}
       \name{author}{3}{}{%
         {{hash=5b50822fb5130e00603d8b53547e6247}{%
@@ -2525,7 +2547,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{angelovApi}
   \missing{fret}
   \missing{fretish}
   \missing{ml79}
