@@ -1314,20 +1314,20 @@ functions from the PGF API \cite{angelovApi} and the denotational
 \term{semantics} function to operate on a string like ``go to the store , turn
 left and stop at the woman with the dog . go to the bridge . Finish .'' and
 produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
-(theWomanWithTheDog \wedge F\; (theBridge \wedge \wedge G\; FINISHED))))$. This
+(theWomanWithTheDog \wedge F\; (theBridge \wedge G\; finished))))$. This
 visible as an AST represented as a Haskell datatype \term{Phi} :
 
-% \begin{verbatim}
-%   F (Meet 
-%       (Atom "the_store") 
-%       (F (Meet 
-%           (Atom "turn_left") 
-%           (F (Meet 
-%                (Atom "the_woman_with_the_dog") 
-%                (F (Meet 
-%                     (Atom "the_bridge") 
-%                     (G (Atom "FINISHED")))))))))
-% \end{verbatim}
+\begin{verbatim}
+  F (Meet 
+      (Atom "the_store") 
+      (F (Meet 
+          (Atom "turn_left") 
+          (F (Meet 
+               (Atom "the_woman_with_the_dog") 
+               (F (Meet 
+                    (Atom "the_bridge") 
+                    (G (Atom "FINISHED")))))))))
+\end{verbatim}
 
 % To convert from our GF representation, we recall that the list categories enable
 % one to imagine a AST having nodes are given as lists. This then allows one to
