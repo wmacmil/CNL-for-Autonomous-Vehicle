@@ -1309,13 +1309,13 @@ to an AST, whereby it can be transformed into a Haskell program manipulable such
 that it produces a canonical LTL expression representing our envisioned
 sequencing application. 
 
-% We utilize the outermost function \term{applySem}, which utilizes standard
-% functions from the PGF API \cite{angelovApi} and the denotational
-% \term{semantics} function to operate on a string like ``go to the store , turn
-% left and stop at the woman with the dog . go to the bridge . Finish .'' and
-% produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
-% (theWomanWithTheDog \wedge F\; (theBridge
-% \wedge \wedge G\; FINISHED))))$. This visible as an AST represented as a Haskell datatype \term{Phi} :
+We utilize the outermost function \term{applySem}, which utilizes standard
+functions from the PGF API \cite{angelovApi} and the denotational
+\term{semantics} function to operate on a string like ``go to the store , turn
+left and stop at the woman with the dog . go to the bridge . Finish .'' and
+produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
+(theWomanWithTheDog \wedge F\; (theBridge \wedge \wedge G\; FINISHED))))$. This
+visible as an AST represented as a Haskell datatype \term{Phi} :
 
 % \begin{verbatim}
 %   F (Meet 
