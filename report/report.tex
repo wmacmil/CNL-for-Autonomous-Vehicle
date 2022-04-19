@@ -1299,8 +1299,104 @@ programming as a verification paradigm.
 % PL case, or some natural language form can be deterministically transformed to
 % a term that does type-check.
 
+\subsubsection{PGF Embedding}
+
+As GF is written in Haskell, the manipulation of GF ASTs as Haskell programs is
+a natural idea which one may apply to the problem of generating LTL formulas.
+
+An simple example illustrates what we do, the GF grammar can parse a string in
+to an AST, whereby it can be transformed into a Haskell program manipulable such
+that it produces a canonical LTL expression representing our envisioned
+sequencing application. 
+
+% We utilize the outermost function \term{applySem}, which utilizes standard
+% functions from the PGF API \cite{angelovApi} and the denotational
+% \term{semantics} function to operate on a string like ``go to the store , turn
+% left and stop at the woman with the dog . go to the bridge . Finish .'' and
+% produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
+% (theWomanWithTheDog \wedge F\; (theBridge
+% \wedge \wedge G\; FINISHED))))$. This visible as an AST represented as a Haskell datatype \term{Phi} :
+
+% \begin{verbatim}
+%   F (Meet 
+%       (Atom "the_store") 
+%       (F (Meet 
+%           (Atom "turn_left") 
+%           (F (Meet 
+%                (Atom "the_woman_with_the_dog") 
+%                (F (Meet 
+%                     (Atom "the_bridge") 
+%                     (G (Atom "FINISHED")))))))))
+% \end{verbatim}
+
+% To convert from our GF representation, we recall that the list categories enable
+% one to imagine a AST having nodes are given as lists. This then allows one to
+% write a general functions from CNL sentences, \term{String}, to formulas
+% \term{Phi}. The function \term{semantics} should give one a taste of how to
+% manipulate GF objects. We describe the algorithm via its recursive behavior.
+
+% \begin{verbatim}
+% semantics :: GListCommands -> Phi
+% semantics x =
+%   let (GListCommands ((GOneCommand y) : _)) = normalizeList x
+%   in case y of
+%       q@(GSimpleCom a) -> astToAtom q
+%       (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
+% \end{verbatim}
+
+% We first start out by normalizing the list structure. A list of commands
+% \term{GListCommands} consists of a list of sentences, which may be further
+% deconstructed as a list of simple commands. We simply flatten the list of lists,
+% building a list of simple commands each of which include the atomic variables to
+% be grounded.
+
+% We assume positive polarity throughout, deflecting the negation operator for
+% future work. Additionally, although the disjuntive \term{Or} operator is parsed
+% by the grammar, it is not included in the sequencing task (natively), and we
+% hope not to confuse the details depending on how different Boolean operators may
+% change the interpretation of a path.
+
+% The \term{normalizeList} function normalizes the nested lists by breaking the sentence
+% structure into positive commands, where the flattening actually takes place.
+% This materializes in the following functional dependencies :
+
+% \begin{verbatim}
+% normalizeList ::  GListCommands -> GListCommands
+%   where
+%   normalizeNestedLists :: GListCommands -> GListPosCommand
+%     where
+%       normalizeListPosCommand :: GListPosCommand -> GListPosCommand
+%         where
+%           unSentence :: [GCommands] -> [GPosCommand]
+%           flattenSublist :: GPosCommand -> [GPosCommand]
+%           where
+%             getListPosCommands :: GListPosCommand -> [GPosCommand]
+% \end{verbatim}
+
+% To produce the atoms (which we must account for the simple commands, denoted by
+% the \term{SimpleCom} function [TODO cite GF Grammar] . The constructors are
+% appended with a G in Haskell to prevent name clashes. This operation converting
+% strings to atoms simply replaces spaces with underscores in the possibly
+% modified object (``the woman with the dog'') or condition (specified by the
+% instruction ``turn left''). We note that the condition should be ``is_left'',
+% but we forego this detail.
+
+% One could go through our example with a fine-toothed comb, making both the
+% grammar more expressive, and deciding how explicit linguistic instructions
+% manifest as different temporal combinators. In addition, one could ask if there's
+% a more expressive atomic data structure that may be more well suited to
+% grounding. We suggest this be done after more deliberate conditions and ideas
+% about the model of the driver and the environment, in addition to experience
+% with an application setting, have been established.
+
+
+
 \paragraph{other ideas}
+
+
+warrick
 [TODO : maybe move to GF section]
+
 
 There is still work to be done to actually integrate this corpus with our
 grammar so-as to maximize ratio of parsible expression relative to the size of the
