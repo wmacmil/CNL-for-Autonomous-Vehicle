@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  22 APR 2022 01:49
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  22 APR 2022 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **report.tex
 (./report.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
+/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
@@ -22,52 +22,39 @@ File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-)
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
-
 (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
-
 (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
-)
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count171
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-)
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-
 (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count172
-
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -128,7 +115,6 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count282
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
@@ -220,17 +206,14 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip70
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-unicode.def)
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 \c@textcitecount=\count351
@@ -249,12 +232,10 @@ File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count360
@@ -262,7 +243,6 @@ File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
@@ -279,13 +259,10 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
-))
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
@@ -301,15 +278,12 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen141
 \Gm@layoutvoffset=\dimen142
 \Gm@dimlist=\toks15
-)
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 225.
-
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 )
@@ -321,39 +295,29 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
-
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen143
 \Hy@linkcounter=\count365
 \Hy@pagecounter=\count366
-
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count367
@@ -368,10 +332,8 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count368
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen144
-
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
 (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
@@ -388,7 +350,6 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6455.
 Package hyperref Info: PDF/A mode OFF on input line 6460.
 LaTeX Info: Redefining \ref on input line 6500.
 LaTeX Info: Redefining \pageref on input line 6504.
-
 (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
@@ -397,14 +358,11 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 \c@Hfootnote=\count372
 )
 Package hyperref Info: Driver (autodetected): hxetex.
-
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
 File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
-
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
@@ -413,22 +371,18 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \HyField@AnnotCount=\count374
 \Fld@listcount=\count375
 \c@bookmark@seq@number=\count376
-
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip71
-)
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip72
 \enit@outerparindent=\dimen147
@@ -436,8 +390,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box46
 \enit@count@id=\count377
 \enitdp@description=\count378
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
@@ -447,16 +400,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (./agda.sty
 Package: agda 
-
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
-
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count379
@@ -469,15 +418,12 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count381
 \calc@Cskip=\skip75
-)
-(/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
-))
-(/usr/share/texlive/texmf-dist/tex/latex/polytable/polytable.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/polytable/polytable.sty
 Package: polytable 2013/07/18 v0.8.5 `polytable' package (Andres Loeh)
-
-(/usr/share/texlive/texmf-dist/tex/latex/lazylist/lazylist.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+(/usr/share/texlive/texmf-dist/tex/latex/lazylist/lazylist.sty) (/usr/share/tex
+live/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen150
 \ar@mcellbox=\box47
@@ -493,19 +439,15 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \PT@toks=\toks19
 \PT@in=\read3
 \PT@out=\write4
-)
-(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
-
 (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks20
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/s
+hare/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
-
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \g__graphics_track_int=\count384
@@ -518,12 +460,10 @@ Package: xparse 2020-02-14 L3 Experimental document command parser
 \g__xparse_grabber_int=\count388
 \l__xparse_m_args_int=\count389
 \l__xparse_v_nesting_int=\count390
-)
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texl
+ive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks21
 \XKV@tempa@toks=\toks22
 )
@@ -538,10 +478,8 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \AgdaEmptySkip=\skip78
 \AgdaEmptyExtraSkip=\skip79
 \c@AgdaCodeNumber=\count396
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTeX
-
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTe
 X
@@ -559,11 +497,9 @@ X
 \l__fontspec_tmpa_dim=\dimen154
 \l__fontspec_tmpb_dim=\dimen155
 \l__fontspec_tmpc_dim=\dimen156
-
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+) (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 
 Package fontspec Info: Font family 'DejaVuSerif(0)' created for font 'DejaVu
 (fontspec)             Serif' with options [Ligatures=TeX].
@@ -647,45 +583,34 @@ Space].
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 
-
 (/usr/share/texlive/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
 Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
-)
-(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
-
 (/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
-
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
-
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip80
-
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
 \ex@=\dimen157
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen158
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count408
@@ -730,17 +655,14 @@ LaTeX Info: Redefining \] on input line 2860.
 \g__um_fonts_used_int=\count421
 \l__um_primecount_int=\count422
 \g__um_primekern_muskip=\muskip22
-
 (/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
-
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
@@ -757,17 +679,14 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen170
 \l_MT_above_shortintertext_sep=\dimen171
 \l_MT_below_shortintertext_sep=\dimen172
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
-
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share
+/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-
+dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/gene
+ric/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks28
 \pgfutil@tempdima=\dimen173
 \pgfutil@tempdimb=\dimen174
@@ -777,35 +696,28 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box52
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/u
+sr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
 ))
 Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share
+/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/sha
+re/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks29
 \pgfkeys@temptoks=\toks30
@@ -834,14 +746,12 @@ ex
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
 \pgf@sys@id@count=\count428
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-xetex.def
-
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
 File: pgfsys-xetex.def 2020/01/08 v3.1.5b (3.1.5b)
-
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
 File: pgfsys-dvipdfmx.def 2020/01/08 v3.1.5b (3.1.5b)
 
@@ -860,22 +770,20 @@ File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/shar
+e/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texl
+ive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/t
+exmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen187
 \pgfmath@count=\count432
 \pgfmath@box=\box53
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
 \pgfmath@stack@operation=\toks37
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
@@ -891,11 +799,10 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
 tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
-thmetics.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+thmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmat
+hfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count433
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -987,8 +894,7 @@ File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
 tex
 File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
@@ -1006,14 +912,13 @@ Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/shar
+e/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/te
+xmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf
+-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic
+/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/uti
+lities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
-
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen270
 \pgffor@skip=\dimen271
@@ -1057,8 +962,7 @@ File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -1085,28 +989,23 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidth=\dimen287
 \titlewidthlast=\dimen288
 \titlewidthfirst=\dimen289
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count446
 \float@exts=\toks41
 \float@box=\box64
 \@float@everytoks=\toks42
 \@floatcapt=\box65
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty
 Package: pstricks 2018/12/21 v0.69 LaTeX wrapper for `PSTricks' (RN,HV)
-
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
 File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex
-`pst-fp' v0.05, 2010/01/17 (hv)
+) (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.tex (/usr/share/
+texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (
+hv)
 \pstFP@xs=\count447
 \pstFP@xia=\count448
 \pstFP@xib=\count449
@@ -1118,7 +1017,6 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 \pstFP@times=\count455
 )
 \psLoopIndex=\count456
-
 `PSTricks' v2.97  <2019/05/11> (tvz,hv)
 \pst@dima=\dimen290
 \pst@dimb=\dimen291
@@ -1145,8 +1043,8 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 \pst@cntp=\count466
 \@zero=\count467
 \pst@toks=\toks43
-(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-pstricks/pstricks.con
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks/config/xdvipdfmx.cfg))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-pstricks/pstricks.con (/usr/sh
+are/texlive/texmf-dist/tex/generic/pstricks/config/xdvipdfmx.cfg))
 \psunit=\dimen300
 \psxunit=\dimen301
 \psyunit=\dimen302
@@ -1165,41 +1063,33 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 \sh@wgridXunit=\dimen312
 \sh@wgridYunit=\dimen313
 \pst@shift=\dimen314
-
-(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-pstricks/pstricks.con
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks/config/xdvipdfmx.cfg
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-pstricks/pstricks.con (/usr/sh
+are/texlive/texmf-dist/tex/generic/pstricks/config/xdvipdfmx.cfg
 Using PSTricks configuration for XeTeX+xdvipdfmx
 )))
 File: pstricks.tex 2019/05/11 v2.97 `PSTricks' (tvz,hv)
- (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex)
 File: pst-fp.tex 2019/05/11 v2.97 `PST-fp' (hv)
-
 >>> Loading XeTeX special macros
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks-xetex.def))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks-xetex.def)) (/usr/
+share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 \epsfxsize=\dimen315
 \epsfysize=\dimen316
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pst-grad/pst-grad.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pst-grad/pst-grad.sty
 Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pst-grad/pst-grad.tex
-`pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
+(/usr/share/texlive/texmf-dist/tex/generic/pst-grad/pst-grad.tex `pst-grad' v1.
+06, 2006/11/27 (tvz,dg,hv))
 File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pst-plot/pst-plot.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pst-plot/pst-plot.sty
 Package: pst-plot 2011/06/05 v1.00 LaTeX wrapper for `pst-plot' (HV)
-
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/pst-xkey.sty
 Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/multido/multido.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/multido/multido.sty
 Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 
-
-(/usr/share/texlive/texmf-dist/tex/generic/multido/multido.tex
- v1.42, 2010/05/14 <tvz>
+(/usr/share/texlive/texmf-dist/tex/generic/multido/multido.tex  v1.42, 2010/05/
+14 <tvz>
 \multido@count=\count469
 \multidocount=\count470
 \multido@stuff=\toks46
@@ -1207,13 +1097,11 @@ Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 )
 Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pst-plot/pst-plot.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pst-tools/pst-tools.tex
-`PST-tools' v0.09b, 2017/12/03 (hv))
-(/usr/share/texlive/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pst-node/pst-node.tex
- v1.42, 2019/03/03
+(/usr/share/texlive/texmf-dist/tex/generic/pst-plot/pst-plot.tex (/usr/share/te
+xlive/texmf-dist/tex/generic/pst-tools/pst-tools.tex `PST-tools' v0.09b, 2017/1
+2/03 (hv)) (/usr/share/texlive/texmf-dist/tex/generic/pstricks-add/pstricks-add
+.tex (/usr/share/texlive/texmf-dist/tex/generic/pst-node/pst-node.tex  v1.42, 2
+019/03/03
 \psrow=\count471
 \pscol=\count472
 \psmatrixcnt=\count473
@@ -1222,16 +1110,13 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@args=\count474
 \num@pts=\count475
 \pst@argcnt=\count476
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pst-arrow/pst-arrow.tex
-`pst-arrow' v0.01, 2016/09/01 (dr,hv)
+) (/usr/share/texlive/texmf-dist/tex/generic/pst-arrow/pst-arrow.tex `pst-arrow
+' v0.01, 2016/09/01 (dr,hv)
 \pshooklength=\dimen317
 \pshookwidth=\dimen318
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pst-3d/pst-3d.tex
-`PST-3d' v1.11, 2010/02/14 (tvz))
-(/usr/share/texlive/texmf-dist/tex/generic/pst-math/pst-math.tex
-`pst-math' v0.64 , (CJ,hv)) `pstricks-add' v3.89a, 2020/02/12 (dr,hv)
+) (/usr/share/texlive/texmf-dist/tex/generic/pst-3d/pst-3d.tex `PST-3d' v1.11, 
+2010/02/14 (tvz)) (/usr/share/texlive/texmf-dist/tex/generic/pst-math/pst-math.
+tex `pst-math' v0.64 , (CJ,hv)) `pstricks-add' v3.89a, 2020/02/12 (dr,hv)
 \psparallelogramsep=\dimen319
 \pst@cntC=\count477
 \pst@stepcount=\count478
@@ -1242,8 +1127,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@chartStackWidth=\dimen324
 \chart@Toggle=\count479
 \psVectorCtr=\count480
-)
- v1.92, 2019/05/16 (tvz,hv)
+)  v1.92, 2019/05/16 (tvz,hv)
 \pstRadUnit=\dimen325
 \pstRadUnitInv=\dimen326
 \pst@linecnt=\count481
@@ -1266,8 +1150,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@yunit=\dimen341
 )
 File: pst-plot.tex 2019/05/16 1.92 `pst-plot' (tvz,hv)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
@@ -1275,7 +1158,7 @@ line 40.
 )
 \@quotelevel=\count483
 \@quotereset=\count484
- (./report.aux)
+(./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
@@ -1300,7 +1183,6 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
 LaTeX Font Info:    ... okay on input line 102.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
@@ -1312,7 +1194,6 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
-
 (./report.bbl
 
 Package biblatex Warning: The following entry could not be found
@@ -1338,7 +1219,6 @@ Package biblatex Warning: The following entry could not be found
 )
 Package biblatex Info: Reference section=0 on input line 102.
 Package biblatex Info: Reference segment=0 on input line 102.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1377,11 +1257,9 @@ Package biblatex Info: Reference segment=0 on input line 102.
 Package hyperref Info: Link coloring ON on input line 102.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count485
@@ -1389,7 +1267,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 102.
 LaTeX Info: Redefining \pageref on input line 102.
 LaTeX Info: Redefining \nameref on input line 102.
-
 (./report.out) (./report.out)
 \@outlinefile=\write6
 \openout6 = `report.out'.
@@ -1608,7 +1485,6 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
 t line 102.
 
-
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
 (unicode-math)                 
@@ -1626,19 +1502,18 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 (unicode-math)                colon-like commands, using them will lead to
 (unicode-math)                inconsistencies.
 
-ABD: EveryShipout initializing macros
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
+ABD: EveryShipout initializing macros (/usr/share/texlive/texmf-dist/tex/generi
+c/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-)
-[1
+) [1
 
 ]
 File: pics/selfDriving.png Graphic file (type bmp)
 <pics/selfDriving.png>
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
- [1]
+[1]
 Overfull \hbox (3.10674pt too wide) in paragraph at lines 217--228
 []\TU/DejaVuSerif(0)/m/n/10.95 Natural language is difficult because it is both
  structured with respect to “rules”,
@@ -1665,18 +1540,16 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.47441pt on input line 721.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 721
 .
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 721
 .
-
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
 21.
-
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
@@ -1757,10 +1630,10 @@ ture. A list of commands []\TU/DejaVuSansMono(0)/m/n/10.95 GListCommands[]
 [21]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
- [22]
+[22]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
- [23]
+[23]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 
@@ -1799,83 +1672,138 @@ Overfull \hbox (4.6223pt too wide) in paragraph at lines 1872--1880
  voice assistants for autonomous
  []
 
-[30]
-Overfull \hbox (26.22372pt too wide) in paragraph at lines 1938--1938
+[30] [31]
+\openout4 = `report.ptb'.
+
+[32]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+[33]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+[34]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+[35]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+[36]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+[37]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+[38]
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+\openout4 = `report.ptb'.
+
+
+Overfull \hbox (5.61969pt too wide) in paragraph at lines 3790--3794
+[]\TU/DejaVuSerif(0)/m/n/10.95 These definiton now enables one to construct exa
+mple models and prove whether
+ []
+
+[39]
+Overfull \hbox (26.22372pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10.95 M. Antoniotti and B. Mishra. “Discrete event mod
 els+temporal logic=supervisory
  []
 
 
-Overfull \hbox (9.28125pt too wide) in paragraph at lines 1938--1938
+Overfull \hbox (9.28125pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/n/10.95 Challenges of Robotics]”. In: \TU/DejaVuSerif(0)/m
 /it/10.95 IEEE Robotics Automation Magazine \TU/DejaVuSerif(0)/m/n/10.95 14.1 (
 2007),
  []
 
-
-Overfull \hbox (4.99118pt too wide) in paragraph at lines 1938--1938
+[40]
+Overfull \hbox (4.99118pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/n/10.95 Falsification of Cyber-Physical Systems with Machi
 ne Learning Components”.
  []
 
-[31]
-Overfull \hbox (2.14502pt too wide) in paragraph at lines 1938--1938
+
+Overfull \hbox (2.14502pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/it/10.95 International Conference on Robotics and Automati
 on\TU/DejaVuSerif(0)/m/n/10.95 . IEEE. 2005, pp. 2020–
  []
 
-
-Overfull \hbox (0.79231pt too wide) in paragraph at lines 1938--1938
+[41]
+Overfull \hbox (0.79231pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/it/10.95 tional Conference on Robotics and Automation (ICR
 A)\TU/DejaVuSerif(0)/m/n/10.95 . IEEE. 2020, pp. 4906–
  []
 
-[32]
-Overfull \hbox (3.46265pt too wide) in paragraph at lines 1938--1938
+
+Overfull \hbox (3.46265pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10.95 C. Menghi et al. “Specification Patterns for Rob
 otic Missions”. In: \TU/DejaVuSerif(0)/m/it/10.95 IEEE Trans-
  []
 
 
-Overfull \hbox (1.08969pt too wide) in paragraph at lines 1938--1938
+Overfull \hbox (1.08969pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10.95 Erion Plaku and Sertac Karaman. “Motion planning
  with temporal-logic spec-
  []
 
-[33]
-Overfull \hbox (20.22708pt too wide) in paragraph at lines 1938--1938
+[42]
+Overfull \hbox (20.22708pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10.95 Wilko Schwarting, Javier Alonso-Mora, and Daniel
 a Rus. “Planning and Decision-
  []
 
 
-Overfull \hbox (0.71028pt too wide) in paragraph at lines 1938--1938
+Overfull \hbox (0.71028pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/it/10.95 AB, Canada, April 14-16, 2014, Conference Track P
 roceedings\TU/DejaVuSerif(0)/m/n/10.95 . Ed. by Yoshua
  []
 
 
-Overfull \hbox (2.86479pt too wide) in paragraph at lines 1938--1938
+Overfull \hbox (2.86479pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/it/10.95 Workshop on South and Southeast Asian Natural Lan
 guage Processing\TU/DejaVuSerif(0)/m/n/10.95 . 2014,
  []
 
-
-Overfull \hbox (8.47925pt too wide) in paragraph at lines 1938--1938
+[43]
+Overfull \hbox (8.47925pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/n/10.95 Logic for Motion Planning with Resource Threshold 
 Constraints”. In: \TU/DejaVuSerif(0)/m/it/10.95 Robotics:
  []
 
-[34] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1939.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1939.
- (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1939.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1939.
+[44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3800.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3800.
+(./report.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3800.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3800.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 2861669A1D14A072EE50F841CB4345E6;2367.
-
+(rerunfilecheck)             Checksum: 6D19BFAD3D56479A3CFD9CE5EBB59A21;2996.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.475pt have occurred.
@@ -1885,12 +1813,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40055 strings out of 481749
- 770819 string characters out of 5935475
- 1561688 words of memory out of 5000000
- 56381 multiletter control sequences out of 15000+600000
- 537484 words of font info for 91 fonts, out of 8000000 for 9000
+ 40184 strings out of 481749
+ 773000 string characters out of 5935475
+ 1564827 words of memory out of 5000000
+ 56508 multiletter control sequences out of 15000+600000
+ 537549 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,14n,109p,2157b,4911s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,109p,2157b,4913s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (36 pages, 1012528 bytes).
+Output written on report.xdv (45 pages, 1319268 bytes).

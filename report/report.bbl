@@ -517,6 +517,35 @@
       \field{title}{TOUCHDOWN: Natural Language Navigation and Spatial Reasoning in Visual Street Environments}
       \field{year}{2019}
     \endentry
+    \entry{coqLTL}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2c06bffaeaf266eeb6246c332fe7422e}{%
+           family={Coupet-Grimal},
+           familyi={C\bibinithyphendelim G\bibinitperiod},
+           given={Solange},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{fullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{bibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorbibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authornamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorfullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Logic and Computation}
+      \field{number}{6}
+      \field{title}{An Axiomatization of Linear Temporal Logic in the Calculus of Inductive Constructions}
+      \field{volume}{13}
+      \field{year}{2003}
+      \field{pages}{801\bibrangedash 813}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1093/logcom/13.6.801
+      \endverb
+    \endentry
     \entry{ltlPDDL}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=488a64eba45b7112ec3641455c843259}{%
@@ -839,6 +868,28 @@
       \verb{url}
       \verb https://aclanthology.org/2020.acl-main.740
       \endverb
+    \endentry
+    \entry{harperBlindness}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=73259fe928ce8add0f265e234f8de3a6}{%
+           family={Harper},
+           familyi={H\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{fullhash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{bibnamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authorbibnamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authornamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authorfullhash}{73259fe928ce8add0f265e234f8de3a6}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://existentialtype.wordpress.com/2011/03/15/boolean-blindness/}}
+      \field{title}{{Boolean Blindness}}
+      \field{year}{2011}
     \endentry
     \entry{hauser2021bert}{misc}{}
       \name{author}{4}{}{%
@@ -1810,6 +1861,49 @@
       \verb{url}
       \verb https://doi.org/10.1007/978-94-010-2506-5_10
       \endverb
+    \endentry
+    \entry{appPf}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9dab876fde0c5b3e663d10c58b57f18b}{%
+           family={O'Connor},
+           familyi={O\bibinitperiod},
+           given={Liam},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Nara, Japan}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{fullhash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{bibnamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authorbibnamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authornamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authorfullhash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we develop a library of typed proof search procedures, and demonstrate their remarkable utility as a mechanism for proof-search and automation. We describe a framework for describing proof-search procedures in Agda, with a library of tactical combinators based on applicative functors. This framework is very general, so we demonstrate the approach with two common applications from the field of software verification: a library for property-based testing in the style of SmallCheck, and the embedding of a basic model checker inside our framework, which we use to verify the correctness of common concurrency algorithms.}
+      \field{booktitle}{Proceedings of the 1st International Workshop on Type-Driven Development}
+      \field{isbn}{9781450344357}
+      \field{series}{TyDe 2016}
+      \field{title}{Applications of Applicative Proof Search}
+      \field{year}{2016}
+      \field{pages}{43\bibrangedash 55}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/2976022.2976030
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2976022.2976030
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2976022.2976030
+      \endverb
+      \keyw{proof,critical section,Agda,model checking,concurrency,properties,testing,automation}
     \endentry
     \entry{patellearning}{article}{}
       \name{author}{3}{}{%

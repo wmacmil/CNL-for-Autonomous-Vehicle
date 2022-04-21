@@ -1,9 +1,9 @@
-all: roadmap.pdf
+all: report.pdf
 
-roadmap.pdf: roadmap.tex
+report.pdf: report.tex
 	latexmk -xelatex -silent $<
 
-roadmap.tex: roadmap.lagda
+report.tex: report.lagda
 	agda --latex-dir=. --latex $<
 
 .PHONY: clean

@@ -1933,6 +1933,1867 @@ our model would be amenable to a similar
 \end{itemize}
 
 \section{LTL Intro In Agda}
+\section{LTL in Agda}
+
+\begin{code}[hide]%
+\>[0]\AgdaSymbol{\{-\#}\AgdaSpace{}%
+\AgdaKeyword{OPTIONS}\AgdaSpace{}%
+\AgdaPragma{--postfix-projections}\AgdaSpace{}%
+\AgdaSymbol{\#-\}}\<%
+\\
+\>[0]\AgdaSymbol{\{-\#}\AgdaSpace{}%
+\AgdaKeyword{OPTIONS}\AgdaSpace{}%
+\AgdaPragma{--guardedness}\AgdaSpace{}%
+\AgdaSymbol{\#-\}}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{module}\AgdaSpace{}%
+\AgdaModule{report}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Bool}\AgdaSpace{}%
+\AgdaKeyword{renaming}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}∨\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}∨'\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}∧\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}∧'\AgdaUnderscore{}}}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Nat}\AgdaSpace{}%
+\AgdaKeyword{renaming}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaDatatype{\AgdaUnderscore{}≤\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{\AgdaUnderscore{}≤'\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}<\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}<'\AgdaUnderscore{}}}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaComment{-- open import Data.Nat}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Unit}\AgdaSpace{}%
+\AgdaKeyword{renaming}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaRecord{⊤}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaRecord{⊤'}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Empty}\AgdaSpace{}%
+\AgdaKeyword{renaming}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{⊥}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaDatatype{⊥'}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Sum}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Relation.Nullary}\AgdaSpace{}%
+\AgdaKeyword{renaming}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{¬\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{to}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{¬'\AgdaUnderscore{}}}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Fin}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Product}\AgdaSpace{}%
+\AgdaKeyword{using}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaRecord{Σ}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}×\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{},\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₁}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₂}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{Σ-syntax}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃-syntax}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Relation.Binary.PropositionalEquality}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{module}\AgdaSpace{}%
+\AgdaModule{Syntax}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\end{code}
+
+We briefly introduce Linear Temporal Logic (LTL), implemented in the Agda
+theorem prover, intended for the reader unfamiliar with LTL, interactive theorem
+provers, or both. Although there is a vast literature on temporal logics,
+spanning logical theory, philosophical concerns, and applications, our
+inroduction of the basic syntax and semantics in Agda will suggest a slightly
+new perspective.
+
+\subsection{Motivating LTL}
+
+The primary ideas that we lean on are in motivating our formalazition are :
+
+\begin{itemize}
+
+%Theorem 2  There is an LTL model-checking algorithm whose running time depends linearly on the size of the Kripke structure and exponentially on
+%the length of the LTL formula. MODELHANDBOOK
+
+\item Motivated philosophically, LTL is captures, at least to some degree,
+natural human intiution about temporal reasoning. That is, we hope that LTL is a
+fair reflection of at least a subset of the temporal reasoning people carry out
+without knowing any formal logic.
+
+\item The semantical notion of model, and the behavior of a given stream of
+actions taken by the system being modeled. A logical formula is given meaning by
+relating it to some model abstracted from a physical system, and possibly a
+trace of steps taken in that physical system.
+
+\item LTL is decidable - that is, we can construct a model that validates an arbitrary formula or its
+negation.
+
+\item Model checking in LTL is decidable. The models are meant to be motivated
+by real physical systems - in this case, the positions or velocity of a vehicle
+relative to its local (and possibly global) environment - and whereby we want
+our verifications of behaviors of this system to be systematically checkable
+with automatically.
+
+\item LTL can serve as template for more expressive or nuanced logical ideas. It
+can be extended with more expressive notions of time as in Metric Temporal Logic
+(MTL) and Signala Temporal Logick (STL) - or with other modalities to enable,
+for instance, multiple interactive agents on the road.
+
+\item LTL is, to first approximation, expressive enough for specifying commonly
+encountered behaviors and specifications seen in the route and motion planning
+domain
+
+\item There are large number of well regarded and established model checkers
+which could be adjoined to our definitions here. Adjacent to this, however, it
+is a point of ongoing research ~\cite{appPf} to leverage Agda's dependent type system
+and to internally decide the validity of a formula in a model.
+
+\end{itemize}
+
+The main point is that dual modalities in LTL quanitfying behaviors of
+measurable events in time with regards to notions of \emph{some future time} and
+\emph{all future times} admit a mathematically coherent theory in addition to
+offering a philosophically interesting perspective on temporality, we can
+leverage both the mathematical coherence and philosophical insight to offer
+solutions to practical problems. In the sense that the philosophy of language is
+concerned with how language is related to the world, we believe the and the
+subset of natural language concerned with temporality generally, examined in the
+use case of commanding a robot with deliberate intentionality in addition to
+explicit expectation about the robots behavior, we may view this case study as an
+intriguing place at the intersection of mathematics, computer science,
+linguistics, and philosophy.
+
+Despite model checking being a problem with high computational complexity
+(relative to say, propisitional logic), our application for relatively simple
+route planning don't require particularly large formulas. The complexity is
+anticipated in the environment in which the vehicle operates, as well as the
+natural language utterances used to describe and dictate the path through the
+environment. The complexity of ensuring proper translations from natural
+language (in addition to other components) is of a much bigger concern than
+computational complextiy of model checking as here supposed. Because our haskell
+translations produce normal forms that have a standard recursive nesting of
+future F, and implications, rightarrow, we envision that the model checkers can
+be heuristically adapted to handle larger formulas that may arise from randomly
+generated LTL formulas.
+
+A primary idea of temporal logics is that events, which may be abstract or
+grounded in reality, take place sequentially in some axiomatizable notion of
+time. Our everyday language captures this with notions of ``before'', ``after'',
+``between'', ``forever'', ``later'', ``until'', and ``so-on and so-forth''. The
+explicit notion of order (and causality) may be up to debate, as well as the
+units by which time is measured, but LTL suppresses more complex notions of the
+continuous time (at least from a computational view), as well as the branching
+over possible worlds seen in Computation Tree Logic (CTL), simpifying assuptions
+we'll accept for the time being. We complement this formalization with a simple
+extension in a branched setting below, in large part to demonstrate that one can
+be somewhat flexibile with the details once the basic infastructure is in place.
+
+We base this formalization off Huth \& Ryan's introductory account in
+\emph{LOGIC IN COMPUTER SCIENCE} CITEHERE. We shall contrast differences with
+their presentation, with various pieces of our system as they arise.
+
+The syntax of LTL is are formulas \blue{$\phi$} inductively defined type consists of
+
+\begin{itemize}
+\item Atomic events \green{atom} (which should ideally be grounded to reality), specified externally as some (presumably finite) type
+\begin{itemize}
+\item Atomic events could denote visible objects, sounds, or relative statements like ``being left'' when compared to some prior state
+\end{itemize}
+\item The standard propositional colletives for truthity, falsity, conjunction, disjunction, and negation :
+  %\green{$\bottom$}
+  %\green{$\top$}
+  %\green{$\neg$}
+\item Unary temporal operators representing
+\begin{itemize}
+\item the next state \green{$X$},
+\item the existence of a future state \green{$F$},
+\item the notion of henceforth, or forever \green{$G$}
+\end{itemize}
+\item Binary temporal operators representing
+\begin{itemize}
+\item The inclusive states in between two events next state \green{$U$},
+\item weak until \green{$W$}
+\item Release \green{$R$}
+\end{itemize}
+\end{itemize}
+
+\begin{code}%
+\>[0][@{}l@{\AgdaIndent{1}}]%
+\>[2]\AgdaKeyword{data}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaComment{-- atom     : Fin n → ϕ instantiate with module instead}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{atom}%
+\>[16]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{⊥}\AgdaSpace{}%
+\AgdaInductiveConstructor{⊤}%
+\>[16]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaInductiveConstructor{¬\AgdaUnderscore{}}}%
+\>[16]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}∨\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}∧\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}⇒\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{X}\AgdaSpace{}%
+\AgdaInductiveConstructor{F}\AgdaSpace{}%
+\AgdaInductiveConstructor{G}%
+\>[16]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}U\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}W\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{}R\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\<%
+\end{code}
+\begin{code}[hide]%
+\>[0]\AgdaComment{-- power set}\<%
+\\
+\>[0]\AgdaFunction{𝑃}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+\>[0]\AgdaFunction{𝑃}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{Bool}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- 𝑃 Bool has four member}\<%
+\\
+\>[0]\AgdaComment{-- for example, we encode the empty set as follows}\<%
+\\
+\>[0]\AgdaFunction{empt}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{𝑃}\AgdaSpace{}%
+\AgdaDatatype{Bool}\<%
+\\
+\>[0]\AgdaFunction{empt}\AgdaSpace{}%
+\AgdaInductiveConstructor{false}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaInductiveConstructor{false}\<%
+\\
+\>[0]\AgdaFunction{empt}\AgdaSpace{}%
+\AgdaInductiveConstructor{true}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaInductiveConstructor{false}\<%
+\end{code}
+
+This syntacic form represents a weak boundary of this study, as the job of actually
+determining how an atomic formula should pertain to reality can be best left to other
+experts. Nonetheless, verifiability has been a primary pretext for this work,
+and our development of the semantics of LTL demonstrate Agda's expressivitness,
+elegance, and enforcement of correct-by-consturction programs. We proceed with defining the semantics.
+
+Noting that a binary relation \blue{rel} is a higher type over a type $s$ - a
+type of types indexed by two elements of $s$, we can then define the property of
+a relation always being able to take another step. That is, for any element of
+$s$, we can always construct a element $s'$ which it is related to by $r_s$,
+that it always steps to.
+
+\begin{code}%
+\>[0]\AgdaFunction{rel}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set₁}\<%
+\\
+\>[0]\AgdaFunction{rel}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{relAlwaysSteps}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{rel}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+\>[0]\AgdaFunction{relAlwaysSteps}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{S}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaBound{rₛ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{s'}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{rₛ}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaBound{s'}\AgdaSymbol{)}\<%
+\end{code}
+
+The dichotomous position about the epistemological status of logic, whether
+logical knowledge is primarily about inference, in the proof theoretic
+traditions, or truth, in the model theoretic traditions, can be both juxtaposed
+and illuminated through our work here.
+
+Theorem provers have often promote ``syntactic view'' of logic, with programs
+and proof derivations taking primacy in interactive theorem provers like Agda
+due to the undecidable notion of generating a proof object for a given type.
+
+The ``semantic view'' is much more well esablished in the verification
+community, where model checkers, whose primary notion is of ``a model'', and
+what the feasibility, or truth, of a piece of syntax means relative to at least
+some models.
+
+We now define this fundamental notion of \emph{model} and
+interpret it in our temporal setting. When used for arbitrary modalities, we
+call a model a \emph{Kripke Structure}, and it can be seen as a fundamental
+example of a general transition system, namely, a Kripke Structure a state-labeled. Used
+colloquially, a model represents an approximation of a complicated system with
+simpler and more understandable subsystem. Since a model is an abstraction which
+involves simplifying assumptions, it may only be faithful to certain behaviors
+of the system it is trying to capture and, indeed, may contradict others.
+
+Given some atomic propositions (groundable to reality) a model \blue{$M$} in LTL consists
+of a
+
+\begin{itemize}
+\item Type of states, \pink{State} TODO : fix colors
+\item A binary relation, or step function over, those states, \pink{$\hookrightarrow$}
+\item Evidence that the relation always can take a step or that we can't get into a stuck state, \pink{relSteps}
+\begin{itemize}
+\item We note that this condition can be dropped for our purposes, noting that including it simply makes our definition of model a subtype off a more general notion, whereby almost all of our code below foregoes using it
+\end{itemize}
+\item A labeling function, L, which determines the atomic propositions true at a given state
+\end{itemize}
+
+\begin{code}%
+\>[0]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{𝑀}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set₁}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{field}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaField{State}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaField{\AgdaUnderscore{}↪\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{rel}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[4]\AgdaField{relSteps}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{relAlwaysSteps}\AgdaSpace{}%
+\AgdaOperator{\AgdaField{\AgdaUnderscore{}↪\AgdaUnderscore{}}}\<%
+\\
+%
+\>[4]\AgdaComment{-- L : State → 𝑃 Atom}\<%
+\\
+%
+\>[4]\AgdaField{L}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaField{State}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\end{code}
+
+
+We note that in the textbook treatment, the labeling function provides a subset
+of the set of atoms for any given state state, that the codomain of the labeller
+is the powerset of the atomic propositions. We opt instead to see the labeling
+function as a type indexed by states and atoms. This typed formulation provides
+not only a convenience for dealing with certain beuracracies encountered using
+the classical power set formulation, but allows us to forego so-called ``Boolean
+Blindness'' ~\cite{harperBlindness} and have proof objects which whose syntax
+more expressively represents the arguments. To see further how one can represent
+various set-theoretic notions in Agda, and familiarize oneself with the
+type-level thinking which so naturally avoids boolean myopia, please see TODO :
+Section in the standard library.
+
+With a model defined, we next establish the fundamental notion of a path in a
+model - which is the primary ingredient to establish how a formula can be
+evaluated relative to sequence of events in a model. More explicitly, paths
+allow us to represent time, and they should be seen as discrete signals
+dependent upon the type of state chosen. This intuition actually manifests in
+Metric Temrpoal Logic (MTL) and Signal Temporal Logic (STL), which generalizes
+temporal logic to transition systems which are actually just signals with a
+real-time domains.
+
+In the discrete case, the formulation of a path is also subject to how one
+interprets the infinte sequence of states over which our temporal expressions
+(and intuitions) take place. We can interpret an infinite sequence manifesting
+via two possible definitions
+
+\begin{itemize}
+\item The coinductive type of streams over states, as done in ~\cite{coqLTL}.
+\item The mathematicians view of a sequence, that is the set of states indexed
+by the natural numbers.
+\end{itemize}
+
+Given a model defined in the context of some atoms, we first outline the stream
+approach. A stream, often analagously referenced as an ``infinite list'', is
+given by a piece of visibile data, the head, \pink{hd}, and the tail, \pink{tl},
+which is just a corecursive reference to another list whose data will be
+accessible later when it is \emph{needed}. Streams are a fundamental datatype
+in the call-by-name operational semantics, whereby lazy evaluation allows one to
+defer computing on the tail until it is needed, and this makes perfect sense if
+one interprets a stream as a discretized version continuous signal which we may
+occassionally sample.
+
+\begin{code}[hide]%
+\>[0]\AgdaKeyword{module}\AgdaSpace{}%
+\AgdaModule{Transition}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{Model}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{𝑀}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Syntax}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaKeyword{public}\<%
+\\
+%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{𝑀}\AgdaSpace{}%
+\AgdaBound{Model}\<%
+\end{code}
+\begin{code}%
+%
+\>[2]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{Stream}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{coinductive}\<%
+\\
+%
+\>[4]\AgdaKeyword{field}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaField{hd}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[6]\AgdaField{tl}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Stream}\<%
+\end{code}
+\begin{code}[hide]%
+%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Stream}\<%
+\end{code}
+
+To define a path, \blue{Path}, in a model, we need an inifinite sequence of
+states \pink{$infSeq$} that don't reach a stuck, or deadlocked state with
+regards to some given structure - we want \pink{$infSeq$} to always transition.
+We say that the stream always transitions when the first two elements are
+related by the model's step function \pink{$\hookrightarrow$}, as evidenced by
+\pink{headValid} and we can coinductively prove this for the tail of the stream,
+\pink{tailValid}. The second state, \blue{nextState} of a stream is defined by taking
+the head of the tail of the stream.
+
+\begin{code}%
+%
+\>[2]\AgdaFunction{nextState}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Stream}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[2]\AgdaFunction{nextState}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaField{hd}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{tl}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{streamAlwaysTransitions}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{stream}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Stream}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{coinductive}\<%
+\\
+%
+\>[4]\AgdaKeyword{field}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaField{headValid}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaField{hd}\AgdaSpace{}%
+\AgdaBound{stream}\AgdaSpace{}%
+\AgdaOperator{\AgdaField{↪}}\AgdaSpace{}%
+\AgdaFunction{nextState}\AgdaSpace{}%
+\AgdaBound{stream}\<%
+\\
+%
+\>[6]\AgdaField{tailValid}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{streamAlwaysTransitions}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{tl}\AgdaSpace{}%
+\AgdaBound{stream}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{field}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaField{infSeq}%
+\>[21]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Stream}\<%
+\\
+%
+\>[6]\AgdaField{isTransitional}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{streamAlwaysTransitions}\AgdaSpace{}%
+\AgdaField{infSeq}\<%
+\end{code}
+\begin{code}[hide]%
+%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{streamAlwaysTransitions}\<%
+\\
+%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Path}\<%
+\end{code}
+
+While a model's step relation may allow more than one possible state that a
+given state can transition to, a path restricts this relation to be a function :
+it gives us the one and only one transition we can make, and gurantees that
+there is no sequence of states for which a possible intermediary transition is
+absent. The ability to quantify over possible paths from a given state is the
+branching referenced in CTL.
+
+As paths not only contain streams of states, but also are forced to cohere with
+the model's step relation, we define two helper functions to overload the head
+and tail operations of the path's stream onto to the path itself.
+
+\begin{code}%
+%
+\>[2]\AgdaFunction{headPath}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[2]\AgdaFunction{headPath}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaField{hd}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{infSeq}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path}\<%
+\\
+%
+\>[2]\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{infSeq}%
+\>[29]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaField{tl}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{infSeq}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{isTransitional}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaField{tailValid}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{isTransitional}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSymbol{)}\<%
+\end{code}
+
+
+\subsection{Sequential Definition}
+
+We now contrast this utilizing the mathematicians view of a sequence, that is,
+we bypass the coinductive stream and assert that the structure of the path is
+given my a map ℕ → State. We then adjust our definition of the propery of
+deadlock freedom. The \blue{alwaysSteps} function says that, given a sequence of
+states $s$, $s_i$ steps to $s_{i+1}$ for any number $i$. Again, this is all
+relative to some given model $M$. Although the seqence formulated as a function
+and a stream look quite different, we prove they are isomorphic elsewhere,
+relying on function extensionality. [TODO:LINK]
+
+\begin{code}%
+%
+\>[2]\AgdaFunction{alwaysSteps}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{sₙ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaField{State}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[2]\AgdaFunction{alwaysSteps}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaOperator{\AgdaField{↪}}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{field}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaField{infSeq}%
+\>[21]\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[6]\AgdaField{isTransitional}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{alwaysSteps}\AgdaSpace{}%
+\AgdaField{infSeq}\<%
+\end{code}
+\begin{code}[hide]%
+%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Path-seq}\<%
+\end{code}
+
+\subsection{LTL Semantics For Streams}
+
+With this infastructure in place, we can finally define what it means for
+formulas ϕ to be true relative to some path in a model. This definition, per
+usual, is given by a type denoted via the semantic entailment relation
+where π ⊧ ψ is the evidence for the truth of proposition ψ relative to path π in
+our model. The fundamental temporal logical notions will be spelled out now as
+they distinguish our definition of truth from the propositional case.
+
+Glancing below, we see that the temporal type definitions involves a paramater
+(-⊧ψ : \blue{Path} → \blue{Set}), which, as the variable name suggests, is to be substituted
+by the semantic entailment applied to a sentence ψ. Although not mutually
+recursive, these definitions should be thought of as such - and indeed they are
+with our alternative formulation of paths.
+
+\subsubsection{Global}
+
+The idea of the universal quantifier captured via a temporal modality, the
+notion of ``forever'' or ``global'', syntactically called $G$, has a meaning
+which is a coinductive record \blue{G-pf}. This \blue{G-pf} type requires
+evidance both that a path π entails the formula ψ and will do so henceforth.
+More specifically, knowing that the the path π yields ψ true now can be given by
+the field \pink{∀-h}. Knowing that forwever onward, the tail of path π will
+globally yield ψ true, as evidenced in the field \pink{∀-t}, and we may conclude that our
+model admits ψ over all time relative the path π in our model.
+
+\begin{code}%
+%
+\>[2]\AgdaKeyword{record}\AgdaSpace{}%
+\AgdaRecord{G-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{coinductive}\<%
+\\
+%
+\>[4]\AgdaKeyword{field}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaField{∀-h}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\\
+%
+\>[6]\AgdaField{∀-t}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{G-pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\<%
+\end{code}
+
+\subsubsection{Future}
+
+To capture the notion of \emph{some} future state via a temporal modality, one
+recognizes that the existential quantifier may be restricted to discuss some
+future state for some path, yielding the $F$ operator. However, in this case we
+just have to prove that a proposition ψ is entailed by some possibly later part
+of path a σ. More explictly, we can give evidence for $F \psi$ via an indexed
+inductive type \blue{F-pf}. If we currently know that σ ⊧ ψ, then we know that
+there exists such a time that ψ is true over the path σ, namely \emph{now}. This
+evidence is denoted by the \green{ev-H} constructor. On the other hand, if we
+can prove that the σ entails ψ at some later time, then σ itself yields a future
+state where ψ is true, and \green{ev-T} names such a witness.
+
+The constructors and fields in the inductive and coinductive cases,
+respectively, correspond precisesly to the head and tail of the path (and its
+underlying stream).
+
+
+\begin{code}%
+%
+\>[2]\AgdaKeyword{data}\AgdaSpace{}%
+\AgdaDatatype{F-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaInductiveConstructor{ev-H}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{F-pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{ev-T}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{F-pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaDatatype{F-pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\end{code}
+
+\subsubsection{Until and Release}
+
+The until operator $U$ is a fundamental binary temporal connective. The meaning
+captures that some proposition ψ holds up til ψ₁. The type \blue{U-pf} relates
+two propositions ψ and ψ₁ in time, and therefore takes a single path and two
+entailment operators applied to the two different formulas, -⊧ψ and -⊧ψ₁. One
+form of evidence, denoted \green{until-h}, can be given if only the the second
+formula ψ₁ is a semantic consequence of the path σ, in which case the truth of
+event ψ over σ is irrelevant. In the tail case, \green{until-t}, if one can show
+that ψ is a consequence of σ, and that we can recursively validate ψ holds until
+ψ₁ under during the future states of σ, then we know that σ semantically
+entails ψ until ψ₁.
+
+Our final helper function, \blue{Uincl-Pf}, is similar to our previous until
+helper, except that we now require additional evidence that both ψ and ψ₁ are
+true relative to σ when the current state is still relevant. It is used in the
+commonly called \emph{release} operator, which we elaorate below.
+
+\begin{code}%
+%
+\>[2]\AgdaKeyword{data}\AgdaSpace{}%
+\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaInductiveConstructor{until-h}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{until-t}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{data}\AgdaSpace{}%
+\AgdaDatatype{Uincl-Pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaInductiveConstructor{untilI-h}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{Uincl-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\\
+%
+\>[4]\AgdaInductiveConstructor{untilI-t}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{Uincl-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{σ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{Uincl-Pf}\AgdaSpace{}%
+\AgdaBound{-⊧ψ}\AgdaSpace{}%
+\AgdaBound{-⊧ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{σ}\<%
+\end{code}
+
+\subsection{Satisfaction}
+
+We now elaborate the meaning of our satisfaction relation, whose definition
+should be intuitive when coupled with our helper definitions for the temporal connectives above. The
+propositional operators are merely embedded in Agda's type system via the usual
+Curry-Howard interpretation, recursively applying the semantic entail relation with in
+the unary and binary cases.
+
+In the case of an atomic formula \green{atom x}, we examine the if the labeling
+function assigns atom $x$ to the current state of π. Although finitely
+determined examples use simple labeling functions, there is the possibility of
+defining an undecidable labeler (which the use of a different encoding of
+power-sets restricts). In this case, one might want to consider adding a
+decidability obligation in the definition of a model.
+
+The next operator, \green{X}, is given meaning by simply taking the path starting at
+the subsequent state in the path - exactly our tailPath function.
+
+We simply apply the type definitions elaborated above to give meaning to the
+forward, global, and until operations. These are \green{F-pf}, \green{G-pf}, and
+\green{U-pf}. The possible recursive calls to the satisfaction relation are made
+once the helper functions are evaluated.
+
+The final operations are ``weak until'', \green{W}, and ``release'', \green{R}. The meaning of ψ \green{W} ψ₁
+relative to path π, is that ψ holds until ψ₁, or ψ holds globally
+already. A corollary is that any formula which holds globally over π also holds
+weakly until any arbitrary formula ψ₁. Additionally, any any formula ψ which
+holds until ψ₁ also satisfies the condition of holding weakly until ψ₁.
+
+The binary release operation, \green{R} and is dual to until. ψ \green{R} ψ₁ says that, in
+the case where ψ isn't by default globally true over π, there is a state in the
+path π where both ψ and ψ₁ are both true at the same time, which is why needed
+the extra evidence in \green{untilI-h} above.
+
+\begin{code}%
+%
+\>[2]\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{⊥}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaDatatype{⊥'}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{⊤}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaRecord{⊤'}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{atom}\AgdaSpace{}%
+\AgdaBound{x}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaField{L}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{headPath}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaInductiveConstructor{¬}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{¬'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{∨}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{∧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{⇒}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{X}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{tailPath}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{F}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaDatatype{F-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaInductiveConstructor{G}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[15]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaRecord{G-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{U}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{W}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{U-Pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaRecord{G-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\\
+%
+\>[2]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{R}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaDatatype{Uincl-Pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaRecord{G-pf}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{π}\<%
+\end{code}
+
+\paragraph{Duality}
+
+The fully symmetric dualities of these various temporal operators, works in a
+non-constructive setting, as is done in accounts, but not in Agda, whose type
+theory is constructive. Despite the fact that most treatments of LTL
+nonchalantly throw out $\neg (G\phi) \equiv F(\neg\phi)$, for instance, the
+following implication in classical logic is not provable in Agda :
+
+\begin{code}%
+%
+\>[2]\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⇛\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaRecord{Path}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[2]\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⇛\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{π}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaBound{ϕ}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaComment{-- only true classically}\<%
+\\
+%
+\>[2]\AgdaKeyword{postulate}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaPostulate{le}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{π}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{φ}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⇛\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{\{}\AgdaBound{π}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaInductiveConstructor{¬}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{G}\AgdaSpace{}%
+\AgdaBound{φ}\AgdaSymbol{))}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{F}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaInductiveConstructor{¬}}\AgdaSpace{}%
+\AgdaBound{φ}\AgdaSymbol{))}\<%
+\end{code}
+
+This follows from the more general fact that one can't construct an arbitrary
+existential type without a witness. While this may be seen as a hindrance if one
+doesn't care about constructivsm, it highlights an important difference in the
+proof assistant.
+
+One could also introduce a strong release dual to weak until, but this is not
+necessary for our purposes, as translating from natural language to these more
+nuanced operators is certain to be a much bigger challenge than we dare
+untertake here.
+
+\subsection{Paths as Sequences}
+
+Once again inhereting the notion of head and tail from streams, we provide can
+overload these to our newly formulated sequence-based paths. In addition, we
+supply a function \blue{path-i} that drops the first n states of a path. Again,
+taking the tail of a path, the \blue{tailPath-seq}, gives meaning to the next
+operator \green{X}.
+
+\begin{code}[hide]%
+%
+\>[2]\AgdaFunction{headPath-seq}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaField{State}\<%
+\\
+%
+\>[2]\AgdaFunction{headPath-seq}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{infSeq}\AgdaSpace{}%
+\AgdaNumber{0}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{tailPath-seq}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\<%
+\\
+%
+\>[2]\AgdaFunction{tailPath-seq}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{infSeq}%
+\>[34]\AgdaBound{n}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{infSeq}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc}\AgdaSpace{}%
+\AgdaBound{n}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaFunction{tailPath-seq}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{isTransitional}%
+\>[34]\AgdaBound{n}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{isTransitional}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc}\AgdaSpace{}%
+\AgdaBound{n}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\<%
+\\
+%
+\>[2]\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaInductiveConstructor{zero}%
+\>[17]\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{p}\<%
+\\
+%
+\>[2]\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{tailPath-seq}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSymbol{)}\<%
+\end{code}
+
+We briefly expand another, isomorphic interpretation of the temporal operators,
+as they manifest in our modified definition of semantic entailment, \blue{⊧'}.
+Below we present the mutually recursive definition, distinguishing it from the
+above definiton. The meaning of \blue{F} ψ over the path π is the existence of a
+natural number $i$ such that ψ is a consequence of the path $i$ temporal units
+ahead, given by droping the first i states of π.
+
+\begin{code}[hide]%
+\>[0]\<%
+\end{code}
+\begin{code}%
+\>[0][@{}l@{\AgdaIndent{1}}]%
+\>[2]\AgdaKeyword{mutual}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{future}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{future}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\end{code}
+
+For a formula ψ to hold forever onward, \blue{G} ψ, we simply say that any future
+subpath of path π entails ψ. That is, we can drop any number of states and still
+know ψ is true.
+
+\begin{code}%
+%
+\>[4]\AgdaFunction{global}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{global}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\end{code}
+
+We define helper functions (dependent function types) \blue{justUpTil} and
+\blue{upTil} to once again assist with the binary temporal operators.
+
+A sentence ψ holds until ψ₁ along some path π if there is a time $i\in\mathbb{N}$ such that
+ψ₁ holds on π after $i$ timesteps, and ψ holds just up until that moment ψ. For ψ
+to hold just up until time $i$, we simply assert that ψ holds for every timepoint $j$ such that
+$j<i$. More precisely, that is, the subpath of π beginning at time $j$ entails ψ. The meaning
+of week-until operator simply accepts the alternative condition that ψ globally
+holds on π.
+
+\begin{code}%
+%
+\>[4]\AgdaFunction{justUpTil}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{justUpTil}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{j}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{j}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{<'}}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{j}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{justUntil}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{justUntil}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaFunction{justUpTil}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\end{code}
+
+The relaease operator is analogous to weak-until, with the added condition that
+there must be a moment where ψ and ψ₁ are simultaneously true. This simple
+change is made by substituting \blue{≤'} for \blue{<'} in the definition of
+\blue{upTil}, thereby illimunating the use of the word ``just'' to reference the
+weaker condition. The unspecified strong-release would be defined as
+\blue{until}. This decision reflects the ambiguity in the colloquial uses of
+``until'', which generally be inclusive of the transition state.
+
+\begin{code}%
+%
+\>[4]\AgdaFunction{upTil}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{upTil}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{j}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{j}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{≤'}}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{j}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{until}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaFunction{until}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaDatatype{ℕ}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{path-i}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaFunction{upTil}\AgdaSpace{}%
+\AgdaBound{i}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\end{code}
+
+The entailment type, which relates a LTL formula and a path in a model, borrows
+the standard semantical ideas from before, with the new helper functions
+providing meaning to the temporal operators.
+
+\begin{code}%
+%
+\>[4]\AgdaComment{-- Definition 3.6}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⊧'\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path-seq}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{⊥}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaDatatype{⊥'}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{⊤}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaRecord{⊤'}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{atom}\AgdaSpace{}%
+\AgdaBound{p}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaField{L}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{headPath-seq}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaBound{p}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaOperator{\AgdaInductiveConstructor{¬}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{¬'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{∨}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{∧}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{⇒}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{X}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{tailPath-seq}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{F}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{future}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaInductiveConstructor{G}\AgdaSpace{}%
+\AgdaBound{ψ}%
+\>[18]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{global}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{U}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{justUntil}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaBound{ψ₁}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{W}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{justUntil}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaFunction{global}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\\
+%
+\>[4]\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧'}}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{R}}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{until}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ₁}\AgdaSpace{}%
+\AgdaBound{ψ}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{⊎}}\AgdaSpace{}%
+\AgdaFunction{global}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaBound{ψ}\<%
+\end{code}
+
+
+\begin{code}[hide]%
+\>[0]\AgdaKeyword{module}\AgdaSpace{}%
+\AgdaModule{Model}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}%
+\>[27]\AgdaKeyword{where}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Syntax}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaComment{-- public}\<%
+\end{code}
+
+The consequence relation can now be generalized to say whether a model M, with a
+given initial state s, yields a formula ϕ for every path π beginning at s. The
+meaning of M \blue{,,} s \blue{⊧} ϕ, is the type which, given any path π
+beginning at s, produces evidence that ϕ is a consequence of π.
+
+\begin{code}%
+%
+\>[2]\AgdaComment{--Definition 3.8}\<%
+\\
+%
+\>[2]\AgdaOperator{\AgdaFunction{\AgdaUnderscore{},,\AgdaUnderscore{}⊧\AgdaUnderscore{}}}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{M}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{𝑀}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{M}\AgdaSpace{}%
+\AgdaSymbol{.}\AgdaField{𝑀.State}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaDatatype{ϕ}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+%
+\>[2]\AgdaBound{M}%
+\>[895I]\AgdaOperator{\AgdaFunction{,,}}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ϕ}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{∀}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{π}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Path}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{headPath}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaDatatype{≡}}\AgdaSpace{}%
+\AgdaBound{s}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{π}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{⊧}}\AgdaSpace{}%
+\AgdaBound{ϕ}\<%
+\end{code}
+\begin{code}[hide]%
+\>[.][@{}l@{}]\<[895I]%
+\>[4]\AgdaKeyword{where}\AgdaSpace{}%
+\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaModule{Transition}\AgdaSpace{}%
+\AgdaBound{Atom}\AgdaSpace{}%
+\AgdaBound{M}\AgdaSpace{}%
+\AgdaKeyword{hiding}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaDatatype{ϕ}\AgdaSymbol{)}\<%
+\end{code}
+
+These definiton now enables one to construct example models and prove whether or
+not they admit temporal sentences, which are available to view [TODO : Ref]
+here. We hope the reader may engage with the the code directly, as the example
+is taken from the book.
+
+
+
 
 \printbibliography
 
