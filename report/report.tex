@@ -8,6 +8,49 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage[margin=1in]{geometry} \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks]{hyperref} \usepackage{enumitem} \usepackage{amsfonts}
 
+\usepackage{agda}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+
+% \setmonofont{Fira Mono}
+% \setsansfont{Noto Sans}
+
+\usepackage{xcolor}
+\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
+\definecolor{calpolypomonagreen}{rgb}{0.12, 0.3, 0.17}
+\definecolor{green(ryb)}{rgb}{0.4, 0.69, 0.2}
+\definecolor{hooker\'sgreen}{rgb}{0.0, 0.44, 0.0}
+\definecolor{hotmagenta}{rgb}{1.0, 0.11, 0.81}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\green}[1]{\textcolor{hooker\'sgreen}{#1}}
+\newcommand{\pink}[1]{\textcolor{hotmagenta}{#1}}
+
+
+
+%\usepackage{unicode-math}
+%\setmathfont{XITS Math}
+
+\usepackage{newunicodechar}
+\newunicodechar{ℓ}{\ensuremath{\mathnormal\ell}}
+\newunicodechar{→}{\ensuremath{\mathnormal\rightarrow}}
+\newunicodechar{↪}{\ensuremath{\mathnormal\hookrightarrow}}
+\newunicodechar{𝑀}{$M$}
+%\newunicodechar{ℕ}{$Bb{N}$}
+%\newunicodechar{ℕ}{\ensuremath{\mathnormal\bN}}
+%\newunicodechar{ℕ}{\ensuremath{\mathnormal\mathbb{N}}}
+
+%\newunicodechar{ℕ}{$N$}
+\newunicodechar{ℕ}{$\mathbb{N}$}
+\newunicodechar{⊨}{\ensuremath{\vDash}}
+\newunicodechar{⊧}{$\models$}
+
+
 \usepackage{unicode-math}
 \usepackage{stmaryrd}
 \usepackage{amsfonts}
@@ -32,7 +75,6 @@ isbn=false, doi=false, ]{biblatex}
 
 \hypersetup{ citecolor=RoyalBlue }
 
-\usepackage{fontspec}
 \usepackage{tikz-cd}
 
 \usepackage{titlesec}
@@ -1735,6 +1777,56 @@ be processed by analysis tools and (2) ensuring that the formulas conform to the
 language semantics. \cite{fretish}
 
 ----- 
+
+\subsubsection{Theorem Provers and Verification for Robots}
+
+In modeling work relating to route planning ideas into Agda, Hill et al.
+~\cite{hillResource} have both designed a \emph{resource logic} interpreted a la
+Curry-Howard in Agda. Subsequently they released  an agda formalization of
+Planning Domain Definition Language (PDDL) ~\cite{hillAction}.
+
+Since LTL is interperable in PDDL
+~\cite{ltlPDDL}, and since our normal-form LTL formulas $F (\phi => F (\phi_0 => ... (G STOP)))$
+, we can easily imagine the follow schema :
+
+In ~\cite{planningForAV}, the authors indicate the need for the verification to
+cover the full-spectrum, and that their are many approahces to planning, namely,
+what they categorize as ``sequential, behavior-aware, and end-to-end'' planning.
+
+[maybe add this to other section]
+In this vision paper ~\cite{seshia2016towards}, the authors outline a few major
+categories that need to be addressed to realize verification in AI,
+
+\begin{itemize}
+\item Formal Specification
+\item Modeling Learning Systems
+\item Scalable Design and Verification of Data and Models
+\item Correct-by-Construction Methods
+\end{itemize}
+
+Environment (incl. Human) Modeling corresponds to Principles
+
+In ~\cite{dreossiDS19} (recommending over the summer), the authors give a model of Adaptive Cruise Controllers (ACCs)
+
+``We formulate this question as the falsification problem for CPS models with
+ML components (CPSML): given a formal specification φ in signal temporal
+logic (STL) [13], and a CPSML model M , find an input for which M does not
+satisfy φ.''
+
+The smaller the meaning space, the simpler the correct translation. This is of
+obvious ewhen the meaning is interpreted as a formal system for a different
+formal system, as is the case when studied in the context of programming
+languages. When the formal meaning space attempts to capture an emperical,
+non-formal system like natural language, the notion of correct translation is no
+longer formally verifiable - it is ultimately up to human convenctions and
+behaviors.
+
+Logical specifications for Natural language
+Past avoidance : Description
+A condition has been ful-
+filled in the past. This can give you a way of judging the success of a route (find the best route, and how well does the route follow this ideal route)
+
+
 
 % Could ask Lapata in Edinburgh, whose work \cite{dong-lapata-2016-language}
 %   is relevant and well-cited (although they use an encoder-decoder method)

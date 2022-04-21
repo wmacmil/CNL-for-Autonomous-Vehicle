@@ -517,6 +517,89 @@
       \field{title}{TOUCHDOWN: Natural Language Navigation and Spatial Reasoning in Visual Street Environments}
       \field{year}{2019}
     \endentry
+    \entry{ltlPDDL}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=488a64eba45b7112ec3641455c843259}{%
+           family={Cresswell},
+           familyi={C\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=47c722b19efd8fe20260e58b12919d57}{%
+           family={Coddington},
+           familyi={C\bibinitperiod},
+           given={Alexandra},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Valencia, Spain}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{fullhash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{bibnamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authorbibnamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authornamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authorfullhash}{7578921d810abd7b1096eb3a410ba6fc}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Temporally extended goals are used in planning to express safety and maintenance conditions. Linear temporal logic is the language often used to express temporally extended goals. We present a method for compiling LTL goal formulas into Planning Domain Definition Language (PDDL), which is handled by many AI planners. The compilation process first constructs a finite state machine representing all reachable progressions of the goal formula, then modifies the planning domain and problem definition so that the state of the FSM is tracked.}
+      \field{booktitle}{Proceedings of the 16th European Conference on Artificial Intelligence}
+      \field{isbn}{9781586034528}
+      \field{series}{ECAI'04}
+      \field{title}{Compilation of LTL Goal Formulas into PDDL}
+      \field{year}{2004}
+      \field{pages}{985\bibrangedash 986}
+      \range{pages}{2}
+    \endentry
+    \entry{dreossiDS19}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4615d44fc7e23e3c227575cc3248f2c8}{%
+           family={Dreossi},
+           familyi={D\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod}}}%
+        {{hash=800cc3bad650b88f0b32ce795ab802d6}{%
+           family={Donz{é}},
+           familyi={D\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2cd16c374b639af8720d1ad5cfbe89d7}{%
+           family={Seshia},
+           familyi={S\bibinitperiod},
+           given={Sanjit\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{fullhash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{bibnamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authorbibnamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authornamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authorfullhash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Autom. Reason.}
+      \field{number}{4}
+      \field{title}{Compositional Falsification of Cyber-Physical Systems with Machine Learning Components}
+      \field{volume}{63}
+      \field{year}{2019}
+      \field{pages}{1031\bibrangedash 1053}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/s10817-018-09509-5
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10817-018-09509-5
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10817-018-09509-5
+      \endverb
+    \endentry
     \entry{5152776}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=9a0e2a3575b0dd32a3e68f70031e1e85}{%
@@ -842,6 +925,109 @@
       \field{year}{2021}
       \verb{eprint}
       \verb 2109.10294
+      \endverb
+    \endentry
+    \entry{hillResource}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2ad81080b120ca9a474a8b2e5d79addc}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Alasdair},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2ea1490b6f0993900c6c2e267564f296}{%
+           family={Petrick},
+           familyi={P\bibinitperiod},
+           given={Ronald\bibnamedelimb P.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bologna, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{fullhash}{752906ba33443b6c837c6009b13ee426}
+      \strng{bibnamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authorbibnamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authornamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authorfullhash}{752906ba33443b6c837c6009b13ee426}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Planning languages have been used successfully in AI for several decades. Recent trends in AI verification and Explainable AI have raised the question of whether AI planning techniques can be verified. In this paper, we present a novel resource logic, the Proof Carrying Plans (PCP) logic that can be used to verify plans produced by AI planners. The PCP logic takes inspiration from existing resource logics (such as Linear logic and Separation logic) as well as Hoare logic when it comes to modelling states and resource-aware plan execution. It also capitalises on the Curry-Howard approach to logics, in its treatment of plans as functions and plan pre- and post-conditions as types. This paper presents two main results. From the theoretical perspective, we show that the PCP logic is sound relative to the standard possible world semantics used in AI planning. From the practical perspective, we present a complete Agda formalisation of the PCP logic and of its soundness proof. Moreover, we showcase the Curry-Howard, or functional, value of this implementation by supplementing it with the library that parses AI plans into Agda’s proofs automatically. We provide evaluation of this library and the resulting Agda functions. Keywords: AI planning, Verification, Resource Logics, Theorem Proving, Dependent Types.}
+      \field{booktitle}{Proceedings of the 22nd International Symposium on Principles and Practice of Declarative Programming}
+      \field{isbn}{9781450388214}
+      \field{series}{PPDP '20}
+      \field{title}{Proof-Carrying Plans: A Resource Logic for AI Planning}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1145/3414080.3414094
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3414080.3414094
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3414080.3414094
+      \endverb
+    \endentry
+    \entry{hillAction}{inbook}{}
+      \name{author}{4}{}{%
+        {{hash=2ad81080b120ca9a474a8b2e5d79addc}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Alasdair},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=47bb7897b121c75ef96ddc064673c78a}{%
+           family={Daggitt},
+           familyi={D\bibinitperiod},
+           given={Matthew\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=2ea1490b6f0993900c6c2e267564f296}{%
+           family={Petrick},
+           familyi={P\bibinitperiod},
+           given={Ronald\bibnamedelimb P.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{fullhash}{1320e37e6f0427f0e037ec88018d124d}
+      \strng{bibnamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authorbibnamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authornamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authorfullhash}{1320e37e6f0427f0e037ec88018d124d}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Verification of AI is a challenge that has engineering, algorithmic and programming language components. For example, AI planners are deployed to model actions of autonomous agents. They comprise a number of searching algorithms that, given a set of specified properties, find a sequence of actions that satisfy these properties. Although AI planners are mature tools from the algorithmic and engineering points of view, they have limitations as programming languages. Decidable and efficient automated search entails restrictions on the syntax of the language, prohibiting use of higher-order properties or recursion. This paper proposes a methodology for embedding plans produced by AI planners into the dependently-typed language Agda, which enables users to reason about and verify more general and abstract properties of plans, and also provides a more holistic programming language infrastructure for modelling plan execution.}
+      \field{booktitle}{Proceedings of the 6th ACM SIGPLAN International Workshop on Type-Driven Development}
+      \field{isbn}{9781450386166}
+      \field{title}{Actions You Can Handle: Dependent Types for AI Plans}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3471875.3472990
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3471875.3472990
       \endverb
     \endentry
     \entry{hsiung2021generalizing}{misc}{}
@@ -2095,6 +2281,87 @@
       \verb{url}
       \verb http://arxiv.org/abs/1707.02812
       \endverb
+    \endentry
+    \entry{planningForAV}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1d9453b50e6412a1d9bbfc911aaf489d}{%
+           family={Schwarting},
+           familyi={S\bibinitperiod},
+           given={Wilko},
+           giveni={W\bibinitperiod}}}%
+        {{hash=248bd79f5e503f11eb095282260ee29f}{%
+           family={Alonso-Mora},
+           familyi={A\bibinithyphendelim M\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f74192f92945701041a41bfa429ee111}{%
+           family={Rus},
+           familyi={R\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{fullhash}{098ff23ab442227694cf61611b75faa6}
+      \strng{bibnamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authorbibnamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authornamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authorfullhash}{098ff23ab442227694cf61611b75faa6}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this review, we provide an overview of emerging trends and challenges in the field of intelligent and autonomous, or self-driving, vehicles. Recent advances in the field of perception, planning, and decision-making for autonomous vehicles have led to great improvements in functional capabilities, with several prototypes already driving on our roads and streets. Yet challenges remain regarding guaranteed performance and safety under all driving circumstances. For instance, planning methods that provide safe and system-compliant performance in complex, cluttered environments while modeling the uncertain interaction with other traffic participants are required. Furthermore, new paradigms, such as interactive planning and end-to-end learning, open up questions regarding safety and reliability that need to be addressed. In this survey, we emphasize recent approaches for integrated perception and planning and for behavior-aware planning, many of which rely on machine learning. This raises the question of verification and safety, which we also touch upon. Finally, we discuss the state of the art and remaining challenges for managing fleets of autonomous vehicles.}
+      \field{journaltitle}{Annual Review of Control, Robotics, and Autonomous Systems}
+      \field{number}{1}
+      \field{title}{Planning and Decision-Making for Autonomous Vehicles}
+      \field{volume}{1}
+      \field{year}{2018}
+      \field{pages}{187\bibrangedash 210}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+    \endentry
+    \entry{seshia2016towards}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2cd16c374b639af8720d1ad5cfbe89d7}{%
+           family={Seshia},
+           familyi={S\bibinitperiod},
+           given={Sanjit\bibnamedelima A},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ad742818738efaa3c358f9def3944504}{%
+           family={Sadigh},
+           familyi={S\bibinitperiod},
+           given={Dorsa},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d756b35e7b530d260e5a0807d1953354}{%
+           family={Sastry},
+           familyi={S\bibinitperiod},
+           given={S\bibnamedelima Shankar},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{fullhash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{bibnamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authorbibnamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authornamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authorfullhash}{689f1d6441e4043f960e22bfeac62a79}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1606.08514}
+      \field{title}{Towards verified artificial intelligence}
+      \field{year}{2016}
     \endentry
     \entry{fewShotSem}{article}{}
       \name{author}{10}{}{%

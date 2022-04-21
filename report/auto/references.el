@@ -2,11 +2,15 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
-    "angelovApi"
-    "toutanova-etal-2003-feature"
-    "BLOEM2012911"
-    "Piterman2018"
-    "synthGazit"
+    "propSpec"
+    "dreossiDS19"
+    "seshia2016towards"
+    "planningForAV"
+    "ltlPDDL"
+    "hillResource"
+    "hillAction"
+    "appPf"
+    "harperBlindness"
     "10.1145/3497775.3503685"
     "fainekos2005temporal"
     "winograd1971procedures"
@@ -63,6 +67,11 @@
     "basu2020aqua"
     "alzantot-etal-2018-generating"
     "Adiwardana2020TowardsAH"
-    "katya13"))
+    "katya13"
+    "angelovApi"
+    "toutanova-etal-2003-feature"
+    "BLOEM2012911"
+    "Piterman2018"
+    "synthGazit"))
  :bibtex)
 
