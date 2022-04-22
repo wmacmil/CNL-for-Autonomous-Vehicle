@@ -79,9 +79,11 @@ isbn=false, doi=false, ]{biblatex}
 
 \begin{document}
 
+\begin{titlepage}
+
 \maketitle
 
-\section{Abstract}
+\begin{abstract}
 
 We introduce a grammar for a controlled natural language (CNL) to give
 imperative commands for an envisioned voice assistant route-planner for a
@@ -96,6 +98,21 @@ downstream applications whose goal is the verification of various aspects of a
 vehicles behavior. This work contributes to a large existing literature,
 connecting the somewhat disparate research spaces including CNLs, verification
 for natural language-controlled robots, and semantic parsing.
+
+\end{abstract}
+
+\vfill
+
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+
+%\newpage
+%\setcounter{page}{1}
+
 
 \section{Introduction}
 

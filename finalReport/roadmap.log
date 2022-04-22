@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  22 APR 2022 23:42
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  23 APR 2022 00:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1406,116 +1406,115 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 83.
+(Font)              scaled to size 12.00128pt on input line 85.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 83.
+(Font)              scaled to size 8.00085pt on input line 85.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 83.
+(Font)              scaled to size 6.00064pt on input line 85.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 83.
+(Font)              scaled to size 11.99872pt on input line 85.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 83.
+(Font)              scaled to size 7.99915pt on input line 85.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 83.
+(Font)              scaled to size 5.99936pt on input line 85.
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 8
-3.
+5.
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
+) [1
+
+] (./roadmap.toc
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 5.
 )
+\tf@toc=\write7
+\openout7 = `roadmap.toc'.
+
+[1]
 File: pics/selfDriving.png Graphic file (type bmp)
 <pics/selfDriving.png>
-[1
-
-]
+[2]
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
-[2] [3] [4] [5] [6] [7] [8] [9]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 685.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 685.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 685.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 685.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 685.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 685.
-[10]
-Overfull \hbox (12.8813pt too wide) in paragraph at lines 776--791
+[3] [4] [5] [6] [7] [8] [9] [10] [11]
+Overfull \hbox (12.8813pt too wide) in paragraph at lines 793--808
 \TU/DejaVuSerif(0)/m/n/10 represent environmental sensor data, and those propos
 itions tied to the robot state, $[][]$, grounded
  []
 
-[11] [12] [13] [14]
-Overfull \hbox (19.91295pt too wide) in paragraph at lines 1024--1024
+[12] [13] [14] [15]
+Overfull \hbox (19.91295pt too wide) in paragraph at lines 1041--1041
 []  \TU/DejaVuSansMono(0)/m/n/10 ([(["going"],1684),(["facing"],939),(["moving"
 ],849),(["passing"],617)],["VBG"])[] 
  []
 
 
-Overfull \hbox (13.89244pt too wide) in paragraph at lines 1024--1024
+Overfull \hbox (13.89244pt too wide) in paragraph at lines 1041--1041
 []  \TU/DejaVuSansMono(0)/m/n/10 ([(["left"],1733),(["parked"],616),(["painted"
 ],307),(["fenced"],263)],["VBN"])[] 
  []
 
-[15] [16] [17] [18] [19] [20] [21]
+[16] [17] [18] [19] [20] [21]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
 [22]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
-[23]
+[23] [24]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
-[24]
-Overfull \hbox (31.30293pt too wide) in paragraph at lines 1595--1598
+[25] [26]
+Overfull \hbox (31.30293pt too wide) in paragraph at lines 1612--1615
 \TU/DejaVuSerif(0)/m/n/10 find to fine-tune via one of these pre-trained models
 . Please see https://github.com/lil-lab/touchdown 
  []
 
-[25] [26] [27] [28]
-Overfull \hbox (5.75768pt too wide) in paragraph at lines 1821--1824
+[27] [28] [29]
+Overfull \hbox (5.75768pt too wide) in paragraph at lines 1838--1841
 []\TU/DejaVuSerif(0)/m/n/10 The group builds a trained pipeline that uses an ob
 ject oriented template-instance method-
  []
 
-[29] [30] [31]
+[30] [31] [32]
 \openout4 = `roadmap.ptb'.
 
-\openout4 = `roadmap.ptb'.
-
-[32]
-\openout4 = `roadmap.ptb'.
-
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
 \openout4 = `roadmap.ptb'.
 
 [33]
 \openout4 = `roadmap.ptb'.
 
-\openout4 = `roadmap.ptb'.
-
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
 \openout4 = `roadmap.ptb'.
 
 [34]
+\openout4 = `roadmap.ptb'.
+
 \openout4 = `roadmap.ptb'.
 
 \openout4 = `roadmap.ptb'.
@@ -1530,8 +1529,6 @@ ge=dflt;!
 
 \openout4 = `roadmap.ptb'.
 
-\openout4 = `roadmap.ptb'.
-
 [37]
 \openout4 = `roadmap.ptb'.
 
@@ -1539,40 +1536,47 @@ ge=dflt;!
 
 \openout4 = `roadmap.ptb'.
 
+[38]
 \openout4 = `roadmap.ptb'.
 
-[38] [39] [40] [41]
-Overfull \hbox (0.68735pt too wide) in paragraph at lines 3769--3769
+\openout4 = `roadmap.ptb'.
+
+\openout4 = `roadmap.ptb'.
+
+\openout4 = `roadmap.ptb'.
+
+[39] [40] [41] [42]
+Overfull \hbox (0.68735pt too wide) in paragraph at lines 3786--3786
 []\TU/DejaVuSerif(0)/m/n/10 Wilko Schwarting, Javier Alonso-Mora, and Daniela R
 us. “Planning and Decision-Making
  []
 
 
-Overfull \hbox (2.03354pt too wide) in paragraph at lines 3769--3769
+Overfull \hbox (2.03354pt too wide) in paragraph at lines 3786--3786
 []\TU/DejaVuSerif(0)/m/n/10 Christopher Wang et al. “Learning a natural-languag
 e to LTL executable semantic parser
  []
 
-[42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3771.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3771.
+[43]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3788.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3788.
 (./roadmap.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3771.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3771.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3788.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3788.
 
 Package rerunfilecheck Info: File `roadmap.out' has not changed.
-(rerunfilecheck)             Checksum: 90EDE560F98219BE69FD6D12E1AA1F2E;3169.
+(rerunfilecheck)             Checksum: 5A19F831DB0D49E5D6B81CBE7D258784;3106.
 Package logreq Info: Writing requests to 'roadmap.run.xml'.
 \openout1 = `roadmap.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36629 strings out of 481749
- 716199 string characters out of 5935475
- 1426869 words of memory out of 5000000
- 53023 multiletter control sequences out of 15000+600000
- 540044 words of font info for 111 fonts, out of 8000000 for 9000
+ 36638 strings out of 481749
+ 716411 string characters out of 5935475
+ 1426876 words of memory out of 5000000
+ 53027 multiletter control sequences out of 15000+600000
+ 540117 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  67i,14n,109p,2135b,4901s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on roadmap.xdv (42 pages, 1315276 bytes).
+Output written on roadmap.xdv (44 pages, 1364808 bytes).
