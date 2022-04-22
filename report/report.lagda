@@ -5,7 +5,9 @@ isbn=false, doi=false, ]{biblatex}
 
 \addbibresource{references.bib}
 
-\usepackage[margin=1in]{geometry} \usepackage[dvipsnames]{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+
 \usepackage[colorlinks]{hyperref} \usepackage{enumitem} \usepackage{amsfonts}
 
 \usepackage{agda}
@@ -17,7 +19,6 @@ isbn=false, doi=false, ]{biblatex}
 % \setmonofont{Fira Mono}
 % \setsansfont{Noto Sans}
 
-\usepackage{xcolor}
 \definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
 \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
 \definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
@@ -57,16 +58,6 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage{mathtools}
 \usepackage{xspace}
 
-\NewDocumentCommand{\codeword}{v}{%
-\texttt{\textcolor{gray}{#1}}%
-}
-
-\NewDocumentCommand{\term}{v}{%
-\texttt{\textcolor{blue}{#1}}%
-}
-\NewDocumentCommand{\keyword}{v}{%
-\texttt{\textcolor{orange}{#1}}%
-}
 
 \usepackage{ stmaryrd }
 
@@ -106,7 +97,7 @@ isbn=false, doi=false, ]{biblatex}
 \vspace*{1cm}
 
 \begin{center} \Large On syntax and semantics
-  for voice assistants in autonomous vehicles  \\ 
+  for voice assistants in autonomous vehicles  \\
 
 \vspace{1.5cm}
 
@@ -114,10 +105,9 @@ isbn=false, doi=false, ]{biblatex}
 \large Developed with the support of Ekaterina Komendantskaya
 \end{center}
 
-
 \end{titlepage}
 
-\section{Abstract} 
+\section{Abstract}
 
 We introduce a grammar for a controlled natural language (CNL) to give
 imperative commands for an envisioned voice assistant route-planner for a
@@ -308,8 +298,8 @@ topics.
 This work should be seen as a stepping stone, specifically we view it as :
 
 \begin{itemize}[noitemsep]
-\item A survey of existing literature about this problem 
-\item A preliminary work attempting to fit in pieces of a solution to the problem  
+\item A survey of existing literature about this problem
+\item A preliminary work attempting to fit in pieces of a solution to the problem
 \item A framework and prescription for how to fit this preliminary work carried
   out here with existing work from elsewhere in attempt to build a comprehensive solution
 \end{itemize}
@@ -319,7 +309,7 @@ of many collaborators and years of research, engineering, and testing. It is
 therefore naive to assume that many of the questions posed below are answerable.
 
 
-\section{Preliminaries} 
+\section{Preliminaries}
 
 This research broaches many different fields, many of which were
 unknown to the author prior to this work. Indeed, voice assistants may
@@ -340,7 +330,7 @@ The approach taken sets out to build a semantic parser, which, despite its
 primitivity, serves as a Petri dish through which many of the deeper questions
 in this space may be viewed.
 
-\subsection{Linguistic} 
+\subsection{Linguistic}
 
 \subsubsection{GF, Parsers, and Personal Work}
 
@@ -450,7 +440,7 @@ during execution (operational semantics).
 \item In statistical notions of semantics, one often seeks the ability of one to
 capture meaning via language use, most common in contemporary contexts, its
 practical uses. Frequently Word2Vec \cite{word2vec} is referenced in this context,
-although the advent of transformers in recent years has largely usurped this. 
+although the advent of transformers in recent years has largely usurped this.
 \end{itemize}
 
 The problem presented in our work, of speaking to a machine, presents challenges
@@ -508,7 +498,7 @@ to analyze our problem domain :
   \end{itemize}
 \item The meaning from the mostly unseen utterances is given a canonical form,
   and the canonicalization process is a transformation via the vector-space and
-  distributional notions of meaning implicit in an attention-based neural network 
+  distributional notions of meaning implicit in an attention-based neural network
 \end{itemize}
 
 We don't intend to exhaust the list of possibilities here, neither in our
@@ -628,7 +618,7 @@ As regards the logical behavior, there are an array of logics available.
 \begin{itemize}
 \item Linear Temporal Logic (LTL)
 \begin{itemize}
-\item 
+\item
 \item
 \end{itemize}
 \item Metric Temporal Logic (MTL)
@@ -638,9 +628,9 @@ As regards the logical behavior, there are an array of logics available.
   the paths and models are now signals
   can be appended with a metric semantics, to show how well a formula satisfies
 \item Computation Tree Logic (CTL)
-  follow the car in front of us 
+  follow the car in front of us
 \item CTL*
-\item Probabilistic Computation Tree Logic (PCTL) 
+\item Probabilistic Computation Tree Logic (PCTL)
   go to the store if its unlikely we'll hit bad traffic
 \end{itemize}
 
@@ -719,7 +709,7 @@ surveils a region of interest for passengers).
 The coverage properties consist of visiting a set of locations, where various
 extra conditions like sequencing, ordering, and strictly ordering governs how.
 Specifically, given a finite (or incomplete) set of locations or events $\{l_i\}$
-where $i \in \{1..n\}$ we can say a baseline coverage is of the form 
+where $i \in \{1..n\}$ we can say a baseline coverage is of the form
 $\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of conjunction,
 doesn't distinguish between the order in which the locations are visited. To
 ensure that for every location $l_i$ eventually follows its predecessor $l_{i-1}$, we
@@ -730,13 +720,13 @@ which restricts how the locations are sequenced by imposing the condition that l
 $l_{i}$ must be visited prior to its successor $l_{i+1}$, namely
 $\underset{i}{\bigwedge}\; (\neg l_{i+1})\; U\; l_i$.
 If one wants to also ensure that the locations aren't redundantly visited, we
-can add the strictness condition. A bit confusing, 
+can add the strictness condition. A bit confusing,
 
 $\underset{i}{\bigwedge}\; (\neg l_{i})\; U\; (l_i \wedge X\; (\neg l_i\; U\;
 l_{i+1}))$, this property ensures that one cannot revisit location $l_i$ until
 after it has been initially visited and, in the next time increment, it hasn't
 been visited until its successor location $l_{i+1}$ has. To see how these syntax
-trees are encoded in Agda, please see the appendix [TODO:REF]. 
+trees are encoded in Agda, please see the appendix [TODO:REF].
 
 As concerns directing autonomous vehicles, one anticipates that the user
 generally would want a sequential visit, with the order condition presumably but
@@ -778,7 +768,7 @@ synthesize `` correct-by-construction robot controllers'', in the case there is 
 contradictory evidence about a specification's feasibility. Although this
 synthesis process exceeds the boundaries of the work, it is important to discuss
 because how one models the external environment and the events in it, should
-cohere to the internal environment - the natural language instructions. 
+cohere to the internal environment - the natural language instructions.
 When building a system, reasoning about it from both directions is paramount.
 
 Explicitly, how one chooses to approximate the external environment, and what a
@@ -849,7 +839,7 @@ these types of formulas.
 
 Linear logic, resource sharing, etc
 
-The review \cite{synthGazit} forgoes dealing with multi-agent systems, 
+The review \cite{synthGazit} forgoes dealing with multi-agent systems,
 
 \section{Our Pipeline}
 
@@ -891,7 +881,7 @@ A typical of the text is :
 Orient yourself so you are following the flow of traffic, Continue straight
 until you reach the intersection and take a left, You should see a red bus lane
 to your right and a bus stop, Continue straight until you are just past the bus
-stop, look to your right and you will see a tree with yellow foliage, click the base of the tree to find touchdown.  
+stop, look to your right and you will see a tree with yellow foliage, click the base of the tree to find touchdown.
 \end{quote}
 
 When filtering the dataset, we can choose to uniformly replace the last sentence
@@ -900,7 +890,7 @@ advantages of this data set with regards to our application.
 
 \begin{itemize}
 \item The size is reasonably large with approximately 10000 multi-command instruction sequences
-\item The descriptions are full of linguistic nuance and diversity 
+\item The descriptions are full of linguistic nuance and diversity
 \item The data is collected from multiple users, and is methodically produced
 \item The non-linguistic data may be of interest to those investigating
 how to grounding the utterances to the Street View panoramas
@@ -918,7 +908,7 @@ process itself, and the application we have in mind. These include :
 \item The workers don't necessarily know New York, so everything the reference is in their immediate
   visual environment.
 \item This is a ``short-term'' task, it requires no long-distance navigation
-  and reasoning. 
+  and reasoning.
 \item Working with panoramas is not necessarily a great simulation to a real
   environment. This manifests in, for example, frequent use of the word choice
   of ``walk'' instead of ``drive''.
@@ -941,7 +931,7 @@ criteria :
 \item The data set would include different urban and rural areas, different
   languages, non-paved environments, different weather and lighting conditions, and possibly multiple speakers in the car
 \item The passengers would be more diverse and have vary degrees of contextual
-  information like street place, public names like ``the opera'' and 
+  information like street place, public names like ``the opera'' and
   private names like ``mom's house'' (whereby a named entity recognition would
   be very important component)
 \item Collecting the data ``in the wild'', envisioning a cab with a human
@@ -950,7 +940,7 @@ criteria :
 
 That the data collection task in an objective way is inherently tied to the way
 we collect the data, approximating the world and environment. This limitation is
-over one's whole experimental apparatus and assumptions in designing the data set. 
+over one's whole experimental apparatus and assumptions in designing the data set.
 
 \subsubsection{Filtering the data set}
 
@@ -965,7 +955,7 @@ parses at least a minimal skeleton of the linguistic diversity found in the
 corpus. As GF grammar is not capable of directly interfacing with out-of-the-box
 part-of-speech-taggers at the \emph{concrete syntax level} when using the RGL
 because of a mismatch of grammatical categories, it is at the \emph{abstract
-syntax level}. While this is a potentially important line of research - to 
+syntax level}. While this is a potentially important line of research - to
 interface GF deal with tagged data-sets - the n-gram language model over
 the corpus  lexicon is very capable of informing the GF grammar.
 
@@ -1018,7 +1008,7 @@ $G$.
 \centering
 \begin{tikzcd}
 Strings \ar[r,"Lexical\ Analysis"] \ar[rr,bend right,"GF\ Parser"'] &[10em] Lexemes
-\ar[r,"Parsing"] &[10em] ASTs \ar[ll,bend right, "GF\ Linearization"] 
+\ar[r,"Parsing"] &[10em] ASTs \ar[ll,bend right, "GF\ Linearization"]
 \end{tikzcd}
 \caption{GF in a nutshell} \label{fig:N2}
 \end{figure}
@@ -1140,9 +1130,9 @@ relative proximity to the root of the tree.
 \end{verbatim}
 
 We since the sequence consists of multiple locations, each of which may satisfy multiple
-conditions, we need to \emph{listify} certain categories. We can include 
-judgments like \term{cat [PosCommand]{n}}.
-GF natively supports list categories, the judgment \term{cat [C] {n}} can be
+conditions, we need to \emph{listify} certain categories. We can include
+judgments like \gray{cat [PosCommand]{n}}.
+GF natively supports list categories, the judgment \gray{cat [C] {n}} can be
 desugared to
 
 \begin{verbatim}
@@ -1158,14 +1148,14 @@ be which, can then be coerced back into a ``single command'' so that the string
 following judgments, noting the last two are automatically generated at compile-time :
 
 \begin{verbatim}
-  cat [PosCommand]{2}; 
-  fun 
+  cat [PosCommand]{2};
+  fun
     CompoundCommand : Conjunct   -> [PosCommand] -> PosCommand   ;
     BasePosCommand  : PosCommand -> PosCommand   -> [PosCommand] ;
     ConsPosCommand  : PosCommand -> [PosCommand] -> [PosCommand] ;
 \end{verbatim}
- 
-One can include an explicit \term{cat Commands;} to enable punctuation denoting
+
+One can include an explicit \gray{cat Commands;} to enable punctuation denoting
 full sentence structure, which should also be listified. We reveal a parse tree
 example from the GF REPL.
 
@@ -1201,7 +1191,7 @@ One should notice that the tree is not subject to arbitrary branching. In fact,
 this is evident that if one starts walking around the exterior of the tree, that
 the leaves consist of expressions which linearize to ``the store'', ``left'',
 ``stop'' and ``Finish.''. Indeed, these are exactly and only the sequence of
-places and conditions one imagines the vehicle going to and satisfying during 
+places and conditions one imagines the vehicle going to and satisfying during
 a trip. Our grammar is designed such that the abstract syntax reflects a linear
 ordering of the atomic conditions, and therefore allows for a straightforward
 denotation as a canonical template formula $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$.
@@ -1211,7 +1201,7 @@ denotation as a canonical template formula $F\; (l_1 \wedge F\; (l_{2} \wedge ..
 While the abstract syntax is a sort of ``neutral syntax'', attempting to specify
 and capture the structure, meaning, and ontology of a given domain, the concrete
 syntax realizes this via different models, manifest as languages : sets of
-strings whose concrete form must cohere to the abstract structure. 
+strings whose concrete form must cohere to the abstract structure.
 
 The concrete syntax introduces two complimentary declarations. The first is
 linearization types ``lincat'', which essentially consist of strings, finite
@@ -1236,12 +1226,12 @@ Importing from the RGL, we show the linearization categories coherent with those
 lincat
   Commands     = Text        ;
   Polarity     = Pol         ;
-  Command      = Utt         ; 
+  Command      = Utt         ;
   [PosCommand] = [Imp]       ;
   PosCommand   = Imp         ;
   Conjunct     = Conj        ;
   Action       = VP          ;
-  Way          = Prep        ; 
+  Way          = Prep        ;
   AdvPh        = Adv         ;
   How          = Adv         ;
   Where        = Adv         ;
@@ -1252,12 +1242,12 @@ lincat
   Number       = Det         ;
   UndetObj     = CN          ;
   Descript     = SyntaxEng.A ;
-  Condition    = Cl          ; 
+  Condition    = Cl          ;
 \end{verbatim}
 
 If one goes into the RGL source, we can see a sample of the linearization
-categories. For instance, in English an common noun \term{CN} has an inherent
-gender given by a field \term{g : Gender}, which is just a ternary parameter
+categories. For instance, in English an common noun \gray{CN} has an inherent
+gender given by a field \gray{g : Gender}, which is just a ternary parameter
 type with three constructors but may manifest differently
 depending on if its singular or plural, and whether the case argument indicates
 a possessive relation. We quote the relevant parts of the RGL :
@@ -1265,7 +1255,7 @@ a possessive relation. We quote the relevant parts of the RGL :
 \begin{verbatim}
   lincat
     CN = {s : Number => Case => Str ; g : Gender} ;
-  param    
+  param
     Gender = Neutr | Masc | Fem ;
     Number = Sg | Pl ;
     Case = Nom | Gen ;
@@ -1275,9 +1265,9 @@ By abstracting away these details within our domain-specific grammar, we can
 just focus on capturing relevant semantic features. We can then assign function
 bodies coherent with the abstraction functions, which are assured to be
 well-typed with the linearization types thanks to GF's type-checker. One can
-then utilize both the syntactic function \term{mkCN} and the lexical operator
-\term{mkN} to build the concrete item for \term{Person} which is irregular with regards
-to its plural form. We show the operational implementation of \term{mkN}, which
+then utilize both the syntactic function \gray{mkCN} and the lexical operator
+\gray{mkN} to build the concrete item for \gray{Person} which is irregular with regards
+to its plural form. We show the operational implementation of \gray{mkN}, which
 reveals how one can pattern match on string structure to implement the
 morphological possessive.
 
@@ -1317,7 +1307,7 @@ grounding strategies.
 Although there are innumerable syntactic and grammatical theories, many
 equipped with computational tools like parsers, of which other relevant
 literature cited here [TODO, reference] has taken advantage, we suggest using GF
-introduces new perspectives on this problem. 
+introduces new perspectives on this problem.
 
 \begin{itemize}
 \item Multilingual support from the RGL
@@ -1327,14 +1317,14 @@ introduces new perspectives on this problem.
 \item Sleek but simple type system where standard functional programming
   intuition and practices abound
 \item Many morphological phenomena can be accounted for at the concrete level as
-  GF allows more interesting languages than those admitted by CFGs 
+  GF allows more interesting languages than those admitted by CFGs
 \item Cubic time parsing with respect to the size of the grammar
 \end{itemize}
 
 These perspectives reflect our own predispositions aimed at functional
 programming as a verification paradigm.
-  
-% We 
+
+% We
 % The first,
 % syntactic completeness, means that a construction contains all the syntactic infor-
 % mation necessary to verify its correctness. It says that a term type-checks in the
@@ -1349,32 +1339,32 @@ a natural idea which one may apply to the problem of generating LTL formulas.
 An simple example illustrates what we do, the GF grammar can parse a string in
 to an AST, whereby it can be transformed into a Haskell program manipulable such
 that it produces a canonical LTL expression representing our envisioned
-sequencing application. 
+sequencing application.
 
-We utilize the outermost function \term{applySem}, which utilizes standard
+We utilize the outermost function \gray{applySem}, which utilizes standard
 functions from the PGF API \cite{angelovApi} and the denotational
-\term{semantics} function to operate on a string like ``go to the store , turn
+\gray{semantics} function to operate on a string like ``go to the store , turn
 left and stop at the woman with the dog . go to the bridge . Finish .'' and
 produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
 (theWomanWithTheDog \wedge F\; (theBridge \wedge G\; finished))))$. This
-visible as an AST represented as a Haskell datatype \term{Phi} :
+visible as an AST represented as a Haskell datatype \gray{Phi} :
 
 \begin{verbatim}
-  F (Meet 
-      (Atom "the_store") 
-      (F (Meet 
-          (Atom "turn_left") 
-          (F (Meet 
-               (Atom "the_woman_with_the_dog") 
-               (F (Meet 
-                    (Atom "the_bridge") 
+  F (Meet
+      (Atom "the_store")
+      (F (Meet
+          (Atom "turn_left")
+          (F (Meet
+               (Atom "the_woman_with_the_dog")
+               (F (Meet
+                    (Atom "the_bridge")
                     (G (Atom "FINISHED")))))))))
 \end{verbatim}
 
 To convert from our GF representation, we recall that the list categories enable
 one to imagine a AST having nodes are given as lists. This then allows one to
-write a general functions from CNL sentences, \term{String}, to formulas
-\term{Phi}. The function \term{semantics} should give one a taste of how to
+write a general functions from CNL sentences, \gray{String}, to formulas
+\gray{Phi}. The function \gray{semantics} should give one a taste of how to
 manipulate GF objects. We describe the algorithm via its recursive behavior.
 
 \begin{verbatim}
@@ -1387,18 +1377,18 @@ semantics x =
 \end{verbatim}
 
 We first start out by normalizing the list structure. A list of commands
-\term{GListCommands} consists of a list of sentences, which may be further
+\gray{GListCommands} consists of a list of sentences, which may be further
 deconstructed as a list of simple commands. We simply flatten the list of lists,
 building a list of simple commands each of which include the atomic variables to
 be grounded.
 
 We assume positive polarity throughout, deflecting the negation operator for
-future work. Additionally, although the disjuntive \term{Or} operator is parsed
+future work. Additionally, although the disjuntive \gray{Or} operator is parsed
 by the grammar, it is not included in the sequencing task (natively), and we
 hope not to confuse the details depending on how different Boolean operators may
 change the interpretation of a path.
 
-The \term{normalizeList} function normalizes the nested lists by breaking the sentence
+The \gray{normalizeList} function normalizes the nested lists by breaking the sentence
 structure into positive commands, where the flattening actually takes place.
 This materializes in the following functional dependencies :
 
@@ -1416,7 +1406,7 @@ normalizeList ::  GListCommands -> GListCommands
 \end{verbatim}
 
 To produce the atoms (which we must account for the simple commands, denoted by
-the \term{SimpleCom} function [TODO cite GF Grammar] . The constructors are
+the \gray{SimpleCom} function [TODO cite GF Grammar] . The constructors are
 appended with a G in Haskell to prevent name clashes. This operation converting
 strings to atoms simply replaces spaces with underscores in the possibly
 modified object (``the woman with the dog'') or condition (specified by the
@@ -1446,19 +1436,19 @@ Once can presumably define a
 threshold to choose the most frequent nouns, adjectives, and verbs too.
 
 One of the difficulties is distinguishing between places and actions, and this
-will become even 
+will become even
 
 However,
-many verbs don't 
+many verbs don't
 
-One challenge for the LTL 
+One challenge for the LTL
 
 
 While the role of large language models is certainly concerned with cutting out
 a lot of the intermediary processing and time with creating natural language
 applications, we don't imagine verifiability, as we see it coming through the
 formal methods community, as feasible without some kind of intermediary logical
-specification of the behavior. 
+specification of the behavior.
 
 
 % [(["so_RB","you_PRP","are_VBP","moving_VBG","with_IN","the_DT","flow_NN","of_IN","traffic_NN"],311),
@@ -1607,7 +1597,7 @@ essentially deeply embeds a GF grammar into a Generalized Algebraic Datatype
 
 For instance, if we abstract over all abstract syntax trees for our grammar
 using this library, we can define the following Haskell functions to equate a
-``female human'' with a ``woman''. 
+``female human'' with a ``woman''.
 
 \begin{verbatim}
 treeMapfemalePersonIsWoman :: forall a. Tree a -> Tree a
@@ -1651,7 +1641,7 @@ That when we are conditioning our syntacitc model of emperical, noisy, and
 biased natural language data, so as to ideally generalize to unencountered
 phenomena.
 
-A central insight ambiguity : 
+A central insight ambiguity :
 
 
 \begin{itemize}
@@ -1676,7 +1666,7 @@ What happens when we encounter ambiguity? For instance, in p "go to the person
 with the dog ." The prepositional phrase "with the dog" can either modify person
 (as an adjectival clause) or it can modify go (as an adverbial clause). Because
 the parser is designed to accommodate simple cases of both types of clauses,
-these ambiguities, even in simple sentences from our corpus, will grow quickly. 
+these ambiguities, even in simple sentences from our corpus, will grow quickly.
 
 In the case of a vehicle, however, knowing the correct parse is dependent on
 the context in which the driver is going to the person : is the language
@@ -1769,14 +1759,14 @@ still don't have engineering, verification, or logical knowledge to give precise
 LTL specifications
 
 In \cite{fret} they use the Prototype Verification System (PVS) theorem prover
-to verify that 
+to verify that
 
 [Problem] There are two major challenges in making structured natural language
 amenable to formal analysis: (1) associating requirements with formulas that can
 be processed by analysis tools and (2) ensuring that the formulas conform to the
 language semantics. \cite{fretish}
 
------ 
+-----
 
 \subsubsection{Theorem Provers and Verification for Robots}
 
@@ -1871,7 +1861,7 @@ data set
 
 The public company Cerence \cite{} is already designing voice assistants for autonomous
 vehicles, for which it has a large software stack between the voice processing
-to actual control of current automative components. In addition to its 
+to actual control of current automative components. In addition to its
 technologies, many of which aren't accessible to external researchers due to
 intellectual property restrictions, Cerence has contracts with large automakers
 [..]. It is therefore natural to inquire, what a small team with varied
@@ -2586,8 +2576,7 @@ not they admit temporal sentences, which are available to view [TODO : Ref]
 here. We hope the reader may engage with the the code directly, as the example
 is taken from the book.
 
-
-
+[todo : bib style?]
 
 \printbibliography
 

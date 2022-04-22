@@ -1,0 +1,2916 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{angelovApi}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{fullhash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{bibnamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authorbibnamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authornamehash}{5b50822fb5130e00603d8b53547e6247}
+      \strng{authorfullhash}{5b50822fb5130e00603d8b53547e6247}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://hackage.haskell.org/package/gf-3.11.0/docs/PGF.html}}
+      \field{title}{{PGF}}
+      \field{year}{2010}
+    \endentry
+    \entry{angelov2010pgf}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ffb461893727ef6bf3f8cca2de6c610c}{%
+           family={Bringert},
+           familyi={B\bibinitperiod},
+           given={Bj{ö}rn},
+           giveni={B\bibinitperiod}}}%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{fullhash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{bibnamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authorbibnamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authornamehash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \strng{authorfullhash}{7e452a30cb2e6224bc74e8eabf285ecd}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Portable Grammar Format (PGF) is a core language for type-theoretical grammars. It is the target language to which grammars written in the high-level formalism Grammatical Framework (GF) are compiled. Low-level and simple, PGF is easy to reason about, so that its language-theoretic properties can be established. It is also easy to write interpreters that perform parsing and generation with PGF grammars, and compilers converting PGF to other formats. This paper gives a concise description of PGF, covering syntax, semantics, and parser generation. It also discusses the technique of embedded grammars, where language processing tasks defined by PGF grammars are integrated in larger systems.}
+      \field{issn}{1572-9583}
+      \field{journaltitle}{Journal of Logic, Language and Information}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{{PGF: A Portable Run-time Format for Type-theoretical Grammars}}
+      \field{volume}{19}
+      \field{year}{2010}
+      \field{pages}{201\bibrangedash 228}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1007/s10849-009-9112-y
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10849-009-9112-y
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10849-009-9112-y
+      \endverb
+    \endentry
+    \entry{ltl95}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=dc4e08d258c7c573965400f9ec1ca1db}{%
+           family={Antoniotti},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1df01036362e1005668068de689ab734}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{fullhash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{bibnamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authorbibnamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authornamehash}{ba5922ee65a9022ce19818e7b1c514af}
+      \strng{authorfullhash}{ba5922ee65a9022ce19818e7b1c514af}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of 1995 IEEE International Conference on Robotics and Automation}
+      \field{title}{Discrete event models+temporal logic=supervisory controller: automatic synthesis of locomotion controllers}
+      \field{volume}{2}
+      \field{year}{1995}
+      \field{pages}{1441\bibrangedash 1446 vol.2}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/ROBOT.1995.525480
+      \endverb
+    \endentry
+    \entry{stlAut}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=2b1aab107799f541e2c3a1f005bc09dd}{%
+           family={Aréchiga},
+           familyi={A\bibinitperiod},
+           given={Nikos},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{fullhash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{bibnamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authorbibnamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authornamehash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \strng{authorfullhash}{2b1aab107799f541e2c3a1f005bc09dd}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE Intelligent Vehicles Symposium (IV)}
+      \field{title}{Specifying Safety of Autonomous Vehicles in Signal Temporal Logic}
+      \field{year}{2019}
+      \field{pages}{58\bibrangedash 63}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IVS.2019.8813875
+      \endverb
+    \endentry
+    \entry{4141034}{article}{}
+      \name{author}{6}{}{%
+        {{hash=826cd766160d9baf0e344510b73d921a}{%
+           family={Belta},
+           familyi={B\bibinitperiod},
+           given={Calin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cc43c52cecb0f037579498ca80c711a1}{%
+           family={Bicchi},
+           familyi={B\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b5ca0ee4d617ad97cc150c468ef1d26}{%
+           family={Egerstedt},
+           familyi={E\bibinitperiod},
+           given={Magnus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7fe896e8ed8d5f30af73e472ebedcec9}{%
+           family={Frazzoli},
+           familyi={F\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ff389ecdbdfc5e473309c319939313c6}{%
+           family={Klavins},
+           familyi={K\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=13515e3859af5918925e99eddb9a9079}{%
+           family={Pappas},
+           familyi={P\bibinitperiod},
+           given={George\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{fullhash}{447f8323b72daac5b55c62e3b7e501dd}
+      \strng{bibnamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authorbibnamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authornamehash}{0ad297f59c18467a4de78fb178f6ae46}
+      \strng{authorfullhash}{447f8323b72daac5b55c62e3b7e501dd}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Robotics Automation Magazine}
+      \field{number}{1}
+      \field{title}{Symbolic planning and control of robot motion [Grand Challenges of Robotics]}
+      \field{volume}{14}
+      \field{year}{2007}
+      \field{pages}{61\bibrangedash 70}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/MRA.2007.339624
+      \endverb
+    \endentry
+    \entry{berant-liang-2014-semantic}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=59365fb6f8cc1328f2453e8fb33dfba4}{%
+           family={Berant},
+           familyi={B\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=86c032bbc45c3b616f0a1170befc0e82}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Percy},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Baltimore, Maryland}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{fullhash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{bibnamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authorbibnamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authornamehash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \strng{authorfullhash}{f9437e56463cf9c11887e0a8d06f4f01}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}
+      \field{month}{6}
+      \field{title}{Semantic Parsing via Paraphrasing}
+      \field{year}{2014}
+      \field{pages}{1415\bibrangedash 1425}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.3115/v1/P14-1133
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P14-1133
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P14-1133
+      \endverb
+    \endentry
+    \entry{9197068}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=8c2239035af0250606d0e4a22482429e}{%
+           family={Berg},
+           familyi={B\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=87699bdf002bb20697e4c6eb581509fc}{%
+           family={Bayazit},
+           familyi={B\bibinitperiod},
+           given={Deniz},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5cb66355ccef3e070aff1d4d6c445d73}{%
+           family={Mathew},
+           familyi={M\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f2373cab49d340575cf56452d72ec503}{%
+           family={Rotter-Aboyoun},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7ca6d98b9aedc0227fb0ef517ebdc65e}{%
+           family={Pavlick},
+           familyi={P\bibinitperiod},
+           given={Ellie},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3d989171b5022d1da4afb4d02a40073}
+      \strng{fullhash}{8149516f770edf8e8af4b7a1ee78b9f6}
+      \strng{bibnamehash}{d3d989171b5022d1da4afb4d02a40073}
+      \strng{authorbibnamehash}{d3d989171b5022d1da4afb4d02a40073}
+      \strng{authornamehash}{d3d989171b5022d1da4afb4d02a40073}
+      \strng{authorfullhash}{8149516f770edf8e8af4b7a1ee78b9f6}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{title}{Grounding Language to Landmarks in Arbitrary Outdoor Environments}
+      \field{year}{2020}
+      \field{pages}{208\bibrangedash 215}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICRA40945.2020.9197068
+      \endverb
+    \endentry
+    \entry{BLOEM2012911}{article}{}
+      \name{author}{5}{}{%
+        {{hash=9865af1b742410e6dee8ca813e1ec733}{%
+           family={Bloem},
+           familyi={B\bibinitperiod},
+           given={Roderick},
+           giveni={R\bibinitperiod}}}%
+        {{hash=89bdd0d9ad97b88862ff21be0cb00f3b}{%
+           family={Jobstmann},
+           familyi={J\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod}}}%
+        {{hash=44b607e69215c95a802a277379799980}{%
+           family={Piterman},
+           familyi={P\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48771ab1876a9bd3472621189d78fe6f}{%
+           family={Pnueli},
+           familyi={P\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=30a6b6adf57d6e71bff7d9d7bf27838a}{%
+           family={Saʼar},
+           familyi={S\bibinitperiod},
+           given={Yaniv},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{fullhash}{383e33b1311f47df7ad3b8e45c1f7dc1}
+      \strng{bibnamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authorbibnamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authornamehash}{d5f8c3a8f9efeaf167c699983f094761}
+      \strng{authorfullhash}{383e33b1311f47df7ad3b8e45c1f7dc1}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the problem of automatically synthesizing digital designs from linear-time specifications. We consider various classes of specifications that can be synthesized with effort quadratic in the number of states of the reactive system, where we measure effort in symbolic steps. The synthesis algorithm is based on a novel type of game called General Reactivity of rank 1 (gr(1)), with a winning condition of the form(□ ◊p1∧⋯∧□ ◊pm)→(□ ◊q1∧⋯∧□ ◊qn), where each pi and qi is a Boolean combination of atomic propositions. We show symbolic algorithms to solve this game, to build a winning strategy and several ways to optimize the winning strategy and to extract a system from it. We also show how to use gr(1) games to solve the synthesis of ltl specifications in many interesting cases. As empirical evidence to the generality and efficiency of our approach we include a significant case study. We describe the formal specifications and the synthesis process applied to a bus arbiter, which is a realistic industrial hardware specification of modest size.}
+      \field{issn}{0022-0000}
+      \field{journaltitle}{Journal of Computer and System Sciences}
+      \field{note}{In Commemoration of Amir Pnueli}
+      \field{number}{3}
+      \field{title}{Synthesis of Reactive(1) designs}
+      \field{volume}{78}
+      \field{year}{2012}
+      \field{pages}{911\bibrangedash 938}
+      \range{pages}{28}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jcss.2011.08.007
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022000011000869
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022000011000869
+      \endverb
+      \keyw{Property synthesis,Realizability,Game theory}
+    \endentry
+    \entry{7759412}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=7a3760d9352e190a9404e5513da767b4}{%
+           family={Boteanu},
+           familyi={B\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e0c87a683e3fe8441004fcc394da2da0}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c7894da64967ad5e1af536dec40ce56e}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{fullhash}{16932bc4d1bc1df7f121c46ebc7a1636}
+      \strng{bibnamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authorbibnamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authornamehash}{c7e5758a3119fad795ac417164d838c7}
+      \strng{authorfullhash}{16932bc4d1bc1df7f121c46ebc7a1636}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+      \field{title}{A model for verifiable grounding and execution of complex natural language instructions}
+      \field{year}{2016}
+      \field{pages}{2649\bibrangedash 2654}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IROS.2016.7759412
+      \endverb
+    \endentry
+    \entry{brunello_et_al}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a67d3dae2cd10c6137f40f82b7afcf23}{%
+           family={Brunello},
+           familyi={B\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f4fecc4d1a6bdd97d5809c143d71f0e4}{%
+           family={Montanari},
+           familyi={M\bibinitperiod},
+           given={Angelo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=05cc798f49b6f213e72f8d9cbb103b2d}{%
+           family={Reynolds},
+           familyi={R\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=516f16d10bfb330d27a74bc55458f5e7}{%
+           family={Gamper},
+           familyi={G\bibinitperiod},
+           given={Johann},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f52457a9c92de5cc318b407b72e931f2}{%
+           family={Pinchinat},
+           familyi={P\bibinitperiod},
+           given={Sophie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1492d1f71d35bbf6643809a1e4b87427}{%
+           family={Sciavicco},
+           familyi={S\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dagstuhl, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik}%
+      }
+      \strng{namehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{fullhash}{5106df8293195951a1cb93524ae8609a}
+      \strng{bibnamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authorbibnamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authornamehash}{5106df8293195951a1cb93524ae8609a}
+      \strng{authorfullhash}{5106df8293195951a1cb93524ae8609a}
+      \strng{editorbibnamehash}{565d64e970333e5b71d61aac947a3180}
+      \strng{editornamehash}{565d64e970333e5b71d61aac947a3180}
+      \strng{editorfullhash}{565d64e970333e5b71d61aac947a3180}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Keywords: Evolutionary algorithms, Machine learning, Natural language processing, Semantic parsing, Temporal logic}
+      \field{booktitle}{26th International Symposium on Temporal Representation and Reasoning (TIME 2019)}
+      \field{isbn}{978-3-95977-127-6}
+      \field{issn}{1868-8969}
+      \field{series}{Leibniz International Proceedings in Informatics (LIPIcs)}
+      \field{title}{{Synthesis of LTL Formulas from Natural Language Texts: State of the Art and Research Directions}}
+      \field{volume}{147}
+      \field{year}{2019}
+      \field{pages}{17:1\bibrangedash 17:19}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.TIME.2019.17
+      \endverb
+      \verb{urlraw}
+      \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
+      \endverb
+      \verb{url}
+      \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
+      \endverb
+    \endentry
+    \entry{chen2019touchdown}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=5e2afaa4949ebeb4930a13e8aa4dc4bc}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7d05bdee06932b6ca64e9f047c136958}{%
+           family={Suhr},
+           familyi={S\bibinitperiod},
+           given={Alane},
+           giveni={A\bibinitperiod}}}%
+        {{hash=abbd24aa7343e80a254d07dc87f433ac}{%
+           family={Misra},
+           familyi={M\bibinitperiod},
+           given={Dipendra},
+           giveni={D\bibinitperiod}}}%
+        {{hash=691a70527bf15623328097c061ad1940}{%
+           family={Snavely},
+           familyi={S\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=bda57b6734e461152eada7e447798ca8}{%
+           family={Artzi},
+           familyi={A\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{fullhash}{235da6855e740a012a9a58a74a19582f}
+      \strng{bibnamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authorbibnamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authornamehash}{fa9eede96d88d516de305a1d7b982a02}
+      \strng{authorfullhash}{235da6855e740a012a9a58a74a19582f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{TOUCHDOWN: Natural Language Navigation and Spatial Reasoning in Visual Street Environments}
+      \field{year}{2019}
+    \endentry
+    \entry{coqLTL}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2c06bffaeaf266eeb6246c332fe7422e}{%
+           family={Coupet-Grimal},
+           familyi={C\bibinithyphendelim G\bibinitperiod},
+           given={Solange},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{fullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{bibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorbibnamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authornamehash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \strng{authorfullhash}{2c06bffaeaf266eeb6246c332fe7422e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Logic and Computation}
+      \field{number}{6}
+      \field{title}{An Axiomatization of Linear Temporal Logic in the Calculus of Inductive Constructions}
+      \field{volume}{13}
+      \field{year}{2003}
+      \field{pages}{801\bibrangedash 813}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1093/logcom/13.6.801
+      \endverb
+    \endentry
+    \entry{ltlPDDL}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=488a64eba45b7112ec3641455c843259}{%
+           family={Cresswell},
+           familyi={C\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=47c722b19efd8fe20260e58b12919d57}{%
+           family={Coddington},
+           familyi={C\bibinitperiod},
+           given={Alexandra},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Valencia, Spain}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{fullhash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{bibnamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authorbibnamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authornamehash}{7578921d810abd7b1096eb3a410ba6fc}
+      \strng{authorfullhash}{7578921d810abd7b1096eb3a410ba6fc}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Temporally extended goals are used in planning to express safety and maintenance conditions. Linear temporal logic is the language often used to express temporally extended goals. We present a method for compiling LTL goal formulas into Planning Domain Definition Language (PDDL), which is handled by many AI planners. The compilation process first constructs a finite state machine representing all reachable progressions of the goal formula, then modifies the planning domain and problem definition so that the state of the FSM is tracked.}
+      \field{booktitle}{Proceedings of the 16th European Conference on Artificial Intelligence}
+      \field{isbn}{9781586034528}
+      \field{series}{ECAI'04}
+      \field{title}{Compilation of LTL Goal Formulas into PDDL}
+      \field{year}{2004}
+      \field{pages}{985\bibrangedash 986}
+      \range{pages}{2}
+    \endentry
+    \entry{dreossiDS19}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4615d44fc7e23e3c227575cc3248f2c8}{%
+           family={Dreossi},
+           familyi={D\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod}}}%
+        {{hash=800cc3bad650b88f0b32ce795ab802d6}{%
+           family={Donz{é}},
+           familyi={D\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2cd16c374b639af8720d1ad5cfbe89d7}{%
+           family={Seshia},
+           familyi={S\bibinitperiod},
+           given={Sanjit\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{fullhash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{bibnamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authorbibnamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authornamehash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \strng{authorfullhash}{15bc358c3ff75fe3f9777fb330b2d418}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Autom. Reason.}
+      \field{number}{4}
+      \field{title}{Compositional Falsification of Cyber-Physical Systems with Machine Learning Components}
+      \field{volume}{63}
+      \field{year}{2019}
+      \field{pages}{1031\bibrangedash 1053}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/s10817-018-09509-5
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10817-018-09509-5
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10817-018-09509-5
+      \endverb
+    \endentry
+    \entry{5152776}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=9a0e2a3575b0dd32a3e68f70031e1e85}{%
+           family={Dzifcak},
+           familyi={D\bibinitperiod},
+           given={Juraj},
+           giveni={J\bibinitperiod}}}%
+        {{hash=85e8e413f67c3ee2e515e95dffc7ef40}{%
+           family={Scheutz},
+           familyi={S\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=121708a74e1528d506fc79a1638d9e8f}{%
+           family={Baral},
+           familyi={B\bibinitperiod},
+           given={Chitta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=86fdc08f2dcf5cdca3b5ebe5e4e29ab6}{%
+           family={Schermerhorn},
+           familyi={S\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7c4063382d22142453eeefc27262ed0}
+      \strng{fullhash}{ce50c6764436448b53a29629dbde7d38}
+      \strng{bibnamehash}{f7c4063382d22142453eeefc27262ed0}
+      \strng{authorbibnamehash}{f7c4063382d22142453eeefc27262ed0}
+      \strng{authornamehash}{f7c4063382d22142453eeefc27262ed0}
+      \strng{authorfullhash}{ce50c6764436448b53a29629dbde7d38}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2009 IEEE International Conference on Robotics and Automation}
+      \field{title}{What to do and how to do it: Translating natural language directives into temporal and dynamic logic representation for goal management and action execution}
+      \field{year}{2009}
+      \field{pages}{4163\bibrangedash 4168}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ROBOT.2009.5152776
+      \endverb
+    \endentry
+    \entry{fainekos2005temporal}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=84ddd8e6d20ce8d222e2daa90d5fa2b3}{%
+           family={Fainekos},
+           familyi={F\bibinitperiod},
+           given={Georgios\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+        {{hash=13515e3859af5918925e99eddb9a9079}{%
+           family={Pappas},
+           familyi={P\bibinitperiod},
+           given={George\bibnamedelima J},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{fullhash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{bibnamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authorbibnamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authornamehash}{085b189f0491b4901ddc9da2f9850e88}
+      \strng{authorfullhash}{085b189f0491b4901ddc9da2f9850e88}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2005 IEEE International Conference on Robotics and Automation}
+      \field{title}{Temporal logic motion planning for mobile robots}
+      \field{year}{2005}
+      \field{pages}{2020\bibrangedash 2025}
+      \range{pages}{6}
+    \endentry
+    \entry{frege79}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1c468d5fce77082669983ce899030b96}{%
+           family={Frege},
+           familyi={F\bibinitperiod},
+           given={Gottlob},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Halle}%
+      }
+      \strng{namehash}{1c468d5fce77082669983ce899030b96}
+      \strng{fullhash}{1c468d5fce77082669983ce899030b96}
+      \strng{bibnamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authorbibnamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authornamehash}{1c468d5fce77082669983ce899030b96}
+      \strng{authorfullhash}{1c468d5fce77082669983ce899030b96}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Begrisschrift}
+      \field{year}{1879}
+    \endentry
+    \entry{tellexInstr}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=b68af0425fdf1015a3a128013dafdd81}{%
+           family={Gopalan},
+           familyi={G\bibinitperiod},
+           given={Nakul},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f86f313631ff8989160c5162163cadad}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5c9eb08f280d681ba0c736cea1c0c7e9}{%
+           family={Konidaris},
+           familyi={K\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=98c39534d4602a8f85dbfe21f8a31a13}{%
+           family={Toussaint},
+           familyi={T\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cc43c52cecb0f037579498ca80c711a1}{%
+           family={Bicchi},
+           familyi={B\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=df5c7be0d6c5dc6449c492d247987636}{%
+           family={Hermans},
+           familyi={H\bibinitperiod},
+           given={Tucker},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c25bd83b330a76339535a4b3320006d}
+      \strng{fullhash}{bb3c700cdfedd465ead62eb43588cae9}
+      \strng{bibnamehash}{4c25bd83b330a76339535a4b3320006d}
+      \strng{authorbibnamehash}{4c25bd83b330a76339535a4b3320006d}
+      \strng{authornamehash}{4c25bd83b330a76339535a4b3320006d}
+      \strng{authorfullhash}{bb3c700cdfedd465ead62eb43588cae9}
+      \strng{editorbibnamehash}{fce81e354ddc7ea9cb2b115f70ad16f4}
+      \strng{editornamehash}{fce81e354ddc7ea9cb2b115f70ad16f4}
+      \strng{editorfullhash}{fce81e354ddc7ea9cb2b115f70ad16f4}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics: Science and Systems XVI, Virtual Event / Corvalis, Oregon, USA, July 12-16, 2020}
+      \field{title}{Simultaneously Learning Transferable Symbols and Language Groundings from Perceptual Data for Instruction Following}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.15607/RSS.2020.XVI.102
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.15607/RSS.2020.XVI.102
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.15607/RSS.2020.XVI.102
+      \endverb
+    \endentry
+    \entry{gururangan-etal-2020-dont}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=d1d3c4c5376249f5a5ed8c43c6585e47}{%
+           family={Gururangan},
+           familyi={G\bibinitperiod},
+           given={Suchin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4af36fd5ea1c6068988c8ff0efce7a84}{%
+           family={Marasovi{ć}},
+           familyi={M\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=17a53fd167ccca7245cb9e8082ccb3a7}{%
+           family={Swayamdipta},
+           familyi={S\bibinitperiod},
+           given={Swabha},
+           giveni={S\bibinitperiod}}}%
+        {{hash=647a3130d4b4f62c11d9a9f9a15d1af1}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ad932527c4d078ff96e5f0b189c66c61}{%
+           family={Beltagy},
+           familyi={B\bibinitperiod},
+           given={Iz},
+           giveni={I\bibinitperiod}}}%
+        {{hash=fa7715d3fe113b4856fbe5933ea9c7aa}{%
+           family={Downey},
+           familyi={D\bibinitperiod},
+           given={Doug},
+           giveni={D\bibinitperiod}}}%
+        {{hash=76caee508bed7d0995f7c21cc5e6208c}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Noah\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Online}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{fullhash}{bf75487d1965aa9381775eb548534a95}
+      \strng{bibnamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authorbibnamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authornamehash}{381ebaef6893d7af0b30916478dbbf80}
+      \strng{authorfullhash}{bf75487d1965aa9381775eb548534a95}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Language models pretrained on text from a wide variety of sources form the foundation of today's NLP. In light of the success of these broad-coverage models, we investigate whether it is still helpful to tailor a pretrained model to the domain of a target task. We present a study across four domains (biomedical and computer science publications, news, and reviews) and eight classification tasks, showing that a second phase of pretraining in-domain (domain-adaptive pretraining) leads to performance gains, under both high- and low-resource settings. Moreover, adapting to the task's unlabeled data (task-adaptive pretraining) improves performance even after domain-adaptive pretraining. Finally, we show that adapting to a task corpus augmented using simple data selection strategies is an effective alternative, especially when resources for domain-adaptive pretraining might be unavailable. Overall, we consistently find that multi-phase adaptive pretraining offers large gains in task performance.}
+      \field{booktitle}{Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Don't Stop Pretraining: Adapt Language Models to Domains and Tasks}
+      \field{year}{2020}
+      \field{pages}{8342\bibrangedash 8360}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.18653/v1/2020.acl-main.740
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/2020.acl-main.740
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2020.acl-main.740
+      \endverb
+    \endentry
+    \entry{harperBlindness}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=73259fe928ce8add0f265e234f8de3a6}{%
+           family={Harper},
+           familyi={H\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{fullhash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{bibnamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authorbibnamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authornamehash}{73259fe928ce8add0f265e234f8de3a6}
+      \strng{authorfullhash}{73259fe928ce8add0f265e234f8de3a6}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://existentialtype.wordpress.com/2011/03/15/boolean-blindness/}}
+      \field{title}{{Boolean Blindness}}
+      \field{year}{2011}
+    \endentry
+    \entry{hauser2021bert}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=4597b678ebd74f74c2ff314278df616f}{%
+           family={Hauser},
+           familyi={H\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d74bc43acb3303863a9ff5cd361de63c}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Zhao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d412140cf59bde2f703f724aba47689d}{%
+           family={Pascual},
+           familyi={P\bibinitperiod},
+           given={Damián},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5c162b9d03517a96680df0dc8d8263eb}{%
+           family={Wattenhofer},
+           familyi={W\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{057b87089f9bed4904b358cd42e988e7}
+      \strng{fullhash}{13d71015be0126368d4bb4f1552320a3}
+      \strng{bibnamehash}{057b87089f9bed4904b358cd42e988e7}
+      \strng{authorbibnamehash}{057b87089f9bed4904b358cd42e988e7}
+      \strng{authornamehash}{057b87089f9bed4904b358cd42e988e7}
+      \strng{authorfullhash}{13d71015be0126368d4bb4f1552320a3}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{BERT is Robust! A Case Against Synonym-Based Adversarial Examples in Text Classification}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2109.07403
+      \endverb
+    \endentry
+    \entry{he2021english}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=23b501650b17f341ebc0b12905086fb5}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=74708e55d9eea33250d8700bf6ba6a69}{%
+           family={Bartocci},
+           familyi={B\bibinitperiod},
+           given={Ezio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=049d616292f9c2194f75c2e20e1c38fb}{%
+           family={Ničković},
+           familyi={N\bibinitperiod},
+           given={Dejan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=72270187c066e12a2a4e2693a4430e4a}{%
+           family={Isakovic},
+           familyi={I\bibinitperiod},
+           given={Haris},
+           giveni={H\bibinitperiod}}}%
+        {{hash=930e6a5b5877f8e9218f144bb79af565}{%
+           family={Grosu},
+           familyi={G\bibinitperiod},
+           given={Radu},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{fullhash}{5319d1f25841e21bdbb581708e7e5406}
+      \strng{bibnamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authorbibnamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authornamehash}{c15675c7e03cbea9abe1682d6d0cf4f5}
+      \strng{authorfullhash}{5319d1f25841e21bdbb581708e7e5406}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{From English to Signal Temporal Logic}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2109.10294
+      \endverb
+    \endentry
+    \entry{hillResource}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2ad81080b120ca9a474a8b2e5d79addc}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Alasdair},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2ea1490b6f0993900c6c2e267564f296}{%
+           family={Petrick},
+           familyi={P\bibinitperiod},
+           given={Ronald\bibnamedelimb P.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bologna, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{fullhash}{752906ba33443b6c837c6009b13ee426}
+      \strng{bibnamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authorbibnamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authornamehash}{752906ba33443b6c837c6009b13ee426}
+      \strng{authorfullhash}{752906ba33443b6c837c6009b13ee426}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Planning languages have been used successfully in AI for several decades. Recent trends in AI verification and Explainable AI have raised the question of whether AI planning techniques can be verified. In this paper, we present a novel resource logic, the Proof Carrying Plans (PCP) logic that can be used to verify plans produced by AI planners. The PCP logic takes inspiration from existing resource logics (such as Linear logic and Separation logic) as well as Hoare logic when it comes to modelling states and resource-aware plan execution. It also capitalises on the Curry-Howard approach to logics, in its treatment of plans as functions and plan pre- and post-conditions as types. This paper presents two main results. From the theoretical perspective, we show that the PCP logic is sound relative to the standard possible world semantics used in AI planning. From the practical perspective, we present a complete Agda formalisation of the PCP logic and of its soundness proof. Moreover, we showcase the Curry-Howard, or functional, value of this implementation by supplementing it with the library that parses AI plans into Agda’s proofs automatically. We provide evaluation of this library and the resulting Agda functions. Keywords: AI planning, Verification, Resource Logics, Theorem Proving, Dependent Types.}
+      \field{booktitle}{Proceedings of the 22nd International Symposium on Principles and Practice of Declarative Programming}
+      \field{isbn}{9781450388214}
+      \field{series}{PPDP '20}
+      \field{title}{Proof-Carrying Plans: A Resource Logic for AI Planning}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1145/3414080.3414094
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3414080.3414094
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3414080.3414094
+      \endverb
+    \endentry
+    \entry{hillAction}{inbook}{}
+      \name{author}{4}{}{%
+        {{hash=2ad81080b120ca9a474a8b2e5d79addc}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Alasdair},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=47bb7897b121c75ef96ddc064673c78a}{%
+           family={Daggitt},
+           familyi={D\bibinitperiod},
+           given={Matthew\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=2ea1490b6f0993900c6c2e267564f296}{%
+           family={Petrick},
+           familyi={P\bibinitperiod},
+           given={Ronald\bibnamedelimb P.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{fullhash}{1320e37e6f0427f0e037ec88018d124d}
+      \strng{bibnamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authorbibnamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authornamehash}{84ccbe878ecc702064642f6cdc4b91db}
+      \strng{authorfullhash}{1320e37e6f0427f0e037ec88018d124d}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Verification of AI is a challenge that has engineering, algorithmic and programming language components. For example, AI planners are deployed to model actions of autonomous agents. They comprise a number of searching algorithms that, given a set of specified properties, find a sequence of actions that satisfy these properties. Although AI planners are mature tools from the algorithmic and engineering points of view, they have limitations as programming languages. Decidable and efficient automated search entails restrictions on the syntax of the language, prohibiting use of higher-order properties or recursion. This paper proposes a methodology for embedding plans produced by AI planners into the dependently-typed language Agda, which enables users to reason about and verify more general and abstract properties of plans, and also provides a more holistic programming language infrastructure for modelling plan execution.}
+      \field{booktitle}{Proceedings of the 6th ACM SIGPLAN International Workshop on Type-Driven Development}
+      \field{isbn}{9781450386166}
+      \field{title}{Actions You Can Handle: Dependent Types for AI Plans}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3471875.3472990
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3471875.3472990
+      \endverb
+    \endentry
+    \entry{hsiung2021generalizing}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=cb88284fc04f1259f4741b347149ec1d}{%
+           family={Hsiung},
+           familyi={H\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ef1d7d7a18879aa74567e2829121d5f0}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Hiloni},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c358c34f84ff883b0210c5d02d32fe09}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={Junchi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9010b1dbea5f12b52033b52fe2b5d334}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xinyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=4a792196f1637b8d2a1d8d43506e633e}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Roma},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5c9eb08f280d681ba0c736cea1c0c7e9}{%
+           family={Konidaris},
+           familyi={K\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d6fa1038a73f2a7cba558774f78e658e}
+      \strng{fullhash}{c01da245331b6cb94c641e580bdb79b0}
+      \strng{bibnamehash}{d6fa1038a73f2a7cba558774f78e658e}
+      \strng{authorbibnamehash}{d6fa1038a73f2a7cba558774f78e658e}
+      \strng{authornamehash}{d6fa1038a73f2a7cba558774f78e658e}
+      \strng{authorfullhash}{c01da245331b6cb94c641e580bdb79b0}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Generalizing to New Domains by Mapping Natural Language to Lifted LTL}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2110.05603
+      \endverb
+    \endentry
+    \entry{ml4pg}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b30eb8db6fa04ec663c803d1cb570f52}{%
+           family={Komendantskaya},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c25b8448f1c4602d8797e51739f4cbe8}{%
+           family={Heras},
+           familyi={H\bibinitperiod},
+           given={Jónathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=99d28f2101f8c9867265ddcefa8f0c8c}{%
+           family={Grov},
+           familyi={G\bibinitperiod},
+           given={Gudmund},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Open Publishing Association}%
+      }
+      \strng{namehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{fullhash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{bibnamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authorbibnamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authornamehash}{623ece393acd62b9150d003eeaefe0be}
+      \strng{authorfullhash}{623ece393acd62b9150d003eeaefe0be}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2075-2180}
+      \field{journaltitle}{Electronic Proceedings in Theoretical Computer Science}
+      \field{month}{7}
+      \field{title}{Machine Learning in Proof General: Interfacing Interfaces}
+      \field{volume}{118}
+      \field{year}{2013}
+      \field{pages}{15\bibrangedash 41}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.4204/eptcs.118.2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.4204/EPTCS.118.2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.4204/EPTCS.118.2
+      \endverb
+    \endentry
+    \entry{synthGazit}{article}{}
+      \name{author}{3}{}{%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a84d914744c0ce5048c15cd0b853fc28}{%
+           family={Lahijanian},
+           familyi={L\bibinitperiod},
+           given={Morteza},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c69d2eebf29ed4409e96c5537de28cde}{%
+           family={Raman},
+           familyi={R\bibinitperiod},
+           given={Vasumathi},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{fullhash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{bibnamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authorbibnamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authornamehash}{7cd53ed00dd4f5554933802378931f52}
+      \strng{authorfullhash}{7cd53ed00dd4f5554933802378931f52}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Robot control for tasks such as moving around obstacles or grasping objects has advanced significantly in the last few decades. However, controlling robots to perform complex tasks is still accomplished largely by highly trained programmers in a manual, time-consuming, and error-prone process that is typically validated only through extensive testing. Formal methods are mathematical techniques for reasoning about systems, their requirements, and their guarantees. Formal synthesis for robotics refers to frameworks for specifying tasks in a mathematically precise language and automatically transforming these specifications into correct-by-construction robot controllers or into a proof that the task cannot be done. Synthesis allows users to reason about the task specification rather than its implementation, reduces implementation error, and provides behavioral guarantees for the resulting controller. This article reviews the current state of formal synthesis for robotics and surveys the landscape of abstractions, specifications, and synthesis algorithms that enable it.}
+      \field{journaltitle}{Annual Review of Control, Robotics, and Autonomous Systems}
+      \field{number}{1}
+      \field{title}{Synthesis for Robots: Guarantees and Feedback for Robot Behavior}
+      \field{volume}{1}
+      \field{year}{2018}
+      \field{pages}{211\bibrangedash 236}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1146/annurev-control-060117-104838
+      \endverb
+    \endentry
+    \entry{kuo2020deep}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b6e011e7e5e027d4f19c5a060ee9a982}{%
+           family={Kuo},
+           familyi={K\bibinitperiod},
+           given={Yen-Ling},
+           giveni={Y\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=582e97f66a3c848f7677fd594314028e}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2848188f1195d5db8f4551d272ab7659}{%
+           family={Barbu},
+           familyi={B\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{fullhash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{bibnamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authorbibnamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authornamehash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \strng{authorfullhash}{7cffedb1646a15c3c1e89bd7b283c550}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{title}{Deep compositional robotic planners that follow natural language commands}
+      \field{year}{2020}
+      \field{pages}{4906\bibrangedash 4912}
+      \range{pages}{7}
+    \endentry
+    \entry{bioBert}{article}{}
+      \name{author}{7}{}{%
+        {{hash=5ba41d910cff5f2417435f020e345d96}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jinhyuk},
+           giveni={J\bibinitperiod}}}%
+        {{hash=58a0d6f9fccd5ea8488a019da5baa102}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Wonjin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ce454f52d2f9592778865d720c09fbbb}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sungdong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4ac8f93c52821069e0cae2242d744139}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Donghyeon},
+           giveni={D\bibinitperiod}}}%
+        {{hash=20cd68102eda3d1ec498b7de2e0d5b10}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sunkyu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e8306d6251506a9021489bbce638e259}{%
+           family={So},
+           familyi={S\bibinitperiod},
+           given={Chan\bibnamedelima Ho},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e78ec4678faa85f642776c14d3877113}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={Jaewoo},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{fullhash}{0ab177fd2cb9c7641ac3e66f20dd1dac}
+      \strng{bibnamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authorbibnamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authornamehash}{d09461c40d714b666bc4fc6a24f15e0f}
+      \strng{authorfullhash}{0ab177fd2cb9c7641ac3e66f20dd1dac}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{09}
+      \field{number}{4}
+      \field{title}{{BioBERT: a pre-trained biomedical language representation model for biomedical text mining}}
+      \field{volume}{36}
+      \field{year}{2019}
+      \field{pages}{1234\bibrangedash 1240}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btz682
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/36/4/1234/32527770/btz682.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/btz682
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/btz682
+      \endverb
+    \endentry
+    \entry{provCorrectNatControl}{article}{}
+      \name{author}{5}{}{%
+        {{hash=37e991f377aeaa24d3530dbd062b63a5}{%
+           family={Lignos},
+           familyi={L\bibinitperiod},
+           given={Constantine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c69d2eebf29ed4409e96c5537de28cde}{%
+           family={Raman},
+           familyi={R\bibinitperiod},
+           given={Vasumathi},
+           giveni={V\bibinitperiod}}}%
+        {{hash=fe21904c961f1bbcc6bb9cfdb6062907}{%
+           family={Finucane},
+           familyi={F\bibinitperiod},
+           given={Cameron},
+           giveni={C\bibinitperiod}}}%
+        {{hash=59c763e6f26e2cb434f5b80d1ed78bf1}{%
+           family={Marcus},
+           familyi={M\bibinitperiod},
+           given={Mitchell},
+           giveni={M\bibinitperiod}}}%
+        {{hash=037e782a30a2f22ad41ef3aa30e7cbbb}{%
+           family={Kress-Gazit},
+           familyi={K\bibinithyphendelim G\bibinitperiod},
+           given={Hadas},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{ec0d3eeefe7bc8f17fb96ac36be74bf4}
+      \strng{fullhash}{5551a6b7b360539515dc24ccc711dd7e}
+      \strng{bibnamehash}{ec0d3eeefe7bc8f17fb96ac36be74bf4}
+      \strng{authorbibnamehash}{ec0d3eeefe7bc8f17fb96ac36be74bf4}
+      \strng{authornamehash}{ec0d3eeefe7bc8f17fb96ac36be74bf4}
+      \strng{authorfullhash}{5551a6b7b360539515dc24ccc711dd7e}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents an integrated system for generating, troubleshooting, and executing correct-by-construction controllers for autonomous robots using natural language input, allowing non-expert users to command robots to perform high-level tasks. This system unites the power of formal methods with the accessibility of natural language, providing controllers for implementable high-level task specifications, easy-to-understand feedback on those that cannot be achieved, and natural language explanation of the reason for the robot's actions during execution. The natural language system uses domain-general components that can easily be adapted to cover the vocabulary of new applications. Generation of a linear temporal logic specification from the user's natural language input uses a novel data structure that allows for subsequent mapping of logical propositions back to natural language, enabling natural language feedback about problems with the specification that are only identifiable in the logical form. We demonstrate the robustness of the natural language understanding system through a user study where participants interacted with a simulated robot in a search and rescue scenario. Automated analysis and user feedback on unimplementable specifications is demonstrated using an example involving a robot assistant in a hospital.}
+      \field{issn}{0929-5593}
+      \field{journaltitle}{Auton. Robots}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Provably Correct Reactive Control from Natural Language}
+      \field{volume}{38}
+      \field{year}{2015}
+      \field{pages}{89\bibrangedash 105}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s10514-014-9418-8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10514-014-9418-8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10514-014-9418-8
+      \endverb
+      \keyw{Synthesis,Natural language,High-level control,Formal methods}
+    \endentry
+    \entry{walkTalk}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=d03955ce6d452b7e6701336bf1e99747}{%
+           family={MacMahon},
+           familyi={M\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a950de0b7ee3a5e0a380ca9eef93ff6}{%
+           family={Stankiewicz},
+           familyi={S\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=526cb08d6e4b7e6741944b2484baf680}{%
+           family={Kuipers},
+           familyi={K\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston, Massachusetts}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \strng{fullhash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \strng{bibnamehash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \strng{authorbibnamehash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \strng{authornamehash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \strng{authorfullhash}{2d06ddb1b79b8a6565f90d1c9d3bdf3a}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st National Conference on Artificial Intelligence - Volume 2}
+      \field{isbn}{9781577352815}
+      \field{series}{AAAI'06}
+      \field{title}{Walk the Talk: Connecting Language, Knowledge, and Action in Route Instructions}
+      \field{year}{2006}
+      \field{pages}{1475\bibrangedash 1482}
+      \range{pages}{8}
+    \endentry
+    \entry{macmillan2021}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=9d187f35f9fb365a330825622dc93aaa}{%
+           family={Macmillan},
+           familyi={M\bibinitperiod},
+           given={Warrick},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Gothenburg}%
+      }
+      \strng{namehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{fullhash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{bibnamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authorbibnamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authornamehash}{9d187f35f9fb365a330825622dc93aaa}
+      \strng{authorfullhash}{9d187f35f9fb365a330825622dc93aaa}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{On the Grammar of Proof}}
+      \field{type}{mathesis}
+      \field{year}{2021}
+      \field{pages}{90}
+      \range{pages}{1}
+    \endentry
+    \entry{MARGE2022101255}{article}{}
+      \name{author}{28}{}{%
+        {{hash=d29a3585cfce1e37eff85dd9c5c79adf}{%
+           family={Marge},
+           familyi={M\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ceb3b9381fe89c67ae1e95c40dd077c}{%
+           family={Espy-Wilson},
+           familyi={E\bibinithyphendelim W\bibinitperiod},
+           given={Carol},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7f6f1880dbbe6098c6ae8ad1e69354ff}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Nigel\bibnamedelima G.},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=1d026f48c0edd8e4ac286be4b4800109}{%
+           family={Alwan},
+           familyi={A\bibinitperiod},
+           given={Abeer},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bda57b6734e461152eada7e447798ca8}{%
+           family={Artzi},
+           familyi={A\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b118f9d5c7ddaa3d38926cc7de6586e0}{%
+           family={Bansal},
+           familyi={B\bibinitperiod},
+           given={Mohit},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0d02a491f45dbfc2f701a246635fe3d5}{%
+           family={Blankenship},
+           familyi={B\bibinitperiod},
+           given={Gil},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b8d8d0f2eea7025356be957bed3afa4e}{%
+           family={Chai},
+           familyi={C\bibinitperiod},
+           given={Joyce},
+           giveni={J\bibinitperiod}}}%
+        {{hash=42072a10ff3897d5450c237c5d500de6}{%
+           family={Daumé},
+           familyi={D\bibinitperiod},
+           given={Hal},
+           giveni={H\bibinitperiod}}}%
+        {{hash=14a631e77effc1b5f2774d9255ed6ebc}{%
+           family={Dey},
+           familyi={D\bibinitperiod},
+           given={Debadeepta},
+           giveni={D\bibinitperiod}}}%
+        {{hash=840dd701c4a45c8fdda8642ec994f552}{%
+           family={Harper},
+           familyi={H\bibinitperiod},
+           given={Mary},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e0c87a683e3fe8441004fcc394da2da0}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a75d75ecd1409dda2275f90f5721ba4f}{%
+           family={Kennington},
+           familyi={K\bibinitperiod},
+           given={Casey},
+           giveni={C\bibinitperiod}}}%
+        {{hash=40e7290d7826f35d367c77b94d92bfe4}{%
+           family={Kruijff-Korbayová},
+           familyi={K\bibinithyphendelim K\bibinitperiod},
+           given={Ivana},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d350899843e74c7cb6f945d48def0dfa}{%
+           family={Manocha},
+           familyi={M\bibinitperiod},
+           given={Dinesh},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f4666a54b6899209b1e6676d92c62f86}{%
+           family={Matuszek},
+           familyi={M\bibinitperiod},
+           given={Cynthia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a53362f56e6740426d88f1c93befbf1a}{%
+           family={Mead},
+           familyi={M\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fd2514553686a5eba6acf95cf22c1f55}{%
+           family={Mooney},
+           familyi={M\bibinitperiod},
+           given={Raymond},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cea44d7b651a50a1a3e55fe36edc599b}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Roger\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=d9964335acf3f82957cd1e681220c042}{%
+           family={Ostendorf},
+           familyi={O\bibinitperiod},
+           given={Mari},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bfb64ddd7bf63e27079992ec177b7939}{%
+           family={Pon-Barry},
+           familyi={P\bibinithyphendelim B\bibinitperiod},
+           given={Heather},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2aac243f66ab83fed3ef61e6d3fd83cd}{%
+           family={Rudnicky},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima I.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=85e8e413f67c3ee2e515e95dffc7ef40}{%
+           family={Scheutz},
+           familyi={S\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1e0f70c6114e01a0601bac6c4e0b055d}{%
+           family={Amant},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima St.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=6df81b955991d7b70afb81d4a64b6c90}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=852889328d57da2df5bccea3165205d0}{%
+           family={Traum},
+           familyi={T\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9c4fef6d6532aa92e8b9c897d215f312}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Zhou},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{9bb840c7377980f2066441592c0541b6}
+      \strng{fullhash}{828c686940af4ae13286beaa318fe194}
+      \strng{bibnamehash}{9bb840c7377980f2066441592c0541b6}
+      \strng{authorbibnamehash}{9bb840c7377980f2066441592c0541b6}
+      \strng{authornamehash}{9bb840c7377980f2066441592c0541b6}
+      \strng{authorfullhash}{828c686940af4ae13286beaa318fe194}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0885-2308}
+      \field{journaltitle}{Computer Speech and Language}
+      \field{title}{Spoken language interaction with robots: Recommendations for future research}
+      \field{volume}{71}
+      \field{year}{2022}
+      \field{pages}{101255}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.csl.2021.101255
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0885230821000620
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0885230821000620
+      \endverb
+      \keyw{Research agenda,Issues,Challenges,Priorities,Users}
+    \endentry
+    \entry{specPat}{article}{}
+      \name{author}{5}{}{%
+        {{hash=68385e5d019db45e211b8a2d8a541a5a}{%
+           family={Menghi},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bdcc4df962d0fabffab1c7333f7073e3}{%
+           family={Tsigkanos},
+           familyi={T\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5a7e482a2db87465bc343138234aba36}{%
+           family={Pelliccione},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=80d7a82348e6e97a8c02edb3abe51bc4}{%
+           family={Ghezzi},
+           familyi={G\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7f3e28fb81a360079c8013f200d0c1a0}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Los Alamitos, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{fullhash}{d7eee7094fdea3a5220b2b70f9043a23}
+      \strng{bibnamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authorbibnamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authornamehash}{6a632a7a51e941f6782e5c5d1d581917}
+      \strng{authorfullhash}{d7eee7094fdea3a5220b2b70f9043a23}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1939-3520}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Specification Patterns for Robotic Missions}
+      \field{volume}{47}
+      \field{year}{2021}
+      \field{pages}{2208\bibrangedash 2224}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1109/TSE.2019.2945329
+      \endverb
+      \keyw{software;service robots;natural languages;software engineering;tools;task analysis}
+    \endentry
+    \entry{word2vec}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=a2d359b12ca2fadf0b40136a73f021bb}{%
+           family={Mikolov},
+           familyi={M\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ee3f7d7b96add98106db907e189d6c13}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3d11e6f2a0d0a1183b2cf62996525afc}{%
+           family={Corrado},
+           familyi={C\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lake Tahoe, Nevada}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates Inc.}%
+      }
+      \strng{namehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{fullhash}{de32714a52f717caeb5f99165092caf6}
+      \strng{bibnamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authorbibnamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authornamehash}{d4849f6d57e38d9b9846cfb360e45131}
+      \strng{authorfullhash}{de32714a52f717caeb5f99165092caf6}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling.An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of "Canada" and "Air" cannot be easily combined to obtain "Air Canada". Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible.}
+      \field{booktitle}{Proceedings of the 26th International Conference on Neural Information Processing Systems - Volume 2}
+      \field{series}{NIPS'13}
+      \field{title}{Distributed Representations of Words and Phrases and Their Compositionality}
+      \field{year}{2013}
+      \field{pages}{3111\bibrangedash 3119}
+      \range{pages}{9}
+    \endentry
+    \entry{wordnet}{article}{}
+      \name{author}{1}{}{%
+        {{hash=52cf88006a41a8cd9aab3bcb5e428b80}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={George\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{fullhash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{bibnamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authorbibnamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authornamehash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \strng{authorfullhash}{52cf88006a41a8cd9aab3bcb5e428b80}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Because meaningful sentences are composed of meaningful words, any system that hopes to process natural languages as people do must have information about words and their meanings. This information is traditionally provided through dictionaries, and machine-readable dictionaries are now widely available. But dictionary entries evolved for the convenience of human readers, not for machines. WordNet1 provides a more effective combination of traditional lexicographic information and modern computing. WordNet is an online lexical database designed for use under program control. English nouns, verbs, adjectives, and adverbs are organized into sets of synonyms, each representing a lexicalized concept. Semantic relations link the synonym sets [4].}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{WordNet: A Lexical Database for English}
+      \field{volume}{38}
+      \field{year}{1995}
+      \field{pages}{39\bibrangedash 41}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1145/219717.219748
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/219717.219748
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/219717.219748
+      \endverb
+    \endentry
+    \entry{Montague1973}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=7c6ba51ce7aee268ca16ba50bb7f44f2}{%
+           family={Montague},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=e479ded1d684815dc3a6bd451e9a6aea}{%
+           family={Hintikka},
+           familyi={H\bibinitperiod},
+           given={K.\bibnamedelimi J.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8463e4ea3a7d7ff0bbb823294678b205}{%
+           family={Moravcsik},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi M.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=9016de0aaea4a11f15e82dc2bed9dd1c}{%
+           family={Suppes},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Springer Netherlands}%
+      }
+      \strng{namehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{fullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{bibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorbibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authornamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorfullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{editorbibnamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editornamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editorfullhash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The aim of this paper is to present in a rigorous way the syntax and semantics of a certain fragment of a certain dialect of English. For expository purposes the fragment has been made as simple and restricted as it can be while accommodating all the more puzzling cases of quantification and reference with which I am acquainted.1}
+      \field{booktitle}{Approaches to Natural Language: Proceedings of the 1970 Stanford Workshop on Grammar and Semantics}
+      \field{isbn}{978-94-010-2506-5}
+      \field{title}{The Proper Treatment of Quantification in Ordinary English}
+      \field{year}{1973}
+      \field{pages}{221\bibrangedash 242}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+    \endentry
+    \entry{appPf}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9dab876fde0c5b3e663d10c58b57f18b}{%
+           family={O'Connor},
+           familyi={O\bibinitperiod},
+           given={Liam},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Nara, Japan}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{fullhash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{bibnamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authorbibnamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authornamehash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \strng{authorfullhash}{9dab876fde0c5b3e663d10c58b57f18b}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we develop a library of typed proof search procedures, and demonstrate their remarkable utility as a mechanism for proof-search and automation. We describe a framework for describing proof-search procedures in Agda, with a library of tactical combinators based on applicative functors. This framework is very general, so we demonstrate the approach with two common applications from the field of software verification: a library for property-based testing in the style of SmallCheck, and the embedding of a basic model checker inside our framework, which we use to verify the correctness of common concurrency algorithms.}
+      \field{booktitle}{Proceedings of the 1st International Workshop on Type-Driven Development}
+      \field{isbn}{9781450344357}
+      \field{series}{TyDe 2016}
+      \field{title}{Applications of Applicative Proof Search}
+      \field{year}{2016}
+      \field{pages}{43\bibrangedash 55}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/2976022.2976030
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2976022.2976030
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2976022.2976030
+      \endverb
+      \keyw{proof,critical section,Agda,model checking,concurrency,properties,testing,automation}
+    \endentry
+    \entry{patellearning}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4a792196f1637b8d2a1d8d43506e633e}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Roma},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3247d4b31b59515aa3a980b53ca555cd}{%
+           family={Tellex},
+           familyi={T\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7ca6d98b9aedc0227fb0ef517ebdc65e}{%
+           family={Pavlick},
+           familyi={P\bibinitperiod},
+           given={Ellie},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{fullhash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{bibnamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authorbibnamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authornamehash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \strng{authorfullhash}{0413bc9e02130beae0cb19a53f4d9f63}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning to Ground Language to Temporal Logical Form}
+      \field{year}{2019}
+    \endentry
+    \entry{Piterman2018}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=44b607e69215c95a802a277379799980}{%
+           family={Piterman},
+           familyi={P\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48771ab1876a9bd3472621189d78fe6f}{%
+           family={Pnueli},
+           familyi={P\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=1822cd554880ea55fd66357a96bca03e}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Edmund\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=eeb928073fbee58751f87d401a62561a}{%
+           family={Henzinger},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5ac94523768e8fc4adb7a926b36d83e0}{%
+           family={Veith},
+           familyi={V\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9865af1b742410e6dee8ca813e1ec733}{%
+           family={Bloem},
+           familyi={B\bibinitperiod},
+           given={Roderick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{fullhash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{bibnamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authorbibnamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authornamehash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{authorfullhash}{28085760634fa42b53eaddc1b0d6daf3}
+      \strng{editorbibnamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editornamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editorfullhash}{eea0cb89759dac86c5d80411829d95b2}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Temporal logic has been used by philosophers to reason about the way the world changes over time. Its modern use in specification and verification of systems describes the evolution of states of a program/design giving rise to descriptions of executions. Temporal logics can be classified by their view of the evolution of time as either linear or branching. In the linear-time view, we see time ranging over a linear total order and executions are sequences of states. When the system has multiple possible executions (due to nondeterminism or reading input) we view them as separate possible evolutions and the system has a set of possible behaviors. In the branching-time view, a point in time may have multiple possible successors and accordingly executions are tree-like structures. According to this view, a system has exactly one execution, which takes the form of a tree. We start this chapter by introducing Fair Discrete Structures, the model on which we evaluate the truth and falsity of temporal logic formulas. Fair Discrete Structures describe the states of a system and their possible evolution. We then proceed with the linear-time view and introduce Propositional Linear Temporal Logic (LTL). We explain the distinction between safety and liveness properties and introduce a hierarchy of liveness properties of increasing expressiveness. We study the expressive power of full LTL and cover extensions that increase its expressive power. We introduce algorithms for checking the satisfiability of LTL and model checking LTL. We turn to the branching-time framework and introduce Computation Tree Logic (CTL). As before, we discuss its expressive power, consider extensions, and cover satisfiability and model checking. We then dedicate some time to examples of formulas in both LTL and CTL and stress the differences between the two. We end with a formal comparison of LTL and CTL and, in view of this comparison, introduce CTL*, a hybrid of LTL and CTL that combines the linear and branching views into one logic.}
+      \field{booktitle}{Handbook of Model Checking}
+      \field{isbn}{978-3-319-10575-8}
+      \field{title}{Temporal Logic and Fair Discrete Systems}
+      \field{year}{2018}
+      \field{pages}{27\bibrangedash 73}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1007/978-3-319-10575-8_2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_2
+      \endverb
+    \endentry
+    \entry{plaku2016motion}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3cb636c8c3c2e19eede483d26b5f5f15}{%
+           family={Plaku},
+           familyi={P\bibinitperiod},
+           given={Erion},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ca50b61c6d4e6ff567664ac59d4d3837}{%
+           family={Karaman},
+           familyi={K\bibinitperiod},
+           given={Sertac},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{fullhash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{bibnamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authorbibnamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authornamehash}{478de9609bc43047ed23cbac13c6c387}
+      \strng{authorfullhash}{478de9609bc43047ed23cbac13c6c387}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AI communications}
+      \field{number}{1}
+      \field{title}{Motion planning with temporal-logic specifications: Progress and challenges}
+      \field{volume}{29}
+      \field{year}{2016}
+      \field{pages}{151\bibrangedash 162}
+      \range{pages}{12}
+    \endentry
+    \entry{ranta1994type}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3ac20553fd2564add973c6e7d55fb05b}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{fullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{bibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorbibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authornamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorfullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Type Theoretical Grammar}}
+      \field{year}{1994}
+    \endentry
+    \entry{ranta_2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Functional Programming}
+      \field{number}{2}
+      \field{title}{{Grammatical Framework}}
+      \field{volume}{14}
+      \field{year}{2004}
+      \field{pages}{145\bibrangedash 189}
+      \range{pages}{45}
+      \verb{doi}
+      \verb 10.1017/S0956796803004738
+      \endverb
+    \endentry
+    \entry{ranta2009rgl}{article}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{3}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Linguistics in Language Technology}}
+      \field{title}{{The GF Resource Grammar Library}}
+      \field{volume}{2}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb http://elanguage.net/journals/index.php/lilt/article/viewFile/214/158
+      \endverb
+      \verb{url}
+      \verb http://elanguage.net/journals/index.php/lilt/article/viewFile/214/158
+      \endverb
+    \endentry
+    \entry{ranta2017cross}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=edc679982f1595754fba996949b28b95}{%
+           family={Kolachina},
+           familyi={K\bibinitperiod},
+           given={Prasanth},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e251a55bef1641f453938651c979ba38}{%
+           family={Hallgren},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{fullhash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{bibnamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authorbibnamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authornamehash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \strng{authorfullhash}{f3e223fd57fe154fb8493cbc2fb95a0d}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st Nordic Conference on Computational Linguistics}
+      \field{title}{Cross-lingual syntax: Relating grammatical framework with Universal Dependencies}
+      \field{year}{2017}
+      \field{pages}{322\bibrangedash 325}
+      \range{pages}{4}
+    \endentry
+    \entry{ren-etal-2019-generating}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=138626d1adbe607b34699718dd377319}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shuhuai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9e48e778d5cd373a68481261d90dcc04}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Yihe},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a328f63ba0e78525a27b105bb17fe87e}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cb0803882fba28a6c7ecb519069a89de}{%
+           family={Che},
+           familyi={C\bibinitperiod},
+           given={Wanxiang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Florence, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{14b01d4236e824603b02873af157428f}
+      \strng{fullhash}{95503987bc0659e8b806df783f04ffc7}
+      \strng{bibnamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authorbibnamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authornamehash}{14b01d4236e824603b02873af157428f}
+      \strng{authorfullhash}{95503987bc0659e8b806df783f04ffc7}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the problem of adversarial attacks on text classification, which is rarely studied comparing to attacks on image classification. The challenge of this task is to generate adversarial examples that maintain lexical correctness, grammatical correctness and semantic similarity. Based on the synonyms substitution strategy, we introduce a new word replacement order determined by both the word saliency and the classification probability, and propose a greedy algorithm called probability weighted word saliency (PWWS) for text adversarial attack. Experiments on three popular datasets using convolutional as well as LSTM models show that PWWS reduces the classification accuracy to the most extent, and keeps a very low word substitution rate. A human evaluation study shows that our generated adversarial examples maintain the semantic similarity well and are hard for humans to perceive. Performing adversarial training using our perturbed datasets improves the robustness of the models. At last, our method also exhibits a good transferability on the generated adversarial examples.}
+      \field{booktitle}{Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Generating Natural Language Adversarial Examples through Probability Weighted Word Saliency}
+      \field{year}{2019}
+      \field{pages}{1085\bibrangedash 1097}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.18653/v1/P19-1103
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P19-1103
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P19-1103
+      \endverb
+    \endentry
+    \entry{verifiedMotion}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=57dba6427ad3454b675f2b86cadc1be0}{%
+           family={Rizaldi},
+           familyi={R\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d0b0722da31cffb37f836c379a269a38}{%
+           family={Immler},
+           familyi={I\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=620b9f4fa70e4ed1ce03b4a790f54a87}{%
+           family={Sch{ü}rmann},
+           familyi={S\bibinitperiod},
+           given={Bastian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6212f49fc6e2ed8c269aa77471508561}{%
+           family={Althoff},
+           familyi={A\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=9a06920f8645e691220f4461275d91f3}{%
+           family={Lahiri},
+           familyi={L\bibinitperiod},
+           given={Shuvendu\bibnamedelima K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=3ad93e4c675a68a22a9c2c52b38e2751}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{fullhash}{f28f64758dacb12e29e92cc5bfb67a33}
+      \strng{bibnamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authorbibnamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authornamehash}{75291f8dd6309aba74839c6a76bb5fbb}
+      \strng{authorfullhash}{f28f64758dacb12e29e92cc5bfb67a33}
+      \strng{editorbibnamehash}{7625318d7320174ab5094a59635a0d3c}
+      \strng{editornamehash}{7625318d7320174ab5094a59635a0d3c}
+      \strng{editorfullhash}{7625318d7320174ab5094a59635a0d3c}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Autonomous vehicles are safety-critical cyber-physical systems. To ensure their correctness, we use a proof assistant to prove safety properties deductively. This paper presents a formally verified motion planner based on manoeuvre automata in Isabelle/HOL. Two general properties which we ensure are numerical soundness (the absence of floating-point errors) and logical correctness (satisfying a plan specified in linear temporal logic). From these two properties, we obtain a motion planner whose correctness only depends on the validity of the models of the ego vehicle and its environment.}
+      \field{booktitle}{Automated Technology for Verification and Analysis}
+      \field{isbn}{978-3-030-01090-4}
+      \field{title}{A Formally Verified Motion Planner for Autonomous Vehicles}
+      \field{year}{2018}
+      \field{pages}{75\bibrangedash 90}
+      \range{pages}{16}
+    \endentry
+    \entry{dontParse}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d7c87895715a271177851daf67ab6e8f}{%
+           family={Rongali},
+           familyi={R\bibinitperiod},
+           given={Subendhu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a276b79ba7f36d42fec6af09d6f81d1a}{%
+           family={Soldaini},
+           familyi={S\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=53bdf0ddf598fd3d3aeba2c16deb6745}{%
+           family={Monti},
+           familyi={M\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1e508a17be554905b7b52f2fd8e933a6}{%
+           family={Hamza},
+           familyi={H\bibinitperiod},
+           given={Wael},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Taipei, Taiwan}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{d54590b78bc23905a0ba25af43817fe7}
+      \strng{fullhash}{1c725f99e7f6443957b7d2a9efd5316c}
+      \strng{bibnamehash}{d54590b78bc23905a0ba25af43817fe7}
+      \strng{authorbibnamehash}{d54590b78bc23905a0ba25af43817fe7}
+      \strng{authornamehash}{d54590b78bc23905a0ba25af43817fe7}
+      \strng{authorfullhash}{1c725f99e7f6443957b7d2a9efd5316c}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of The Web Conference 2020}
+      \field{isbn}{9781450370233}
+      \field{series}{WWW '20}
+      \field{title}{Don’t Parse, Generate! A Sequence to Sequence Architecture for Task-Oriented Semantic Parsing}
+      \field{year}{2020}
+      \field{pages}{2962\bibrangedash 2968}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1145/3366423.3380064
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3366423.3380064
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3366423.3380064
+      \endverb
+      \keyw{Natural Language Understanding,Sequence to Sequence models,Voice Assistants,Semantic Parsing}
+    \endentry
+    \entry{substAttacks}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9470198fa62c53a76873a24efa114622}{%
+           family={Samanta},
+           familyi={S\bibinitperiod},
+           given={Suranjana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fb378fc897441f58f0b87c994b6cf0c3}{%
+           family={Mehta},
+           familyi={M\bibinitperiod},
+           given={Sameep},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{fullhash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{bibnamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authorbibnamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authornamehash}{4941f8349bd964a0411996c0c2a4c606}
+      \strng{authorfullhash}{4941f8349bd964a0411996c0c2a4c606}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Towards Crafting Text Adversarial Samples}
+      \field{volume}{abs/1707.02812}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1707.02812
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1707.02812
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1707.02812
+      \endverb
+    \endentry
+    \entry{planningForAV}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1d9453b50e6412a1d9bbfc911aaf489d}{%
+           family={Schwarting},
+           familyi={S\bibinitperiod},
+           given={Wilko},
+           giveni={W\bibinitperiod}}}%
+        {{hash=248bd79f5e503f11eb095282260ee29f}{%
+           family={Alonso-Mora},
+           familyi={A\bibinithyphendelim M\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f74192f92945701041a41bfa429ee111}{%
+           family={Rus},
+           familyi={R\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{fullhash}{098ff23ab442227694cf61611b75faa6}
+      \strng{bibnamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authorbibnamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authornamehash}{098ff23ab442227694cf61611b75faa6}
+      \strng{authorfullhash}{098ff23ab442227694cf61611b75faa6}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this review, we provide an overview of emerging trends and challenges in the field of intelligent and autonomous, or self-driving, vehicles. Recent advances in the field of perception, planning, and decision-making for autonomous vehicles have led to great improvements in functional capabilities, with several prototypes already driving on our roads and streets. Yet challenges remain regarding guaranteed performance and safety under all driving circumstances. For instance, planning methods that provide safe and system-compliant performance in complex, cluttered environments while modeling the uncertain interaction with other traffic participants are required. Furthermore, new paradigms, such as interactive planning and end-to-end learning, open up questions regarding safety and reliability that need to be addressed. In this survey, we emphasize recent approaches for integrated perception and planning and for behavior-aware planning, many of which rely on machine learning. This raises the question of verification and safety, which we also touch upon. Finally, we discuss the state of the art and remaining challenges for managing fleets of autonomous vehicles.}
+      \field{journaltitle}{Annual Review of Control, Robotics, and Autonomous Systems}
+      \field{number}{1}
+      \field{title}{Planning and Decision-Making for Autonomous Vehicles}
+      \field{volume}{1}
+      \field{year}{2018}
+      \field{pages}{187\bibrangedash 210}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1146/annurev-control-060117-105157
+      \endverb
+    \endentry
+    \entry{seshia2016towards}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2cd16c374b639af8720d1ad5cfbe89d7}{%
+           family={Seshia},
+           familyi={S\bibinitperiod},
+           given={Sanjit\bibnamedelima A},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ad742818738efaa3c358f9def3944504}{%
+           family={Sadigh},
+           familyi={S\bibinitperiod},
+           given={Dorsa},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d756b35e7b530d260e5a0807d1953354}{%
+           family={Sastry},
+           familyi={S\bibinitperiod},
+           given={S\bibnamedelima Shankar},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{fullhash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{bibnamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authorbibnamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authornamehash}{689f1d6441e4043f960e22bfeac62a79}
+      \strng{authorfullhash}{689f1d6441e4043f960e22bfeac62a79}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1606.08514}
+      \field{title}{Towards verified artificial intelligence}
+      \field{year}{2016}
+    \endentry
+    \entry{fewShotSem}{article}{}
+      \name{author}{10}{}{%
+        {{hash=62a630ac09a1d16f2dfa91459b5fbb03}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fd16d4f4011e07f3c20e6f7353bf1406}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Christopher\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e5b0fa296573a8bec18b738326d547a8}{%
+           family={Thomson},
+           familyi={T\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d94bea3eaf38f3d4a49a15cfcda625bb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f4ad2d34f5bfed1aa324323c1e104cfa}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Subhro},
+           giveni={S\bibinitperiod}}}%
+        {{hash=46a959daf7b529520c4829512454008f}{%
+           family={Platanios},
+           familyi={P\bibinitperiod},
+           given={Emmanouil\bibnamedelima Antonios},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=01d23ee6c109414c8e9866437ca8d896}{%
+           family={Pauls},
+           familyi={P\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9fb237891a1517d36109c68767dd6fae}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c812a8d4324b6fd9e02dc2f87adc14f4}{%
+           family={Eisner},
+           familyi={E\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bda24e7cdf1190c6484d62e2e4898d98}{%
+           family={Durme},
+           familyi={D\bibinitperiod},
+           given={Benjamin\bibnamedelima Van},
+           giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{fullhash}{e767b75b528f48c3f446c7b5763ff788}
+      \strng{bibnamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authorbibnamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authornamehash}{07cdf00c8a0710ee228312e42e9279c3}
+      \strng{authorfullhash}{e767b75b528f48c3f446c7b5763ff788}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Constrained Language Models Yield Few-Shot Semantic Parsers}
+      \field{volume}{abs/2104.08768}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2104.08768
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2104.08768
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2104.08768
+      \endverb
+    \endentry
+    \entry{szegedy}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=ed568d9c3bb059e6bf22899fbf170f86}{%
+           family={Szegedy},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e9fec85bbce1b087a6ebefe26e73f7bf}{%
+           family={Zaremba},
+           familyi={Z\bibinitperiod},
+           given={Wojciech},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=c83b564e32475f10dcc91be7e66d3e81}{%
+           family={Bruna},
+           familyi={B\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8bbc4c5d96f205bada839e74e0202146}{%
+           family={Erhan},
+           familyi={E\bibinitperiod},
+           given={Dumitru},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4f74ef4c79f3bb1e51e378184d8850e}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a6784304d1cc890b2cb6c6c7f2f3fd76}{%
+           family={Fergus},
+           familyi={F\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{fullhash}{3180e20a73f95bad20fea6bdef8591c8}
+      \strng{bibnamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authorbibnamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authornamehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{authorfullhash}{3180e20a73f95bad20fea6bdef8591c8}
+      \strng{editorbibnamehash}{afe3c75951d1843ce2846d6c16647f41}
+      \strng{editornamehash}{afe3c75951d1843ce2846d6c16647f41}
+      \strng{editorfullhash}{afe3c75951d1843ce2846d6c16647f41}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2nd International Conference on Learning Representations, {ICLR} 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings}
+      \field{title}{Intriguing properties of neural networks}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1312.6199
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1312.6199
+      \endverb
+    \endentry
+    \entry{toutanova-etal-2003-feature}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=b92aa283415413bb8d2a1548716d0c7d}{%
+           family={Toutanova},
+           familyi={T\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9fb237891a1517d36109c68767dd6fae}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=300d4990e626d975e0c28630444f63c3}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={Yoram},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{fullhash}{61c9e289a54a17659dffa92aea909ea9}
+      \strng{bibnamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authorbibnamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authornamehash}{4558d39fa0cf702f9ef521fae0a5eb34}
+      \strng{authorfullhash}{61c9e289a54a17659dffa92aea909ea9}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2003 Human Language Technology Conference of the North {A}merican Chapter of the Association for Computational Linguistics}
+      \field{title}{Feature-Rich Part-of-Speech Tagging with a Cyclic Dependency Network}
+      \field{year}{2003}
+      \field{pages}{252\bibrangedash 259}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://aclanthology.org/N03-1033
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/N03-1033
+      \endverb
+    \endentry
+    \entry{virk2014developing}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=3cc4d08c137cd8e17a5d5588d4875965}{%
+           family={Virk},
+           familyi={V\bibinitperiod},
+           given={Shafqat\bibnamedelima Mumtaz},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bdfaa46444b8b7e7248f3c8707c2ed8a}{%
+           family={Prasad},
+           familyi={P\bibinitperiod},
+           given={KVS},
+           giveni={K\bibinitperiod}}}%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5b50822fb5130e00603d8b53547e6247}{%
+           family={Angelov},
+           familyi={A\bibinitperiod},
+           given={Krasimir},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{fullhash}{33a3a6ce847b531a8aa0a69262bf76cb}
+      \strng{bibnamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authorbibnamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authornamehash}{df0fe12c7bc38e1b072a74d23ffef329}
+      \strng{authorfullhash}{33a3a6ce847b531a8aa0a69262bf76cb}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Fifth Workshop on South and Southeast Asian Natural Language Processing}
+      \field{title}{Developing an interlingual translation lexicon using WordNets and Grammatical Framework}
+      \field{year}{2014}
+      \field{pages}{55\bibrangedash 64}
+      \range{pages}{10}
+    \endentry
+    \entry{hudak}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b16728073956f239e9a00ad4c1f33be8}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Zhanyong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ebfbf9d5ed6e5a1698b8fe9fb2b322a4}{%
+           family={Hudak},
+           familyi={H\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vancouver, British Columbia, Canada}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{fullhash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{bibnamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authorbibnamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authornamehash}{eddc34de1b5f1903a008509a09991acd}
+      \strng{authorfullhash}{eddc34de1b5f1903a008509a09991acd}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Functional Reactive Programming, or FRP, is a general framework for programming hybrid systems in a high-level, declarative manner. The key ideas in FRP are its notions of behaviors and events. Behaviors are time-varying, reactive values, while events are time-ordered sequences of discrete-time event occurrences. FRP is the essence of Fran, a domain-specific language embedded in Haskell for programming reactive animations, but FRP is now also being used in vision, robotics and other control systems applications. In this paper we explore the formal semantics of FRP and how it relates to an implementation based on streams that represent (and therefore only approximate) continuous behaviors. We show that, in the limit as the sampling interval goes to zero, the implementation is faithful to the formal, continuous semantics, but only when certain constraints on behaviors are observed. We explore the nature of these constraints, which vary amongst the FRP primitives. Our results show both the power and limitations of this approach to language design and implementation. As an example of a limitation, we show that streams are incapable of representing instantaneous predicate events over behaviors.}
+      \field{booktitle}{Proceedings of the ACM SIGPLAN 2000 Conference on Programming Language Design and Implementation}
+      \field{isbn}{1581131992}
+      \field{series}{PLDI '00}
+      \field{title}{Functional Reactive Programming from First Principles}
+      \field{year}{2000}
+      \field{pages}{242\bibrangedash 252}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/349299.349331
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/349299.349331
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/349299.349331
+      \endverb
+    \endentry
+    \entry{ltlSemParse}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f5a8fc4ce8c3e5df2c4d74eb71b8c743}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2330300c09e258fbf1b4ab45c8adb8a2}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Candace},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b6e011e7e5e027d4f19c5a060ee9a982}{%
+           family={Kuo},
+           familyi={K\bibinitperiod},
+           given={Yen-Ling},
+           giveni={Y\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=582e97f66a3c848f7677fd594314028e}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2848188f1195d5db8f4551d272ab7659}{%
+           family={Barbu},
+           familyi={B\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{fullhash}{9d42cbcf604cce113f1fb1d61fced275}
+      \strng{bibnamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authorbibnamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authornamehash}{00a18364699b97cc63492b198d5ef6fd}
+      \strng{authorfullhash}{9d42cbcf604cce113f1fb1d61fced275}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Learning a natural-language to {LTL} executable semantic parser for grounded robotics}
+      \field{volume}{abs/2008.03277}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2008.03277
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2008.03277
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2008.03277
+      \endverb
+    \endentry
+    \entry{winograd1971procedures}{report}{}
+      \name{author}{1}{}{%
+        {{hash=9270c737346819f33742a35de2661f82}{%
+           family={Winograd},
+           familyi={W\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {MASSACHUSETTS INST OF TECH CAMBRIDGE PROJECT MAC}%
+      }
+      \strng{namehash}{9270c737346819f33742a35de2661f82}
+      \strng{fullhash}{9270c737346819f33742a35de2661f82}
+      \strng{bibnamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authorbibnamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authornamehash}{9270c737346819f33742a35de2661f82}
+      \strng{authorfullhash}{9270c737346819f33742a35de2661f82}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Procedures as a representation for data in a computer program for understanding natural language}
+      \field{type}{techreport}
+      \field{year}{1971}
+    \endentry
+    \entry{winograd}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9270c737346819f33742a35de2661f82}{%
+           family={Winograd},
+           familyi={W\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=be48454d81535ef1779bf1d024f2a06e}{%
+           family={Flores},
+           familyi={F\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{fullhash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{bibnamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authorbibnamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authornamehash}{78e4f99c6cdaef538acf68a688ac444d}
+      \strng{authorfullhash}{78e4f99c6cdaef538acf68a688ac444d}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding Computers and Cognition: A New Foundation for Design}
+      \field{year}{1987}
+    \endentry
+    \entry{yooCTL}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=91b2687b39e42d9c845ff339c82a5692}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={Chanyeol},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a253c89a5ace0bf9866a979a84a73311}{%
+           family={Fitch},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6a2a4be8cea359c4052c49887b76d57e}{%
+           family={Sukkarieh},
+           familyi={S\bibinitperiod},
+           given={Salah},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=6ccc9c6aff1883595048aadc565f08db}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ca24e95476e264dad412fe7e4302db16}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a77cf8d8e3ec4a0f44508c534df6e5af}{%
+           family={Srinivasa},
+           familyi={S\bibinitperiod},
+           given={Siddhartha\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{fullhash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{bibnamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authorbibnamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authornamehash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{authorfullhash}{39c34d3c91a382d7d9e0c7954eb491db}
+      \strng{editorbibnamehash}{9a566fb4250fc4e8c648e30689a2c576}
+      \strng{editornamehash}{9a566fb4250fc4e8c648e30689a2c576}
+      \strng{editorfullhash}{9a566fb4250fc4e8c648e30689a2c576}
+      \field{sortinit}{Y}
+      \field{sortinithash}{6ae2ff5458ff901249c2745238c951b7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics: Science and Systems VIII, University of Sydney, Sydney, NSW, Australia, July 9-13, 2012}
+      \field{title}{Probabilistic Temporal Logic for Motion Planning with Resource Threshold Constraints}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.15607/RSS.2012.VIII.058
+      \endverb
+      \verb{urlraw}
+      \verb http://www.roboticsproceedings.org/rss08/p58.html
+      \endverb
+      \verb{url}
+      \verb http://www.roboticsproceedings.org/rss08/p58.html
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{fret}
+  \missing{fretish}
+  \missing{ml79}
+\endrefsection
+\endinput
+

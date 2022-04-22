@@ -5,7 +5,9 @@ isbn=false, doi=false, ]{biblatex}
 
 \addbibresource{references.bib}
 
-\usepackage[margin=1in]{geometry} \usepackage[dvipsnames]{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+
 \usepackage[colorlinks]{hyperref} \usepackage{enumitem} \usepackage{amsfonts}
 
 \usepackage{agda}
@@ -17,7 +19,6 @@ isbn=false, doi=false, ]{biblatex}
 % \setmonofont{Fira Mono}
 % \setsansfont{Noto Sans}
 
-\usepackage{xcolor}
 \definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
 \definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
 \definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
@@ -57,16 +58,6 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage{mathtools}
 \usepackage{xspace}
 
-\NewDocumentCommand{\codeword}{v}{%
-\texttt{\textcolor{gray}{#1}}%
-}
-
-\NewDocumentCommand{\term}{v}{%
-\texttt{\textcolor{blue}{#1}}%
-}
-\NewDocumentCommand{\keyword}{v}{%
-\texttt{\textcolor{orange}{#1}}%
-}
 
 \usepackage{ stmaryrd }
 
@@ -1141,8 +1132,8 @@ relative proximity to the root of the tree.
 
 We since the sequence consists of multiple locations, each of which may satisfy multiple
 conditions, we need to \emph{listify} certain categories. We can include 
-judgments like \term{cat [PosCommand]{n}}.
-GF natively supports list categories, the judgment \term{cat [C] {n}} can be
+judgments like \gray{cat [PosCommand]{n}}.
+GF natively supports list categories, the judgment \gray{cat [C] {n}} can be
 desugared to
 
 \begin{verbatim}
@@ -1165,7 +1156,7 @@ following judgments, noting the last two are automatically generated at compile-
     ConsPosCommand  : PosCommand -> [PosCommand] -> [PosCommand] ;
 \end{verbatim}
  
-One can include an explicit \term{cat Commands;} to enable punctuation denoting
+One can include an explicit \gray{cat Commands;} to enable punctuation denoting
 full sentence structure, which should also be listified. We reveal a parse tree
 example from the GF REPL.
 
@@ -1256,8 +1247,8 @@ lincat
 \end{verbatim}
 
 If one goes into the RGL source, we can see a sample of the linearization
-categories. For instance, in English an common noun \term{CN} has an inherent
-gender given by a field \term{g : Gender}, which is just a ternary parameter
+categories. For instance, in English an common noun \gray{CN} has an inherent
+gender given by a field \gray{g : Gender}, which is just a ternary parameter
 type with three constructors but may manifest differently
 depending on if its singular or plural, and whether the case argument indicates
 a possessive relation. We quote the relevant parts of the RGL :
@@ -1275,9 +1266,9 @@ By abstracting away these details within our domain-specific grammar, we can
 just focus on capturing relevant semantic features. We can then assign function
 bodies coherent with the abstraction functions, which are assured to be
 well-typed with the linearization types thanks to GF's type-checker. One can
-then utilize both the syntactic function \term{mkCN} and the lexical operator
-\term{mkN} to build the concrete item for \term{Person} which is irregular with regards
-to its plural form. We show the operational implementation of \term{mkN}, which
+then utilize both the syntactic function \gray{mkCN} and the lexical operator
+\gray{mkN} to build the concrete item for \gray{Person} which is irregular with regards
+to its plural form. We show the operational implementation of \gray{mkN}, which
 reveals how one can pattern match on string structure to implement the
 morphological possessive.
 
@@ -1351,13 +1342,13 @@ to an AST, whereby it can be transformed into a Haskell program manipulable such
 that it produces a canonical LTL expression representing our envisioned
 sequencing application. 
 
-We utilize the outermost function \term{applySem}, which utilizes standard
+We utilize the outermost function \gray{applySem}, which utilizes standard
 functions from the PGF API \cite{angelovApi} and the denotational
-\term{semantics} function to operate on a string like ``go to the store , turn
+\gray{semantics} function to operate on a string like ``go to the store , turn
 left and stop at the woman with the dog . go to the bridge . Finish .'' and
 produce a formula of the form $F\; (theStore \wedge F\; (isLeft \wedge F\;
 (theWomanWithTheDog \wedge F\; (theBridge \wedge G\; finished))))$. This
-visible as an AST represented as a Haskell datatype \term{Phi} :
+visible as an AST represented as a Haskell datatype \gray{Phi} :
 
 \begin{verbatim}
   F (Meet 
@@ -1373,8 +1364,8 @@ visible as an AST represented as a Haskell datatype \term{Phi} :
 
 To convert from our GF representation, we recall that the list categories enable
 one to imagine a AST having nodes are given as lists. This then allows one to
-write a general functions from CNL sentences, \term{String}, to formulas
-\term{Phi}. The function \term{semantics} should give one a taste of how to
+write a general functions from CNL sentences, \gray{String}, to formulas
+\gray{Phi}. The function \gray{semantics} should give one a taste of how to
 manipulate GF objects. We describe the algorithm via its recursive behavior.
 
 \begin{verbatim}
@@ -1387,18 +1378,18 @@ semantics x =
 \end{verbatim}
 
 We first start out by normalizing the list structure. A list of commands
-\term{GListCommands} consists of a list of sentences, which may be further
+\gray{GListCommands} consists of a list of sentences, which may be further
 deconstructed as a list of simple commands. We simply flatten the list of lists,
 building a list of simple commands each of which include the atomic variables to
 be grounded.
 
 We assume positive polarity throughout, deflecting the negation operator for
-future work. Additionally, although the disjuntive \term{Or} operator is parsed
+future work. Additionally, although the disjuntive \gray{Or} operator is parsed
 by the grammar, it is not included in the sequencing task (natively), and we
 hope not to confuse the details depending on how different Boolean operators may
 change the interpretation of a path.
 
-The \term{normalizeList} function normalizes the nested lists by breaking the sentence
+The \gray{normalizeList} function normalizes the nested lists by breaking the sentence
 structure into positive commands, where the flattening actually takes place.
 This materializes in the following functional dependencies :
 
@@ -1416,7 +1407,7 @@ normalizeList ::  GListCommands -> GListCommands
 \end{verbatim}
 
 To produce the atoms (which we must account for the simple commands, denoted by
-the \term{SimpleCom} function [TODO cite GF Grammar] . The constructors are
+the \gray{SimpleCom} function [TODO cite GF Grammar] . The constructors are
 appended with a G in Haskell to prevent name clashes. This operation converting
 strings to atoms simply replaces spaces with underscores in the possibly
 modified object (``the woman with the dog'') or condition (specified by the
@@ -3792,8 +3783,7 @@ not they admit temporal sentences, which are available to view [TODO : Ref]
 here. We hope the reader may engage with the the code directly, as the example
 is taken from the book.
 
-
-
+[todo : bib style?]
 
 \printbibliography
 

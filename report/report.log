@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  22 APR 2022 01:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  22 APR 2022 08:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,26 +1161,26 @@ line 40.
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1217,8 +1217,8 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 102.
-Package biblatex Info: Reference segment=0 on input line 102.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1254,7 +1254,7 @@ Package biblatex Info: Reference segment=0 on input line 102.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring ON on input line 102.
+Package hyperref Info: Link coloring ON on input line 93.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1264,34 +1264,34 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count485
 )
-LaTeX Info: Redefining \ref on input line 102.
-LaTeX Info: Redefining \pageref on input line 102.
-LaTeX Info: Redefining \nameref on input line 102.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 (./report.out) (./report.out)
 \@outlinefile=\write6
 \openout6 = `report.out'.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/DejaVuSerif(0)/m/n on input line 102
-.
+(Font)                  OT1/cmr/m/n --> TU/DejaVuSerif(0)/m/n on input line 93.
+
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/DejaVuSerif(0)/m/it on input line 1
-02.
+(Font)                  OT1/cmr/m/it --> TU/DejaVuSerif(0)/m/it on input line 9
+3.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/DejaVuSerif(0)/b/n on input line 10
-2.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/DejaVuSans(0)/m/n on input line 102
+(Font)                  OT1/cmr/bx/n --> TU/DejaVuSerif(0)/b/n on input line 93
 .
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/DejaVuSans(0)/m/n on input line 93.
+
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/DejaVuSans(0)/b/n on input line 10
-2.
+(Font)                  OT1/cmss/bx/n --> TU/DejaVuSans(0)/b/n on input line 93
+.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/DejaVuSansMono(0)/m/n on input line
- 102.
+ 93.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/DejaVuSansMono(0)/b/n on input line
- 102.
+ 93.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1332,16 +1332,15 @@ Style=MathScript},{Size=-6.57,Font=latinmodern-math.otf,Style=MathScriptScript}
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 102.
-
+(Font)              `operators' in the math version `normal' on input line 93.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 102.
+ line 93.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 102.
+(Font)              `operators' in the math version `bold' on input line 93.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 102.
+t line 93.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -1412,15 +1411,15 @@ uage=dflt;"
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 102.
+(Font)              `symbols' in the math version `normal' on input line 93.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 102.
+t line 93.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 102.
+(Font)              `symbols' in the math version `bold' on input line 93.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 102.
+t line 93.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -1473,17 +1472,17 @@ uage=dflt;"
 (fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 1
-02.
+(Font)              `largesymbols' in the math version `normal' on input line 9
+3.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 102.
+t line 93.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 102
-.
+(Font)              `largesymbols' in the math version `bold' on input line 93.
+
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 102.
+t line 93.
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
@@ -1514,117 +1513,111 @@ File: pics/selfDriving.png Graphic file (type bmp)
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
 [1]
-Overfull \hbox (3.10674pt too wide) in paragraph at lines 217--228
+Overfull \hbox (3.10674pt too wide) in paragraph at lines 208--219
 []\TU/DejaVuSerif(0)/m/n/10.95 Natural language is difficult because it is both
  structured with respect to “rules”,
  []
 
 [2] [3] [4] [5] [6]
-Overfull \hbox (5.92133pt too wide) in paragraph at lines 506--508
+Overfull \hbox (5.92133pt too wide) in paragraph at lines 497--499
 []\TU/DejaVuSerif(0)/m/n/10.95 A dialogue state, in the envisioned Question Ans
 wer (QA) context, whereby
  []
 
 [7] [8] [9]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 721.
+(Font)              scaled to size 10.95116pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 721.
+(Font)              scaled to size 7.6658pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 721.
+(Font)              scaled to size 5.47559pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 721.
+(Font)              scaled to size 10.94882pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 721.
+(Font)              scaled to size 7.66417pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 721.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 721
+(Font)              scaled to size 5.47441pt on input line 712.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 712
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 721
+LaTeX Font Info:    Trying to load font information for U+msb on input line 712
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-21.
+12.
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 721.
+(Font)              size <5> substituted on input line 712.
 
 [10] [11]
-Overfull \hbox (7.40822pt too wide) in paragraph at lines 828--838
+Overfull \hbox (7.40822pt too wide) in paragraph at lines 819--829
 []\TU/DejaVuSerif(0)/m/n/10.95 Unfortunately, the liveness conditions only allo
 w for formulas of the form $[] [] [] [][]$
  []
 
 
-Overfull \hbox (3.02896pt too wide) in paragraph at lines 873--879
+Overfull \hbox (3.02896pt too wide) in paragraph at lines 864--870
 \TU/DejaVuSerif(0)/m/n/10.95 The most comprehensive known data source relevant 
 to this problem is the TOUCH-
  []
 
 [12]
-Overfull \hbox (4.67043pt too wide) in paragraph at lines 905--907
+Overfull \hbox (4.67043pt too wide) in paragraph at lines 896--898
 []\TU/DejaVuSerif(0)/m/n/10.95 The non-linguistic data may be of interest to th
 ose investigating how to ground-
  []
 
 [13]
-Overfull \hbox (0.59306pt too wide) in paragraph at lines 939--941
+Overfull \hbox (0.59306pt too wide) in paragraph at lines 930--932
 []\TU/DejaVuSerif(0)/m/n/10.95 The instructions would consist of long and short
  distance driving tasks, prefer-
  []
 
 [14] [15]
-Overfull \hbox (21.68886pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (21.68886pt too wide) in paragraph at lines 1050--1050
 []  \TU/DejaVuSansMono(0)/m/n/10.95 ([(["Go"],5527),(["be"],5300),(["turn"],415
 4),(["Turn"],4154)],["VB"])[] 
  []
 
 
-Overfull \hbox (28.28128pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (28.28128pt too wide) in paragraph at lines 1050--1050
 []  \TU/DejaVuSansMono(0)/m/n/10.95 ([(["left"],228),(["came"],59),(["made"],47
 ),(["started"],44)],["VBD"])[] 
  []
 
 
-Overfull \hbox (87.61339pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (87.61339pt too wide) in paragraph at lines 1050--1050
 []  \TU/DejaVuSansMono(0)/m/n/10.95 ([(["going"],1684),(["facing"],939),(["movi
 ng"],849),(["passing"],617)],["VBG"])[] 
  []
 
 
-Overfull \hbox (81.02094pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (81.02094pt too wide) in paragraph at lines 1050--1050
 []  \TU/DejaVuSansMono(0)/m/n/10.95 ([(["left"],1733),(["parked"],616),(["paint
 ed"],307),(["fenced"],263)],["VBN"])[] 
  []
 
 
-Overfull \hbox (34.87376pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (34.87376pt too wide) in paragraph at lines 1050--1050
 []  \TU/DejaVuSansMono(0)/m/n/10.95 ([(["are"],3554),(["'re"],1185),(["reach"],
 1100),(["get"],770)],["VBP"])[] 
  []
 
 [16] [17] [18] [19]
-Overfull \hbox (25.10513pt too wide) in paragraph at lines 1317--1321
+Overfull \hbox (25.10513pt too wide) in paragraph at lines 1308--1312
 []\TU/DejaVuSerif(0)/m/n/10.95 Although there are innumerable syntactic and gra
 mmatical theories, many equipped
  []
 
 [20]
-Overfull \hbox (21.6888pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (21.6888pt too wide) in paragraph at lines 1378--1378
 []      \TU/DejaVuSansMono(0)/m/n/10.95 (GCompoundCommand GAnd (GListPosCommand
  xs)) -> listCommand2LTL xs[] 
- []
-
-
-Overfull \hbox (30.10449pt too wide) in paragraph at lines 1389--1394
-[]\TU/DejaVuSerif(0)/m/n/10.95 We first start out by normalizing the list struc
-ture. A list of commands []\TU/DejaVuSansMono(0)/m/n/10.95 GListCommands[]
  []
 
 [21]
@@ -1637,37 +1630,37 @@ File: pics/two.jpg Graphic file (type bmp)
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 
-Overfull \hbox (48.05862pt too wide) in paragraph at lines 1554--1554
+Overfull \hbox (48.05862pt too wide) in paragraph at lines 1545--1545
 []  \TU/DejaVuSansMono(0)/m/n/10.95 MultipleRoutes And (ConsPosCommand (SimpleC
 om (ModAction Drive (MkAdvPh To[] 
  []
 
 
-Overfull \hbox (15.09634pt too wide) in paragraph at lines 1554--1554
+Overfull \hbox (15.09634pt too wide) in paragraph at lines 1545--1545
 []  \TU/DejaVuSansMono(0)/m/n/10.95 (WhichObject The Store)))) (BasePosCommand 
 (SimpleCom (ModAction Turn[] 
  []
 
 
-Overfull \hbox (67.83598pt too wide) in paragraph at lines 1554--1554
+Overfull \hbox (67.83598pt too wide) in paragraph at lines 1545--1545
 []  \TU/DejaVuSansMono(0)/m/n/10.95 (WherePhrase Right))) (SimpleCom (ModAction
  Stop (MkAdvPh At (WhichObject The[] 
  []
 
 [24] [25]
-Overfull \hbox (74.42844pt too wide) in paragraph at lines 1617--1617
+Overfull \hbox (74.42844pt too wide) in paragraph at lines 1608--1608
 []\TU/DejaVuSansMono(0)/m/n/10.95 treeMapfemalePersonIsWoman GWoman            
         = (GModObj GFemale GPerson)[] 
  []
 
 
-Overfull \hbox (8.50389pt too wide) in paragraph at lines 1617--1617
+Overfull \hbox (8.50389pt too wide) in paragraph at lines 1608--1608
 []\TU/DejaVuSansMono(0)/m/n/10.95 treeMapfemalePersonIsWoman gp = composOp tree
 MapfemalePersonIsWoman gp[] 
  []
 
 [26] [27] [28] [29]
-Overfull \hbox (4.6223pt too wide) in paragraph at lines 1872--1880
+Overfull \hbox (4.6223pt too wide) in paragraph at lines 1863--1871
 \TU/DejaVuSerif(0)/m/n/10.95 The public company Cerence [] is already designing
  voice assistants for autonomous
  []
@@ -1723,84 +1716,84 @@ ge=dflt;!
 \openout4 = `report.ptb'.
 
 
-Overfull \hbox (5.61969pt too wide) in paragraph at lines 3790--3794
+Overfull \hbox (5.61969pt too wide) in paragraph at lines 3781--3785
 []\TU/DejaVuSerif(0)/m/n/10.95 These definiton now enables one to construct exa
 mple models and prove whether
  []
 
 [39]
-Overfull \hbox (26.22372pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (26.22372pt too wide) in paragraph at lines 3789--3789
 []\TU/DejaVuSerif(0)/m/n/10.95 M. Antoniotti and B. Mishra. “Discrete event mod
 els+temporal logic=supervisory
  []
 
 
-Overfull \hbox (9.28125pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (9.28125pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/n/10.95 Challenges of Robotics]”. In: \TU/DejaVuSerif(0)/m
 /it/10.95 IEEE Robotics Automation Magazine \TU/DejaVuSerif(0)/m/n/10.95 14.1 (
 2007),
  []
 
 [40]
-Overfull \hbox (4.99118pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (4.99118pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/n/10.95 Falsification of Cyber-Physical Systems with Machi
 ne Learning Components”.
  []
 
 
-Overfull \hbox (2.14502pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (2.14502pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/it/10.95 International Conference on Robotics and Automati
 on\TU/DejaVuSerif(0)/m/n/10.95 . IEEE. 2005, pp. 2020–
  []
 
 [41]
-Overfull \hbox (0.79231pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (0.79231pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/it/10.95 tional Conference on Robotics and Automation (ICR
 A)\TU/DejaVuSerif(0)/m/n/10.95 . IEEE. 2020, pp. 4906–
  []
 
 
-Overfull \hbox (3.46265pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (3.46265pt too wide) in paragraph at lines 3789--3789
 []\TU/DejaVuSerif(0)/m/n/10.95 C. Menghi et al. “Specification Patterns for Rob
 otic Missions”. In: \TU/DejaVuSerif(0)/m/it/10.95 IEEE Trans-
  []
 
 
-Overfull \hbox (1.08969pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (1.08969pt too wide) in paragraph at lines 3789--3789
 []\TU/DejaVuSerif(0)/m/n/10.95 Erion Plaku and Sertac Karaman. “Motion planning
  with temporal-logic spec-
  []
 
 [42]
-Overfull \hbox (20.22708pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (20.22708pt too wide) in paragraph at lines 3789--3789
 []\TU/DejaVuSerif(0)/m/n/10.95 Wilko Schwarting, Javier Alonso-Mora, and Daniel
 a Rus. “Planning and Decision-
  []
 
 
-Overfull \hbox (0.71028pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (0.71028pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/it/10.95 AB, Canada, April 14-16, 2014, Conference Track P
 roceedings\TU/DejaVuSerif(0)/m/n/10.95 . Ed. by Yoshua
  []
 
 
-Overfull \hbox (2.86479pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (2.86479pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/it/10.95 Workshop on South and Southeast Asian Natural Lan
 guage Processing\TU/DejaVuSerif(0)/m/n/10.95 . 2014,
  []
 
 [43]
-Overfull \hbox (8.47925pt too wide) in paragraph at lines 3799--3799
+Overfull \hbox (8.47925pt too wide) in paragraph at lines 3789--3789
 \TU/DejaVuSerif(0)/m/n/10.95 Logic for Motion Planning with Resource Threshold 
 Constraints”. In: \TU/DejaVuSerif(0)/m/it/10.95 Robotics:
  []
 
 [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3800.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3800.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3790.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3790.
 (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3800.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3800.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3790.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3790.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 6D19BFAD3D56479A3CFD9CE5EBB59A21;2996.
@@ -1813,12 +1806,12 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40184 strings out of 481749
- 773000 string characters out of 5935475
- 1564827 words of memory out of 5000000
- 56508 multiletter control sequences out of 15000+600000
+ 40176 strings out of 481749
+ 772932 string characters out of 5935475
+ 1564752 words of memory out of 5000000
+ 56500 multiletter control sequences out of 15000+600000
  537549 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  67i,14n,109p,2157b,4913s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (45 pages, 1319268 bytes).
+Output written on report.xdv (45 pages, 1319184 bytes).
