@@ -34,16 +34,9 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage{graphicx} % for images
 \usepackage{float} % for figure[H]
 
-
-
 \setmainfont{DejaVu Serif}
 \setsansfont{DejaVu Sans}
 \setmonofont{DejaVu Sans Mono}
-
-% \setmonofont{Fira Mono}
-% \setsansfont{Noto Sans}
-
-
 
 \usepackage{xcolor}
 \definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
@@ -92,10 +85,10 @@ by a grammar : thereby, the sentences it admits, parsed as Abstract Syntax Trees
 (ASTs), can be manipulated as mathematical objects amenable to verification
 techniques. Using the TOUCHDOWN data set to empirically motivate common idioms
 and phrases our grammar should be capable of parsing, we give a denotational
-semantics from our ASTs to a Linear Temporal Logic (LTL) formulas, essentially
-expressing sequences of states which are amenable as specifications to
-downstream applications whose goal is the verification of various aspects of a
-vehicles behavior. This work contributes to a large existing literature,
+semantics from our ASTs to specific Linear Temporal Logic (LTL) formulas which
+express sequences of states to be visited in some order, and which are amenable
+as specifications to motion planners and systems capable of verifying a correct
+path has been taken. This work contributes to a large existing literature,
 connecting the somewhat disparate research spaces including CNLs, verification
 for natural language-controlled robots, and semantic parsing.
 
@@ -109,9 +102,8 @@ for natural language-controlled robots, and semantic parsing.
 \newpage
 \tableofcontents
 
-
-%\newpage
-%\setcounter{page}{1}
+\newpage
+\setcounter{page}{1}
 
 
 \section{Introduction}
@@ -119,23 +111,25 @@ for natural language-controlled robots, and semantic parsing.
 A central question in the philosophy of language concerns how language relates
 to the world. That is, how do our semantical notions relate to the physical
 world we perceive? How do we internalize and externalize our experience with
-linguistic structures? This question manifests concretely in the problem of
+linguistic structures? These questions manifest concretely in the problem of
 designing a voice directed command system for an autonomous vehicle.
 
 \subsection{Problem Statement}
 
-We imagine the most simplified vision possible vision of an autonomous
-vehicle, a computer controlling the mechanical components of the vehicle to
-navigate based of sensor data from the environment, as seen in \autoref{fig:A1}.
-It is natural to partition the environment internally and externally : whereby
-the external setting may be captured by cameras, LiDar sensors, and a myriad of other
-sensors, and the internal environment may consist of a microphone to capture
-verbal commands given by a human. The goal of this project is then to connect
-the intentions of the human to the actuators controlling the
-mechanical vehicle relative to their shared perception of the environment
-through the modality of language.
+We imagine the most simplified vision possible vision of an autonomous vehicle,
+with a computer controlling the mechanical components of the vehicle to navigate
+based of sensor data from the environment, as seen in \autoref{fig:A1}. It is
+natural to partition the environment internally and externally : whereby the
+external setting may be captured by cameras, LiDar sensors, and a myriad of
+other sensors, and the internal environment may include a microphone to capture
+verbal commands given by a human. In addition, the vehicle will contain (at
+least one) interface with the internet, which may further inform all other
+components by external environmental data not captured by the sensors. The goal
+of this project is then to connect the intentions of the human to the actuators
+controlling the mechanical vehicle relative to their shared perception of the
+environment through the modality of language.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=150mm]{pics/selfDriving.png}
 \caption{Self Driving Car}\label{fig:A1}
@@ -143,7 +137,7 @@ through the modality of language.
 
 We can refine this picture, as is seen in \autoref{fig:A2}. Imagine making an
 initial voice command to the vehicle like ``drive to San Francisco'', which the
-google voice assistant on my phone can already recognize, and plan the
+voice assistant on my phone can already decipher and plan the
 \emph{initial path}. Then suppose that during the route, I get hungry and
 realize I need to refuel. I can utter ``go to the grocery store after the next
 exit, and then go to fuel station, but stop by the fire hydrant so I can take a
@@ -154,16 +148,16 @@ agent is human. Finally, we know that neither the idealized nor the modified
 path can be met without local perturbations, and that the \emph{actual path}
 should be optimized to conform to the modified path relative to some metric.
 
-The many sub-problems under this grandiose vision are themselves grandiose.
+The many sub-problems under this grandiose vision are themselves ambitious.
 Training a neural network to accurately capture the meaning of natural language
 utterances (even in a domain specific setting), the ability to synthesize a path
-and a controller that meets the meaning specification, and the possibility of
-following the path in an unpredictable environment - these all have large
-communities working on them, and while there is certainly progress, a reliable
-end-to-end system should be treated with skepticism until some kind of empirical
-validation of such a system exists.
+and a controller that adheres to the intended menaing of the specification, and
+the possibility of following the path in an unpredictable environment - these
+all have large communities working on them, and while there is certainly
+progress, a vision for a reliable end-to-end system should be treated with
+skepticism until some kind of empirical validation of such a system exists.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=150mm]{pics/diagramTrial1.png}
 \caption{Vehicle Route}\label{fig:A2}
@@ -195,17 +189,17 @@ informed systems, seek predictable and well-defined behavior for specific
 problem domains. Yet, these systems fail to generalize without an explosion in
 complexity when presented with data outside their domain.
 
-Natural language is difficult because it is both structured with respect to
+Natural language is difficult because it is structured with respect to
 ``rules'', perhaps more descriptively titled \emph{logical behaviors} which
-admit lots of predictability. Yet natural language continuously breaks or
-introduces exceptions to these rules, necessitating empirical and observational
-understanding. This makes it exceedingly hard to penetrate with exclusively the
+admit lots of predictability, yet it continuously breaks or introduces
+exceptions to these rules, necessitating empirical and observational
+understanding. This makes it impossible to penetrate with exclusively the
 empirical or formalist approach. Many are led to wonder about the degree to
 which large amounts of linguistic data can be augmented with theoretical
 linguistic knowledge to create optimal and practical systems with respect to
-both breadth and depth of coverage of language phenomena. The ultimate question
+both breadth and depth in coverage of language phenomena. The ultimate questions
 seeking compromise from both camps asks : how can we build machines which
-``understand'' us (or at least our data), and which are comprehensible by us.
+``understand'' us (or at least \emph{our data}), and which are comprehensible by us?
 
 This problem acutely arises when trying to design a voice assistant in the
 domain of commanding controllable robots, specifically, autonomous vehicles. For
@@ -235,26 +229,25 @@ We therefore analyze our ``big-picture question'' above in the following
 ``sub-question'' : how can one map the manifold ways of presenting information
 to an autonomous robot into a rigorous and formally verifiable kernel which the
 controller can understand? Our proposed solution is to build a semantic parser
-from natural language commands to linear temporal logic, whereby we can filter
-the many empirical natural language commands into a ``canonical subset'' defined
-by our CNL which are equivalent to (sets of) temporal logic formulas. We detail
-here both the progress to these ends, as well as the challenges.
+from natural language commands to LTL, whereby we can filter the many empirical
+natural language commands into a ``canonical subset'' defined by our CNL which
+are equivalent to types of temporal logic formulas. We detail here both the
+progress to these ends, as well as the challenges.
 
-\section{Contributions}
+\subsection{Contributions}
 
-Initially
-motivated to give the system assurances against so-called
-substitution-based attacks, whereby impose ``meaning equivalence'' for synonymic
-expressions by imposing posterior conditions on the parse trees. Clustering via
-the tree structure to provide some the equivalence to meaningfully similar
-sentences was an initially enticing direction, as had been done with
-Komendantskaya and Heras' work on Machine Learning for Proof General (ML4PG)
-\cite{ml4pg}. However, this work had the advantage that there are multiple
-large, well-maintained Coq libraries which were amenable to clustering.
+We were initially motivated to give the system assurances against so-called
+substitution-based attacks, whereby one may assert ``meaning equivalence'' for
+synonymic expressions by imposing posterior conditions on the parse trees.
+Clustering via the tree structure to provide some the equivalence to
+meaningfully similar sentences was an initially enticing direction, as had been
+done with Komendantskaya and Heras' work on Machine Learning for Proof General
+(ML4PG) \cite{ml4pg}. However, this work had the advantage that there are
+multiple large, well-maintained Coq libraries which were amenable to clustering.
 Successful clustering results could give rise to proof developers seeking
 suggestions in their developments.
 
-Our use case, the design of a non-existent language, left us with the conundrum
+Our idea, the design of a non-existent language, left us with the conundrum
 of an impoverished data set to train over. There was no empirical data source
 from which to observe ``natural ASTs'', and generating trees in an ad-hoc random basis would
 not likely provide real-world applicability. What has followed should be seen as
@@ -263,17 +256,17 @@ to give examples of non-trivial natural language utterances, in addition to
 finding a suitable semantic language with utility and applicability which is
 amenable to translation from sentences parsed by our grammar. Working from both
 the empirical and semantic directions seemed the most reasonable way to build a
-robust least prototype of a CNL .
+robust prototype of a CNL.
 
 The primary contributions of this undertaking so far are as follows :
 
 \begin{itemize}[noitemsep]
+\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown} suited to
+our needs of designing a better grammar
 \item A Grammatical Framework (GF) grammar providing the definition of a CNL for
 suitable directives from a passenger to a driving agent
 \item A Haskell library mapping trees generated by our grammar a particularly well-behaved subset of LTL
 \item An Agda implementation of LTL with a standard semantic interpretation
-\item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown} suited to our needs of designing a
-better grammar
 \end{itemize}
 
  %[TODO : ref sectionions]
@@ -286,19 +279,18 @@ discussing our own contributions, we give a relevant and comprehensive literatur
 review that embeds our work in the context of ongoing studies about these
 topics.
 
-This work should be seen as a stepping stone, specifically we view it as :
+This work should be seen as a stepping stone, specifically we include within it :
 
 \begin{itemize}[noitemsep]
 \item A survey of existing literature about this problem
-\item A preliminary work attempting to fit in pieces of a solution to the problem
-\item A framework and prescription for how to fit this preliminary work carried
- out here with existing work from elsewhere in attempt to build a comprehensive solution
+\item A bunch of preliminary pieces fitting a proposed solution to the problem
+\item A framework and prescription for how to fit the preliminary work carried
+ out here with existing ideas in attempt to build a comprehensive solution
 \end{itemize}
 
-The feasibility of a realistic solution will doubtless rely on the future work
-of many collaborators and years of research, engineering, and testing. It is
-therefore naive to assume that many of the questions posed below are answerable.
-
+The feasibility of a realistic solution will doubtless rely on the future
+collaboration, research, engineering, and testing. It is therefore naive to
+assume that many of the questions posed will have answers.
 
 \section{Preliminaries}
 
@@ -335,7 +327,7 @@ amenable to a natural treatment via computer programs \cite{ml79}. In
 implementing a parser from natural language to a dependent type theory, Ranta
 discovered that the dual sugaring (pretty printing) transformation of a tree to
 a string could allow for a general mechanism of purely syntax-based translation.
-This work culminated in Grammatical Framework (GF) \cite{ranta_2004}.
+This work culminated in Grammatical Framework \cite{ranta_2004}.
 
 Grammatical Framework became a full research project, allowing for the simple
 specification of a parser using a statically typed programming language whereby
@@ -699,25 +691,24 @@ surveils a region of interest for passengers).
 
 The coverage properties consist of visiting a set of locations, where various
 extra conditions like sequencing, ordering, and strictly ordering governs how.
-Specifically, given a finite (or incomplete) set of locations or events $\{l_i\}$
-where $i \in \{1..n\}$ we can say a baseline coverage is of the form
-$\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of conjunction,
-doesn't distinguish between the order in which the locations are visited. To
-ensure that for every location $l_i$ eventually follows its predecessor $l_{i-1}$, we
-nest the locations in future temporal operators, essentially building a linked
-list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$ with an extra $F$
-operator appended at every node. To induce the ordering, we can conjoin a predicate
-which restricts how the locations are sequenced by imposing the condition that location
-$l_{i}$ must be visited prior to its successor $l_{i+1}$, namely
-$\underset{i}{\bigwedge}\; (\neg l_{i+1})\; U\; l_i$.
-If one wants to also ensure that the locations aren't redundantly visited, we
-can add the strictness condition. A bit confusing,
-
+Specifically, given a finite (or incomplete) set of locations or events
+$\{l_i\}$ where $i \in \{1..n\}$ we can say a baseline coverage is of the form
+$\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of
+conjunction, doesn't distinguish between the order in which the locations are
+visited. To ensure that for every location $l_i$ eventually follows its
+predecessor $l_{i-1}$, we nest the locations in future temporal operators,
+essentially building a linked list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\;
+l_{n}))$ with an extra $F$ operator appended at every node. To induce the
+ordering, we can conjoin a predicate which restricts how the locations are
+sequenced by imposing the condition that location $l_{i}$ must be visited prior
+to its successor $l_{i+1}$, namely $\underset{i}{\bigwedge}\; (\neg l_{i+1})\;
+U\; l_i$. If one wants to also ensure that the locations aren't redundantly
+visited, we can add the strictness condition. This property,
 $\underset{i}{\bigwedge}\; (\neg l_{i})\; U\; (l_i \wedge X\; (\neg l_i\; U\;
-l_{i+1}))$, this property ensures that one cannot revisit location $l_i$ until
-after it has been initially visited and, in the next time increment, it hasn't
-been visited until its successor location $l_{i+1}$ has. To see how these syntax
-trees are encoded in Agda, please see the appendix [TODO:REF].
+l_{i+1}))$, ensures that one cannot revisit location $l_i$ until after it has
+been initially visited and, in the next time increment, it hasn't been visited
+until its successor location $l_{i+1}$ has. To see how these syntax trees are
+encoded in Agda, please see the appendix [TODO:REF].
 
 As concerns directing autonomous vehicles, one anticipates that the user
 generally would want a sequential visit, with the order condition presumably but
@@ -817,15 +808,12 @@ properties, but it is well worth investigating, because despite the nesting of
 the $F$ operators, we can certainly anticipate a reduction in the complexity of
 these types of formulas.
 
-
 % for a distinction between Planning Domain Definition Language (PDDL)
 % The differences between synthesis approaches and those pursued in the planning community
 % span the way the problem is formulated, the complexity of the algorithms, the expressive-
 % ness of the specifications and system models, and the type of feedback that is possible when
 % the synthesis/planning problem can and cannot be solved.
 
-
-\paragraph{Environment and Vehicluar Modeling}
 
 \paragraph{External and Other Constraints}
 
@@ -1032,12 +1020,12 @@ processed by our Haskell script.
 
 
 \begin{verbatim}
-  ([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
-  ([(["left"],228),(["came"],59),(["made"],47),(["started"],44)],["VBD"])
-  ([(["going"],1684),(["facing"],939),(["moving"],849),(["passing"],617)],["VBG"])
-  ([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced"],263)],["VBN"])
-  ([(["are"],3554),(["'re"],1185),(["reach"],1100),(["get"],770)],["VBP"])
-  ([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],["VBZ"])
+([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
+([(["left"],228),(["came"],59),(["made"],47),(["started"],44)],["VBD"])
+([(["going"],1684),(["facing"],939),(["moving"],849),(["passing"],617)],["VBG"])
+([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced"],263)],["VBN"])
+([(["are"],3554),(["'re"],1185),(["reach"],1100),(["get"],770)],["VBP"])
+([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],["VBZ"])
 \end{verbatim}
 
 The exception is the base-form ``be'', which
@@ -1360,12 +1348,12 @@ write a general functions from CNL sentences, \gray{String}, to formulas
 manipulate GF objects. We describe the algorithm via its recursive behavior.
 
 \begin{verbatim}
-semantics :: GListCommands -> Phi
-semantics x =
-  let (GListCommands ((GOneCommand y) : _)) = normalizeList x
-  in case y of
-      q@(GSimpleCom a) -> astToAtom q
-      (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
+  semantics :: GListCommands -> Phi
+  semantics x =
+    let (GListCommands ((GOneCommand y) : _)) = normalizeList x
+    in case y of
+        q@(GSimpleCom a) -> astToAtom q
+        (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
 \end{verbatim}
 
 We first start out by normalizing the list structure. A list of commands
@@ -1385,16 +1373,16 @@ structure into positive commands, where the flattening actually takes place.
 This materializes in the following functional dependencies :
 
 \begin{verbatim}
-normalizeList ::  GListCommands -> GListCommands
- where
- normalizeNestedLists :: GListCommands -> GListPosCommand
-   where
-     normalizeListPosCommand :: GListPosCommand -> GListPosCommand
-       where
-         unSentence :: [GCommands] -> [GPosCommand]
-         flattenSublist :: GPosCommand -> [GPosCommand]
-         where
-           getListPosCommands :: GListPosCommand -> [GPosCommand]
+  normalizeList ::  GListCommands -> GListCommands
+  where
+  normalizeNestedLists :: GListCommands -> GListPosCommand
+    where
+      normalizeListPosCommand :: GListPosCommand -> GListPosCommand
+        where
+          unSentence :: [GCommands] -> [GPosCommand]
+          flattenSublist :: GPosCommand -> [GPosCommand]
+          where
+            getListPosCommands :: GListPosCommand -> [GPosCommand]
 \end{verbatim}
 
 To produce the atoms (which we must account for the simple commands, denoted by
@@ -1498,12 +1486,25 @@ Wikepdia, can be mapped to some suitable set of robot commands, even though
 these types of expressions will have a sparse presence in the corpus the model
 was initially trained on (presumably Marco will know more about this than me).
 
+\subsubsection{Language models}
+
 In this context, we can then further refine the language to something less
 natural, but more well-behaved. The whole proposed pipeline in \autoref{fig:M3},
 indicates using the methodology as used in \cite{fewShotSem}, whereby the
 semantic parser should ideally be able to take any command from the Robot
 Control Language and turn it into a set of temporal logic formulas, distributed
 according to most likely interpretation.
+
+\cite{hauser2021bert}  claims that Bert is robust, analyzing claims of four
+ papers, including the one which uses a wordnet attack
+
+In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
+context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
+parsible semantic form, that one can use a large pre-trained language model as a front-end
+to filter a much wider syntax into the CNL. GF's expressivity is
+more expressive than the SCFG, at least based off a tertiary reading in the
+index, and therefore if we carved out a subset of commands to cohere with our
+LTL,
 
 Ideally, the downstream dialogue system should either be able to ask for
 clarification if two formulas are determined to be of some relative likelihood,
@@ -1890,32 +1891,6 @@ of data, our system is narrowly focused as a proof-of-concept, from which it
 could either be extended by hand, or different components modified using
 other techniques and tools.
 
-TODO : other ml stuff, like ravi's publication
-
-\section{Publications Description}
-
-\subsection{Statistical (pre-trained) Language Models}
-
-
-\begin{itemize}
-
-\item In \cite{fewShotSem} [under review], the authors show how, using a \emph{synchronous
-context-free grammar} (SCFG) to define a minified CNL with a parallel and dually
-parsible semantic form, that one can use a large pre-trained language model as a front-end
-to filter a much wider syntax into the CNL. GF's expressivity is
-more expressive than the SCFG, at least based off a tertiary reading in the
-index, and therefore if we carved out a subset of commands to cohere with our
-LTL,
-
-our model would be amenable to a similar
-
-\item  \cite{hauser2021bert}  claims that Bert is robust, analyzing claims of four
- papers, including the one which uses a wordnet attack
-
-\end{itemize}
-
-\section{LTL Intro In Agda}
-\section{LTL in Agda}
 
 
 
