@@ -15,7 +15,11 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage{fullpage}
 
 \usepackage[colorlinks]{hyperref}
-\usepackage{enumitem}
+\hypersetup{
+    urlcolor= black,
+    linkcolor= blue,
+}
+\newcommand\sbref[1]{[\ref{#1}]}
 \usepackage{agda}
 
 
@@ -25,8 +29,9 @@ isbn=false, doi=false, ]{biblatex}
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{xspace}
+\usepackage[inline]{enumitem}
 
-\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[itemize,enumerate]{noitemsep, topsep=0pt}
 %\hypersetup{ citecolor=RoyalBlue }
 \usepackage{tikz-cd}
 \usepackage{titlesec}
@@ -78,7 +83,7 @@ isbn=false, doi=false, ]{biblatex}
 
 \begin{abstract}
 
-We introduce a grammar for a controlled natural language (CNL) to give
+We introduce a grammar for a Controlled Natural Language (CNL) to give
 imperative commands for an envisioned voice assistant route-planner for a
 self-driving vehicle. The utility of the CNL is that it is inductively defined
 by a grammar : thereby, the sentences it admits, parsed as Abstract Syntax Trees
@@ -303,10 +308,10 @@ the popular zeitgeist.
 Limiting the scope of work in this context can be challenging, as so many
 different tools and ideas can be seen as relevant. We therefore try to very
 explicitly narrow our focus to investigate how feasible it is to build a
-language for an autonomous vehicle that exhibits predictable behavior and also
+CNL for an autonomous vehicle that exhibits predictable behavior and also
 satisfies verification properties - this includes a determination to what extent
 the properties can even be stated. As the full development of such as a system
-is a grandiose vision, we hope to highlight many of the difficulties already
+is an extravagent vision, we hope to highlight many of the difficulties already
 arising, and also those one may anticipate.
 
 The approach taken sets out to build a semantic parser, which, despite its
@@ -315,13 +320,13 @@ in this space may be viewed.
 
 \subsection{Linguistic}
 
-\subsubsection{GF, Parsers, and Personal Work}
+\subsubsection{Grammtical Framework}
 
-The questions of designing an idealized and expressive formal language, with
-roots in Frege \cite{frege79}, manifested more recently in the natural language
-semantic tradition of Montague \cite{Montague1973}, who proposed an
-interpretation of English in a typed higher order logic with a focus on
-quantifiers. Aarne Ranta, a student of Martin-Löf, attempted to reformulate
+The questions of designing or interpreting an idealized and expressive formal
+language, with roots in Frege \cite{frege79}, manifested more recently in the
+natural language semantical tradition of Montague \cite{Montague1973}, who
+proposed an interpretation of English in a typed higher-order logic with a focus
+on quantifiers. Aarne Ranta, a student of Martin-Löf, attempted to reformulate
 Montague's work in an intuitionistic setting \cite{ranta1994type}, thereby
 amenable to a natural treatment via computer programs \cite{ml79}. In
 implementing a parser from natural language to a dependent type theory, Ranta
@@ -335,9 +340,9 @@ the grammar rules could be seen as types. Separate concrete syntaxes cohering
 with a given abstract syntax allowed for language-specific parsing, sugaring,
 and translation. The GF ``standard library'', the Resource Grammar Library (RGL)
 \cite{ranta2009rgl}, allows one to get off-the-shelf grammatical constructions
-for more than 30 languages, with English being the most comprehensively covered. The RGL
-therefore allows the grammar writer to focus on the semantic domain of the
-application the grammar is being developed for. In addition to this, one can
+for more than 30 languages, with English being the most comprehensively covered.
+The RGL therefore allows the grammar writer to focus on the semantic domain of
+the application the grammar is being developed for. In addition to this, one can
 embed a grammar as a Generalized Algebraic Datatype (GADT) in Haskell via the
 Portable Grammar Format (PGF) \cite{angelov2010pgf}. One can get run-time
 support for parsing and linearization directly in Haskell, in addition to
@@ -345,28 +350,35 @@ manipulating the trees by pattern matching over them as Haskell programs.
 
 A reflection on these historical developments reveals that GF is intimately tied
 to both the formal/informal distinction in addition to the syntactical and
-semantical approaches present in computational linguistics. These dual characteristics
-very much inform our problem as well. In the context of designing a voice
-assistant for, whereby one can give commands like ``turn
-right after the woman with the big dog'', we desire that the intensional belief a
-user has about her utterance is consistent with the extensional behavior of the
+semantical approaches present in computational linguistics. These dual
+characteristics very much inform our program as well. In the context of
+designing a voice assistant, whereby one can give commands like ``turn right
+after the woman with the big dog'', we desire that the intensional belief a user
+has about her utterance is consistent with the extensional behavior of the
 vehicle. This can be done through an intermediary mapping to a formal semantic
-representation. Ensuring that the syntactic content of a speaker's
-(well-formed) utterance maps predictably to the logical form is important from
-the verificationist perspective : one wants to maximize the \emph{syntactic
+representation. Ensuring that the syntactic content of a speaker's (well-formed)
+utterance maps predictably to the logical form is important from the
+verificationist perspective : one wants to maximize the \emph{syntactic
 completeness} of the system \cite{macmillan2021}.
 
 In a dual situation we briefly mention, one can imagine our voice assistant as
-giving the user feedback, responding with clarifications (``we will turn after
-the big cafe even though the other route may have less traffic''), questions
-(``do you mean this or that person?''), or even possible illocutionary
-directives (``we won't drive over the speed limit in a school zone''), requiring
-the computer to generate an utterance after it has made some internal
+giving the user feedback,
+\begin {enumerate*} [label=\itshape\alph*\upshape)]
+\item responding with clarifications, for instance, ``we will turn after the big
+cafe even though the other route may have less traffic'', \item questions like
+``do you mean this or that person?'' or \item even possible illocutionary
+directives such as ``we won't drive over the speed limit in a school zone''
+\end{enumerate*}
+, requiring the computer to generate an utterance after it has made some internal
 determination. This internal deliberation must be a program, possibly expressed
-inside or outside our semantical space. It should be capable of identifying
-multiple routes in the clarification, multiple objects in a given state in the
-question regarding two people, or constraints based off external circumstances
-such as speed limits in school zones. In each case, the formation of a natural
+inside or outside our semantical space. For these examples, we note the vehicle
+\begin {enumerate*} [label=\itshape\alph*\upshape)]
+\item should be capable of identifying multiple routes in the clarification,
+\item multiple similar objects in a given state, or
+\item constraints based off external circumstances
+such as speed limits in school zones.
+\end{enumerate*}
+In each case, the formation of a natural
 language utterance requires the computer to generate natural language which must
 conform to both a program's structure and behavior, but which also may be clear
 and recognizable to the user.
@@ -393,26 +405,26 @@ standard.
 
 \subsubsection{Semantical Representations}
 
-We choose LTL as our semantic form in large part due to its relative
-expressivity for the kinds of verification conditions one might anticipate an
-autonomous vehicle needing to carry out, in addition to its ubiquitous
-appearance in the existing literature. Nonetheless, it is obvious their are many
-types of logical conditions LTL doesn't immediately support, and other logics,
-particularly ones which allow one to reason about space in its relation to time,
-would be an ideal direction to look. This line of research is probably more
-suited to people developing systems at later stages of development, where
-empirical observations may be collected in the wild. The nuances of where an
-autonomous navigator responding to a human agent can go wrong, and the most
-amenable set of verification conditions to prevent this, will ultimately have to
-be gained through trial and error.
+We choose LTL as a semantic form in large part due to its relative expressivity
+for the kinds of verification conditions one might anticipate an autonomous
+vehicle needing to carry out in addition to its ubiquitous appearance in the
+existing literature. Nonetheless, it is obvious their are many types of
+conditions LTL doesn't immediately support, and other logics, particularly ones
+which allow one to reason about other modalities including space in its relation
+to time, would be an ideal direction to look. This line of research is probably
+more suited to systems at later stages of development, where empirical
+observations may be collected in the wild. The nuances of what can go wrong for
+an autonomous navigator responding to a human agent, and the most amenable set
+of verification conditions to ensure the best user experience will ultimately
+have to be gained through trial and error.
 
 \paragraph{Notions of Semantics}
 
-We also note that the notion ``semantics'', having many connotations and interpretations in
-different fields, is subject to many interpretations. Here are some examples :
+We also note that the notion ``semantics'', having many connotations and
+in different fields, is subject to many interpretations. Here
+are some examples :
 
-\begin{itemize}
-
+\begin{enumerate}
 \item In linguistics, semantics may be interpreted as intended meaning.
 Different theoretical notions of meaning may include a logical meaning, as in
 the case of Montague semantics, or a meaning as it arises in the use and context
@@ -423,18 +435,18 @@ during execution (operational semantics).
 \item In statistical notions of semantics, one often seeks the ability of one to
 capture meaning via language use, most common in contemporary contexts, its
 practical uses. Frequently Word2Vec \cite{word2vec} is referenced in this context,
-although the advent of transformers in recent years has largely usurped this.
-\end{itemize}
+although the advent of transformers \cite{attnetion} in recent years has largely usurped this.
+\end{enumerate}
 
-The problem presented in our work, of speaking to a machine, presents challenges
+The problem of speaking to a machine, presents challenges
 in that it requires notions of semantics from disparate disciplines, which
-themselves have little overlap (at least as treated in the existing literature).
+themselves have little overlap, at least as explored in the existing literature.
 This is because we are attempting to witness an utterance as a natural, native
-linguistic phenomena with an indented speaker meaning, a program whose syntax is
+linguistic phenomena with an intended speaker meaning, a program whose syntax is
 defined via the CNL, and a statistical observation defined over some probability
 distribution of ``sayable things''. More concretely we ask :
 
-\begin{itemize}
+\begin{enumerate}
 \item How is the speakers meaning interpreted as if intended to be understood by
  other native speakers?
 \item How does the speakers meaning manifest as a formal program a computer can
@@ -442,16 +454,16 @@ distribution of ``sayable things''. More concretely we ask :
 \item How can we identify a speakers meaning in a possibly infinite space of
  utterances and contexts in which those utterances arise, neither of which can
  be formally defined \emph{a priori}?
-\end{itemize}
+\end{enumerate}
 
 Although the inter-relatedness of various semantic theories is a much bigger
 project than we can give space to here, it should be granted that problem we
 address forces one, both implicitly and explicitly, to try to grapple with them.
 We chose \emph{the syntax of LTL} as the \emph{semantics of our CNL} which is
 defined by filtering a ``naturally observed'' corpus to a primitive grammar. We
-propose to fit unseen utterances by fine-tuning a transformer-based language
-model to the corpus and grammar. We can then seek specific formalisms in which
-to analyze our problem domain :
+later [TODO : ref] propose to fit unseen utterances by fine-tuning a
+transformer-based language model to the corpus and grammar. We can then seek
+specific formalisms in which to analyze some possible notions of meaning :
 
 \begin{itemize}
 \item The meaning for a passenger-speaker can be analyzed in a variety of ways :
@@ -479,18 +491,18 @@ to analyze our problem domain :
    \item A dialogue state, in the envisioned Question Answer (QA) context, whereby
      the computer must provide feedback to the user based of contextual information
  \end{itemize}
-\item The meaning from the mostly unseen utterances is given a canonical form,
- and the canonicalization process is a transformation via the vector-space and
- distributional notions of meaning implicit in an attention-based neural network
+\item The meaning from the utterances may be given a canonical form,
+ and the canonicalization process is a transformation in some vector-space with
+ distributional notions of meaning at work, as is the case in an attention-based neural network
 \end{itemize}
 
 We don't intend to exhaust the list of possibilities here, neither in our
 description of the many meanings of ``semantics'', nor in how our taxonomy of
 semantics can be understood in the context of our solution to the problem of
-giving navigation commands to a autonomous driver. We intend to clarify some of
+giving navigation commands to an autonomous driver. We intend to clarify some of
 the many subtleties and terminological confusions arising from many
-communities of researchers. We suggest that working towards a unified view of
-what kinds of semantic notions we want to deal in this particular domain may
+communities of researchers. We suggest that working towards a relational view of
+what kinds of semantic notions we want to deal some this particular domain may
 inform better solutions to the problem at hand.
 
 \paragraph{Semantic Parsing}
@@ -503,12 +515,12 @@ semantic forms can be traced back to Winograd's SHRDLU
 was also incredibly brittle, and apparently led Winograd to step away from NLU,
 believing the problem too difficult.
 
-The largest strain of contemporary interest in semantic parsers emerged during
-the resurgence applying deep neural networks to a variety of problems in NLP.
-An important observation, to view ``semantic parsing as paraphrasing''
+The largest strain of contemporary interest in semantic parsers emerged by the
+application of deep neural networks to a variety of natural to formal language
+problems. An important observation, to view ``semantic parsing as paraphrasing''
 \cite{berant-liang-2014-semantic}, has greatly influenced the contemporary
 statistical approaches to semantic parsing. Much of this work has still used
-grammars as a central component in their  pipeline, often to generate sentences
+grammars as a central component in their pipeline, often to generate sentences
 randomly for the construction of a corpus to train with.
 
 Towards the extreme of the data-centered perspective, it has been advocated to
@@ -532,8 +544,8 @@ parser, or rely on some hand-made rules, to derive a translation into a target l
 Brunello et al. give a thorough literature review of the many ways of
 translating natural language to LTL, indicating the interest and need of
 suitable semantic parsers in this domain. We give a refined perspective on the
-problems below, deferring a formal treatment of LTL to the appendix [TODO :
-reference].
+problems below, deferring to our formal treatment of LTL \sbref{Agda}.
+
 
 An interesting result published more recently attempts to translate between
 English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
@@ -1303,7 +1315,7 @@ introduces new perspectives on this problem.
 
 These perspectives reflect our own predispositions aimed at functional
 programming as a verification paradigm.
- 
+
 % We
 % The first,
 % syntactic completeness, means that a construction contains all the syntactic infor-
@@ -1895,7 +1907,7 @@ other techniques and tools.
 
 
 
-\section{LTL in Agda}
+\section{LTL in Agda} \label{Agda}
 
 \begin{code}[hide]
 {-# OPTIONS --postfix-projections #-}

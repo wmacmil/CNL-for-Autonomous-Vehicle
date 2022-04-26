@@ -2,6 +2,8 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "attnetion"
+    "ml79"
     "propSpec"
     "dreossiDS19"
     "seshia2016towards"
@@ -67,6 +69,11 @@
     "basu2020aqua"
     "alzantot-etal-2018-generating"
     "Adiwardana2020TowardsAH"
-    "katya13"))
+    "katya13"
+    "angelovApi"
+    "toutanova-etal-2003-feature"
+    "BLOEM2012911"
+    "Piterman2018"
+    "synthGazit"))
  :bibtex)
 

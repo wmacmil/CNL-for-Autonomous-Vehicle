@@ -12,15 +12,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Linguistic}{5}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.1}GF, Parsers, and Personal Work}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Grammtical Framework}{5}{subsubsection.2.1.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.1.2}Semantical Representations}{6}{subsubsection.2.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Notions of Semantics}{6}{subsubsection.2.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Semantic Parsing}{7}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Semantic Parsing}{7}{Item.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Semantic Parsing for Temporal Logics}{8}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Semantic Parsing for Temporal Logics}{8}{Item.12}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Robot Motion Planning and Verification}{8}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 

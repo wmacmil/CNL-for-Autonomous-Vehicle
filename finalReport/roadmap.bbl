@@ -1647,6 +1647,69 @@
       \endverb
       \keyw{Research agenda,Issues,Challenges,Priorities,Users}
     \endentry
+    \entry{ml79}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=617a4cbf763fdc17e84e14c7343bddde}{%
+           family={Martin-L{ö}f},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=4a6df7694417ffd7958cd11adeccd4ef}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Jonathan},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=32c7bb5de89190dfc2c391bb14c5e42d}{%
+           family={{Łoś}},
+           familyi={Ł\bibinitperiod},
+           given={Jerzy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a5a056b2c7f1c8ddecfd608047a7768a}{%
+           family={Pfeiffer},
+           familyi={P\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ad78a8bed66012064ad2d78475355e10}{%
+           family={Podewski},
+           familyi={P\bibinitperiod},
+           given={Klaus-Peter},
+           giveni={K\bibinithyphendelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{fullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{bibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorbibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authornamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorfullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{editorbibnamehash}{fc3390c53d47dc3c90969d4cc63ddc15}
+      \strng{editornamehash}{fc3390c53d47dc3c90969d4cc63ddc15}
+      \strng{editorfullhash}{e745b341c20be0fb23d0ddae1a51fde5}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logic, Methodology and Philosophy of Science VI, Proceedings of the Sixth International Congress of Logic, Methodology and Philosophy of Science, Hannover 1979}
+      \field{series}{Studies in Logic and the Foundations of Mathematics}
+      \field{title}{Constructive mathematics and computer programming}
+      \field{volume}{104}
+      \field{year}{1982}
+      \field{pages}{153\bibrangedash 175}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1016/S0049-237X(09)70189-2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1016/S0049-237X(09)70189-2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1016/S0049-237X(09)70189-2
+      \endverb
+    \endentry
     \entry{specPat}{article}{}
       \name{author}{5}{}{%
         {{hash=68385e5d019db45e211b8a2d8a541a5a}{%
@@ -2653,6 +2716,113 @@
       \verb https://aclanthology.org/N03-1033
       \endverb
     \endentry
+    \entry{attnetion}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=540fcd72e1fa4bbed46604f4e6cff817}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Łukasz},
+           giveni={Ł\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \name{editor}{7}{}{%
+        {{hash=e7e74de725116358b68a6e890c026145}{%
+           family={Guyon},
+           familyi={G\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=3b118a9660c18913c6d05d3bcfae41a3}{%
+           family={Luxburg},
+           familyi={L\bibinitperiod},
+           given={U.\bibnamedelimi Von},
+           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=9b411b6c9cefdde16ffea77ecf612142}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1444141e07dd9549dbb4b8530fe4ec15}{%
+           family={Wallach},
+           familyi={W\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f3857e15544199442f3d4fb2cf6645b4}{%
+           family={Fergus},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c73f06e2fc98c9b0bf52eb5fdce61943}{%
+           family={Vishwanathan},
+           familyi={V\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=36b98b7ab533936cf1b5716148de704f}{%
+           family={Garnett},
+           familyi={G\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{bibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorbibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{editorbibnamehash}{7cffda9a379be8eb9063eee4eb0f58b3}
+      \strng{editornamehash}{7cffda9a379be8eb9063eee4eb0f58b3}
+      \strng{editorfullhash}{1564f811a39f09a7400a11284c987926}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Attention is All you Need}
+      \field{volume}{30}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf
+      \endverb
+    \endentry
     \entry{virk2014developing}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=3cc4d08c137cd8e17a5d5588d4875965}{%
@@ -2910,7 +3080,6 @@
   \enddatalist
   \missing{fret}
   \missing{fretish}
-  \missing{ml79}
 \endrefsection
 \endinput
 
