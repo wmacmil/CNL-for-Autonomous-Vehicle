@@ -16,12 +16,10 @@ isbn=false, doi=false, ]{biblatex}
 
 \usepackage[colorlinks]{hyperref}
 \hypersetup{
-    urlcolor= black,
-    linkcolor= blue,
+    allcolors= blue,
 }
 \newcommand\sbref[1]{[\ref{#1}]}
 \usepackage{agda}
-
 
 
 \usepackage{unicode-math}
@@ -531,7 +529,7 @@ temporal logic semantic formalism. Our approach takes for granted that the
 parser is one of the most controllable and easily understood components of a NL
 pipeline.
 
-\paragraph{Semantic Parsing for Temporal Logics}
+\paragraph{Semantic Parsing for LTL}
 
 \begin{quote}
 given an input English utterance, preprocess it to extract syntactical information, which may
@@ -543,23 +541,8 @@ parser, or rely on some hand-made rules, to derive a translation into a target l
 
 Brunello et al. give a thorough literature review of the many ways of
 translating natural language to LTL, indicating the interest and need of
-suitable semantic parsers in this domain. We give a refined perspective on the
-problems below, deferring to our formal treatment of LTL \sbref{Agda}.
-
-
-An interesting result published more recently attempts to translate between
-English and Signal Temporal Logic (STL) \cite{he2021english}, which has the
-advantage of not just treating Boolean, but real-valued signals. From this
-perceptive, STL vs LTL can be understood as a quantitative versus qualitative
-way of analyzing events. The fact that STL gives the specifications a higher
-expressiveness in terms of how the order of events takes place, but also comes
-with a higher computational cost [ref needed], but more importantly, a
-potentially unnecessary complication for the system designer, The more
-granularity view of time may be unnecessary in many cases - our data set doesn't
-cover time at all (a defect, [reference below]), but even in a more naturally
-derived corpus, might only crop up as an ``edge case'' relative to other more
-important or likely phenomena that engineers may wish to capture.
-
+suitable semantic parsers in this domain. We defer to our formal treatment of
+LTL, as well as our transformation pipeline, below \sbref{Agda} \sbref{PGF}.
 
 \subsection{Robot Motion Planning and Verification}
 
@@ -569,34 +552,31 @@ complexity of environment, and provable correctness \cite{4141034}. In this
 context, we assume that expressivity of the language itself should reflect the
 complexity of the environments, thereby being adequately descriptive. The
 criteria of correctness : that the language itself is well-represented in the
-LTL semantics - the system being is syntactically complete - is the focus of
-these investigations. Our work additionally, is the only work we know of which
-actually seeks autonomous vehicles as the central motivation, rather than more
-general robotics applications.
-
+semantics - the system being syntactically complete - is the focus of these
+investigations. Our presentation is the only work we know of which actually
+seeks autonomous vehicles as the central motivation, rather than more general
+robotics applications.
 
 \subsubsection{Temporal Logic for Robot Verification}
 
-
-We need a comprehensive view of the robot control problem as it pertains to
-temporal logics. Our considerations should include :
+We provide a minimal but necessary view of the robot control problem as it
+pertains to temporal logics. Our considerations should inquire :
 
 \begin{itemize}
-\item The kinds of logical behavior one may wish to capture
+\item What kinds of logical behavior one may wish to capture
 \item The sorts of missions we want our autonomous agent to accomplish
 \item The types of atomic grounded conditions one may want to include
-\item How do we model both the vehicle and the environment
-\item How do these logical behaviors interface with other components of the
- larger system
+\item How these factor into the model both the vehicle and the environment
+\item How the logical behaviors governing motion interface with other components
+ of the larger system
 \end{itemize}
+
 
 \paragraph{Temporal Logics}
 
-
-
 Modal logics, specifically those dealing with stateful staging of events like
 LTL \cite{ltl95}, Computation Tree Logic (CTL) \cite{yooCTL}, Signal Temporal
-Logic (STL) \cite{stlAut} , have been used extensively in the specification and
+Logic (STL) \cite{stlAut}, have been used extensively in the specification and
 verification of properties of robotics systems, including autonomous vehicles .
 As LTL is often seen as one of the ``primitive'' temporal logic, we chose it as
 a our semantic space despite its limitations (the lack of numerical precision,
@@ -605,62 +585,118 @@ to expand the scope of which logic (or possibly \emph{logics}) the machine may
 use to verify behavior, in addition to the mathematical models most amenable to
 verification of a logical formula.
 
-% ugg
-% Additionally, LTL  formulas can be transformed into automata which can then be used as reward
-% functions for reinforcement learners, as in \cite{ltlRein}.
-As regards the logical behavior, there are an array of logics available.
+We give a brief survey of popular temporal logics, noting that there may be many
+variations on each individual logic. Much of the material has been sourced from
+The Handbook on Model Checking \cite{Piterman2018}, of which there is incredible
+amount of uncovered infomation which may be additionally applicable to
+self-driving vehicles.
+
+\paragraph{Discrete Time Models}
+
+LTL has by far the most attention of any temporal logic. Its pervasiveness can be accounted for by both philosophical and technical qualities : its straightforward intuition of ordered time appeases our intuition for ordered time, and various object and meta properties of the logic appeal to one's mathematical sensibilities. These three theorems are of particular interest :
 
 \begin{itemize}
-\item Linear Temporal Logic (LTL)
+\item LTL satisfiability is decidable in polynomial space.
+\item LTL validity is decidable in polynomial space.
+\item LTL model checking is decidable in polynomial space.
+\end{itemize}
+
+In addition, many interesting classes of LTL formulas exist which both facilitate the translations and also have more well-behaved meta-theoretic properties, like the GR(1) fragment and Co-safe LTL.
+
+The branching time logics, most notably Computation Tree Logic (CTL), allows a
+more fine-grained exploration of possible trajectories by allowing
+quantification over paths in a model. Its metatheory behaves ``better'' than
+LTL, insofar as one considers the following :
+
 \begin{itemize}
-\item
-\item
+\item CTL model checking is decidable in polynomial time.
+\begin{itemize}
+\item More explictly, a CTL model-checking algorithm exists whose running time
+depends linearly on the size of the transition system and on the length of the CTL
+formula.
 \end{itemize}
-\item Metric Temporal Logic (MTL)
- go to the store within 5 minutes
- modal operators can express timing constraints
-\item Signal Temporal Logic (STL)
- the paths and models are now signals
- can be appended with a metric semantics, to show how well a formula satisfies
-\item Computation Tree Logic (CTL)
- follow the car in front of us
-\item CTL*
-\item Probabilistic Computation Tree Logic (PCTL)
- %go to the store if its unlikely we'll hit bad traffic
+\item CTL satisfiability is decidable in exponential time.
 \end{itemize}
 
+Although the fine-grained nature of quantifying over events in a given path characteristic of LTL is lost because the temporal operators only exist in a quantified context, CTL has a more refined ability to talk about possible futures.
 
-% Co-safe LTL (non-reactive): (¬Deliver ) U(Deliver ∧(Office B ∨Office C )) expresses “deliver
-% a package to one of offices B or C but not anywhere else” .
-% GR(1) fragment (reactive):  
-%  (SensePackage → (Deliver ∧ (Office B ∨ OfficeC ))) ∧
-%  
-%  (¬SensePackage → Mailroom) expresses “If you sense a package then deliver it to
-% Office B or Office C, otherwise go to the mail room” (only part of the formula is shown).
-% PCTL: P>0.95 ( 
-%  (Deliver ∧ (Office B ∨ Office C ))) expresses “The robot should deliver the
-% package to Office B or C with probability greater than 0.95”.
-% STL: 
-%  [0,5](Deliver ∧ (Office B ∨ Office C )) expresses “Deliver the package to Office B or
-% Office C within 5 time units”
+The satisfiability property, that of finding a model which admits a formula, is
+generally (but not always) more difficult than model checking \cite{satModel},
+or giving evidence that a formula is admitted by a model. And the more
+expressive the logic, the more complex both satisfiability and model checking
+algorithms become. One can try for the best of both worlds, and allow for both expressivity over and within paths, as is done with CTL*, but not without the following consequenes :
+
+\begin{itemize}
+\item CTL∗ model checking is decidable in polynomial space.
+\item CTL∗ satisfiability is decidable in doubly exponential time.
+\end{itemize}
+
+Although our exposition of LTL \sbref{Agda} details many of the main ideas for
+building constructive models of LTL, it doesn't cover the entire code base
+developed for this work. Included is a parallel treatment of CTL \cite{wltl},
+where the modularization of the syntax, transition system, semantics, and
+examples allows one to see the relative differences between the two families of
+logics in a fairly straightforward manner. It is an exercise to develop CTL* as
+an extension of this library in Agda.
+
+\paragraph{Continuous Time Models}
+
+Metric Temporal Logic (MTL) allows one to interpret temporal operators with
+respect to time intervals, so that a statement like ``go to the store within 5
+minutes'' is expressible. This more easily enables one to shift from the
+verification of purely discrete systems to real-time systems, particularly
+cyber-physical systems. This may however result in a catastrophic blow-up in complexity, as is stated in \cite{Bouyer2018}:
+
+\begin{itemize}
+\item Model checking and satisfiability for MTL in the point-wise semantics over
+finite words are decidable but non-primitive recursive. Over infinite words,
+both problems are undecidable.
+\item Model checking and satisfiability for MTL in the continuous
+ semantics (over both finite and infinite signals) are undecidable.
+\end{itemize}
+
+Signal Temporal Logic (STL) is even more expressive, where the transition
+systems are replaced by signals. Whereas in MTL the predicates are
+Boolean-valued, they are real-valued in STL. This details how the signals are
+grounded, via an evaluation function which allows one to quantify how much a
+predicate is satisfied. Instead of interpreting the logic in a Heyting Algebra
+of logical operators one can opt to define the semantics via lattice of real
+numbers with infimum and supremum operators.
+
+The notion of robustness metric \cite{robustnessMet} allows one a more
+quantitative view on how well a formula is satisfied by a given signal. We
+suppose this may give one the ability to judge the quality of a vehicles path
+LTL formulas can be transformed into automata which can then be used as reward
+functions for reinforcement learners, as in \cite{ltlRein}, and it would be
+interesting to investigate this further in the case of a robustness metric. The
+expressivity of STL makes model-checking largely intractible outside of special
+cases, unfortunately, and relegates the verification to a weaker but more
+pragmatic notion of monitoring in a cyber-physical system. We therefore imagine
+it might be of more use in posterio route-validation rather than planning.
+
+Recent work attempted to translate between English and STL \cite{he2021english},
+which may be relevant for our work. However, most of the time the passenger may
+not be as concerned with times, as it is presumed the passenger wants to
+minimize the time they spend in the vehicle.
 
 
-% LTL satisfiability is decidable in polynomial space.
-% LTL validity is decidable in polynomial space.
-% LTL model checking is decidable in polynomial space
+\paragraph{Probabilitic Models}
 
-% CTL model checking is decidable in polynomial time.
-% CTL satisfiability is decidable in exponential time.
+One can extend any of the above logics to a probabilistic setting. For instance,
+one can say ``The vehicle should go to $store_1$ or $store_2$ with probability
+greater than 0.95.'' Probabilistic Computation Tree Logic (PCTL) is one such
+variation, where the logical formula is embedded in a probabilistic predicate.
 
-% CTL∗ model checking is decidable in polynomial space.
-% CTL∗ satisfiability is decidable in doubly exponential time.
 
-%  Model checking and satisfiability for MTL in the point-
-% wise semantics over finite words are decidable but non-primitive recursive. Over
-% infinite words, both problems are undecidable.
+here
+\cite{Sadigh-RSS-16}
 
-%  Model checking and satisfiability for MTL in the continuous
-% semantics (over both finite and infinite signals) are undecidable.
+
+
+
+
+
+
 
 \paragraph{Missions Types}
 
@@ -1323,7 +1359,8 @@ programming as a verification paradigm.
 % PL case, or some natural language form can be deterministically transformed to
 % a term that does type-check.
 
-\subsubsection{PGF Embedding}
+\subsubsection{PGF Embedding} \label{PGF}
+
 
 As GF is written in Haskell, the manipulation of GF ASTs as Haskell programs is
 a natural idea which one may apply to the problem of generating LTL formulas.

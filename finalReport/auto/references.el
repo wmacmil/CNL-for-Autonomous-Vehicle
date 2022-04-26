@@ -2,6 +2,10 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "Sadigh-RSS-16"
+    "robustnessMet"
+    "Bouyer2018"
+    "satModel"
     "attnetion"
     "ml79"
     "propSpec"

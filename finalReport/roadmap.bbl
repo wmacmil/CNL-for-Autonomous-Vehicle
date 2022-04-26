@@ -19,6 +19,52 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{satModel}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5e246dc4776d0e6ac24765701fe43bf2}{%
+           family={Acar},
+           familyi={A\bibinitperiod},
+           given={Erman},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fd627ed813ae13b03b55d71922434f3f}{%
+           family={Benerecetti},
+           familyi={B\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=68d01cf5e1bdcc27b5312306575b85cd}{%
+           family={Mogavero},
+           familyi={M\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cedbf440463a611a45343ecc052bd47}
+      \strng{fullhash}{2cedbf440463a611a45343ecc052bd47}
+      \strng{bibnamehash}{2cedbf440463a611a45343ecc052bd47}
+      \strng{authorbibnamehash}{2cedbf440463a611a45343ecc052bd47}
+      \strng{authornamehash}{2cedbf440463a611a45343ecc052bd47}
+      \strng{authorfullhash}{2cedbf440463a611a45343ecc052bd47}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
+      \field{month}{7}
+      \field{number}{01}
+      \field{title}{Satisfiability in Strategy Logic Can Be Easier than Model Checking}
+      \field{volume}{33}
+      \field{year}{2019}
+      \field{pages}{2638\bibrangedash 2645}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1609/aaai.v33i01.33012638
+      \endverb
+      \verb{urlraw}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/4112
+      \endverb
+      \verb{url}
+      \verb https://ojs.aaai.org/index.php/AAAI/article/view/4112
+      \endverb
+    \endentry
     \entry{angelovApi}{misc}{}
       \name{author}{1}{}{%
         {{hash=5b50822fb5130e00603d8b53547e6247}{%
@@ -401,6 +447,97 @@
       \verb 10.1109/IROS.2016.7759412
       \endverb
     \endentry
+    \entry{Bouyer2018}{inbook}{}
+      \name{author}{6}{}{%
+        {{hash=4fb0970ac06bf7857c9dec863551d736}{%
+           family={Bouyer},
+           familyi={B\bibinitperiod},
+           given={Patricia},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6dcc1ff1dee2597ea206d2d8fed057cc}{%
+           family={Fahrenberg},
+           familyi={F\bibinitperiod},
+           given={Uli},
+           giveni={U\bibinitperiod}}}%
+        {{hash=b4e7304ebb3a5b91bf463d0565d270d7}{%
+           family={Larsen},
+           familyi={L\bibinitperiod},
+           given={Kim\bibnamedelima Guldstrand},
+           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9b9d49a73a3e877cd87f4aa91604d8d6}{%
+           family={Markey},
+           familyi={M\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=9dcad644e9ede71fbd155e846e020375}{%
+           family={Ouaknine},
+           familyi={O\bibinitperiod},
+           given={Jo{ë}l},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4225ab35a9e84541465345977a7f9c42}{%
+           family={Worrell},
+           familyi={W\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=1822cd554880ea55fd66357a96bca03e}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Edmund\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=eeb928073fbee58751f87d401a62561a}{%
+           family={Henzinger},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5ac94523768e8fc4adb7a926b36d83e0}{%
+           family={Veith},
+           familyi={V\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9865af1b742410e6dee8ca813e1ec733}{%
+           family={Bloem},
+           familyi={B\bibinitperiod},
+           given={Roderick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{553337bf835e321a5937b684342c9119}
+      \strng{fullhash}{72da0da6868afaa410ad88b024cb485b}
+      \strng{bibnamehash}{553337bf835e321a5937b684342c9119}
+      \strng{authorbibnamehash}{553337bf835e321a5937b684342c9119}
+      \strng{authornamehash}{553337bf835e321a5937b684342c9119}
+      \strng{authorfullhash}{72da0da6868afaa410ad88b024cb485b}
+      \strng{editorbibnamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editornamehash}{2eed5a22a1fbe3a605ce6dc9254e65de}
+      \strng{editorfullhash}{eea0cb89759dac86c5d80411829d95b2}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This chapter surveys timed automata as a formalism for model checking real-time systems. We begin with introducing the model, as an extension of finite-state automata with real-valued variables for measuring time. We then present the main model-checking results in this framework, and give a hint about some recent extensions (namely weighted timed automata and timed games).}
+      \field{booktitle}{Handbook of Model Checking}
+      \field{isbn}{978-3-319-10575-8}
+      \field{title}{Model Checking Real-Time Systems}
+      \field{year}{2018}
+      \field{pages}{1001\bibrangedash 1046}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1007/978-3-319-10575-8_29
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_29
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-10575-8_29
+      \endverb
+    \endentry
     \entry{brunello_et_al}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=a67d3dae2cd10c6137f40f82b7afcf23}{%
@@ -473,6 +610,63 @@
       \endverb
       \verb{url}
       \verb http://drops.dagstuhl.de/opus/volltexte/2019/11375
+      \endverb
+    \endentry
+    \entry{ltlRein}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=b6bf3b37af60368035a03df97f25c49a}{%
+           family={Camacho},
+           familyi={C\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4d8d1c1efefeb9c1757fc7d576c4cda8}{%
+           family={Toro\bibnamedelima Icarte},
+           familyi={T\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9b7c89136c9d998576bf147e6e7854ae}{%
+           family={Klassen},
+           familyi={K\bibinitperiod},
+           given={Toryn\bibnamedelima Q.},
+           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{hash=f74a91dbe44cdd5596967deb87490e54}{%
+           family={Valenzano},
+           familyi={V\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a502f0250e544fbb725c646170ab1dc2}{%
+           family={McIlraith},
+           familyi={M\bibinitperiod},
+           given={Sheila\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {International Joint Conferences on Artificial Intelligence Organization}%
+      }
+      \strng{namehash}{437d1a4866d540a01785c45ad9ab10b2}
+      \strng{fullhash}{6e88f154588ef0dc70f33ae0c8e07449}
+      \strng{bibnamehash}{437d1a4866d540a01785c45ad9ab10b2}
+      \strng{authorbibnamehash}{437d1a4866d540a01785c45ad9ab10b2}
+      \strng{authornamehash}{437d1a4866d540a01785c45ad9ab10b2}
+      \strng{authorfullhash}{6e88f154588ef0dc70f33ae0c8e07449}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, {IJCAI-19}}
+      \field{month}{7}
+      \field{title}{LTL and Beyond: Formal Languages for Reward Function Specification in Reinforcement Learning}
+      \field{year}{2019}
+      \field{pages}{6065\bibrangedash 6073}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.24963/ijcai.2019/840
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.24963/ijcai.2019/840
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.24963/ijcai.2019/840
       \endverb
     \endentry
     \entry{chen2019touchdown}{inproceedings}{}
@@ -1476,6 +1670,33 @@
       \field{pages}{90}
       \range{pages}{1}
     \endentry
+    \entry{wltl}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=9d187f35f9fb365a330825622dc93aaa}{%
+           family={Macmillan},
+           familyi={M\bibinitperiod},
+           given={Warrick},
+           giveni={W\bibinitperiod}}}%
+        {{hash=15779d310ef7ab0623a2503d62e1e5f8}{%
+           family={Kallberg},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{fullhash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{bibnamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authorbibnamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authornamehash}{73a9981441ccc8f76d68ba816457734b}
+      \strng{authorfullhash}{73a9981441ccc8f76d68ba816457734b}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/wmacmil/LTL-Agda}}
+      \field{title}{{LTL in Agda}}
+      \field{year}{2021}
+    \endentry
     \entry{MARGE2022101255}{article}{}
       \name{author}{28}{}{%
         {{hash=d29a3585cfce1e37eff85dd9c5c79adf}{%
@@ -2401,6 +2622,40 @@
       \endverb
       \keyw{Natural Language Understanding,Sequence to Sequence models,Voice Assistants,Semantic Parsing}
     \endentry
+    \entry{Sadigh-RSS-16}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=ad742818738efaa3c358f9def3944504}{%
+           family={Sadigh},
+           familyi={S\bibinitperiod},
+           given={Dorsa},
+           giveni={D\bibinitperiod}}}%
+        {{hash=976735c002ce6a93b243cfa6779822c4}{%
+           family={Kapoor},
+           familyi={K\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {AnnArbor, Michigan}%
+      }
+      \strng{namehash}{7d115425c913e1c5deef457aac5f4e19}
+      \strng{fullhash}{7d115425c913e1c5deef457aac5f4e19}
+      \strng{bibnamehash}{7d115425c913e1c5deef457aac5f4e19}
+      \strng{authorbibnamehash}{7d115425c913e1c5deef457aac5f4e19}
+      \strng{authornamehash}{7d115425c913e1c5deef457aac5f4e19}
+      \strng{authorfullhash}{7d115425c913e1c5deef457aac5f4e19}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Robotics: Science and Systems}
+      \field{month}{6}
+      \field{title}{Safe Control under Uncertainty with Probabilistic Signal Temporal Logic}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.15607/RSS.2016.XII.017
+      \endverb
+    \endentry
     \entry{substAttacks}{article}{}
       \name{author}{2}{}{%
         {{hash=9470198fa62c53a76873a24efa114622}{%
@@ -2715,6 +2970,45 @@
       \verb{url}
       \verb https://aclanthology.org/N03-1033
       \endverb
+    \endentry
+    \entry{robustnessMet}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=daeed053346223c8c91f31399a20ccd5}{%
+           family={Varnai},
+           familyi={V\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=16eb1861275c0ad5bc458768565e4a9e}{%
+           family={Dimarogonas},
+           familyi={D\bibinitperiod},
+           given={Dimos\bibnamedelima V.},
+           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{6c6e15e8a84d804e35751c03d50023e8}
+      \strng{fullhash}{6c6e15e8a84d804e35751c03d50023e8}
+      \strng{bibnamehash}{6c6e15e8a84d804e35751c03d50023e8}
+      \strng{authorbibnamehash}{6c6e15e8a84d804e35751c03d50023e8}
+      \strng{authornamehash}{6c6e15e8a84d804e35751c03d50023e8}
+      \strng{authorfullhash}{6c6e15e8a84d804e35751c03d50023e8}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On Robustness Metrics for Learning STL Tasks}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.48550/ARXIV.2003.06041
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2003.06041
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2003.06041
+      \endverb
+      \keyw{Systems and Control (eess.SY),FOS: Electrical engineering,electronic engineering,information engineering,FOS: Electrical engineering,electronic engineering,information engineering}
     \endentry
     \entry{attnetion}{inproceedings}{}
       \name{author}{8}{}{%
