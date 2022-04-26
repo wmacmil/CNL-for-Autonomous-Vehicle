@@ -16,12 +16,10 @@ isbn=false, doi=false, ]{biblatex}
 
 \usepackage[colorlinks]{hyperref}
 \hypersetup{
-    urlcolor= black,
-    linkcolor= blue,
+    allcolors= blue,
 }
 \newcommand\sbref[1]{[\ref{#1}]}
 \usepackage{agda}
-
 
 
 \usepackage{unicode-math}
