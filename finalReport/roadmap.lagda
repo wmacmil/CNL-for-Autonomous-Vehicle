@@ -687,9 +687,10 @@ one can say ``The vehicle should go to $store_1$ or $store_2$ with probability
 greater than 0.95.'' Probabilistic Computation Tree Logic (PCTL) is one such
 variation, where the logical formula is embedded in a probabilistic predicate.
 
+Probabilistic Signal Temporal Logic (PrSTL) takes this a step further, by again
+allowing probabilistic predicates in an attempt to understand and control in a
+context with ``uncertainty arising due to sensing and classification'' \cite{Sadigh-RSS-16}.
 
-here
-\cite{Sadigh-RSS-16}
 
 
 
