@@ -237,7 +237,7 @@ natural language commands into a ``canonical subset'' defined by our CNL which
 are equivalent to types of temporal logic formulas. We detail here both the
 progress to these ends, as well as the challenges.
 
-\subsection{Contributions}
+\subsection{Contributions} \label{Contrib}
 
 We were initially motivated to give the system assurances against so-called
 substitution-based attacks, whereby one may assert ``meaning equivalence'' for
@@ -680,40 +680,44 @@ not be as concerned with times, as it is presumed the passenger wants to
 minimize the time they spend in the vehicle.
 
 
-\paragraph{Probabilitic Models}
+\paragraph{Temporal Reasoning Under Uncertainty}
 
 One can extend any of the above logics to a probabilistic setting. For instance,
 one can say ``The vehicle should go to $store_1$ or $store_2$ with probability
 greater than 0.95.'' Probabilistic Computation Tree Logic (PCTL) is one such
 variation, where the logical formula is embedded in a probabilistic predicate.
 
+Probabilistic Signal Temporal Logic (PrSTL) takes this a step further, by again
+allowing probabilistic predicates in an attempt to understand and control of
+cyber-physical systems in a context with ``uncertainty arising due to sensing
+and classification'' \cite{Sadigh-RSS-16}. This allows one to account for the
+uncertainty of the sensors and environment by introducing the probabilistic
+constraints over the atomic formulas, and then show how to synthesize
+controllers satisfying probabilistic safety properties. They showcase PrSTL in
+an autonomous vehicle example, however, the properties they explore are given by
+the system designer, not the system user.
 
-here
-\cite{Sadigh-RSS-16}
-
-
-
-
-
-
-
+These logics obviously admit a weaker setting whereby verification can only be
+performed up to some notion of certainty, but they also have the capacity to
+account for more realistic real-world phenomena.
 
 \paragraph{Missions Types}
 
-In the literature, there are two main properties of concern
-when specifying robot behaviors to be checked by models : \emph{safety} and \emph{liveness}.
-These are intimately related to the temporal modalities. Safety
-properties say ``nothing bad ever happens'', that is, a specification is
-satisfied globally by some model. Liveness conditions, on the other hand, mean
-that ``something good eventually happens''. An important theoretical result is
-that safety and liveness are expressively adequate : every property of interest can be
+In the literature, there are two main properties of concern when specifying
+robot behaviors to be checked by models : \emph{safety} and \emph{liveness}.
+These are intimately related to the temporal modalities. Safety properties say
+``nothing bad ever happens'', that is, a specification is satisfied globally by
+some model. Liveness conditions, on the other hand, mean that ``something good
+eventually happens''. An important theoretical result is that safety and
+liveness are expressively adequate : every property of interest can be
 decomposed into safety and liveness components \cite{Piterman2018}.
 
 This distinction is particularly relevant for our analysis, because we suggest
 that for the most part, directions given by a human (at least in our fragmented
-treatment) should be interpreted as liveness conditions. The
-expression of the desire to reach of a sequence of destinations, says that
-eventually we arrive at each such destination.
+treatment) should be interpreted as liveness conditions. The expression of the
+desire to reach of a sequence of destinations, says that eventually we expect to
+arrive at each such destination, and we expect our route and ride to be as efficient as
+possible.
 
 On the other hand, when we account for behaviors of the vehicle that are
 generally not intended to be instructed by the driver, these should be
@@ -724,39 +728,42 @@ vehicle never accelerates too quickly or takes turns too quickly could also be
 encoded in this way. While there may be other mechanisms of enforcing or
 verifying that a vehicle meets these standards, we envision that the route
 planner (and the verifier) should treat the linguistic utterance as saying that
-do something good while simultaneously always never behaving badly.
+do something good while never behaving badly.
 
 We now discuss the missions that a user would want to instruct a vehicle to
 carry out, in the context of satisfying a stack of safety property
 preconditions. In \cite{specPat}, the authors empirically analyze an array of
 literature about robots and the types of missions they are typically employed
 for, filter out a subset of generalized LTL formulas which appear frequently,
-and design a tool PsA1M capable of building template missions over these formulas.
-We pay particular attention to what they call ``core movement patterns'', which
-include coverage (mainly what we're concerned with) and surveillance (which
-could be relevant, if, for instance, one wanted to design a autonomous-taxi that
-surveils a region of interest for passengers).
+and design a tool PsA1M capable of building template missions over these
+formulas. We pay particular attention to what they call ``core movement
+patterns'', which include coverage (mainly what we're concerned with) and
+surveillance. This could be relevant, if, for instance, one wanted to design a
+autonomous-taxi that surveils a region of interest for passengers.
 
 The coverage properties consist of visiting a set of locations, where various
-extra conditions like sequencing, ordering, and strictly ordering governs how.
-Specifically, given a finite (or incomplete) set of locations or events
-$\{l_i\}$ where $i \in \{1..n\}$ we can say a baseline coverage is of the form
-$\underset{i}{\bigwedge}\; F\; l_i$, which due to the commutativity of
-conjunction, doesn't distinguish between the order in which the locations are
-visited. To ensure that for every location $l_i$ eventually follows its
-predecessor $l_{i-1}$, we nest the locations in future temporal operators,
-essentially building a linked list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\;
-l_{n}))$ with an extra $F$ operator appended at every node. To induce the
-ordering, we can conjoin a predicate which restricts how the locations are
-sequenced by imposing the condition that location $l_{i}$ must be visited prior
-to its successor $l_{i+1}$, namely $\underset{i}{\bigwedge}\; (\neg l_{i+1})\;
-U\; l_i$. If one wants to also ensure that the locations aren't redundantly
-visited, we can add the strictness condition. This property,
-$\underset{i}{\bigwedge}\; (\neg l_{i})\; U\; (l_i \wedge X\; (\neg l_i\; U\;
-l_{i+1}))$, ensures that one cannot revisit location $l_i$ until after it has
-been initially visited and, in the next time increment, it hasn't been visited
-until its successor location $l_{i+1}$ has. To see how these syntax trees are
-encoded in Agda, please see the appendix [TODO:REF].
+extra conditions such as ``sequencing'', ``ordering'', and ``strictly ordering''
+governs how the visitations are performed. Specifically, given a finite (or
+incomplete) set of locations or events $\{l_i\}$ where $i \in \{1..n\}$ we can
+say a baseline coverage is of the form $\underset{i}{\bigwedge}\; F\; l_i$. Due
+to the commutativity of conjunction, this class of formulas doesn't distinguish
+between the order in which the locations are visited.
+
+To ensure that for every location $l_i$ eventually follows its predecessor
+$l_{i-1}$, we nest the locations in future temporal operators, essentially
+building a linked list $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$ with
+an extra $F$ operator appended at every node. To induce the ordering, we can
+conjoin a predicate which restricts how the locations are sequenced by imposing
+the condition that location $l_{i}$ must be visited prior to its successor
+$l_{i+1}$, namely $\underset{i}{\bigwedge}\; (\neg l_{i+1})\; U\; l_i$. If one
+wants to also ensure that the locations aren't redundantly visited, we can add
+the strictness condition. This property, $\underset{i}{\bigwedge}\; (\neg
+l_{i})\; U\; (l_i \wedge X\; (\neg l_i\; U\; l_{i+1}))$, ensures that one cannot
+revisit location $l_i$ until after it has been initially visited and, in the
+next time increment, it hasn't been visited until its successor location
+$l_{i+1}$ has. Please see \cite{wltl} to see how these syntax trees are encoded
+in Agda.
+
 
 As concerns directing autonomous vehicles, one anticipates that the user
 generally would want a sequential visit, with the order condition presumably but
@@ -764,14 +771,14 @@ not necessarily intended in most situations. The strict order condition seems
 like it would need to be induced by the system almost automatically for
 efficiency reasons. We therefore chose to target the vanilla sequential visit
 with our Haskell program, although it merits a close investigation in which
-circumstances other logical predicates should be inferred, both based of
-specific language of the passenger and other contextual constraints.
+circumstances other logical predicate classes should be inferred, based of
+both the specific language of the passenger and other contextual constraints.
 
 Other movement patterns may reference past tense temporal operators, which may
-indeed prove very useful to verify that a users needs have been met, or the
-cases in which the route taken didn't conform to a command. We envision that
-developing a complete calculus of specification patterns in the specific domain
-of autonomous vehicles should very much inform how the CNL should be designed.
+indeed prove very useful to verify that a users needs have or haven't been met
+We envision that developing a complete calculus of specification patterns in the
+specific domain of autonomous vehicles should very much inform how the CNL
+should be designed.
 
 \paragraph{Environment and Grounding}
 
@@ -779,49 +786,59 @@ The historical development of logic in mathematics ultimately served to
 partition the mathematical expressions so that one could abstract the high level
 reasoning, the proposition and a proof structure, from the purely mathematical
 constructions. The interpretation of types in programming as logical
-propositions emanating from constructivist circles questioned this partitioning,
-allowing one to construct computer programs with mixed and indistinguishable
-``logical'' and ``mathematical''. In the case of temporal logics for
-cyberphysical systems, however, the atomic propositions like ``is-green-light'',
-``truck-ahead'', or ``grocery-store'' have no simple encoding in programming
-languages. This is because they aren't mathematical precise concepts, being
-empirically fastened to the environment in which the computer program operates.
-This is an incredibly important realization : how we witness the world is
-captured by some possibly faithful but incomplete mathematical abstraction.
+propositions, emanating from constructivist circles, questioned this
+partitioning. This interpretation allows one to construct computer programs with
+a mixture of logical, mathematical, and computational behaviors. In the case of
+temporal logics for cyberphysical systems, however, the atomic propositions like
+``is-green-light'', ``truck-ahead'', or ``grocery-store'' have no simple
+encoding in programming languages. This is because they aren't mathematical
+precise concepts, being empirically fastened to the environment in which the
+computer program operates. This is an incredibly important realization : how we
+witness the world is captured by some possibly faithful but incomplete
+mathematical abstraction.
 
 For the atomic propositions in a temporal sentence to have meaning, we must
 ground them to the physical world. This grounding involves both the sensors
 collecting data from the physical environment, as well as the mathematical
 approximations we make of the environment. In \cite{synthGazit}, the authors
 review the many ways one can take propositions in various temporal logics and
-synthesize `` correct-by-construction robot controllers'', in the case there is no
+synthesize ``correct-by-construction robot controllers'', in the case there is no
 contradictory evidence about a specification's feasibility. Although this
-synthesis process exceeds the boundaries of the work, it is important to discuss
-because how one models the external environment and the events in it, should
+synthesis proccess exceeds the boundaries of our work, it is important to discuss.
+How one models the external environment and the events in it, should
 cohere to the internal environment - the natural language instructions.
 When building a system, reasoning about it from both directions is paramount.
 
 Explicitly, how one chooses to approximate the external environment, and what a
-vehicle can and should \emph{do} in it, should inform the constraints what
+vehicle can and should \emph{do} in it, should inform the constraints about
 one can say in the internal environment. In the case of a QA system where the
 car needs to inform the passenger of why the vehicle can't obey such
 instructions, or ask for clarification, the Natural Language Generation (NLG)
 phase will need to perform some kind of ``reverse synthesis'', and this process
 may well be much more difficult than the synthesis process to begin with.
 
-The paper details three main ways of approximating the continuous external
+This review details three main ways of approximating the continuous external
 environment, modeled as a dynamical system specified by a first order
-differential equation, by a state transition system. These abstractions are from
-the dynamical system to a symbolic model represented by a transition system are
-partitions, motion primitives, and motion planners with trajectories. The partitioning generates a
+differential equation. These abstractions transform the dynamical system to a
+symbolic model represented by a transition system. They are
+\begin {enumerate*}
+\item partitions,
+\item motion primitives, and
+\item motion planners with trajectories\end{enumerate*}. More specifically :
+
+\begin{enumerate}
+\item The partitioning generates a
 discrete transition system from a continuous state space, where actions
-represent movements between areas, and is contingent upon the dynamics of the
-differential equation. The motion primitives approach defines the primitives as
-maps between a different kind partition of the state space, and it is noted that
-they definitionally satisfy invariance and liveness properties, ideal for our application.
-To generate paths without regard to the dynamics of the system, motion planners
-deal with a geometric partition and builds robot trajectories based off where
-the robot is at a given time.
+represent movements between areas, and they are contingent upon the dynamics of
+the differential equation.
+\item The motion primitives approach defines the primitives
+as maps between a different kind of partition of the state space, and it is
+noted that they definitionally satisfy invariance and liveness properties, ideal
+for our application.
+\item To generate paths without regard to the dynamics of the
+system, motion planners deal with a geometric partition and builds robot
+trajectories based off where the robot is at a given time.
+\end{enumerate}
 
 Once the abstraction from the external environment to a transition system has
 been realized, the translation of a logical formula into a Buchi Automata (or
@@ -829,13 +846,13 @@ some other automata) can decided true or false relative to the Kripke model
 which has been generated. Unfortunately, the generation of an automata is doubly
 exponential in the size of the LTL sentence.
 
-Using a tame fragment of LTL, Generalized Reactivity (1) (GR(1)), one may use
+A tame fragment of LTL, Generalized Reactivity (1) (GR(1)), one may use
 game-theoretic approaches to that reduce the complexity of controller synthesis
 to polynomial in the size of the external environment's transition system
 \cite{BLOEM2012911}. The GR(1) fragment partitions the atomic propositions into
-two sets based of the environment and the state. Those formulas $\phi_e$ which
+two sets based of the environment and the state. Those formulas $\phi_e$
 represent environmental sensor data, and those propositions tied to the robot
-state, $\phi_s$, grounded to actions and physical positions. The fragment deals
+state, $\phi_s$, are grounded to actions and physical positions. The fragment deals
 with sentences of the form $\phi_e \implies \phi_s$, where both sets of formulas
 can be seen as a conjunctions of initial conditions, safety assumptions, and
 liveness conditions. In our example, this would mean that the command like
@@ -846,47 +863,47 @@ map which has a fire hydrant, and that this should precede a state where the car
 sense a turn coupled with the steering wheel turning.
 
 Unfortunately, the liveness conditions only allow for formulas of the form
-$\underset{i}{\bigwedge}\;G\; F\; \phi_i$ with $\phi_i$ restricted to using
+$\underset{i}{\bigwedge}\;G\; F\; \phi_i$ with the $\phi_i$ restricted by using
 Boolean connectives. Nonetheless, by isolating environmental sensor data from
-the position certain and action primitives, and additionally separating out the liveness
-and safety properties, we see a clear methodology that can greatly simplify our
-specific problem. It is not known to the author if there has been work
+the position and action primitives and additionally separating out the liveness
+and safety properties, we see a clear methodology that can greatly simplify in our
+specific use case. It is not known to us if there has been work
 investigating synthesis coverage properties the fragment of LTL for the coverage
-properties, but it is well worth investigating, because despite the nesting of
+properties, but it is well worth investigating. Despite the nesting of
 the $F$ operators, we can certainly anticipate a reduction in the complexity of
 these types of formulas.
 
-% for a distinction between Planning Domain Definition Language (PDDL)
-% The differences between synthesis approaches and those pursued in the planning community
-% span the way the problem is formulated, the complexity of the algorithms, the expressive-
-% ness of the specifications and system models, and the type of feedback that is possible when
-% the synthesis/planning problem can and cannot be solved.
-
-
 \paragraph{External and Other Constraints}
 
-Linear logic, resource sharing, etc
+While temporal logics for motion planning and verification are useful, they
+certainly could be coupled with other modalities to make them more expressive.
+The relation of other such modalities and logics to voice commands is
+speculative and enticing. We suggest the following be investigated, which may
+well have been done without our knowledge.
 
-The review \cite{synthGazit} forgoes dealing with multi-agent systems,
+\begin{itemize}
+\item Linear logic to account for cost, both physical (energy consumption) and computational
+\item Logics for resource sharing to enable multi-agent systems to altruistically and effectively share the roads
+\item Spatial logics to reason more precisely within a given time frame
+\end{itemize}
 
 \section{Our Pipeline}
 
-As mentioned in the [TODO : Ref contributions], this work makes a proposal for
-how to create a general semantic parser from arbitrary voice commands to the
-coverage and sequencing subset of LTL, maximizing both coverage and robustness
-of the system. We outline the work done with respect to the following pieces, of
-our system, and conclude with the proposal which envisions a synthesis of all
-these pieces.
+As mentioned in \sbref{Contrib}, this work makes a proposal for creating a
+general semantic parser from arbitrary voice commands to the coverage and
+sequencing subset of LTL, hoping to maximize both coverage and robustness of the
+autonomous system. We outline the work done with respect to the following
+pieces, of our system, and conclude with the proposal which envisions a
+synthesis of all these pieces. The main pieces consist of :
 
 \begin{itemize}[noitemsep]
 \item A refinement of the TOUCHDOWN dataset \cite{chen2019touchdown}
-\item A refined version of the touchdown dataset
-\item A GF Grammar
-\item A PGF Haskell embedding of the Grammar
-\item An Agda implementation of LTL [TODO: see appendix]
+\item A GF Grammar for expressing imperative commands
+\item A PGF Haskell embedding of the grammar for translating ASTs to the sequencing class of LTL formulas
+\item An Agda implementation of LTL (and CTL) \sbref{Agda}
 \end{itemize}
 
-\subsection{Touchdown Data Set}
+\subsection{The TOUCHDOWN Data Set}
 
 The most comprehensive known data source relevant to this problem is the
 TOUCHDOWN data set \cite{chen2019touchdown}. The authors' used Amazon Mechanical
@@ -1816,6 +1833,15 @@ In modeling work relating to route planning ideas into Agda, Hill et al.
 ~\cite{hillResource} have both designed a \emph{resource logic} interpreted a la
 Curry-Howard in Agda. Subsequently they released  an agda formalization of
 Planning Domain Definition Language (PDDL) ~\cite{hillAction}.
+
+% for a distinction between Planning Domain Definition Language (PDDL)
+% The differences between synthesis approaches and those pursued in the planning community
+% span the way the problem is formulated, the complexity of the algorithms, the expressive-
+% ness of the specifications and system models, and the type of feedback that is possible when
+% the synthesis/planning problem can and cannot be solved.
+%\cite{synthGazit}
+%grass -hezet
+
 
 Since LTL is interperable in PDDL
 ~\cite{ltlPDDL}, and since our normal-form LTL formulas $F (\phi => F (\phi_0 => ... (G STOP)))$

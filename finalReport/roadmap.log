@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  26 APR 2022 08:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  27 APR 2022 07:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1450,64 +1450,59 @@ File: pics/selfDriving.png Graphic file (type bmp)
 [1]
 File: pics/diagramTrial1.png Graphic file (type bmp)
 <pics/diagramTrial1.png>
-[2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-Overfull \hbox (12.8813pt too wide) in paragraph at lines 832--847
-\TU/DejaVuSerif(0)/m/n/10 represent environmental sensor data, and those propos
-itions tied to the robot state, $[][]$, grounded
- []
-
-[12] [13] [14] [15]
-Overfull \hbox (11.8856pt too wide) in paragraph at lines 1077--1077
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+Overfull \hbox (11.8856pt too wide) in paragraph at lines 1094--1094
 []\TU/DejaVuSansMono(0)/m/n/10 ([(["going"],1684),(["facing"],939),(["moving"],
 849),(["passing"],617)],["VBG"])[] 
  []
 
 
-Overfull \hbox (5.8651pt too wide) in paragraph at lines 1077--1077
+Overfull \hbox (5.8651pt too wide) in paragraph at lines 1094--1094
 []\TU/DejaVuSansMono(0)/m/n/10 ([(["left"],1733),(["parked"],616),(["painted"],
 307),(["fenced"],263)],["VBN"])[] 
  []
 
-[16] [17] [18] [19] [20] [21]
+[16] [17] [18] [19] [20] [21] [22]
 File: pics/one.jpg Graphic file (type bmp)
 <pics/one.jpg>
-[22]
+[23]
 File: pics/two.jpg Graphic file (type bmp)
 <pics/two.jpg>
-[23] [24]
+[24]
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 [25] [26]
-Overfull \hbox (31.30293pt too wide) in paragraph at lines 1662--1665
+Overfull \hbox (31.30293pt too wide) in paragraph at lines 1679--1682
 \TU/DejaVuSerif(0)/m/n/10 find to fine-tune via one of these pre-trained models
 . Please see https://github.com/lil-lab/touchdown 
  []
 
 [27] [28] [29]
-Overfull \hbox (5.75768pt too wide) in paragraph at lines 1888--1891
+Overfull \hbox (5.75768pt too wide) in paragraph at lines 1914--1917
 []\TU/DejaVuSerif(0)/m/n/10 The group builds a trained pipeline that uses an ob
 ject oriented template-instance method-
  []
 
-[30] [31] [32]
+[30] [31]
+\openout4 = `roadmap.ptb'.
+
+[32]
 \openout4 = `roadmap.ptb'.
 
 \openout4 = `roadmap.ptb'.
 
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
+Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
+ge=dflt;!
 [33]
 \openout4 = `roadmap.ptb'.
 
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
-Missing character: There is no 𝑃 in font DejaVu Sans Mono/OT:script=latn;langua
-ge=dflt;!
 \openout4 = `roadmap.ptb'.
 
 [34]
-\openout4 = `roadmap.ptb'.
-
 \openout4 = `roadmap.ptb'.
 
 \openout4 = `roadmap.ptb'.
@@ -1529,6 +1524,8 @@ ge=dflt;!
 
 \openout4 = `roadmap.ptb'.
 
+\openout4 = `roadmap.ptb'.
+
 [38]
 \openout4 = `roadmap.ptb'.
 
@@ -1536,46 +1533,44 @@ ge=dflt;!
 
 \openout4 = `roadmap.ptb'.
 
-\openout4 = `roadmap.ptb'.
-
 [39] [40] [41]
-Overfull \hbox (16.6544pt too wide) in paragraph at lines 3810--3810
+Overfull \hbox (16.6544pt too wide) in paragraph at lines 3836--3836
 \TU/DejaVuSerif(0)/m/it/10 Methodology and Philosophy of Science VI, Proceeding
 s of the Sixth International Congress
  []
 
 [42]
-Overfull \hbox (0.68735pt too wide) in paragraph at lines 3810--3810
+Overfull \hbox (0.68735pt too wide) in paragraph at lines 3836--3836
 []\TU/DejaVuSerif(0)/m/n/10 Wilko Schwarting, Javier Alonso-Mora, and Daniela R
 us. “Planning and Decision-Making
  []
 
 
-Overfull \hbox (2.03354pt too wide) in paragraph at lines 3810--3810
+Overfull \hbox (2.03354pt too wide) in paragraph at lines 3836--3836
 []\TU/DejaVuSerif(0)/m/n/10 Christopher Wang et al. “Learning a natural-languag
 e to LTL executable semantic parser
  []
 
 [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3812.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3812.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3838.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3838.
 (./roadmap.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3812.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3812.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3838.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3838.
 
 Package rerunfilecheck Info: File `roadmap.out' has not changed.
-(rerunfilecheck)             Checksum: DC013A88368B69BDA50954D54A2027B0;2899.
+(rerunfilecheck)             Checksum: 8090BFFBDE088C62AFE9ADC0BB2E931D;2906.
 Package logreq Info: Writing requests to 'roadmap.run.xml'.
 \openout1 = `roadmap.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36677 strings out of 481749
- 717490 string characters out of 5935475
- 1426512 words of memory out of 5000000
- 53066 multiletter control sequences out of 15000+600000
+ 36678 strings out of 481749
+ 717499 string characters out of 5935475
+ 1426554 words of memory out of 5000000
+ 53067 multiletter control sequences out of 15000+600000
  540117 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  67i,14n,109p,2135b,4900s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on roadmap.xdv (45 pages, 1426292 bytes).
+Output written on roadmap.xdv (45 pages, 1442048 bytes).
