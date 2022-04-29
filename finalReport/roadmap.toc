@@ -12,7 +12,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Linguistic}{5}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.1}Grammtical Framework}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}The Concepts of Grammtical Framework}{5}{subsubsection.2.1.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.1.2}Semantical Representations}{6}{subsubsection.2.1.2}%
 \defcounter {refsection}{0}\relax 
@@ -52,19 +52,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.2}Our Drive Grammar}{16}{subsubsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Linearization}{19}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Informing the Grammar with TOUCHDOWN}{16}{subsubsection.3.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Abstract Syntax}{17}{subsubsection.3.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Concrete Sytnax}{19}{subsubsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Why GF?}{20}{subsubsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.3}PGF Embedding}{21}{subsubsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{other ideas}{22}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Pipeline Proposal}{22}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.4}PGF Embedding}{23}{subsubsection.3.2.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Pipeline Proposal}{23}{subsection.3.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Language models}{24}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Language models}{25}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4}Syntax and Semantics}{27}{subsection.3.4}%
 \defcounter {refsection}{0}\relax 
@@ -82,7 +82,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.1.4}Commericial}{30}{subsubsection.4.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.5}Alternative ideas}{30}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.5}Alternative ideas}{31}{subsubsection.4.1.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}LTL in Agda}{31}{section.5}%
 \defcounter {refsection}{0}\relax 
@@ -90,7 +90,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2}Sequential Definition}{35}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}LTL Semantics For Streams}{35}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}LTL Semantics For Streams}{36}{subsection.5.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.3.1}Global}{36}{subsubsection.5.3.1}%
 \defcounter {refsection}{0}\relax 

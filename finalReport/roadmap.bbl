@@ -2383,6 +2383,33 @@
       \verb 10.1017/S0956796803004738
       \endverb
     \endentry
+    \entry{ranta2011grammatical}{book}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {CSLI Publications, Center for the Study of Language}%
+        {Information Stanford}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{3}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Grammatical framework: Programming with multilingual grammars}
+      \field{volume}{173}
+      \field{year}{2011}
+    \endentry
     \entry{ranta2009rgl}{article}{}
       \name{author}{1}{}{%
         {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
@@ -2397,7 +2424,7 @@
       \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
       \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
       \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{R}
       \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
       \field{labelnamesource}{author}

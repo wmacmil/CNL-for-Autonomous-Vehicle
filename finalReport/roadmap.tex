@@ -318,7 +318,7 @@ in this space may be viewed.
 
 \subsection{Linguistic}
 
-\subsubsection{Grammtical Framework}
+\subsubsection{The Concepts of Grammtical Framework}
 
 The questions of designing or interpreting an idealized and expressive formal
 language, with roots in Frege \cite{frege79}, manifested more recently in the
@@ -332,7 +332,7 @@ discovered that the dual sugaring (pretty printing) transformation of a tree to
 a string could allow for a general mechanism of purely syntax-based translation.
 This work culminated in Grammatical Framework \cite{ranta_2004}.
 
-Grammatical Framework became a full research project, allowing for the simple
+GF became a full research project, allowing for the simple
 specification of a parser using a statically typed programming language whereby
 the grammar rules could be seen as types. Separate concrete syntaxes cohering
 with a given abstract syntax allowed for language-specific parsing, sugaring,
@@ -882,7 +882,7 @@ speculative and enticing. We suggest the following be investigated, which may
 well have been done without our knowledge.
 
 \begin{itemize}
-\item Linear logic to account for cost, both physical (energy consumption) and computational
+\item Linear logic to account for possibly computational and physical cost of generating and following a given route, respectively
 \item Logics for resource sharing to enable multi-agent systems to altruistically and effectively share the roads
 \item Spatial logics to reason more precisely within a given time frame
 \end{itemize}
@@ -905,14 +905,15 @@ synthesis of all these pieces. The main pieces consist of :
 
 \subsection{The TOUCHDOWN Data Set}
 
-The most comprehensive known data source relevant to this problem is the
-TOUCHDOWN data set \cite{chen2019touchdown}. The authors' used Amazon Mechanical
-Turk workers and an ``interactive visual navigation environment based on Google
-Street View'' based off images collected in New York City to generate English
-Language instructions to describe a route based off the visible environment to
-find a ``touchdown object''. Once the object is visible, the task is complete.
+The most comprehensive known data source relevant to vehicle navigation
+instructions is the TOUCHDOWN data set \cite{chen2019touchdown}. The authors
+used Amazon Mechanical Turk workers and an ``interactive visual navigation
+environment based on Google Street View'' based off images collected in New York
+City to generate English language instructions. Each instruction describes a
+route based off the visible environment to find a ``touchdown object''. Once the
+object is visible, the task is complete.
 
-An intention of the work is a seemingly natural dataset which accounts for
+An intention of the work was producing a seemingly natural dataset for
 ``resolving the spatial descriptions'', but we focus only extracting the
 navigation instruction part of the task, knowing that the image classifier and
 the grounding mechanism is outside the scope of our work. Although the data
@@ -934,17 +935,17 @@ reference the ``touchdown'' with the word finish. We first indicate some of the
 advantages of this data set with regards to our application.
 
 \begin{itemize}
-\item The size is reasonably large with approximately 10000 multi-command instruction sequences
-\item The descriptions are full of linguistic nuance and diversity
-\item The data is collected from multiple users, and is methodically produced
+\item The size is reasonably large with approximately 10000 multi-command instruction sequences.
+\item The descriptions are full of linguistic nuance and diversity.
+\item The data is collected from multiple users, and is methodically produced.
 \item The non-linguistic data may be of interest to those investigating
-how to grounding the utterances to the Street View panoramas
+how to ground the utterances to the street view panoramas.
 \end{itemize}
 
-We imagine to a first approximation, these sequences are a great starting point
-when trying to build a robust system with respect to the linguistic environment.
-Nonetheless, there are many potential drawbacks, both with the data collection
-process itself, and the application we have in mind. These include :
+To a first approximation, these sequences are a great starting point when trying
+to build a robust system with coherence between to the linguistic and external
+environment. Nonetheless, there are many potential drawbacks, both with the data
+collection process itself, and the application we have in mind. These include :
 
 \begin{itemize}
 \item Finding the touchdown only coarsely approximates general navigating in a city.
@@ -961,31 +962,30 @@ process itself, and the application we have in mind. These include :
 images, including street names, store names, or numbers''  \cite{chen2019touchdown}
 \item No explicit temporal reasoning with regards to actual and relative times,
  i.e. ``noon'' and ``in 5 minutes'', respectively
-\item The limitations of using panoramic image data
-\item The fact that Amazon Turk workers are exploited. This may influence how they
+\item There may be limitations of only using panoramic image data.
+\item Amazon Turk workers are exploited. This may influence how they
  do the work (they try to meet the standard that makes them the most amount of
  money), and also not be a representative sample of the population.
 \end{itemize}
 
-A truly ideal data set would resolve these issues and meet the following
-criteria :
+The data collection task is inherently tied to the model approximating the world
+and environment. This limitation is over one's whole experimental apparatus and
+assumptions in designing the data set. A truly ideal data set would resolve
+these issues and meet the following criteria :
 
 \begin{itemize}
 \item The instructions would consist of long and short distance driving tasks,
  preferably interspersed.
 \item The data set would include different urban and rural areas, different
- languages, non-paved environments, different weather and lighting conditions, and possibly multiple speakers in the car
+ languages, non-paved environments, different weather and lighting conditions, and possibly multiple speakers in the car.
 \item The passengers would be more diverse and have vary degrees of contextual
- information like street place, public names like ``the opera'' and
- private names like ``mom's house'' (whereby a named entity recognition would
- be very important component)
-\item Collecting the data ``in the wild'', envisioning a cab with a human
- drivers equipped with sensors and microphones
+ information like street place, public names like ``The Opera'' and
+ private names like ``mom's house'' (whereby a named entity recognizer would
+ be very important component).
+\item The data would be collected ``in the wild''. We envision a cab with a human
+ drivers equipped with sensors and microphones.
 \end{itemize}
 
-That the data collection task in an objective way is inherently tied to the way
-we collect the data, approximating the world and environment. This limitation is
-over one's whole experimental apparatus and assumptions in designing the data set.
 
 \subsubsection{Filtering the data set}
 
@@ -995,17 +995,17 @@ we sought to curate the data so that it is more compatible with our GF grammar. 
 ``Finish.'' sentence substituted for the touchdown phrase to indicate command
 termination.
 
-We to process the data so that it enables both generation of a GF grammar which
+We process the data so that it enables both generation of a GF grammar which
 parses at least a minimal skeleton of the linguistic diversity found in the
 corpus. As GF grammar is not capable of directly interfacing with out-of-the-box
 part-of-speech-taggers at the \emph{concrete syntax level} when using the RGL
-because of a mismatch of grammatical categories, it is at the \emph{abstract
-syntax level}. While this is a potentially important line of research - to
-interface GF deal with tagged data-sets - the n-gram language model over
-the corpus  lexicon is very capable of informing the GF grammar.
+because of a mismatch of grammatical categories, it can do so at the
+\emph{abstract syntax level}. This is potentially an important line of research -
+to interface GF deal with tagged data-sets - the n-gram language model over the
+corpus lexicon is very capable of informing a GF grammar.
 
 The processing of the data in Haskell was simple : we simply ordered the n-grams
-of the whole words of the corpus by frequency and (n-gram) POS label, and this
+of the words of the corpus by frequency and (n-gram) POS label, and this
 was easily done with basic functional programming techniques operating over
 nested lists and tuples, although in the future it would certainly be better to use a lens
 interface. For instance, one can quickly filter the most common
@@ -1023,7 +1023,7 @@ is, and also indicates the most important phrases to include in the grammar.
 
 \subsubsection{Brief Intro To Gf}
 
-A grammar specification in GF is an abstract syntax, where one specifies trees,
+A grammar specification in GF defines a set of ASTs via some multi-arity rules,
 and a concrete syntax, where one says how the trees compositionally evaluate to
 strings. Multiple concrete syntaxes may be attached to a given abstract syntax,
 and these different concrete syntaxes represent different languages. An AST may
@@ -1033,12 +1033,13 @@ ASTs which linearize to that tree. The composition of parsing and linearization
 amounts to machine translation.
 
 When defining a GF pipeline, one has to merely to construct an abstract syntax
-file and a concrete syntax file such that they are coherent. In the abstract,
-one specifies the \emph{semantics} of the domain one wants to translate over,
-which is ironic, because we normally associate abstract syntax with \emph{just
-syntax}. However, because GF was intended for implementing the natural language
-phenomena, the types of semantic categories (or sorts) can grow much bigger than
-is desirable in a programming language, where minimalism is generally favored.
+file and a concrete syntax file such that they are coherent. In the abstract
+file, one specifies the \emph{semantics} of the domain one wants to translate
+over. This is ironic, because we normally associate abstract syntax with
+\emph{just syntax}. However, because GF was intended for implementing the
+natural language phenomena, the types of semantic categories (or sorts) can grow
+much bigger than is desirable in a programming language, where minimalism is
+generally favored.
 
 The two functions displayed in \autoref{fig:N2}, $Parse : \{Strings\}
 \rightarrow \{\{ASTs\}\}$ and $Linearize : \{ASTs\} \rightarrow \{Strings\}$, obey
@@ -1060,13 +1061,7 @@ Strings \ar[r,"Lexical\ Analysis"] \ar[rr,bend right,"GF\ Parser"'] &[10em] Lexe
 
 \subsubsection{Our Drive Grammar}
 
-We present a simple proof-of-concept grammar, to illustrate these ideas above.
-
-The abstract syntax consists of two declarations, where one defines
-\emph{categories} with ``cat'' and simply typed function signatures over those
-categories, denoted by the ``fun'' keyword. GF has support for dependent types
-as well, although they make general parsing undecidable and are relatively
-unmaintained.
+\paragraph{Informing the Grammar with TOUCHDOWN}
 
 The first thing we want to recognize before delving into the details of our
 Grammar is that the directive-style commands, being informed by the intended
@@ -1079,10 +1074,9 @@ break, and steering wheel, we can look at verbs from the corpus, to the
 recognize that only present tense, base-form verbs ``VB'' inform these. Other
 POS verb classifications - past -tense ``VBD'', gerund ``VBG'', past participle
 ``VBN'', singular present, 3rd person or not, ``VBP'' and ``VBZ'' respectively -
-either seem to describe a scene or object in the peripheral environment or the viewers
-relationship to some such happening. We show the counts of the top verbs
+either seem to describe a scene or object in the peripheral environment or the
+viewers relationship to some such happening. We show the counts of the top verbs
 processed by our Haskell script.
-
 
 \begin{verbatim}
 ([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
@@ -1093,91 +1087,102 @@ processed by our Haskell script.
 ([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],["VBZ"])
 \end{verbatim}
 
-The exception is the base-form ``be'', which
-typically denotes things are relative to you. So if one says ``go to the store
-and there should be a mailbox on your right...'', the logical condition could be
-indicated as $F\; (theStore \wedge aMailboxOnRight \wedge ...)$, whereby being
-at the store is next to a mailbox are simultaneous properties to verify.
+The exception is the base-form ``be'', which typically denotes things are
+relative to you. So if one says ``go to the store and there should be a mailbox
+on your right...'', the logical condition could be indicated as $F\; (theStore
+\wedge aMailboxOnRight \wedge ...)$, whereby being at the store is with and
+being there with a mailbox are simultaneous properties to verify. One could instead opt for $theStore$ as a precondition with $aMailboxOnRight$ as a postcondition.
 
-One recognizes that the relationships of the driver to the scenarios described is to
-be understood with respect to the camera and the sensors, with the vehicles spatial/temporal relationship to
-them dealt with by the grounding mechanism. We therefore organize our commands
-based off the most frequent verbs : go, turn, stop, ...)
+One recognizes that the relationships of the driver to the scenarios described
+is to be understood with respect to the camera and the sensors, with the
+vehicle's spatial and temporal relationships to them dealt with by the grounding
+mechanism. We therefore organize our commands based off the most frequent verbs
+: ``go'', ``turn'', ``stop'', etc.
 
+\paragraph{Abstract Syntax}
+
+The abstract syntax consists of two declarations, where one defines
+\emph{categories} with \gray{cat} and simply typed function signatures over those
+categories, denoted by the \gray{fun} keyword. GF has support for dependent types
+as well, although they make parsing for arbitrary grammars undecidable. GF's
+dependent types are relatively unused in general.
+
+We present a simple proof-of-concept grammar to illustrate these ideas above.
 We now indicate the main ``semantic'' content of our parser, whereby our
 primitive ontological categories are listed alongside example strings which
-are grammatical examples parsible and linearizable with respect to the
-linearization.
+are both parsible and linearizable by the grammar.
 
 \begin{verbatim}
-cat
- Command      ; -- don't go to the store
- Polarity     ; -- don't
- PosCommand   ; -- go to the store
- Place        ; -- the store
- Time         ; -- in 5 minutes
- Action       ; -- drive
- Way          ; -- to
- How          ; -- quickly
- Where        ; -- left
- AdvPh        ; -- to the store
- UndetObj     ; -- store
- Determ       ; -- the
- Object       ; -- the store
- Number       ; -- a
- Conjunct     ; -- and
- Condition    ; -- there is a museum
- Descript     ; -- big
+  cat
+    Command      ; -- don't go to the store
+    Polarity     ; -- don't
+    PosCommand   ; -- go to the store
+    Place        ; -- the store
+    Time         ; -- in 5 minutes
+    Action       ; -- drive
+    Way          ; -- to
+    How          ; -- quickly
+    Where        ; -- left
+    AdvPh        ; -- to the store
+    UndetObj     ; -- store
+    Determ       ; -- the
+    Object       ; -- the store
+    Number       ; -- a
+    Conjunct     ; -- and
+    Condition    ; -- there is a museum
+    Descript     ; -- big
 \end{verbatim}
 
 These categories form the core calculus for building imperative commands. To
 construct them we must specify the functions, of which we only sample a few. We
-first notice that categories like ``Descript'', ``Conjunct'', ``Where'' are all
-limited to single words, whereas the phrases must be syntactically composed - and
-this composition is given by plugging in sub-expressions in the AST, typable via
-simple functions over the categories. We list a subset of the grammar ordered by
-relative proximity to the root of the tree.
+first notice that categories like \gray{Descript}, \gray{Conjunct}, and
+\gray{Where} are all limited to single words, whereas the phrases must be
+syntactically composed. This composition is given by plugging in
+sub-expressions in the AST, typable via simple functions over the categories. We
+list a subset of the grammar ordered by relative proximity to the root of the
+tree.
 
 \begin{verbatim}
- DoTil     : Action   -> Time         -> PosCommand ;
- SimpleCom : Action   -> PosCommand ;
- Finish    : PosCommand ;
+  fun
+    DoTil     : Action   -> Time         -> PosCommand ;
+    SimpleCom : Action   -> PosCommand ;
+    Finish    : PosCommand ;
 
- ModAction : Action -> AdvPh -> Action ;
+    ModAction : Action -> AdvPh -> Action ;
 
- MkAdvPh     : Way   -> Object -> AdvPh ;
- HowPhrase   : How   -> AdvPh ;
- WherePhrase : Where -> AdvPh ;
+    MkAdvPh     : Way   -> Object -> AdvPh ;
+    HowPhrase   : How   -> AdvPh ;
+    WherePhrase : Where -> AdvPh ;
 
- WhichObject : Determ -> UndetObj -> Object ;
- ObjectPlace : Place  -> Object ;
+    WhichObject : Determ -> UndetObj -> Object ;
+    ObjectPlace : Place  -> Object ;
 
- ModObj : Descript -> UndetObj -> UndetObj ;
+    ModObj : Descript -> UndetObj -> UndetObj ;
 
- InNMin : Determ -> Way -> Time ;
+    InNMin : Determ -> Way -> Time ;
 
- MkNum  : Int -> Determ ;
+    MkNum  : Int -> Determ ;
 
- Quickly : How      ;
- Left    : Where    ;
- Around  : Where    ;
- To      : Way      ;
- After   : Way      ;
- Store   : UndetObj ;
- Traffic : UndetObj ;
- Car     : UndetObj ;
- Person  : UndetObj ;
- London  : Place    ;
- Drive   : Action   ;
- Turn    : Action   ;
- Big     : Descript ;
- A       : Determ   ;
+    Quickly : How      ;
+    Left    : Where    ;
+    Around  : Where    ;
+    To      : Way      ;
+    After   : Way      ;
+    Store   : UndetObj ;
+    Traffic : UndetObj ;
+    Car     : UndetObj ;
+    Person  : UndetObj ;
+    London  : Place    ;
+    Drive   : Action   ;
+    Turn    : Action   ;
+    Big     : Descript ;
+    A       : Determ   ;
 \end{verbatim}
 
-We since the sequence consists of multiple locations, each of which may satisfy multiple
+Since the sequence consists of multiple locations, each of which may satisfy multiple
 conditions, we need to \emph{listify} certain categories. We can include
-judgments like \gray{cat [PosCommand]{n}}.
-GF natively supports list categories, the judgment \gray{cat [C] {n}} can be
+judgments like \gray{cat [PosCommand]\{n\}}.
+GF natively supports list categories, the judgment \gray{cat [C] \{n\}} can be
 desugared to
 
 \begin{verbatim}
@@ -1187,10 +1192,10 @@ desugared to
 \end{verbatim}
 
 This introduces new categories and functions : for instance, one may induce
-lists of positive commands by introducing a list of positive commands which can
-be which, can then be coerced back into a ``single command'' so that the string
-``go to the store and turn left'' can be parsed by adding including the
-following judgments, noting the last two are automatically generated at compile-time :
+lists, \gray{[PosCommand]}, which can then be coerced back into a single
+\gray{PosCommand} so that the string ``go to the store and turn left'' can be
+parsed by adding including the following judgments, noting the last two are
+automatically generated at compile-time :
 
 \begin{verbatim}
   cat [PosCommand]{2};
@@ -1205,55 +1210,55 @@ full sentence structure, which should also be listified. We reveal a parse tree
 example from the GF REPL.
 
 \begin{verbatim}
-p " go to the store , turn left  and stop . Finish ." | tt
-* ConsCommands
-    * OneCommand
-        * CompoundCommand
-            * And
-              ConsPosCommand
-                * SimpleCom
-                    * ModAction
-                        * Go
-                          MkAdvPh
-                            * To
-                              WhichObject
-                                * The
-                                  Store
-                  BasePosCommand
-                    * SimpleCom
-                        * ModAction
-                            * Turn
-                              WherePhrase
-                                * Left
-                      SimpleCom
-                        * Stop
-      BaseCommands
-        * OneCommand
-            * Finish
+  >> p " go to the store , turn left  and stop . Finish ." | tt
+      * ConsCommands
+          * OneCommand
+              * CompoundCommand
+                  * And
+                    ConsPosCommand
+                      * SimpleCom
+                          * ModAction
+                              * Go
+                                MkAdvPh
+                                  * To
+                                    WhichObject
+                                      * The
+                                        Store
+                        BasePosCommand
+                          * SimpleCom
+                              * ModAction
+                                  * Turn
+                                    WherePhrase
+                                      * Left
+                            SimpleCom
+                              * Stop
+            BaseCommands
+              * OneCommand
+                  * Finish
 \end{verbatim}
 
 One should notice that the tree is not subject to arbitrary branching. In fact,
-this is evident that if one starts walking around the exterior of the tree, that
+it is evident that if one starts walking around the exterior of the tree, that
 the leaves consist of expressions which linearize to ``the store'', ``left'',
 ``stop'' and ``Finish.''. Indeed, these are exactly and only the sequence of
 places and conditions one imagines the vehicle going to and satisfying during
 a trip. Our grammar is designed such that the abstract syntax reflects a linear
 ordering of the atomic conditions, and therefore allows for a straightforward
-denotation as a canonical template formula $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$.
+denotation as a LTL formula from the sequencing class, $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$.
 
-\paragraph{Linearization}
+\paragraph{Concrete Sytnax}
 
 While the abstract syntax is a sort of ``neutral syntax'', attempting to specify
 and capture the structure, meaning, and ontology of a given domain, the concrete
-syntax realizes this via different models, manifest as languages : sets of
-strings whose concrete form must cohere to the abstract structure.
+syntax realizes this via different models, manifest as languages. Languages are
+sets of strings whose concrete form must cohere to the abstract structure.
 
 The concrete syntax introduces two complimentary declarations. The first is
-linearization types ``lincat'', which essentially consist of strings, finite
-number types, and products (manifest as records). From this calculus one can
+linearization types \gray{lincat}, which essentially consist of strings, finite
+number types, and products (arising as records). From this calculus one can
 encode coproducts as well, which one has access to as well. The function bodies
-are given via the ``lin'' declaration. There are operator and parameter
-declarations which serve as auxiliary means of prettifying one's code.
+are given via the \gray{lin} declaration. There are additionally operator and
+parameter declarations, \gray{param} and \gray{oper}, respectively, which serve as auxiliary means of modularizing one's code.
 
 We utilize the RGL, with the API guiding most of the implementation details.
 This allows us to focus on any particular domain specific or syntactic
@@ -1265,33 +1270,33 @@ account for number in designing the above abstract syntax if one wants the
 references ``person'' versus ``people'' to be distinguished as atomic elements
 which may be grounded differently.
 
-Importing from the RGL, we show the linearization categories coherent with those above.
+Importing the grammatical categories from the RGL, we show the linearization categories coherent with those abstract categories above.
 
 \begin{verbatim}
-lincat
-  Commands     = Text        ;
-  Polarity     = Pol         ;
-  Command      = Utt         ;
-  [PosCommand] = [Imp]       ;
-  PosCommand   = Imp         ;
-  Conjunct     = Conj        ;
-  Action       = VP          ;
-  Way          = Prep        ;
-  AdvPh        = Adv         ;
-  How          = Adv         ;
-  Where        = Adv         ;
-  Time         = Adv         ;
-  Place        = NP          ;
-  Object       = NP          ;
-  Determ       = Det         ;
-  Number       = Det         ;
-  UndetObj     = CN          ;
-  Descript     = SyntaxEng.A ;
-  Condition    = Cl          ;
+  lincat
+    Commands     = Text        ;
+    Polarity     = Pol         ;
+    Command      = Utt         ;
+    [PosCommand] = [Imp]       ;
+    PosCommand   = Imp         ;
+    Conjunct     = Conj        ;
+    Action       = VP          ;
+    Way          = Prep        ;
+    AdvPh        = Adv         ;
+    How          = Adv         ;
+    Where        = Adv         ;
+    Time         = Adv         ;
+    Place        = NP          ;
+    Object       = NP          ;
+    Determ       = Det         ;
+    Number       = Det         ;
+    UndetObj     = CN          ;
+    Descript     = SyntaxEng.A ;
+    Condition    = Cl          ;
 \end{verbatim}
 
 If one goes into the RGL source, we can see a sample of the linearization
-categories. For instance, in English an common noun \gray{CN} has an inherent
+categories. For instance, in English, a common noun \gray{CN} has an inherent
 gender given by a field \gray{g : Gender}, which is just a ternary parameter
 type with three constructors but may manifest differently
 depending on if its singular or plural, and whether the case argument indicates
@@ -1333,29 +1338,28 @@ morphological possessive.
 \end{verbatim}
 
 The interested reader should reference the source code for this project, or
-other more comprehesive resources across the GF literature [TODO : cite].
+other more comprehesive resources about GF \cite{ranta2009rgl} \cite{ranta2011grammatical}.
 
 \paragraph{Why GF?}
 
-A key insight of GF is approximate a [fragment of] natural language as a
-programming language. This arose from considerations in the distinction between
-syntax and semantics in natural language, and the realization that the abstract
-meaning of an utterance should be preserved when translating between two
-languages. This is of great utility when translating between a CNL and a PL,
-because ideas from compiler literature and programming language research may
-influence how we design a CNL so that they may succinctly express ideas from
+A key insight of GF is that one may approximate a fragment of natural language
+as a programming language. This arose by analyzing the distinction
+between syntax and semantics in natural language, and realizing that the
+abstract meaning of an utterance should be preserved when translating between
+two languages. This is of great utility when translating between a CNL and a PL,
+because ideas from compiler and programming language research may
+influence how we design a CNL which may succinctly express ideas from
 some formal system. One uses basic ideas from denotational semantics when
 translating between ASTs, morphing GF's trees into Haskell objects, which may be
 evaluated down-stream with regards to some abstract system model coupled with
 grounding strategies.
 
 Although there are innumerable syntactic and grammatical theories, many
-equipped with computational tools like parsers, of which other relevant
-literature cited here [TODO, reference] has taken advantage, we suggest using GF
-introduces new perspectives on this problem.
+equipped with computational tools like parsers, we suggest using GF
+introduces these new perspectives on this proble at hand :
 
 \begin{itemize}
-\item Multilingual support from the RGL
+\item Multilingual support by using the RGL
 \item Native support embedding GF ASTs into Haskell GADTS
 \item Separation of abstract (semantic) and concrete (syntactic and
  morphological) considerations
@@ -1369,20 +1373,12 @@ introduces new perspectives on this problem.
 These perspectives reflect our own predispositions aimed at functional
 programming as a verification paradigm.
 
-% We
-% The first,
-% syntactic completeness, means that a construction contains all the syntactic infor-
-% mation necessary to verify its correctness. It says that a term type-checks in the
-% PL case, or some natural language form can be deterministically transformed to
-% a term that does type-check.
-
 \subsubsection{PGF Embedding} \label{PGF}
 
+GF is written in Haskell. The manipulation of GF ASTs as embedded Haskell
+programs whereby one can easily generate LTL formulas.
 
-As GF is written in Haskell, the manipulation of GF ASTs as Haskell programs is
-a natural idea which one may apply to the problem of generating LTL formulas.
-
-An simple example illustrates what we do, the GF grammar can parse a string in
+A simple example illustrates this. The GF grammar can parse a string in
 to an AST, whereby it can be transformed into a Haskell program manipulable such
 that it produces a canonical LTL expression representing our envisioned
 sequencing application.
@@ -1422,7 +1418,7 @@ manipulate GF objects. We describe the algorithm via its recursive behavior.
         (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
 \end{verbatim}
 
-We first start out by normalizing the list structure. A list of commands
+One begins by normalizing the list structure. A list of commands
 \gray{GListCommands} consists of a list of sentences, which may be further
 deconstructed as a list of simple commands. We simply flatten the list of lists,
 building a list of simple commands each of which include the atomic variables to
@@ -1451,13 +1447,12 @@ This materializes in the following functional dependencies :
             getListPosCommands :: GListPosCommand -> [GPosCommand]
 \end{verbatim}
 
-To produce the atoms (which we must account for the simple commands, denoted by
-the \gray{SimpleCom} function [TODO cite GF Grammar] . The constructors are
-appended with a G in Haskell to prevent name clashes. This operation converting
-strings to atoms simply replaces spaces with underscores in the possibly
-modified object (``the woman with the dog'') or condition (specified by the
-instruction ``turn left''). We note that the condition should be ``isLeft'',
-but we forego this detail.
+The constructors are appended with a \gray{G} in Haskell to prevent name
+clashes. To produce the atoms, we must account for the simple commands, denoted
+by the \gray{SimpleCom} function. This operation converting strings to atoms
+simply replaces spaces with underscores in the possibly modified object (``the
+woman with the dog'') or condition (specified by the instruction ``turn left'').
+We note that the condition should be ``isLeft'', but we forego this detail.
 
 One could go through our example with a fine-toothed comb, making both the
 grammar more expressive, and deciding how explicit linguistic instructions
@@ -1467,50 +1462,20 @@ grounding. We suggest this be done after more deliberate conditions and ideas
 about the model of the driver and the environment, in addition to experience
 with an application setting, have been established.
 
-\paragraph{other ideas}
-
-
-warrick
-[TODO : maybe move to GF section]
-
-
 There is still work to be done to actually integrate this corpus with our
-grammar so-as to maximize ratio of parsible expression relative to the size of the
-grammar. We sketch a strategy for this integration.
-
-Once can presumably define a
-threshold to choose the most frequent nouns, adjectives, and verbs too.
-
-One of the difficulties is distinguishing between places and actions, and this
-will become even
-
-However,
-many verbs don't
-
-One challenge for the LTL
-
-
-While the role of large language models is certainly concerned with cutting out
-a lot of the intermediary processing and time with creating natural language
-applications, we don't imagine verifiability, as we see it coming through the
-formal methods community, as feasible without some kind of intermediary logical
-specification of the behavior.
-
-
-% [(["so_RB","you_PRP","are_VBP","moving_VBG","with_IN","the_DT","flow_NN","of_IN","traffic_NN"],311),
-
-
-[Todo : link]
+grammar so-as to maximize ratio of parsible expression relative to the size of
+the grammar.
 
 
 
-
-\subsubsection{PGF Embedding}
-
-simplifying assumptions
-amgbiguity
 
 \subsection{Pipeline Proposal}
+
+%While the role of large language models is certainly concerned with cutting out
+%a lot of the intermediary processing and time with creating natural language
+%applications, we don't imagine verifiability, as we see it coming through the
+%formal methods community, as feasible without some kind of intermediary logical
+%specification of the behavior.
 
 The ``sets of'' clause
 references the inevitable ambiguity of parses even from a big enough parser, even
@@ -1591,7 +1556,7 @@ Mongolian ...'' This is clearly outside the boundary of what the robot control
 language should support, and ideally would be accepted or rejected by the
 computer prior to the commands completion depending if there was a man looking
 at a phone. Our parser currently accepts strings in our primitive canonical
-language, designed in Grammatical Framework (GF), such as :
+language, designed in GF, such as :
 
 \begin{verbatim}
   p "drive to the store , turn right and stop at the dog"

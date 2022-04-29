@@ -2,6 +2,7 @@
  "references"
  (lambda ()
    (LaTeX-add-bibitems
+    "ranta2011grammatical"
     "Sadigh-RSS-16"
     "robustnessMet"
     "Bouyer2018"
