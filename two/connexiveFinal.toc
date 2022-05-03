@@ -1,0 +1,6 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Overview}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Quick Recapitulation}{2}{0}{1}
+\beamer@sectionintoc {2}{Two Exercises}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Negative Normal Form}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Proof in Agda}{13}{0}{2}
