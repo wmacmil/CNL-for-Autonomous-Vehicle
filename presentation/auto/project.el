@@ -14,8 +14,6 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
-    "latex/F"
-    "latex/G"
     "beamer"
     "beamer10"
     "fontenc"

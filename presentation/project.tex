@@ -39,10 +39,11 @@
 \useinnertheme{rounded}
 \useoutertheme{infolines}
 
-%\titlegraphic{\includegraphics[width=25mm]{gottingen1.png}}
-\title{On of syntax and semantics for voice assistants in autonomous vehicles }
+% \titlegraphic{\includegraphics[width=25mm]{pics/aisec.png}}
+\title{On the syntax and semantics of voice assistants in autonomous vehicles}
 \author{Warrick Macmillan}
-\date{$14^{th}$ February 2022}
+\date{$6^{th}$ May 2022}
+
 
 
 \begin{document}
@@ -56,31 +57,121 @@
 
 % \subsection{Quick Recapitulation}
 
-\begin{frame}
-\frametitle{Big Picture}
+% \begin{frame}
+% \include{latex/F}
+% \end{frame}
 
-\begin{exampleblock}{Manifold Ideas}
-This project contains bits and pieces of :
+% \begin{frame}
+% \include{latex/G}
+% \end{frame}
+
+
+
+\begin{frame}
+\frametitle{Motivation}
+
+\begin{exampleblock}{}
+
+  ``Go to the grocery store after the next exit, and then go to fuel station,
+but stop by the fire hydrant so I can take a picture of that crazy sign,
+first.''
+
 \end{exampleblock}
+\pause
+\begin{figure}
+\hspace*{-3mm}%
+\centering
+   \pause
+   \includegraphics[width=1.5cm]{pics/hydrant.png}
+   \pause
+   \includegraphics[width=3cm]{pics/crazy.jpg}
+   % \includegraphics[width=2cm]{pics/exit.jpg}
+   % \includegraphics[width=3cm]{pics/shop.jpeg}
+\end{figure}
+\pause
+\begin{figure}
+\hspace*{-3mm}%
+\centering
+   % \includegraphics[width=1.5cm]{pics/hydrant.png}
+   % \includegraphics[width=3cm]{pics/crazy.jpg}
+   \includegraphics[width=2cm]{pics/exit.jpg}
+   \pause
+   \includegraphics[width=3cm]{pics/shop.jpeg}
+   \pause
+   \includegraphics[width=3cm]{pics/charge.jpg}
+\end{figure}
+  
+\end{frame}
 
-\begin{enumerate}
-\item Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
-\item Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
-\item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
-\end{enumerate}
+\begin{frame}
+\frametitle{Ambiguities}
+
+\begin{center}
+\begin{minipage}{4cm}
+\begin{alertblock}{}
+``Go into the other lane''
+\end{alertblock}
+\end{minipage}
+\end{center}
+\pause
+\begin{figure}
+\hspace*{-3mm}%
+\centering
+    % \includegraphics[width=4cm,angle=45]{Ques}
+    % \includegraphics[angle=45,width=4cm]{Ques}
+   \includegraphics[width=4cm]{pics/singleLane.jpg}
+   \pause
+   \includegraphics[width=6cm]{pics/multipleLane.jpg}
+\end{figure}
+% \pause
+% \begin{figure}
+% \hspace*{-3mm}%
+% \centering
+%    \includegraphics[width=3cm]{pics/multipleLane.jpg}
+% \end{figure}
+  
 \end{frame}
 
 \begin{frame}
 
-\include{latex/F}
+\frametitle{Ambiguities (cont.)}
 
+\begin{alertblock}{}
+``Drive to the store with the dog''
+\end{alertblock}
+\pause
+\begin{figure}
+\hspace*{-3mm}%
+\centering
+   \includegraphics[width=3cm]{pics/personDog.png}
+\end{figure}
+\pause
+\begin{figure}
+\hspace*{-3mm}%
+\centering
+   \includegraphics[width=3cm]{pics/dogCar.png}
+ \end{figure}
+  
 \end{frame}
 
-\begin{frame}
 
-\include{latex/G}
 
-\end{frame}
+% ``Go directly through the crosswalk''
+
+
+% \begin{frame}
+% \frametitle{Big Picture}
+
+% \begin{exampleblock}{Manifold Ideas}
+% This project contains bits and pieces of :
+% \end{exampleblock}
+
+% \begin{enumerate}
+% \item Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
+% \item Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
+% \item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
+% \end{enumerate}
+% \end{frame}
 
 
 
