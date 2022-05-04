@@ -29,7 +29,7 @@
 % \usepackage{enumitem} %personalizza gli elenchi
 % \usepackage{amsthm} %teoremi e definizioni
 \usepackage{tikz-cd}
-
+\usepackage{adjustbox}
 
 \usepackage{multirow}%più righe nella stessa cella in tabella
 \usepackage{multicol}
@@ -219,13 +219,14 @@ subject to constraints on the sets imposed by, for example
 \centering
 
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwABAFEedALZpxAXxBLS6TLnyEUZAIxVajFm1XqQGbHgJEA7KQPV6zVohBmNV7UQBM5Q84mbpzcfIIwOBIQAGbSsgricCpqnlo2KAAs-k7GrhxcvPxCouISAAoAThBoMBU4AJ7J5pZpOsgAbNlGLmwhhcAAshF0aFU1dY0eFprWbWQ+Abm9BWEAqmC4EgAq8DhNqbO+pAs5PcEr-JXVtQ0AtABGdHAwUNu7+9Ne6chZJ91B+VC-AG0BgDAkAGEABYwADGAGthCIPi1DihOn9Ank+mEAJJgbgVOiwvA0SRbGEQCowOTlKpkioombeFB6Y6LM7uFKfVpHADMHIBU1RLOQfPZpyF3JF3yyAsleWFzO+AFYJf9FdLlW1OvKNaYtV82myMoLNc1tUQABykU0Kg2GF4ieBEUDRKpyJBskA4CBIHzc90QT2IPRkH1+0N6QMer1+CNevkx4NerIJ0Mq5MhvSddN6ewgBh0e5gsqWtzCbCwED285A4AAMSYYBJ2kYdIgIiJcjkSIkAihWGie1UFCUQA
-
+\adjustbox{scale=2,center}{%
 \begin{tikzcd}
 \text{Single Example} &                                                                       & \text{Set of Examples}     &               & \text{Single Property} &               & \text{Metaproperty}               &    &    \\
 {} \arrow[rrrrrrr]    &                                                                       &                            &               &                        &               &                                   & {} &    \\
 \text{Unit Test}      & {} \arrow[rd]                                                         & \text{Property-based Test} & {} \arrow[rd] & \text{Model Checking}  & {} \arrow[rd] & \text{Interactive Theorem Prover} &    &    \\
                       &                                                                       & {}                         &               & {}                     &               & {}                                &    &    \\
                       & {} \arrow[rrrrrrr, "\text{Functional Programming Shift}" description] &                            &               &                        &               &                                   &    & {}
+                      }
 \end{tikzcd}
 \end{figure}
 
