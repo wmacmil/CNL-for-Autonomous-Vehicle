@@ -28,6 +28,8 @@
 \usepackage{amssymb}
 % \usepackage{enumitem} %personalizza gli elenchi
 % \usepackage{amsthm} %teoremi e definizioni
+\usepackage{tikz-cd}
+
 
 \usepackage{multirow}%più righe nella stessa cella in tabella
 \usepackage{multicol}
@@ -130,24 +132,108 @@ first.''
 
 \frametitle{Ambiguities (cont.)}
 
+\begin{center}
+\begin{minipage}{6cm}
 \begin{alertblock}{}
-``Drive to the store with the dog''
+``Drive to the person with the dog''
 \end{alertblock}
+\end{minipage}
+\end{center}
+
 \pause
 \begin{figure}
 \hspace*{-3mm}%
 \centering
-   \includegraphics[width=3cm]{pics/personDog.png}
+   \includegraphics[width=5cm]{pics/personDog.png}
    \pause
-   \includegraphics[width=3cm]{pics/dogCar.png}
+   \includegraphics[width=5cm]{pics/dogCar.png}
 \end{figure}
   
 \end{frame}
 
+\begin{frame}
+\frametitle{Simplified Autonomous Vehicle}
+\begin{figure}
+\centering
+\includegraphics[width=100mm]{pics/selfDriving.png}
+\caption{Self-driving car}\label{fig:A1}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Path}
+\begin{figure}
+\centering
+\includegraphics[width=100mm]{pics/diagramTrial1.png}
+\caption{Initial, modified, and actual paths/routes}\label{fig:A2}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Mathematically Ideal Property}
+  $\forall u \in \text{Utt}\; \exists r \in \text{Routes}$
+  such that $\forall r' \in \text{Routes}\; d(u,r) \leq d(u,r')$
+\end{block}
+\pause
+\begin{exampleblock}{}
+where $d$ is some hypothetical metric which should depend on
+\begin{itemize}
+\item Cost
+\item Safety
+\item Legality
+\item Adversaries
+\end{itemize}
+\end{exampleblock}
+
+\pause
+\begin{exampleblock}{}
+and where
+\begin{itemize}
+\item The set of utterances is a set of strings over a standard alphabet
+\item The set of routes is some discretized set of paths in Euclidean 2-space
+\end{itemize}
+subject to constraints on the sets imposed by, for example
+\begin{itemize}
+\item grammars in the case of strings
+\item or physical objects in the case of paths in Euclidean space
+\end{itemize}
+\end{exampleblock}
 
 
-% ``Go directly through the crosswalk''
 
+% \begin{itemize}
+% \item Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
+% \item Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
+% \item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
+% \end{enumerate}
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{figure}
+\centering
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwABAFEedALZpxAXxBLS6TLnyEUZAIxVajFm1XqQGbHgJEA7KQPV6zVohBmNV7UQBM5Q84mbpzcfIIwOBIQAGbSsgricCpqnlo2KAAs-k7GrhxcvPxCouISAAoAThBoMBU4AJ7J5pZpOsgAbNlGLmwhhcAAshF0aFU1dY0eFprWbWQ+Abm9BWEAqmC4EgAq8DhNqbO+pAs5PcEr-JXVtQ0AtABGdHAwUNu7+9Ne6chZJ91B+VC-AG0BgDAkAGEABYwADGAGthCIPi1DihOn9Ank+mEAJJgbgVOiwvA0SRbGEQCowOTlKpkioombeFB6Y6LM7uFKfVpHADMHIBU1RLOQfPZpyF3JF3yyAsleWFzO+AFYJf9FdLlW1OvKNaYtV82myMoLNc1tUQABykU0Kg2GF4ieBEUDRKpyJBskA4CBIHzc90QT2IPRkH1+0N6QMer1+CNevkx4NerIJ0Mq5MhvSddN6ewgBh0e5gsqWtzCbCwED285A4AAMSYYBJ2kYdIgIiJcjkSIkAihWGie1UFCUQA
+
+\begin{tikzcd}
+\text{Single Example} &                                                                       & \text{Set of Examples}     &               & \text{Single Property} &               & \text{Metaproperty}               &    &    \\
+{} \arrow[rrrrrrr]    &                                                                       &                            &               &                        &               &                                   & {} &    \\
+\text{Unit Test}      & {} \arrow[rd]                                                         & \text{Property-based Test} & {} \arrow[rd] & \text{Model Checking}  & {} \arrow[rd] & \text{Interactive Theorem Prover} &    &    \\
+                      &                                                                       & {}                         &               & {}                     &               & {}                                &    &    \\
+                      & {} \arrow[rrrrrrr, "\text{Functional Programming Shift}" description] &                            &               &                        &               &                                   &    & {}
+\end{tikzcd}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ambiguities (cont.)}
+\end{frame}
 
 % \begin{frame}
 % \frametitle{Big Picture}

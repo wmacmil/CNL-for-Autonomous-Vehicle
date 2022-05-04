@@ -33,9 +33,13 @@
     "soul"
     "amsmath"
     "amssymb"
+    "tikz-cd"
     "multirow"
     "multicol"
     "caption"
-    "bussproofs"))
+    "bussproofs")
+   (LaTeX-add-labels
+    "fig:A1"
+    "fig:A2"))
  :latex)
 
