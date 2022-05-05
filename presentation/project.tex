@@ -29,7 +29,8 @@
 % \usepackage{enumitem} %personalizza gli elenchi
 % \usepackage{amsthm} %teoremi e definizioni
 \usepackage{tikz-cd}
-\usepackage{adjustbox}
+% \tikzcdset{scale cd/.style={every label/.append style={scale=#1} }}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1}, cells={nodes={scale=#1}}}}
 
 \usepackage{multirow}%più righe nella stessa cella in tabella
 \usepackage{multicol}
@@ -219,15 +220,36 @@ subject to constraints on the sets imposed by, for example
 \centering
 
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwABAFEedALZpxAXxBLS6TLnyEUZAIxVajFm1XqQGbHgJEA7KQPV6zVohBmNV7UQBM5Q84mbpzcfIIwOBIQAGbSsgricCpqnlo2KAAs-k7GrhxcvPxCouISAAoAThBoMBU4AJ7J5pZpOsgAbNlGLmwhhcAAshF0aFU1dY0eFprWbWQ+Abm9BWEAqmC4EgAq8DhNqbO+pAs5PcEr-JXVtQ0AtABGdHAwUNu7+9Ne6chZJ91B+VC-AG0BgDAkAGEABYwADGAGthCIPi1DihOn9Ank+mEAJJgbgVOiwvA0SRbGEQCowOTlKpkioombeFB6Y6LM7uFKfVpHADMHIBU1RLOQfPZpyF3JF3yyAsleWFzO+AFYJf9FdLlW1OvKNaYtV82myMoLNc1tUQABykU0Kg2GF4ieBEUDRKpyJBskA4CBIHzc90QT2IPRkH1+0N6QMer1+CNevkx4NerIJ0Mq5MhvSddN6ewgBh0e5gsqWtzCbCwED285A4AAMSYYBJ2kYdIgIiJcjkSIkAihWGie1UFCUQA
-\adjustbox{scale=2,center}{%
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwAvp2lde-AKI86AWzTiJICaXSZc+QigCM5KrUYs2nbn0EwcUmbJsQAZg5nWFS1eLgatOth4BEQATCbU9MysiBxO-EKi6o7xwAAKAE4QaDAZOACe-togGEH6RADMEWbRlqkAsnZ0aFk5eYWaxaV6IShkhqZRFrGdgT0GyFUDkeYxIJqmMFAi8ESgLlnKSAAs1DgQSACsEhQSQA
 \begin{tikzcd}
-\text{Single Example} &                                                                       & \text{Set of Examples}     &               & \text{Single Property} &               & \text{Metaproperty}               &    &    \\
-{} \arrow[rrrrrrr]    &                                                                       &                            &               &                        &               &                                   & {} &    \\
-\text{Unit Test}      & {} \arrow[rd]                                                         & \text{Property-based Test} & {} \arrow[rd] & \text{Model Checking}  & {} \arrow[rd] & \text{Interactive Theorem Prover} &    &    \\
-                      &                                                                       & {}                         &               & {}                     &               & {}                                &    &    \\
-                      & {} \arrow[rrrrrrr, "\text{Functional Programming Shift}" description] &                            &               &                        &               &                                   &    & {}
-                      }
+\substack{\text{Single}\\\text{Example}} & \substack{\text{Set}\\\text{of}\\\text{Examples}} & \substack{\text{Single}\\\text{Property}} & \substack{\text{Metaproperty}} \\
+{} \arrow[rrr, "\text{Verifiability}" description] &                                        &                                & {}                  &    \\
+\substack{\text{Unit}\\\text{Testing}} & \substack{\text{Property-based}\\\text{Testing}} & \substack{\text{Model}\\\text{Checking}} & \substack{\text{ITP}} \\
+
+{} \arrow[rd, "FP" description]                    &                                        &                                &                     &    \\
+                                                   & {} \arrow[rrr]                         &                                &                     & {}
+               
 \end{tikzcd}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwAvp2lde-AKI86AWzTiJICaXSZc+QigCM5KrUYs2nbn0EwcUmbJsQAZg5nWFS1eLgatOth4BEQATCbU9MysiBxO-EKi6o7xwAAKAE4QaDAZOACe-togGEH6RADMEWbRlqkAsnZ0aFk5eYWaxaV6IShkhqZRFrGdgT0GyFUDkeYxIKMlusETxhWDs2wL3ctEACykazO1IwGLZb0kpKHrx-MSpjBQIvBEoC5Zykj7IDgQSACs1AYdAARjAGGkluVYsJsLAQEdhnFPMAAGq5LAuLCgrAMXAdU7vCCfRAANmovyQAHZCR8kAAOCl-MlA0HgyHnAwgWFYeGIuYAMTSmgoEiAA
+% \begin{tikzcd}
+% \text{Single}\\\text{Example}                      & \text{Set}\\\text{of}\\\text{Examples} & \text{Single}\\\text{Property} & \text{Metaproperty} &    \\
+% \end{tikzcd}
+
+% % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwAvp2lde-AKI86AWzTiJICaXSZc+QigCM5KrUYs2nbn0EwcUmbJsQAZg5nWFS1eLgatOth4BEQATCbU9MysiBxO-EKi6o7xwAAKAE4QaDAZOACe-togGEH6RADMEWbRlqkAsnZ0aFk5eYWaxaV6IShkhqZRFrGdgT0GyFUDkeYxIKMlusETxhWDs2wL3ctEACykazO1IxKmMFAi8ESgLlnKSPsgOBBIAKzUDHQARjAMaUvlWLCbCwEBHYZxTzAABquSwLiw3ywDFwHQCIFuEHuiAAbNRnkgAOzozHYx4E3Efb6-f5lXogYFYUHguZWOTAABiaX8FAkQA
+% \begin{tikzcd}
+% \substack{\text{Single}\\\text{Example}} & \substack{\text{Set}\\\text{of}\\\text{Examples}} & \substack{\text{Single}\\\text{Property}} & \substack{\text{Metaproperty}} \\
+% % \text{Single}\\\text{Example}                                                           & \text{Set}\\\text{of}\\\text{Examples} & \text{Single}\\\text{Property} & \text{Metaproperty} &    \\
+% {} \arrow[rrr, "\text{Verifiability}" description] \arrow[rdd, "\text{FP}" description] &                                        &                                & {}                  &    \\
+%                                                                                         &                                        &                                &                     &    \\
+%                                                                                         & {} \arrow[rrr]                         &                                &                     & {}
+% \end{tikzcd}
+% % \begin{tikzcd}[scale cd=.4]
+% \text{Single Example} &                                                                       & \text{Set of Examples}     &               & \text{Single Property} &               & \text{Metaproperty}               &    &    \\
+% {} \arrow[rrrrrrr]    &                                                                       &                            &               &                        &               &                                   & {} &    \\
+% \text{Unit Test}      & {} \arrow[rd]                                                         & \text{Property-based Test} & {} \arrow[rd] & \text{Model Checking}  & {} \arrow[rd] & \text{Interactive Theorem Prover} &    &    \\
+%                       &                                                                       & {}                         &               & {}                     &               & {}                                &    &    \\
+%                       & {} \arrow[rrrrrrr, "\text{Functional Programming Shift}" description] &                            &               &                        &               &                                   &    & {}
+% \end{tikzcd}
 \end{figure}
 
 \end{frame}

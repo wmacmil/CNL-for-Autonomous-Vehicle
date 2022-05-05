@@ -34,7 +34,6 @@
     "amsmath"
     "amssymb"
     "tikz-cd"
-    "adjustbox"
     "multirow"
     "multicol"
     "caption"
