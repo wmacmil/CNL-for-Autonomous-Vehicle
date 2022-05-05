@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  29 APR 2022 08:57
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  6 MAY 2022 00:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1472,13 +1472,13 @@ File: pics/two.jpg Graphic file (type bmp)
 File: pics/three.jpg Graphic file (type bmp)
 <pics/three.jpg>
 [25] [26]
-Overfull \hbox (31.30293pt too wide) in paragraph at lines 1644--1647
+Overfull \hbox (31.30293pt too wide) in paragraph at lines 1642--1645
 \TU/DejaVuSerif(0)/m/n/10 find to fine-tune via one of these pre-trained models
 . Please see https://github.com/lil-lab/touchdown 
  []
 
 [27] [28] [29]
-Overfull \hbox (5.75768pt too wide) in paragraph at lines 1879--1882
+Overfull \hbox (5.75768pt too wide) in paragraph at lines 1877--1880
 []\TU/DejaVuSerif(0)/m/n/10 The group builds a trained pipeline that uses an ob
 ject oriented template-instance method-
  []
@@ -1533,36 +1533,36 @@ ge=dflt;!
 \openout4 = `roadmap.ptb'.
 
 [39] [40] [41]
-Overfull \hbox (16.6544pt too wide) in paragraph at lines 3801--3801
+Overfull \hbox (16.6544pt too wide) in paragraph at lines 3799--3799
 \TU/DejaVuSerif(0)/m/it/10 Methodology and Philosophy of Science VI, Proceeding
 s of the Sixth International Congress
  []
 
 
-Overfull \hbox (16.97191pt too wide) in paragraph at lines 3801--3801
+Overfull \hbox (16.97191pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10 Aarne Ranta. \TU/DejaVuSerif(0)/m/it/10 Grammatical
  framework: Programming with multilingual grammars\TU/DejaVuSerif(0)/m/n/10 . V
 ol. 173.
  []
 
 [42]
-Overfull \hbox (0.68735pt too wide) in paragraph at lines 3801--3801
+Overfull \hbox (0.68735pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10 Wilko Schwarting, Javier Alonso-Mora, and Daniela R
 us. “Planning and Decision-Making
  []
 
 
-Overfull \hbox (2.03354pt too wide) in paragraph at lines 3801--3801
+Overfull \hbox (2.03354pt too wide) in paragraph at lines 3799--3799
 []\TU/DejaVuSerif(0)/m/n/10 Christopher Wang et al. “Learning a natural-languag
 e to LTL executable semantic parser
  []
 
 [43] [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3803.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3803.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3801.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3801.
 (./roadmap.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3803.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3803.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3801.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3801.
 
 Package rerunfilecheck Info: File `roadmap.out' has not changed.
 (rerunfilecheck)             Checksum: F4180EFAB23D6A7B10FD6B2578A325C1;2855.
@@ -1573,10 +1573,10 @@ Package logreq Info: Writing requests to 'roadmap.run.xml'.
 Here is how much of TeX's memory you used:
  36680 strings out of 481749
  717604 string characters out of 5935475
- 1426624 words of memory out of 5000000
+ 1426622 words of memory out of 5000000
  53069 multiletter control sequences out of 15000+600000
  540117 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  67i,14n,109p,2135b,4900s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on roadmap.xdv (46 pages, 1436940 bytes).
+Output written on roadmap.xdv (46 pages, 1436912 bytes).

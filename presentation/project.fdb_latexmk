@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1651709347 "project.xdv" "project.pdf" "project" 1651709348
-  "project.xdv" 1651709347 1153920 4acf4b43d74f5e1977d0a536426db64e "xelatex"
+["xdvipdfmx"] 1651792707 "project.xdv" "project.pdf" "project" 1651792708
+  "project.xdv" 1651792707 1444192 6894cc9bfab07fc821beaf1971721e39 "xelatex"
   (generated)
   "project.pdf"
-["xelatex"] 1651709344 "project.tex" "project.xdv" "project" 1651709348
+["xelatex"] 1651792703 "project.tex" "project.xdv" "project" 1651792708
   "/etc/texmf/web2c/texmf.cnf" 1598478810 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -259,6 +259,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1648763752 3380421 d386f3d577e79c572dc44ca88e622667 ""
   "latex/agda.sty" 1651612799 25379 d172c873cc9290d6a780ea9676fcead4 ""
+  "pics/WithArrow.png" 1651792666 106640 033cc2f96f696dd562b1f698af3fd6bf ""
   "pics/charge.jpg" 1651620229 17059 b22bc77b2d834be8b545d8089fc4f9e0 ""
   "pics/crazy.jpg" 1651615317 23786 25bb4e3cf5df6a0cbfdb262a65435d07 ""
   "pics/diagramTrial1.png" 1651703420 65871 cbb66f522e170f8cf6a8957204df7a45 ""
@@ -273,11 +274,13 @@
   "pics/singleLane.jpg" 1651619918 62701 2537188658d2dd55965a47c500499ddf ""
   "pics/three.jpg" 1644917866 2831292 070a4cc667713025bda6e46aa24c98bc ""
   "pics/two.jpg" 1644917866 3546758 aa913192548cfe60bd6f3365956833ff ""
-  "project.aux" 1651709347 5385 62b14d443cde9c9408d351d437b28727 "xelatex"
-  "project.nav" 1651709347 2677 069f65c7bb653f6712826ffcac6986be "xelatex"
-  "project.out" 1651709347 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
-  "project.tex" 1651709342 17627 d86b55b7b770a124a83b3bc7003b17bf ""
-  "project.vrb" 1651709347 400 3e6645e1fbae6b66667d87f1f1547b0d "xelatex"
+  "pics/wholeAST.png" 1651790320 71999 77095c24cc88e14f1e0be79556be199d ""
+  "pics/zoomedScreenshot.png" 1651790386 45485 c91724af05d729e421cc63cb5aec1777 ""
+  "project.aux" 1651792707 6470 5ebd147eab31bbdf3535b06111ddc3be "xelatex"
+  "project.nav" 1651792707 3328 d787e7bd156bd06d9c39930dc158257b "xelatex"
+  "project.out" 1651792707 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
+  "project.tex" 1651792695 17381 3750c78c81a9ce0ed333d9d317de97e2 ""
+  "project.vrb" 1651792707 400 3e6645e1fbae6b66667d87f1f1547b0d "xelatex"
   (generated)
   "project.aux"
   "project.log"

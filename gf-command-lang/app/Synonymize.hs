@@ -189,6 +189,7 @@ femalePersonIsWoman gp = composOp femalePersonIsWoman gp
 
 
 directions = "turn left at the cafe , go to the store and turn left then turn right and turn right and go straight . go and turn left at the woman , turn right and stop . Finish ."
+directions2 = " go to the store , turn left  and stop at the woman with the dog . go to the bridge . Finish ." 
   
 simple = "go to the store and turn left . Finish ."
 
@@ -196,6 +197,8 @@ simple = "go to the store and turn left . Finish ."
 -- F (Meet (Atom "the_cafe") (F (Meet (Atom "the_store") (X (Meet (Atom "left") (X (Meet (Atom "right") (X (Meet (Atom "right") (X (Meet (Atom "straight") (F (Meet (Atom "go") (F (Meet (Atom "the_woman") (X (Meet (Atom "right") (F (Meet (Atom "stop") (G (Atom "FINISHED")))))))))))))))))))))
 -- >>> applySem simple
 -- F (Meet (Atom "the_store") (X (Meet (Atom "left") (G (Atom "FINISHED")))))
+-- >>> applySem directions2
+-- F (Meet (Atom "the_store") (X (Meet (Atom "left") (F (Meet (Atom "the_woman_with_the_dog") (G (Atom "FINISHED")))))))
 
 goToTheWoman = "go to the woman then go to the female person . stop at the woman ."
 bigCafe = GWhichObject GThe (GModObj GBig GCafe)

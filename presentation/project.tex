@@ -230,36 +230,154 @@ subject to constraints on the sets imposed by, for example
                                                    & {} \arrow[rrr]                         &                                &                     & {}
                
 \end{tikzcd}
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwAvp2lde-AKI86AWzTiJICaXSZc+QigCM5KrUYs2nbn0EwcUmbJsQAZg5nWFS1eLgatOth4BEQATCbU9MysiBxO-EKi6o7xwAAKAE4QaDAZOACe-togGEH6RADMEWbRlqkAsnZ0aFk5eYWaxaV6IShkhqZRFrGdgT0GyFUDkeYxIKMlusETxhWDs2wL3ctEACykazO1IwGLZb0kpKHrx-MSpjBQIvBEoC5Zykj7IDgQSACs1AYdAARjAGGkluVYsJsLAQEdhnFPMAAGq5LAuLCgrAMXAdU7vCCfRAANmovyQAHZCR8kAAOCl-MlA0HgyHnAwgWFYeGIuYAMTSmgoEiAA
-% \begin{tikzcd}
-% \text{Single}\\\text{Example}                      & \text{Set}\\\text{of}\\\text{Examples} & \text{Single}\\\text{Property} & \text{Metaproperty} &    \\
-% \end{tikzcd}
-
-% % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12cYAPHYAMpYwAcwYwAvp2lde-AKI86AWzTiJICaXSZc+QigCM5KrUYs2nbn0EwcUmbJsQAZg5nWFS1eLgatOth4BEQATCbU9MysiBxO-EKi6o7xwAAKAE4QaDAZOACe-togGEH6RADMEWbRlqkAsnZ0aFk5eYWaxaV6IShkhqZRFrGdgT0GyFUDkeYxIKMlusETxhWDs2wL3ctEACykazO1IxKmMFAi8ESgLlnKSPsgOBBIAKzUDHQARjAMaUvlWLCbCwEBHYZxTzAABquSwLiw3ywDFwHQCIFuEHuiAAbNRnkgAOzozHYx4E3Efb6-f5lXogYFYUHguZWOTAABiaX8FAkQA
-% \begin{tikzcd}
-% \substack{\text{Single}\\\text{Example}} & \substack{\text{Set}\\\text{of}\\\text{Examples}} & \substack{\text{Single}\\\text{Property}} & \substack{\text{Metaproperty}} \\
-% % \text{Single}\\\text{Example}                                                           & \text{Set}\\\text{of}\\\text{Examples} & \text{Single}\\\text{Property} & \text{Metaproperty} &    \\
-% {} \arrow[rrr, "\text{Verifiability}" description] \arrow[rdd, "\text{FP}" description] &                                        &                                & {}                  &    \\
-%                                                                                         &                                        &                                &                     &    \\
-%                                                                                         & {} \arrow[rrr]                         &                                &                     & {}
-% \end{tikzcd}
-% % \begin{tikzcd}[scale cd=.4]
-% \text{Single Example} &                                                                       & \text{Set of Examples}     &               & \text{Single Property} &               & \text{Metaproperty}               &    &    \\
-% {} \arrow[rrrrrrr]    &                                                                       &                            &               &                        &               &                                   & {} &    \\
-% \text{Unit Test}      & {} \arrow[rd]                                                         & \text{Property-based Test} & {} \arrow[rd] & \text{Model Checking}  & {} \arrow[rd] & \text{Interactive Theorem Prover} &    &    \\
-%                       &                                                                       & {}                         &               & {}                     &               & {}                                &    &    \\
-%                       & {} \arrow[rrrrrrr, "\text{Functional Programming Shift}" description] &                            &               &                        &               &                                   &    & {}
-% \end{tikzcd}
 \end{figure}
 
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Ambiguities (cont.)}
+\frametitle{Main Idea}
+
+Functional Programming is all about composition of higher order functions
+
+Break down system into composable components, each of which can operate under
+different verification conditions
+
+
 \end{frame}
 
+\begin{frame}
+\frametitle{Trade-offs}
+\begin{itemize}[<+->]
+\item Depth versus breadth
+\item Specificity and generality
+\item Formality and formalizability
+\item Verifiability and validity
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ontological Categories}
+\begin{verbatim}
+  cat
+    PosCommand   ; -- go to the store
+    Place        ; -- the store
+    Time         ; -- in 5 minutes
+    Action       ; -- drive
+    Way          ; -- to
+    How          ; -- quickly
+    Where        ; -- left
+    AdvPh        ; -- to the store
+    UndetObj     ; -- store
+    Determ       ; -- the
+    Object       ; -- the store
+    Number       ; -- a
+    Conjunct     ; -- and
+    Condition    ; -- there is a museum
+    Descript     ; -- big
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\fontsize{9pt}{10pt}\selectfont
+\begin{exampleblock}{}
+go to the store, turn left and stop at the woman with the dog. go to the bridge. finish.
+\end{exampleblock}
+
+\begin{figure}
+
+\centering
+\includegraphics[width=90mm]{pics/wholeAST.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\fontsize{9pt}{10pt}\selectfont
+\begin{exampleblock}{}
+go to the store, turn left and stop at the woman with the dog. go to the bridge. finish.
+\end{exampleblock}
+
+\begin{figure}
+
+\centering
+\includegraphics[width=90mm]{pics/WithArrow.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\fontsize{9pt}{10pt}\selectfont
+\begin{exampleblock}{}
+go to the store, turn left and stop at the woman with the dog. go to the bridge.
+finish.
+\end{exampleblock}
+
+\begin{figure}
+
+\centering
+\includegraphics[width=50mm]{pics/zoomedScreenshot.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{GF AST}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{GF AST}
+\begin{verbatim}
+WhichObject
+  * The
+    Store
+
+WherePhrase
+  * Left
+
+PhraseModObj
+  * Woman
+    MkAdjPh
+      * With
+        WhichObject
+          * The
+            Dog
+
+WhichObject
+  * The
+    Bridge
+
+* OneCommand
+    * Finish
+\end{verbatim}
+\end{frame}
+
+
 % \begin{frame}
-% \frametitle{Big Picture}
+% \frametitle{HS LTL AST}
+% \begin{verbatim}
+%   F (Meet
+%       (Atom "the_store")
+%       (F (Meet
+%           (Atom "turn_left")
+%           (F (Meet
+%                (Atom "the_woman_with_the_dog")
+%                (F (Meet
+%                     (Atom "the_bridge")
+%                     (G (Atom "FINISHED")))))))))
+% \end{verbatim}
+% \end{frame}
+
+
+                            % 2 ModAction
+                            %     * Stop
+                            %       MkAdvPh
+                            %         * At
+                            %           WhichObject
+                            %             * The
+                            %               Woman
+                            %   MkAdvPh
+                            %     * With
+                            %       WhichObject
+                            %         * The
+                            %           Dog
 
 % \begin{exampleblock}{Manifold Ideas}
 % This project contains bits and pieces of :

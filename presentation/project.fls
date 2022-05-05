@@ -511,6 +511,15 @@ INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
+INPUT pics/wholeAST.png
+INPUT pics/WithArrow.png
+INPUT pics/zoomedScreenshot.png
+OUTPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+OUTPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
