@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1651801436 "project.xdv" "project.pdf" "project" 1651801436
-  "project.xdv" 1651801436 2427176 8ba7b39cbbc42b3aaec5495af240c036 "xelatex"
+["xdvipdfmx"] 1651806124 "project.xdv" "project.pdf" "project" 1651806125
+  "project.xdv" 1651806124 2427448 b7cfd8ad1169bbae826ccff0b9a1aa24 "xelatex"
   (generated)
   "project.pdf"
-["xelatex"] 1651801430 "project.tex" "project.xdv" "project" 1651801436
+["xelatex"] 1651806118 "project.tex" "project.xdv" "project" 1651806125
   "/etc/texmf/web2c/texmf.cnf" 1598478810 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -260,13 +260,16 @@
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1648763752 3380421 d386f3d577e79c572dc44ca88e622667 ""
   "latex/agda.sty" 1651612799 25379 d172c873cc9290d6a780ea9676fcead4 ""
   "pics/WithArrow.png" 1651792666 106640 033cc2f96f696dd562b1f698af3fd6bf ""
+  "pics/aisec.png" 1651805618 170393 8d971fc445e210783db70c085aca5005 ""
   "pics/charge.jpg" 1651620229 17059 b22bc77b2d834be8b545d8089fc4f9e0 ""
   "pics/circledZoom.png" 1651795027 76525 e563aa3fb41b68ea75c742418be3b09e ""
   "pics/crazy.jpg" 1651615317 23786 25bb4e3cf5df6a0cbfdb262a65435d07 ""
   "pics/diagramTrial1.png" 1651703420 65871 cbb66f522e170f8cf6a8957204df7a45 ""
   "pics/dogCar.png" 1651619715 37461 959c94f367e3e7f5b1b15e32950e88bd ""
   "pics/exit.jpg" 1651616467 17117 2fa30e8c24e55e18ad6972ade745ec2a ""
+  "pics/hw.png" 1651806060 37071 247fa1856a767af766f8ad85a2893353 ""
   "pics/hydrant.png" 1651615423 4835 203a99feb6df8db3a474185e92c09c51 ""
+  "pics/laiv.png" 1651805765 55413 37b8756b50719846fafcea7e0f06bc1c ""
   "pics/multipleLane.jpg" 1651619729 32782 5bc7cfa936ed4120682adc25e6d4603a ""
   "pics/one.jpg" 1644917866 2944603 6dfb15224972162171d3cd5de1193613 ""
   "pics/personDog.png" 1651619707 4159 41ded5c09ef3a47e9bc09b09a75dfd10 ""
@@ -277,11 +280,11 @@
   "pics/two.jpg" 1644917866 3546758 aa913192548cfe60bd6f3365956833ff ""
   "pics/wholeAST.png" 1651790320 71999 77095c24cc88e14f1e0be79556be199d ""
   "pics/zoomedScreenshot.png" 1651790386 45485 c91724af05d729e421cc63cb5aec1777 ""
-  "project.aux" 1651801436 6780 0b0d809f56ba5d53824af7966c9e17ba "xelatex"
-  "project.nav" 1651801436 3514 37758ceb0ee9dbf7c456ff88505a88f7 "xelatex"
-  "project.out" 1651801436 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
-  "project.tex" 1651801422 18450 4fba32d2528f8c5de5c70a3ef48568e4 ""
-  "project.vrb" 1651801435 469 6de28bdf05a52b96de703f6e9eb9cd02 "xelatex"
+  "project.aux" 1651806124 6780 0b0d809f56ba5d53824af7966c9e17ba "xelatex"
+  "project.nav" 1651806124 3514 37758ceb0ee9dbf7c456ff88505a88f7 "xelatex"
+  "project.out" 1651806124 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
+  "project.tex" 1651806116 18711 f64b21c6f5b34ce26de582e8016cee4e ""
+  "project.vrb" 1651806123 469 6de28bdf05a52b96de703f6e9eb9cd02 "xelatex"
   (generated)
   "project.aux"
   "project.log"

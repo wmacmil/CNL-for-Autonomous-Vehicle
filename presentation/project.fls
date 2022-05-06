@@ -455,6 +455,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
+INPUT pics/hw.png
+INPUT pics/aisec.png
+INPUT pics/laiv.png
 OUTPUT project.xdv
 INPUT pics/hydrant.png
 INPUT pics/crazy.jpg
