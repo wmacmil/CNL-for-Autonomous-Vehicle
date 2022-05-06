@@ -401,6 +401,8 @@ INPUT project.aux
 INPUT project.aux
 INPUT latex/Syntax.aux
 INPUT latex/Syntax.aux
+INPUT latex/Syntaxx.aux
+INPUT latex/Syntaxx.aux
 INPUT latex/Model.aux
 INPUT latex/Model.aux
 INPUT latex/LTL-seq.aux
@@ -409,6 +411,8 @@ INPUT latex/LTL-seqq.aux
 INPUT latex/LTL-seqq.aux
 INPUT latex/LTL-seqqq.aux
 INPUT latex/LTL-seqqq.aux
+INPUT latex/LTL-seqqqq.aux
+INPUT latex/LTL-seqqqq.aux
 OUTPUT project.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -534,6 +538,8 @@ INPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
@@ -564,9 +570,21 @@ INPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 OUTPUT latex/Syntax.aux
 INPUT latex/Syntax.tex
 INPUT latex/Syntax.tex
+OUTPUT project.ptb
+INPUT project.ptb
+OUTPUT latex/Syntaxx.aux
+INPUT latex/Syntaxx.tex
+INPUT latex/Syntaxx.tex
 OUTPUT project.ptb
 INPUT project.ptb
 OUTPUT latex/Model.aux
@@ -591,6 +609,11 @@ OUTPUT project.ptb
 INPUT project.ptb
 OUTPUT project.ptb
 INPUT project.ptb
+OUTPUT latex/LTL-seqqqq.aux
+INPUT latex/LTL-seqqqq.tex
+INPUT latex/LTL-seqqqq.tex
+OUTPUT project.ptb
+INPUT project.ptb
 INPUT pics/one.jpg
 INPUT pics/three.jpg
 OUTPUT project.nav
@@ -599,6 +622,8 @@ OUTPUT project.snm
 INPUT project.aux
 INPUT latex/Syntax.aux
 INPUT latex/Syntax.aux
+INPUT latex/Syntaxx.aux
+INPUT latex/Syntaxx.aux
 INPUT latex/Model.aux
 INPUT latex/Model.aux
 INPUT latex/LTL-seq.aux
@@ -607,5 +632,7 @@ INPUT latex/LTL-seqq.aux
 INPUT latex/LTL-seqq.aux
 INPUT latex/LTL-seqqq.aux
 INPUT latex/LTL-seqqq.aux
+INPUT latex/LTL-seqqqq.aux
+INPUT latex/LTL-seqqqq.aux
 INPUT ./project.out
 INPUT ./project.out

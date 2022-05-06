@@ -15,10 +15,12 @@
    (TeX-run-style-hooks
     "latex2e"
     "latex/Syntax"
+    "latex/Syntaxx"
     "latex/Model"
     "latex/LTL-seq"
     "latex/LTL-seqq"
     "latex/LTL-seqqq"
+    "latex/LTL-seqqqq"
     "beamer"
     "beamer10"
     "fontenc"

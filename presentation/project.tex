@@ -39,6 +39,9 @@
 \newunicodechar{∈}{$\in$}
 \newunicodechar{∀}{$\forall$}
 \newunicodechar{≤}{$\leq$}
+\newunicodechar{⊎}{$\uplus$}
+\newunicodechar{≡}{$\equiv$}
+\newunicodechar{∷}{$::$}
 
 %πψ
 
@@ -329,8 +332,8 @@ This project contains bits and pieces of :
 \item Semantic considerations
 \item Coarse meaning space
 \item Tree formation
-\item Categories cat (basic types)
-\item Named function fun of arbitrary arities over them
+\item Categories, declared \emph{cat}, which are abstract types
+\item Named functions, declared \emph{fun}, of arbitrary arities over them
 \end{itemize}
 \end{frame}
 
@@ -354,6 +357,7 @@ By adding record types and natural number types to concrete categories we gain e
 \item ``interactive visual navigation environment based on Google Street View''
 \item Intended for ``resolving the spatial descriptions''
 \item Grounded navigation instructions
+\item Only using text
 \end{itemize}
 \end{block}
 \pause
@@ -421,7 +425,9 @@ fun
 \begin{frame}[fragile]
 \frametitle{Base Ingredients}
 
+\begin{exampleblock}{}
 These represent the tree leaves to be grounded!
+\end{exampleblock}
 
 \begin{verbatim}
 fun
@@ -585,26 +591,31 @@ normalizeList ::  GListCommands -> GListCommands
 
 
 \begin{frame}
-\frametitle{Linear Temporal Logic}
-\begin{itemize}
-\item Modal logic (temporal modality)
-\item Allows one to reason about sequential actions
-\item Verification for robotics systems
-\item Objective in reinforcement learning
-\item Other temporal logics (Signal TL, Computation Tree Logic, ...)
-\item Decidable 
+\frametitle{Temporal Logic}
+\begin{itemize}[<+->]
+\item Linear Temporal Logic (LTL)
+\item Decidable model construction and decidable model checking
+\item Many related temporal logics : CTL, MTL, STL, PrSTL, ...
+\item Grounding of atomic propositions is central
 \end{itemize}
+\end{frame}
 
-\begin{block}{Complexity (and expressivity)}
-$\text{Propositional Logic} < \text{Temporal Logic} <_{undecidable} \text{First Order Logic}$
+\begin{frame}
+\begin{block}{Temporal Operators}
+\begin{itemize}[<+->]
+\item Unary temporal operators representing
+\begin{itemize}[<+->]
+\item the next state $X$
+\item the existence of a future state $F$
+\item the notion of henceforth, or forever $G$
+\end{itemize}
+\item Binary temporal operators representing the inclusive states in between two events $U$
+\end{itemize}
 \end{block}
-
-\begin{exampleblock}{Temporal Operators}
-\begin{itemize}
-\item $X \phi$ : in the next state, phi holds
-\item $\diamond \phi$ : exists a future state such that $\phi$ holds ($F \phi$)
-\item $\square \phi$ : $\phi$ holds for every future state ($G \phi$)
-\end{itemize}
+\pause
+\begin{exampleblock}{}
+To ensure that every location $l_i$ eventually follows its predecessor
+$l_{i-1}$, we target the following a class of formulas of the form $F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$
 \end{exampleblock}
 
 \end{frame}
@@ -613,6 +624,13 @@ $\text{Propositional Logic} < \text{Temporal Logic} <_{undecidable} \text{First 
 
 \begin{frame}
 \include{latex/Syntax}
+\end{frame}
+
+\begin{frame}
+\begin{exampleblock}{}
+$F\; (l_1 \wedge F\; (l_{2} \wedge ... F\; l_{n}))$
+\end{exampleblock}
+\include{latex/Syntaxx}
 \end{frame}
 
 \begin{frame}
@@ -630,6 +648,10 @@ $\text{Propositional Logic} < \text{Temporal Logic} <_{undecidable} \text{First 
 
 \begin{frame}
 \include{latex/LTL-seqqq}
+\end{frame}
+
+\begin{frame}
+\include{latex/LTL-seqqqq}
 \end{frame}
 
 \section{Conclusion}
