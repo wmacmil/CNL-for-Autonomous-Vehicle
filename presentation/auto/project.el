@@ -15,6 +15,8 @@
    (TeX-run-style-hooks
     "latex2e"
     "latex/Syntax"
+    "latex/Model"
+    "latex/LTL-seq"
     "beamer"
     "beamer10"
     "fontenc"

@@ -401,6 +401,10 @@ INPUT project.aux
 INPUT project.aux
 INPUT latex/Syntax.aux
 INPUT latex/Syntax.aux
+INPUT latex/Model.aux
+INPUT latex/Model.aux
+INPUT latex/LTL-seq.aux
+INPUT latex/LTL-seq.aux
 OUTPUT project.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -464,6 +468,16 @@ OUTPUT project.xdv
 OUTPUT latex/Syntax.aux
 INPUT latex/Syntax.tex
 INPUT latex/Syntax.tex
+OUTPUT project.ptb
+INPUT project.ptb
+OUTPUT latex/Model.aux
+INPUT latex/Model.tex
+INPUT latex/Model.tex
+OUTPUT project.ptb
+INPUT project.ptb
+OUTPUT latex/LTL-seq.aux
+INPUT latex/LTL-seq.tex
+INPUT latex/LTL-seq.tex
 OUTPUT project.ptb
 INPUT project.ptb
 INPUT pics/hydrant.png
@@ -560,5 +574,9 @@ OUTPUT project.snm
 INPUT project.aux
 INPUT latex/Syntax.aux
 INPUT latex/Syntax.aux
+INPUT latex/Model.aux
+INPUT latex/Model.aux
+INPUT latex/LTL-seq.aux
+INPUT latex/LTL-seq.aux
 INPUT ./project.out
 INPUT ./project.out
