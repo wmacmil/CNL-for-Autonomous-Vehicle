@@ -180,23 +180,26 @@ first.''
 \pause
 \begin{exampleblock}{}
 where $d$ is some hypothetical metric which should depend on
-\begin{itemize}
+\pause
+\begin{itemize}[<+->]
 \item Cost
 \item Safety
 \item Legality
 \item Adversaries
 \end{itemize}
 \end{exampleblock}
-
 \pause
 \begin{exampleblock}{}
 and where
-\begin{itemize}
+\pause
+\begin{itemize}[<+->]
 \item The set of utterances is a set of strings over a standard alphabet
 \item The set of routes is some discretized set of paths in Euclidean 2-space
 \end{itemize}
+\pause
 subject to constraints on the sets imposed by, for example
-\begin{itemize}
+\pause
+\begin{itemize}[<+->]
 \item grammars in the case of strings
 \item or physical objects in the case of paths in Euclidean space
 \end{itemize}
@@ -247,14 +250,57 @@ different verification conditions
 \end{frame}
 
 \begin{frame}
-\frametitle{Trade-offs}
+\frametitle{Grammatical Framework}
 \begin{itemize}[<+->]
-\item Depth versus breadth
-\item Specificity and generality
-\item Formality and formalizability
-\item Verifiability and validity
+\item Multilingual support
+\item Standard Libarary : Resource Grammar Library (RGL)
+\item Embedding in Haskell (as GADTs) : Portable Grammar Format (PGF)
+\item Simple types, functional programming
+\item ``Parallel multiple CFGs''
+\item Chomsky Hierarchy : $\text{CFG} < \text{PMCFG} < \text{Context Sensitive Grammar}$
+\item Separation of abstract (semantic and syntactic) and concrete (syntactic and
+ morphological) considerations
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Abstract Syntax}
+\begin{itemize}[<+->]
+\item Semantic considerations
+\item Coarse meaning space
+\item Tree formation
+\item Categories cat (basic types)
+\item Named function fun of arbitrary arities over them
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Concrete Syntax}
+\begin{itemize}[<+->]
+\item Lexical Details
+\item Function body, how strings are formed
+\item 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{TOUCHDOWN Dataset}
+
+
+\begin{verbatim}
+([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
+([(["left"],228),(["came"],59),(["made"],47),(["started"],44)],["VBD"])
+([(["going"],1684),(["facing"],939),(["moving"],849),(["passing"],617)],["VBG"])
+([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced"],263)],["VBN"])
+([(["are"],3554),(["'re"],1185),(["reach"],1100),(["get"],770)],["VBP"])
+([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],["VBZ"])
+\end{verbatim}
+
+n-grams : the 9-gram ``so you are moving with the flow of traffic'' occurs 311
+
+\end{frame}
+
+
 
 \begin{frame}[fragile]
 \frametitle{Ontological Categories}
@@ -277,6 +323,49 @@ different verification conditions
     Descript     ; -- big
 \end{verbatim}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{GF Functions}
+\begin{verbatim}
+fun
+  -- Explicit Temporality
+  DoTil     : Action -> Time -> PosCommand ; go in one minute
+
+  -- Modified action
+  ModAction : Action -> AdvPh -> Action ; -- go to the store
+
+  -- Adverbial Phrases
+  MkAdvPh     : Way   -> Object -> AdvPh ; -- to the store
+
+  -- Noun Phrases
+  WhichObject : Determ -> UndetObj -> Object ; -- the red dog
+
+  -- Modified Noun
+  ModObj : Descript -> UndetObj -> UndetObj ; -- black dog
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Base Ingredients}
+
+These represent the tree leaves to be grounded!
+
+\begin{verbatim}
+fun
+  Quickly : How      ;
+  Left    : Where    ;
+  To      : Way      ;
+  After   : Way      ;
+  Store   : UndetObj ;
+  Traffic : UndetObj ;
+  London  : Place    ;
+  Drive   : Action   ;
+  Turn    : Action   ;
+  Big     : Descript ;
+  A       : Determ   ;
+\end{verbatim}
+\end{frame}
+
 
 \begin{frame}
 \fontsize{9pt}{10pt}\selectfont
@@ -304,6 +393,11 @@ go to the store, turn left and stop at the woman with the dog. go to the bridge.
 \end{figure}
 \end{frame}
 
+% the more "kinds" of branching there are, the more complicated
+% can the different kinds of branching interact : this syntactic question
+% manifests as a semantic one
+
+
 \begin{frame}
 \fontsize{9pt}{10pt}\selectfont
 \begin{exampleblock}{}
@@ -319,65 +413,84 @@ finish.
 \end{frame}
 
 \begin{frame}
-\frametitle{GF AST}
+\fontsize{9pt}{10pt}\selectfont
+\begin{exampleblock}{}
+go to the store, turn left and stop at the woman with the dog. go to the bridge.
+finish.
+\end{exampleblock}
+
+\begin{figure}
+
+\centering
+\includegraphics[width=50mm]{pics/circledZoom.png}
+\end{figure}
 \end{frame}
 
+
 \begin{frame}[fragile]
-\frametitle{GF AST}
+\begin{exampleblock}{Alternative Interpretation}
+go (to the store, turn left and stop (at the woman)) with the dog. 
+\end{exampleblock}
+\begin{alertblock}{}
+Need a temporal until operator, $U$, to construct a semantically justifiable interpretation
+\end{alertblock}
 \begin{verbatim}
-WhichObject
-  * The
-    Store
-
-WherePhrase
-  * Left
-
-PhraseModObj
-  * Woman
-    MkAdjPh
-      * With
+ModAction
+  * Stop
+    MkAdvPh
+      * At
         WhichObject
           * The
-            Dog
-
-WhichObject
-  * The
-    Bridge
-
-* OneCommand
-    * Finish
+            Woman
+MkAdvPh
+  * With
+    WhichObject
+      * The
+        Dog
 \end{verbatim}
 \end{frame}
 
 
-% \begin{frame}
-% \frametitle{HS LTL AST}
-% \begin{verbatim}
-%   F (Meet
-%       (Atom "the_store")
-%       (F (Meet
-%           (Atom "turn_left")
-%           (F (Meet
-%                (Atom "the_woman_with_the_dog")
-%                (F (Meet
-%                     (Atom "the_bridge")
-%                     (G (Atom "FINISHED")))))))))
-% \end{verbatim}
-% \end{frame}
+\begin{frame}[fragile]
+\frametitle{Haskell LTL}
+
+\fontsize{9pt}{10pt}\selectfont
+\begin{exampleblock}{}
+go to the store, turn left and stop at the woman with the dog. go to the bridge.
+finish.
+\end{exampleblock}
+
+\begin{verbatim}
+  F (Meet
+      (Atom "the_store")
+      (F (Meet
+          (Atom "turn_left")
+          (F (Meet
+               (Atom "the_woman_with_the_dog")
+               (F (Meet
+                    (Atom "the_bridge")
+                    (G (Atom "FINISHED")))))))))
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Lists under the hood}
+\begin{verbatim}
+  normalizeList ::  GListCommands -> GListCommands
+  where
+  normalizeNestedLists :: GListCommands -> GListPosCommand
+    where
+      normalizeListPosCommand :: GListPosCommand -> GListPosCommand
+        where
+          unSentence :: [GCommands] -> [GPosCommand]
+          flattenSublist :: GPosCommand -> [GPosCommand]
+          where
+            getListPosCommands :: GListPosCommand -> [GPosCommand]
+\end{verbatim}
+\end{frame}
 
 
-                            % 2 ModAction
-                            %     * Stop
-                            %       MkAdvPh
-                            %         * At
-                            %           WhichObject
-                            %             * The
-                            %               Woman
-                            %   MkAdvPh
-                            %     * With
-                            %       WhichObject
-                            %         * The
-                            %           Dog
+
 
 % \begin{exampleblock}{Manifold Ideas}
 % This project contains bits and pieces of :
@@ -410,16 +523,6 @@ Goal : Design a controlled natural language which is
 
 \end{frame}
 
-\begin{frame}
-
-\frametitle{Trade-offs}
-
-\begin{itemize}
-\item Breadth : Wide coverage, usable by non-experts (where ML comes in)
-\item Depth   : Well-behaved, verifiable (where FP comes in)
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}
 \frametitle{Ideal Pipeline}
@@ -447,118 +550,45 @@ Goal : Design a controlled natural language which is
 \end{equation} 
 \end{frame}
 
-
-\begin{frame}[fragile]
-\frametitle{Example AST}
-``go to the store and turn left'' $\mapsto$
-\begin{verbatim}
-CompoundCommand
-    * And
-      BasePosCommand
-        * SimpleCom
-            * ModAction
-                * Go
-                  MkAdvPh
-                    * To
-                      WhichObject
-                        * The
-                          Store
-          SimpleCom
-            * ModAction
-                * Turn
-                  WherePhrase (Left)
-\end{verbatim}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Example Cont..}
-${\llbracket  \text{``go to the store and turn left . Finish .''}_{AST} \rrbracket_{Haskell}}$
-\begin{verbatim}
-F
-  (Meet
-    (Atom "the_store") 
-    (X 
-      (Meet 
-        (Atom "left") 
-        (G (Atom "FINISHED")))))
-\end{verbatim}
-
-\begin{exampleblock}{Interpretation}
-  
-Eventually be in a state where you are at the store. Directly after, you are in
-a state where you are left. From thereon, you are forever finished.
-
-\end{exampleblock}
-\end{frame}
-
-
 \begin{frame}
-\frametitle{Functional Programming}
-\begin{block}{}
-Types, and type-checking is a fundamental way to seperate the process of
-programming into two phases
-\begin{itemize}
-\item Static  : Specification, Types 
-\item Dynamic : Implentation, Programs 
+\frametitle{Trade-offs}
+\begin{itemize}[<+->]
+\item Depth versus breadth
+\begin{itemize}[<+->]
+\item Breadth : Wide coverage, usable by non-experts (where ML comes in)
+\item Depth   : Well-behaved, verifiable (where FP comes in)
 \end{itemize}
-\end{block}
-
-% \begin{exampleblock}{}
-\begin{itemize}
-\item Correct-by-construction mentality - ``verification technique''
-\item Constraints are baked into user-defined types.
-\item Specification guides implementation. Functional
-  programmers spend almost all their time thinking about types.
-\item Focus energy on high-level (abstract) details
-\item It is convenient to implement programming languages
-(i.e. write interpreters and compilers)
+\item Specificity and generality
+\item Formality and formalizability
+\item Verifiability and validity
 \end{itemize}
-% \end{exampleblock}
 \end{frame}
 
-\begin{frame}
 
-\frametitle{Grammatical Framework}
+% \begin{frame}
+% \frametitle{Functional Programming}
+% \begin{block}{}
+% Types, and type-checking is a fundamental way to seperate the process of
+% programming into two phases
+% \begin{itemize}
+% \item Static  : Specification, Types 
+% \item Dynamic : Implentation, Programs 
+% \end{itemize}
+% \end{block}
+% % \begin{exampleblock}{}
+% \begin{itemize}
+% \item Correct-by-construction mentality - ``verification technique''
+% \item Constraints are baked into user-defined types.
+% \item Specification guides implementation. Functional
+%   programmers spend almost all their time thinking about types.
+% \item Focus energy on high-level (abstract) details
+% \item It is convenient to implement programming languages
+% (i.e. write interpreters and compilers)
+% \end{itemize}
+% % \end{exampleblock}
+% \end{frame}
 
-\begin{itemize}
-\item Functional programming language
-\item Implementing natural language parsers and linearizes
-\item Separation of abstract syntax and concrete syntax.
-\item Intended for translation, multilingual support
-\item One designs a grammar, Parallel Multiple CFGs (PMCFG)
-\item Chomsky Hierarchy : $\text{CFG} < \text{PMCFG} < \text{Context Sensitive Grammar}$
-\item Standard Libarary : Resource Grammar Library (RGL)
-\item Embedding in Haskell : Portable Grammar Format (PGF)
-\end{itemize}
 
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{GF Example}
-
-BNFC (traditional treatment of fixity)
-
-\begin{verbatim}
-Lam. Exp  ::= "\\" [PTele] "->" Exp ;
-App. Exp2 ::= Exp2 Exp3 ;
-\end{verbatim}
-
-Abstract :
-
-\begin{verbatim}
-fun
-  Lam : [Tele] -> Exp -> Exp ;
-  App : Exp -> Exp -> Exp ;
-\end{verbatim}
-
-Concrete :
-
-\begin{verbatim}
-lin
-  Lam pt e = mkPrec 0 ("\\" ++ pt ++ "->" ++ usePrec 0 e) ;
-  App = infixl 2 "" ;
-\end{verbatim}
-\end{frame}
 
 
 \begin{frame}
