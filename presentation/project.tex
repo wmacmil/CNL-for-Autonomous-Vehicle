@@ -18,7 +18,7 @@
 
 \usepackage{newunicodechar}
 \newunicodechar{→}{\ensuremath{\mathnormal\to}}
-\newunicodechar{ℕ}{\ensuremath{\mathnormal\bN}}
+% \newunicodechar{ℕ}{\ensuremath{\mathnormal\bN}}
 \newunicodechar{ℓ}{\ensuremath{\mathnormal\ell}}
 \newunicodechar{↪}{\ensuremath{\mathnormal\hookrightarrow}}
 \newunicodechar{⟶}{\ensuremath{\mathnormal\hookrightarrow}}
@@ -28,12 +28,19 @@
 \newunicodechar{⊨}{\ensuremath{\vDash}}
 \newunicodechar{⊧}{$\models$}
 
+\newunicodechar{ℕ}{$N$}
 \newunicodechar{ϕ}{$\phi$}
 \newunicodechar{∨}{$\lor$}
 \newunicodechar{∧}{$\land$}
 \newunicodechar{⇒}{$\Rightarrow$}
-\newunicodechar{⇒}{$\Rightarrow$}
+\newunicodechar{π}{$\pi$}
+\newunicodechar{ψ}{$\psi$}
+\newunicodechar{Σ}{$\Sigma$}
+\newunicodechar{∈}{$\in$}
+\newunicodechar{∀}{$\forall$}
+\newunicodechar{≤}{$\leq$}
 
+%πψ
 
 \newunicodechar{⊥}{$\bot$}
 \newunicodechar{⊤}{$\top$}
@@ -85,20 +92,6 @@
 
 
 % \subsection{Quick Recapitulation}
-
-\begin{frame}
-\include{latex/Syntax}
-\end{frame}
-
-\begin{frame}
-\include{latex/Model}
-\end{frame}
-
-\begin{frame}
-\include{latex/LTL-seq}
-\end{frame}
-% ab
-
 
 \begin{frame}
 \frametitle{Motivation}
@@ -291,10 +284,11 @@ subject to constraints on the sets imposed by, for example
 \begin{exampleblock}{More Specifically}
 This project contains bits and pieces of :
 \end{exampleblock}
-\begin{enumerate}
+\pause
+\begin{enumerate}[<+->]
 \item Functional Programming Languages : GF (Grammatical Framework), Haskell, Agda
 \item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
-\item Tools : Grammars, Decidable logics for motion planning and verification
+\item Tools : Grammars and logical implementations for motion planning and verification
 \end{enumerate}
 \end{frame}
 
@@ -321,7 +315,7 @@ This project contains bits and pieces of :
 \item Standard Libarary : Resource Grammar Library (RGL)
 \item Embedding in Haskell (as GADTs) : Portable Grammar Format (PGF)
 \item Simple types, functional programming
-\item ``Parallel multiple CFGs''
+\item \emph{Parallel Multiple CFGs} (PMCFG)
 \item Chomsky Hierarchy : $\text{CFG} < \text{PMCFG} < \text{Context Sensitive Grammar}$
 \item Separation of abstract (semantic and syntactic) and concrete (syntactic and
  morphological) considerations
@@ -600,6 +594,30 @@ $\text{Propositional Logic} < \text{Temporal Logic} <_{undecidable} \text{First 
 
 \end{frame}
 
+\section{Agda}
+
+\begin{frame}
+\include{latex/Syntax}
+\end{frame}
+
+\begin{frame}
+\include{latex/Model}
+\end{frame}
+
+\begin{frame}
+\include{latex/LTL-seq}
+\end{frame}
+% abc
+
+\begin{frame}
+\include{latex/LTL-seqq}
+\end{frame}
+
+\begin{frame}
+\include{latex/LTL-seqqq}
+\end{frame}
+
+
 
 \begin{frame}
 \begin{exampleblock}{}
@@ -687,7 +705,6 @@ Integrate their technique and code with our parser and dataset
 
 \begin{frame}
 \frametitle{Future}
-
 \begin{itemize} 
 \item Expand parser itself
 \item Work on semantics , more expressive logic, etc
@@ -695,7 +712,6 @@ Integrate their technique and code with our parser and dataset
 \item Better data set?
 \item Working on a draft document, with references, of everything shown here.
 \end{itemize} 
-
 \end{frame}
 
 \begin{frame}

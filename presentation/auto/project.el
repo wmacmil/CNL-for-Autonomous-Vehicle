@@ -17,6 +17,8 @@
     "latex/Syntax"
     "latex/Model"
     "latex/LTL-seq"
+    "latex/LTL-seqq"
+    "latex/LTL-seqqq"
     "beamer"
     "beamer10"
     "fontenc"

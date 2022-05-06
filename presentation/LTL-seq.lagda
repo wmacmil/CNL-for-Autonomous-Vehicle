@@ -20,6 +20,8 @@ open import Relation.Binary hiding (_⇒_)
 module Transition (Atom : Set) (M : 𝑀 Atom) where
   open Syntax Atom public
   open 𝑀 M
+\end{code}
+\begin{code}
   alwaysSteps : (sₙ : ℕ → State) → Set
   alwaysSteps s = ∀ i → s i ⟶ s (suc i)
 
@@ -41,10 +43,9 @@ module Transition (Atom : Set) (M : 𝑀 Atom) where
   path-i : ℕ → Path → Path
   path-i n = nTimes n tailPath
 \end{code}
-\begin{code}
-  mutual
-\end{code}
 \begin{code}[hide]
+  mutual
+
     future : Path → ϕ → Set
     future π ψ = Σ[ i ∈ ℕ ] (path-i i π) ⊧ ψ
 
@@ -63,7 +64,8 @@ module Transition (Atom : Set) (M : 𝑀 Atom) where
 
     until : Path → ϕ → ϕ → Set
     until π ψ ψ₁ = Σ[ i ∈ ℕ ] (path-i i π) ⊧ ψ₁ × upTil i π ψ
-
+\end{code}
+\begin{code}[hide]
     -- Definition 3.6
     _⊧_ : Path → ϕ → Set
     π ⊧ ⊥        = ⊥'
@@ -79,6 +81,8 @@ module Transition (Atom : Set) (M : 𝑀 Atom) where
     π ⊧ (ψ U ψ₁) = justUntil π ψ ψ₁
     π ⊧ (ψ W ψ₁) = justUntil π ψ ψ₁ ⊎ global π ψ
     π ⊧ (ψ R ψ₁) = until π ψ₁ ψ ⊎ global π ψ
+\end{code}
+\begin{code}[hide]
 
 
 module Models (Atom : Set) where
