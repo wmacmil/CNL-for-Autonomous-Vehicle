@@ -524,6 +524,16 @@ INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
@@ -582,7 +592,6 @@ INPUT project.ptb
 OUTPUT project.ptb
 INPUT project.ptb
 INPUT pics/one.jpg
-INPUT pics/two.jpg
 INPUT pics/three.jpg
 OUTPUT project.nav
 OUTPUT project.toc

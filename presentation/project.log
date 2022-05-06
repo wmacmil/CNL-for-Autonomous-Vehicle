@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  6 MAY 2022 11:55
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  6 MAY 2022 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1955,21 +1955,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [57
 
 ]
-\openout4 = `project.vrb'.
-
-(./project.vrb
-Overfull \hbox (35.70465pt too wide) in paragraph at lines 7--7
-[]\TU/lmtt/m/n/9 ([(["going"],1684),(["facing"],939),(["moving"],849),(["passin
-g"],617)],["VBG"])[] 
- []
-
-
-Overfull \hbox (30.97966pt too wide) in paragraph at lines 8--8
-[]\TU/lmtt/m/n/9 ([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced
-"],263)],["VBN"])[] 
- []
-
-)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1980,7 +1965,52 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 \openout4 = `project.vrb'.
 
 (./project.vrb)
-Overfull \vbox (9.09676pt too high) detected at line 384
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[59
+
+] (./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[60
+
+] (./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[61
+
+] (./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[62
+
+] (./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[63
+
+] (./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[64
+
+]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
+Overfull \vbox (9.09676pt too high) detected at line 398
  []
 
 
@@ -1988,7 +2018,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[59
+[65
 
 ]
 \openout4 = `project.vrb'.
@@ -2016,101 +2046,23 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[60
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[61
-
-]
-File: pics/wholeAST.png Graphic file (type bmp)
-<pics/wholeAST.png>
-
-Overfull \vbox (5.4435pt too high) detected at line 440
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[62
-
-]
-File: pics/WithArrow.png Graphic file (type bmp)
-<pics/WithArrow.png>
-
-Overfull \vbox (5.4435pt too high) detected at line 453
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[63
-
-]
-File: pics/zoomedScreenshot.png Graphic file (type bmp)
-<pics/zoomedScreenshot.png>
-
-Overfull \vbox (4.57608pt too high) detected at line 472
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[64
-
-]
-File: pics/circledZoom.png Graphic file (type bmp)
-<pics/circledZoom.png>
-
-Overfull \vbox (4.57608pt too high) detected at line 486
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[65
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
-Overfull \vbox (2.43716pt too high) detected at line 512
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [66
 
-] (./project.vrb)
-Overfull \vbox (2.43716pt too high) detected at line 512
- []
+]
+\openout4 = `project.vrb'.
 
-
+(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [67
 
-] (./project.vrb)
-Overfull \vbox (2.43716pt too high) detected at line 512
+]
+File: pics/wholeAST.png Graphic file (type bmp)
+<pics/wholeAST.png>
+
+Overfull \vbox (5.4435pt too high) detected at line 454
  []
 
 
@@ -2121,9 +2073,13 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [68
 
 ]
-\openout4 = `project.vrb'.
+File: pics/WithArrow.png Graphic file (type bmp)
+<pics/WithArrow.png>
 
-(./project.vrb)
+Overfull \vbox (5.4435pt too high) detected at line 467
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2131,6 +2087,70 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [69
 
 ]
+File: pics/zoomedScreenshot.png Graphic file (type bmp)
+<pics/zoomedScreenshot.png>
+
+Overfull \vbox (4.57608pt too high) detected at line 486
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[70
+
+]
+File: pics/circledZoom.png Graphic file (type bmp)
+<pics/circledZoom.png>
+
+Overfull \vbox (4.57608pt too high) detected at line 500
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[71
+
+]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 526
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[72
+
+] (./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 526
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[73
+
+] (./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 526
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[74
+
+]
 \openout4 = `project.vrb'.
 
 (./project.vrb)
@@ -2138,28 +2158,38 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[70
+[75
+
+]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[76
 
 ] (./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[71
+[77
 
 ] (./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[72
+[78
 
 ]
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[73
+[79
 
 ]
 \openout2 = `latex/Syntax.aux'.
@@ -2172,7 +2202,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[74
+[80
 
 
 
@@ -2187,7 +2217,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[75
+[81
 
 
 
@@ -2201,7 +2231,7 @@ Missing character: There is no ₙ in font [lmsans10-oblique]:mapping=tex-text;!
 Missing character: There is no ₙ in font [lmsans10-oblique]:mapping=tex-text;!
 Missing character: There is no ₙ in font [lmsans10-oblique]:mapping=tex-text;!
 )
-Overfull \vbox (12.68704pt too high) detected at line 609
+Overfull \vbox (12.68704pt too high) detected at line 624
  []
 
 
@@ -2209,7 +2239,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[76
+[82
 
 
 
@@ -2236,7 +2266,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[77
+[83
 
 
 
@@ -2297,59 +2327,17 @@ Missing character: There is no ≡ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ≡ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ≡ in font [lmsans10-regular]:mapping=tex-text;!
 )
-Overfull \vbox (11.28705pt too high) detected at line 618
+Overfull \vbox (11.28705pt too high) detected at line 633
  []
 
 
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[78
-
-
-
-]
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[79
-
-]
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[80
-
-]
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[81
-
-]
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[82
-
-]
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[83
-
-]
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [84
+
+
 
 ]
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
@@ -2366,18 +2354,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [86
 
 ]
-File: pics/one.jpg Graphic file (type bmp)
-<pics/one.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 687--687
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 687
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2385,18 +2361,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [87
 
 ]
-File: pics/two.jpg Graphic file (type bmp)
-<pics/two.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 695--695
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 695
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2404,18 +2368,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [88
 
 ]
-File: pics/three.jpg Graphic file (type bmp)
-<pics/three.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 704--704
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 704
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2437,6 +2389,142 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [91
 
 ]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[92
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[93
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[94
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[95
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[96
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[97
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[98
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[99
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[100
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[101
+
+]
+File: pics/one.jpg Graphic file (type bmp)
+<pics/one.jpg>
+
+Overfull \hbox (13.36418pt too wide) in paragraph at lines 687--687
+ | [] 
+ []
+
+
+Overfull \vbox (46.28949pt too high) detected at line 687
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[102
+
+]
+File: pics/three.jpg Graphic file (type bmp)
+<pics/three.jpg>
+
+Overfull \hbox (13.36418pt too wide) in paragraph at lines 695--695
+ | [] 
+ []
+
+
+Overfull \vbox (46.28949pt too high) detected at line 695
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[103
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[104
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[105
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[106
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[107
+
+]
 \tf@nav=\write7
 \openout7 = `project.nav'.
 
@@ -2446,26 +2534,26 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 \tf@snm=\write9
 \openout9 = `project.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 709.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 709.
 (./project.aux (./latex/Syntax.aux) (./latex/Model.aux) (./latex/LTL-seq.aux) (
 ./latex/LTL-seqq.aux) (./latex/LTL-seqqq.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 721.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 709.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 709.
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: F9E4B06065222142B1655875911E027B;82.
+(rerunfilecheck)             Checksum: 14A7CA87849C06E734FDEFB6C09B8218;228.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.43pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 35542 strings out of 481749
- 702193 string characters out of 5935475
- 1174569 words of memory out of 5000000
- 51722 multiletter control sequences out of 15000+600000
- 542288 words of font info for 89 fonts, out of 8000000 for 9000
+ 35550 strings out of 481749
+ 702277 string characters out of 5935475
+ 1174903 words of memory out of 5000000
+ 51719 multiletter control sequences out of 15000+600000
+ 542296 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,28n,109p,798b,1119s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.xdv (91 pages, 3018872 bytes).
+Output written on project.xdv (107 pages, 3589480 bytes).
