@@ -399,6 +399,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.s
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 INPUT project.aux
 INPUT project.aux
+INPUT latex/Syntax.aux
+INPUT latex/Syntax.aux
 OUTPUT project.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -459,6 +461,11 @@ INPUT pics/hw.png
 INPUT pics/aisec.png
 INPUT pics/laiv.png
 OUTPUT project.xdv
+OUTPUT latex/Syntax.aux
+INPUT latex/Syntax.tex
+INPUT latex/Syntax.tex
+OUTPUT project.ptb
+INPUT project.ptb
 INPUT pics/hydrant.png
 INPUT pics/crazy.jpg
 INPUT pics/exit.jpg
@@ -530,10 +537,18 @@ INPUT pics/circledZoom.png
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
 OUTPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
 OUTPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
+INPUT project.vrb
 INPUT project.vrb
 INPUT project.vrb
 INPUT pics/one.jpg
@@ -543,5 +558,7 @@ OUTPUT project.nav
 OUTPUT project.toc
 OUTPUT project.snm
 INPUT project.aux
+INPUT latex/Syntax.aux
+INPUT latex/Syntax.aux
 INPUT ./project.out
 INPUT ./project.out

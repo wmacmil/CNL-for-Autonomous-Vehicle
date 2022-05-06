@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  6 MAY 2022 05:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.3.31)  6 MAY 2022 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,29 +1244,30 @@ live/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texliv
 e/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty)) (/usr/share/texl
 ive/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty) (/usr/share/texlive
 /texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/t
-exmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (./project.aux)
+exmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (./project.aux (./lat
+ex/Syntax.aux))
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1303,7 +1304,7 @@ LaTeX Font Info:    ... okay on input line 55.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box137
-Package hyperref Info: Link coloring OFF on input line 55.
+Package hyperref Info: Link coloring OFF on input line 75.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1313,9 +1314,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count369
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
 (./project.out) (./project.out)
 \@outlinefile=\write6
 \openout6 = `project.out'.
@@ -1346,19 +1347,19 @@ ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  TU/XITSMath(1)/m/n --> TU/lmr/m/n on input line 55.
+(Font)                  TU/XITSMath(1)/m/n --> TU/lmr/m/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 55.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 55.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 55.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 55.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 55.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 55.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 75.
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
@@ -1380,51 +1381,51 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (./project.nav)
-Overfull \hbox (69.77533pt too wide) in paragraph at lines 55--55
+Overfull \hbox (69.77533pt too wide) in paragraph at lines 75--75
  [][][][]  
  []
 
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
 5.
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/XITSMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 55.
+(Font)              scaled to size 6.00064pt on input line 75.
 LaTeX Font Info:    Font shape `TU/XITSMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 55.
+(Font)              scaled to size 5.00053pt on input line 75.
 LaTeX Font Info:    Font shape `TU/XITSMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 55.
+(Font)              scaled to size 5.99936pt on input line 75.
 LaTeX Font Info:    Font shape `TU/XITSMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+(Font)              scaled to size 4.99947pt on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
 5.
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Font shape `TU/XITSMath(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 59.
+(Font)              scaled to size 10.95116pt on input line 79.
 LaTeX Font Info:    Font shape `TU/XITSMath(2)/m/n' will be
-(Font)              scaled to size 8.21336pt on input line 59.
+(Font)              scaled to size 8.21336pt on input line 79.
 LaTeX Font Info:    Font shape `TU/XITSMath(2)/m/n' will be
-(Font)              scaled to size 6.5707pt on input line 59.
+(Font)              scaled to size 6.5707pt on input line 79.
 LaTeX Font Info:    Font shape `TU/XITSMath(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 59.
+(Font)              scaled to size 10.94882pt on input line 79.
 LaTeX Font Info:    Font shape `TU/XITSMath(3)/m/n' will be
-(Font)              scaled to size 8.21161pt on input line 59.
+(Font)              scaled to size 8.21161pt on input line 79.
 LaTeX Font Info:    Font shape `TU/XITSMath(3)/m/n' will be
-(Font)              scaled to size 6.5693pt on input line 59.
+(Font)              scaled to size 6.5693pt on input line 79.
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <6.57> not available
-(Font)              size <7> substituted on input line 59.
+(Font)              size <7> substituted on input line 79.
 
 File: pics/hw.png Graphic file (type bmp)
 <pics/hw.png>
@@ -1440,22 +1441,21 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [1
 
 ]
-File: pics/hydrant.png Graphic file (type bmp)
-<pics/hydrant.png>
-File: pics/crazy.jpg Graphic file (type bmp)
-<pics/crazy.jpg>
-File: pics/exit.jpg Graphic file (type bmp)
-<pics/exit.jpg>
-File: pics/shop.jpeg Graphic file (type bmp)
-<pics/shop.jpeg>
-File: pics/charge.jpg Graphic file (type bmp)
-<pics/charge.jpg>
+\openout2 = `latex/Syntax.aux'.
 
+(./latex/Syntax.tex
+\openout5 = `project.ptb'.
+
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 68.
+)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [2
+
+
 
 ]
 File: pics/hydrant.png Graphic file (type bmp)
@@ -1566,10 +1566,16 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [8
 
 ]
-File: pics/singleLane.jpg Graphic file (type bmp)
-<pics/singleLane.jpg>
-File: pics/multipleLane.jpg Graphic file (type bmp)
-<pics/multipleLane.jpg>
+File: pics/hydrant.png Graphic file (type bmp)
+<pics/hydrant.png>
+File: pics/crazy.jpg Graphic file (type bmp)
+<pics/crazy.jpg>
+File: pics/exit.jpg Graphic file (type bmp)
+<pics/exit.jpg>
+File: pics/shop.jpeg Graphic file (type bmp)
+<pics/shop.jpeg>
+File: pics/charge.jpg Graphic file (type bmp)
+<pics/charge.jpg>
 
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
@@ -1602,10 +1608,10 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [11
 
 ]
-File: pics/personDog.png Graphic file (type bmp)
-<pics/personDog.png>
-File: pics/dogCar.png Graphic file (type bmp)
-<pics/dogCar.png>
+File: pics/singleLane.jpg Graphic file (type bmp)
+<pics/singleLane.jpg>
+File: pics/multipleLane.jpg Graphic file (type bmp)
+<pics/multipleLane.jpg>
 
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
@@ -1638,8 +1644,10 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [14
 
 ]
-File: pics/selfDriving.png Graphic file (type bmp)
-<pics/selfDriving.png>
+File: pics/personDog.png Graphic file (type bmp)
+<pics/personDog.png>
+File: pics/dogCar.png Graphic file (type bmp)
+<pics/dogCar.png>
 
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
@@ -1648,8 +1656,8 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [15
 
 ]
-File: pics/diagramTrial1.png Graphic file (type bmp)
-<pics/diagramTrial1.png>
+File: pics/selfDriving.png Graphic file (type bmp)
+<pics/selfDriving.png>
 
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
@@ -1658,6 +1666,9 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [16
 
 ]
+File: pics/diagramTrial1.png Graphic file (type bmp)
+<pics/diagramTrial1.png>
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1756,9 +1767,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [30
 
 ]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1766,6 +1774,9 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [31
 
 ]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1773,6 +1784,9 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [32
 
 ]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 279.
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1878,45 +1892,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [47
 
 ]
-\openout4 = `project.vrb'.
-
-(./project.vrb
-Overfull \hbox (60.11705pt too wide) in paragraph at lines 5--5
-[]\TU/lmtt/m/n/10.95 ([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],41
-54)],["VB"])[] 
- []
-
-
-Overfull \hbox (65.8658pt too wide) in paragraph at lines 6--6
-[]\TU/lmtt/m/n/10.95 ([(["left"],228),(["came"],59),(["made"],47),(["started"],
-44)],["VBD"])[] 
- []
-
-
-Overfull \hbox (117.60454pt too wide) in paragraph at lines 7--7
-[]\TU/lmtt/m/n/10.95 ([(["going"],1684),(["facing"],939),(["moving"],849),(["pa
-ssing"],617)],["VBG"])[] 
- []
-
-
-Overfull \hbox (111.85579pt too wide) in paragraph at lines 8--8
-[]\TU/lmtt/m/n/10.95 ([(["left"],1733),(["parked"],616),(["painted"],307),(["fe
-nced"],263)],["VBN"])[] 
- []
-
-
-Overfull \hbox (71.61455pt too wide) in paragraph at lines 9--9
-[]\TU/lmtt/m/n/10.95 ([(["are"],3554),(["'re"],1185),(["reach"],1100),(["get"],
-770)],["VBP"])[] 
- []
-
-
-Overfull \hbox (37.12206pt too wide) in paragraph at lines 10--10
-[]\TU/lmtt/m/n/10.95 ([(["is"],4919),(["has"],795),(["'s"],471),(["ends"],93)],
-["VBZ"])[] 
- []
-
-)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1924,10 +1899,81 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [48
 
 ]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[49
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[50
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[51
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[52
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[53
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[54
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[55
+
+]
+\openout4 = `project.vrb'.
+
+(./project.vrb
+Overfull \hbox (35.70465pt too wide) in paragraph at lines 7--7
+[]\TU/lmtt/m/n/9 ([(["going"],1684),(["facing"],939),(["moving"],849),(["passin
+g"],617)],["VBG"])[] 
+ []
+
+
+Overfull \hbox (30.97966pt too wide) in paragraph at lines 8--8
+[]\TU/lmtt/m/n/9 ([(["left"],1733),(["parked"],616),(["painted"],307),(["fenced
+"],263)],["VBN"])[] 
+ []
+
+)
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[56
+
+]
 \openout4 = `project.vrb'.
 
 (./project.vrb)
-Overfull \vbox (9.09676pt too high) detected at line 328
+Overfull \vbox (9.09676pt too high) detected at line 383
  []
 
 
@@ -1935,7 +1981,7 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[49
+[57
 
 ]
 \openout4 = `project.vrb'.
@@ -1963,121 +2009,12 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[50
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[51
-
-]
-File: pics/wholeAST.png Graphic file (type bmp)
-<pics/wholeAST.png>
-
-Overfull \vbox (5.4435pt too high) detected at line 384
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[52
-
-]
-File: pics/WithArrow.png Graphic file (type bmp)
-<pics/WithArrow.png>
-
-Overfull \vbox (5.4435pt too high) detected at line 397
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[53
-
-]
-File: pics/zoomedScreenshot.png Graphic file (type bmp)
-<pics/zoomedScreenshot.png>
-
-Overfull \vbox (4.57608pt too high) detected at line 416
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[54
-
-]
-File: pics/circledZoom.png Graphic file (type bmp)
-<pics/circledZoom.png>
-
-Overfull \vbox (4.57608pt too high) detected at line 430
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[55
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
-Overfull \vbox (2.43716pt too high) detected at line 454
- []
-
-
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[56
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb)
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[57
-
-]
-\openout4 = `project.vrb'.
-
-(./project.vrb
-Overfull \hbox (42.8708pt too wide) in paragraph at lines 7--7
-[]      \TU/lmtt/m/n/10.95 normalizeListPosCommand :: GListPosCommand -> GListP
-osCommand[] 
- []
-
-
-Overfull \hbox (37.12206pt too wide) in paragraph at lines 12--12
-[]            \TU/lmtt/m/n/10.95 getListPosCommands :: GListPosCommand -> [GPos
-Command][] 
- []
-
-)
-Overfull \hbox (69.77533pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [58
 
 ]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2085,6 +2022,13 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [59
 
 ]
+File: pics/wholeAST.png Graphic file (type bmp)
+<pics/wholeAST.png>
+
+Overfull \vbox (5.4435pt too high) detected at line 439
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2092,6 +2036,13 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [60
 
 ]
+File: pics/WithArrow.png Graphic file (type bmp)
+<pics/WithArrow.png>
+
+Overfull \vbox (5.4435pt too high) detected at line 452
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2099,6 +2050,13 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [61
 
 ]
+File: pics/zoomedScreenshot.png Graphic file (type bmp)
+<pics/zoomedScreenshot.png>
+
+Overfull \vbox (4.57608pt too high) detected at line 471
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2106,6 +2064,13 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [62
 
 ]
+File: pics/circledZoom.png Graphic file (type bmp)
+<pics/circledZoom.png>
+
+Overfull \vbox (4.57608pt too high) detected at line 485
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2113,20 +2078,35 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [63
 
 ]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 511
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [64
 
-]
+] (./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 511
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [65
 
-]
+] (./project.vrb)
+Overfull \vbox (2.43716pt too high) detected at line 511
+ []
+
+
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2134,6 +2114,9 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [66
 
 ]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2141,20 +2124,23 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [67
 
 ]
+\openout4 = `project.vrb'.
+
+(./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [68
 
-]
+] (./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [69
 
-]
+] (./project.vrb)
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2162,18 +2148,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [70
 
 ]
-File: pics/one.jpg Graphic file (type bmp)
-<pics/one.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 676--676
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 676
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2181,18 +2155,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [71
 
 ]
-File: pics/two.jpg Graphic file (type bmp)
-<pics/two.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 684--684
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 684
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2200,18 +2162,6 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [72
 
 ]
-File: pics/three.jpg Graphic file (type bmp)
-<pics/three.jpg>
-
-Overfull \hbox (13.36418pt too wide) in paragraph at lines 693--693
- | [] 
- []
-
-
-Overfull \vbox (46.28949pt too high) detected at line 693
- []
-
-
 Overfull \hbox (69.77533pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2226,6 +2176,112 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 [74
 
 ]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[75
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[76
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[77
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[78
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[79
+
+]
+File: pics/one.jpg Graphic file (type bmp)
+<pics/one.jpg>
+
+Overfull \hbox (13.36418pt too wide) in paragraph at lines 662--662
+ | [] 
+ []
+
+
+Overfull \vbox (46.28949pt too high) detected at line 662
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[80
+
+]
+File: pics/two.jpg Graphic file (type bmp)
+<pics/two.jpg>
+
+Overfull \hbox (13.36418pt too wide) in paragraph at lines 670--670
+ | [] 
+ []
+
+
+Overfull \vbox (46.28949pt too high) detected at line 670
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[81
+
+]
+File: pics/three.jpg Graphic file (type bmp)
+<pics/three.jpg>
+
+Overfull \hbox (13.36418pt too wide) in paragraph at lines 679--679
+ | [] 
+ []
+
+
+Overfull \vbox (46.28949pt too high) detected at line 679
+ []
+
+
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[82
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[83
+
+]
+Overfull \hbox (69.77533pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[84
+
+]
 \tf@nav=\write7
 \openout7 = `project.nav'.
 
@@ -2235,11 +2291,11 @@ Overfull \hbox (69.77533pt too wide) has occurred while \output is active
 \tf@snm=\write9
 \openout9 = `project.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 708.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 708.
-(./project.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 708.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 708.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 698.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 698.
+(./project.aux (./latex/Syntax.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 698.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 698.
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: DB4907BAECED9E6EC4AFD693504A7296;43.
 
@@ -2248,12 +2304,12 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 35352 strings out of 481749
- 699079 string characters out of 5935475
- 1134611 words of memory out of 5000000
- 51579 multiletter control sequences out of 15000+600000
- 542272 words of font info for 87 fonts, out of 8000000 for 9000
+ 35438 strings out of 481749
+ 700635 string characters out of 5935475
+ 1134612 words of memory out of 5000000
+ 51646 multiletter control sequences out of 15000+600000
+ 542288 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,26n,109p,798b,1117s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,28n,109p,798b,1119s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.xdv (74 pages, 2427448 bytes).
+Output written on project.xdv (84 pages, 2769652 bytes).

@@ -14,6 +14,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
+    "latex/Syntax"
     "beamer"
     "beamer10"
     "fontenc"
@@ -38,6 +39,8 @@
     "multicol"
     "caption"
     "bussproofs")
+   (TeX-add-symbols
+    '("mathcolorbox" 2))
    (LaTeX-add-labels
     "fig:A1"
     "fig:A2"))

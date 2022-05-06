@@ -1435,16 +1435,16 @@ structure into positive commands, where the flattening actually takes place.
 This materializes in the following functional dependencies :
 
 \begin{verbatim}
-  normalizeList ::  GListCommands -> GListCommands
+normalizeList ::  GListCommands -> GListCommands
   where
-  normalizeNestedLists :: GListCommands -> GListPosCommand
-    where
-      normalizeListPosCommand :: GListPosCommand -> GListPosCommand
-        where
-          unSentence :: [GCommands] -> [GPosCommand]
-          flattenSublist :: GPosCommand -> [GPosCommand]
+    normalizeNestedLists :: GListCommands -> GListPosCommand
+      where
+        normalizeListPosCommand :: GListPosCommand -> GListPosCommand
           where
-            getListPosCommands :: GListPosCommand -> [GPosCommand]
+            unSentence :: [GCommands] -> [GPosCommand]
+            flattenSublist :: GPosCommand -> [GPosCommand]
+            where
+              getListPosCommands :: GListPosCommand -> [GPosCommand]
 \end{verbatim}
 
 The constructors are appended with a \gray{G} in Haskell to prevent name

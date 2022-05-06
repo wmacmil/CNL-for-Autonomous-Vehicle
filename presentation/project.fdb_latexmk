@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1651806124 "project.xdv" "project.pdf" "project" 1651806125
-  "project.xdv" 1651806124 2427448 b7cfd8ad1169bbae826ccff0b9a1aa24 "xelatex"
+["xdvipdfmx"] 1651820073 "project.xdv" "project.pdf" "project" 1651820074
+  "project.xdv" 1651820072 2769652 d835ae11830064314197f65fb33bbbc0 "xelatex"
   (generated)
   "project.pdf"
-["xelatex"] 1651806118 "project.tex" "project.xdv" "project" 1651806125
+["xelatex"] 1651820066 "project.tex" "project.xdv" "project" 1651820074
   "/etc/texmf/web2c/texmf.cnf" 1598478810 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -258,6 +258,8 @@
   "/usr/share/texmf/tex/latex/lm/t1lmss.fd" 1256929440 1639 ba1c66ef577aa5cadc2c0fdc691a26ee ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1648763752 3380421 d386f3d577e79c572dc44ca88e622667 ""
+  "latex/Syntax.aux" 1651820067 894 dcfdef68b3aad97d5b25bf09f61d9f9b "xelatex"
+  "latex/Syntax.tex" 1651819987 11895 6021907dba12c5cb7ace39623370ce37 ""
   "latex/agda.sty" 1651612799 25379 d172c873cc9290d6a780ea9676fcead4 ""
   "pics/WithArrow.png" 1651792666 106640 033cc2f96f696dd562b1f698af3fd6bf ""
   "pics/aisec.png" 1651805618 170393 8d971fc445e210783db70c085aca5005 ""
@@ -280,16 +282,19 @@
   "pics/two.jpg" 1644917866 3546758 aa913192548cfe60bd6f3365956833ff ""
   "pics/wholeAST.png" 1651790320 71999 77095c24cc88e14f1e0be79556be199d ""
   "pics/zoomedScreenshot.png" 1651790386 45485 c91724af05d729e421cc63cb5aec1777 ""
-  "project.aux" 1651806124 6780 0b0d809f56ba5d53824af7966c9e17ba "xelatex"
-  "project.nav" 1651806124 3514 37758ceb0ee9dbf7c456ff88505a88f7 "xelatex"
-  "project.out" 1651806124 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
-  "project.tex" 1651806116 18711 f64b21c6f5b34ce26de582e8016cee4e ""
-  "project.vrb" 1651806123 469 6de28bdf05a52b96de703f6e9eb9cd02 "xelatex"
+  "project.aux" 1651820072 6958 9ce7a62f8ca0e9a59c40bdd019aa8456 "xelatex"
+  "project.nav" 1651820072 3605 b3e50058a82c9b4fbfdde158ae476f3c "xelatex"
+  "project.out" 1651820072 43 db4907baeced9e6ec4afd693504a7296 "xelatex"
+  "project.ptb" 1651820067 801 6084071298a653149e20e91b2d33581c "xelatex"
+  "project.tex" 1651820064 18533 61c1e0a18da7e8ac8eb413693a5c8373 ""
+  "project.vrb" 1651820071 952 3ec59619c097ac257c635a2101124b0a "xelatex"
   (generated)
+  "latex/Syntax.aux"
   "project.aux"
   "project.log"
   "project.nav"
   "project.out"
+  "project.ptb"
   "project.snm"
   "project.toc"
   "project.vrb"

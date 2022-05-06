@@ -1,13 +1,28 @@
-\frametitle{Lists under the hood}
+\frametitle{Haskell Semantics}
+\fontsize{9pt}{10pt}\selectfont
+\begin{block}{}
+Sequence of future states reveal a simple list flattening procedure which
+amounts to an exceedingly simple denotational semantics
+\end{block}
+\pause
 \begin{verbatim}
-  normalizeList ::  GListCommands -> GListCommands
+semantics :: GListCommands -> Phi
+semantics x =
+  let (GListCommands ((GOneCommand y) : _)) = normalizeList x
+  in case y of
+      q@(GSimpleCom a) -> astToAtom q
+      (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
+\end{verbatim}
+\pause
+\begin{verbatim}
+normalizeList ::  GListCommands -> GListCommands
   where
-  normalizeNestedLists :: GListCommands -> GListPosCommand
-    where
-      normalizeListPosCommand :: GListPosCommand -> GListPosCommand
-        where
-          unSentence :: [GCommands] -> [GPosCommand]
-          flattenSublist :: GPosCommand -> [GPosCommand]
+    normalizeNestedLists :: GListCommands -> GListPosCommand
+      where
+        normalizeListPosCommand :: GListPosCommand -> GListPosCommand
           where
-            getListPosCommands :: GListPosCommand -> [GPosCommand]
+            unSentence :: [GCommands] -> [GPosCommand]
+            flattenSublist :: GPosCommand -> [GPosCommand]
+            where
+              getListPosCommands :: GListPosCommand -> [GPosCommand]
 \end{verbatim}

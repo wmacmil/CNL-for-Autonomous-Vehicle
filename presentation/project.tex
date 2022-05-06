@@ -19,6 +19,24 @@
 \usepackage{newunicodechar}
 \newunicodechar{→}{\ensuremath{\mathnormal\to}}
 \newunicodechar{ℕ}{\ensuremath{\mathnormal\bN}}
+\newunicodechar{ℓ}{\ensuremath{\mathnormal\ell}}
+\newunicodechar{↪}{\ensuremath{\mathnormal\hookrightarrow}}
+\newunicodechar{𝑀}{$M$}
+
+% \newunicodechar{ℕ}{$\mathbb{N}$}
+\newunicodechar{⊨}{\ensuremath{\vDash}}
+\newunicodechar{⊧}{$\models$}
+
+\newunicodechar{ϕ}{$\phi$}
+\newunicodechar{∨}{$\lor$}
+\newunicodechar{∧}{$\land$}
+\newunicodechar{⇒}{$\Rightarrow$}
+
+\newunicodechar{⊥}{$\bot$}
+\newunicodechar{⊤}{$\top$}
+% ⊥ ⊤
+  % _∨_ _∧_ _⇒_ : → ϕ → ϕ
+
 
 \usepackage{xcolor}
 \usepackage[normalem]{ulem}%per barrare parole
@@ -36,6 +54,8 @@
 \usepackage{multicol}
 \usepackage{caption}
 \usepackage{bussproofs}
+\usepackage{soul}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
 
 \usetheme{Antibes}
 \usecolortheme{beaver}
@@ -63,9 +83,9 @@
 
 % \subsection{Quick Recapitulation}
 
-% \begin{frame}
-% \include{latex/F}
-% \end{frame}
+\begin{frame}
+\include{latex/Syntax}
+\end{frame}
 
 % \begin{frame}
 % \include{latex/G}
@@ -177,8 +197,8 @@ first.''
 
 \begin{frame}
 \begin{block}{Mathematically Ideal Property}
-  $\forall u \in \text{Utt}\; \exists r \in \text{Routes}$
-  such that $\forall r' \in \text{Routes}\; d(u,r) \leq d(u,r')$
+  $\forall u \in \text{Utt}.\; \exists r \in \text{Routes}$
+  such that $\forall r' \in \text{Routes}.\; d(u,r) \leq d(u,r')$
 \end{block}
 \pause
 \begin{exampleblock}{}
@@ -204,7 +224,7 @@ subject to constraints on the sets imposed by, for example
 \pause
 \begin{itemize}[<+->]
 \item grammars in the case of strings
-\item or physical objects in the case of paths in Euclidean space
+\item physical objects in the case of paths in Euclidean space
 \end{itemize}
 \end{exampleblock}
 
@@ -222,6 +242,7 @@ subject to constraints on the sets imposed by, for example
 
 
 \begin{frame}[fragile]
+\frametitle{Verification Spectrum}
 \begin{figure}
 \centering
 
@@ -240,17 +261,51 @@ subject to constraints on the sets imposed by, for example
 
 \end{frame}
 
-
+% general
 \begin{frame}
 \frametitle{Main Idea}
 
-Functional Programming is all about composition of higher order functions
-
-Break down system into composable components, each of which can operate under
-different verification conditions
-
-
+\begin{itemize}[<+->]
+\item Functional Programming is all about composition of higher order functions
+\item Break down system into composable \emph{big-components}, each of which
+\begin{itemize}[<+->]
+\item admits composition of \emph{small-components}
+\item operates under different verification conditions
+\end{itemize}
+\item Ensure maps between big-components are functorial with respect to
+  small-component composition
+\item Verification of system is can similarly be broken into sub-verifications
+\end{itemize}
 \end{frame}
+
+
+% more specifically
+\begin{frame}
+\begin{exampleblock}{More Specifically}
+This project contains bits and pieces of :
+\end{exampleblock}
+\begin{enumerate}
+\item Functional Programming Languages : GF (Grammatical Framework), Haskell, Agda
+\item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
+\item Tools : Grammars, Decidable logics for motion planning and verification
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ideal Pipeline}
+
+\begin{equation} % \label{eq1}
+\begin{split}
+\text{Utterance} & \mathcolorbox{yellow}{\xrightarrow{\mathit{Speech\ Recognizer}}} \text{String}\\
+ & \mathcolorbox{yellow}{\xrightarrow{\mathit{Canonicalization_{LLM}}}} \text{String}\\
+ & \xrightarrow{\mathit{Parsing_{GF}}} \text{Abstract Syntax Tree (NL)}\\
+ & \xrightarrow{\llbracket - \rrbracket_{Haskell}} \text{Abstract Syntax Tree (LTL)}\\
+ & \mathcolorbox{yellow}{\xrightarrow{\vDash_{Agda}}} \text{Verifiable Path}
+\end{split}
+\end{equation} 
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Grammatical Framework}
@@ -288,7 +343,7 @@ different verification conditions
 
 \begin{frame}[fragile]
 \frametitle{TOUCHDOWN Dataset}
-
+\fontsize{9pt}{10pt}\selectfont
 
 \begin{verbatim}
 ([(["Go"],5527),(["be"],5300),(["turn"],4154),(["Turn"],4154)],["VB"])
@@ -434,9 +489,7 @@ finish.
 \begin{exampleblock}{Alternative Interpretation}
 go (to the store, turn left and stop (at the woman)) with the dog. 
 \end{exampleblock}
-\begin{alertblock}{}
-Need a temporal until operator, $U$, to construct a semantically justifiable interpretation
-\end{alertblock}
+\pause
 \begin{verbatim}
 ModAction
   * Stop
@@ -451,6 +504,10 @@ MkAdvPh
       * The
         Dog
 \end{verbatim}
+\pause
+\begin{alertblock}{}
+Need a temporal until operator, $U$, to construct a semantically justifiable interpretation
+\end{alertblock}
 \end{frame}
 
 
@@ -477,147 +534,42 @@ finish.
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Lists under the hood}
+\frametitle{Haskell Semantics}
+\fontsize{9pt}{10pt}\selectfont
+\begin{block}{}
+Sequence of future states reveal a simple list flattening procedure which
+amounts to an exceedingly simple denotational semantics
+\end{block}
+\pause
 \begin{verbatim}
-  normalizeList ::  GListCommands -> GListCommands
+semantics :: GListCommands -> Phi
+semantics x =
+  let (GListCommands ((GOneCommand y) : _)) = normalizeList x
+  in case y of
+      q@(GSimpleCom a) -> astToAtom q
+      (GCompoundCommand GAnd (GListPosCommand xs)) -> listCommand2LTL xs
+\end{verbatim}
+\pause
+\begin{verbatim}
+normalizeList ::  GListCommands -> GListCommands
   where
-  normalizeNestedLists :: GListCommands -> GListPosCommand
-    where
-      normalizeListPosCommand :: GListPosCommand -> GListPosCommand
-        where
-          unSentence :: [GCommands] -> [GPosCommand]
-          flattenSublist :: GPosCommand -> [GPosCommand]
+    normalizeNestedLists :: GListCommands -> GListPosCommand
+      where
+        normalizeListPosCommand :: GListPosCommand -> GListPosCommand
           where
-            getListPosCommands :: GListPosCommand -> [GPosCommand]
+            unSentence :: [GCommands] -> [GPosCommand]
+            flattenSublist :: GPosCommand -> [GPosCommand]
+            where
+              getListPosCommands :: GListPosCommand -> [GPosCommand]
 \end{verbatim}
 \end{frame}
 
 
 
 
-% \begin{exampleblock}{Manifold Ideas}
-% This project contains bits and pieces of :
-% \end{exampleblock}
-
-% \begin{enumerate}
-% \item Functional Programming languages : GF (Grammatical Framework), Haskell, Theorem Provers (Agda, Coq, ...)
-% \item Verification for Robotics Systems :  Temporal logic (mostly at the syntactic level, for now)
-% \item Natural Language Processing : Semantic Parsing, Controlled Natural Languages
-% \end{enumerate}
-% \end{frame}
-
-
-
-\begin{frame}
-
-\begin{exampleblock}{}
-This project is quite multifaceted, still in a somewhat primordial state (and therefore may be taken in many directions).
-\end{exampleblock}
-
-\begin{block}{}
-Goal : Design a controlled natural language which is 
-\end{block}
-
-\begin{itemize}
-\item Suitable as an ``approximation'' for a voice assistant for an autonomous vehicle
-\item Has a well defined semantics in temporal logic
-\item Seeking to balance breadth and depth of our system
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Ideal Pipeline}
-
-\begin{equation} % \label{eq1}
-\begin{split}
-\text{Utterance} & \xrightarrow{\mathit{Speech\ Recognizer}} \text{String}\\
- & \xrightarrow{\mathit{Canonicalization_{BERT}}} \text{String}\\
- & \xrightarrow{\mathit{Parsing\ (GF)}} \text{Abstract Syntax Tree (NL)}\\
- & \xrightarrow{\llbracket - \rrbracket_{Haskell}} \text{Abstract Syntax Tree (LTL)}\\
- & \xrightarrow{\vDash} \text{Verifiable Path}
-\end{split}
-\end{equation} 
-\end{frame}
-
-\begin{frame}
-\frametitle{What we have so far...}
-
-\begin{equation} % \label{eq1}
-\begin{split}
-\text{String} & \xrightarrow{\mathit{Parsing\ (GF)}} \text{Abstract Syntax Tree (NL)}\\
- & \xrightarrow{\llbracket - \rrbracket_{Haskell}} \text{Abstract Syntax Tree (LTL)}\\
- & \xrightarrow{\vDash}_{Agda} \text{``Standard Semantics''}
-\end{split}
-\end{equation} 
-\end{frame}
-
-\begin{frame}
-\frametitle{Trade-offs}
-\begin{itemize}[<+->]
-\item Depth versus breadth
-\begin{itemize}[<+->]
-\item Breadth : Wide coverage, usable by non-experts (where ML comes in)
-\item Depth   : Well-behaved, verifiable (where FP comes in)
-\end{itemize}
-\item Specificity and generality
-\item Formality and formalizability
-\item Verifiability and validity
-\end{itemize}
-\end{frame}
-
-
-% \begin{frame}
-% \frametitle{Functional Programming}
-% \begin{block}{}
-% Types, and type-checking is a fundamental way to seperate the process of
-% programming into two phases
-% \begin{itemize}
-% \item Static  : Specification, Types 
-% \item Dynamic : Implentation, Programs 
-% \end{itemize}
-% \end{block}
-% % \begin{exampleblock}{}
-% \begin{itemize}
-% \item Correct-by-construction mentality - ``verification technique''
-% \item Constraints are baked into user-defined types.
-% \item Specification guides implementation. Functional
-%   programmers spend almost all their time thinking about types.
-% \item Focus energy on high-level (abstract) details
-% \item It is convenient to implement programming languages
-% (i.e. write interpreters and compilers)
-% \end{itemize}
-% % \end{exampleblock}
-% \end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Haskell and Agda}
-
-\begin{exampleblock}{Haskell}
-\begin{itemize}
-\item One of the main FP languages - deep ties in Scotland and Sweden
-\item GADTs and pattern matching make for first-class tree transformations
-\item Defining and reasoning about logics and programming languages
-\end{itemize}
-\end{exampleblock}
-
-\begin{exampleblock}{Agda}
-\begin{itemize}
-\item ``Dependently typed Haskell''
-\item Interactive Theorem Prover
-\item Programs as proofs, propositions as types
-\end{itemize}
-
-\end{exampleblock}
-\end{frame}
 
 \begin{frame}
 \frametitle{Linear Temporal Logic}
-
 \begin{itemize}
 \item Modal logic (temporal modality)
 \item Allows one to reason about sequential actions
@@ -640,6 +592,40 @@ $\text{Propositional Logic} < \text{Temporal Logic} <_{undecidable} \text{First 
 \end{exampleblock}
 
 \end{frame}
+
+
+\begin{frame}
+\begin{exampleblock}{}
+This project is quite multifaceted, still in a somewhat primordial state (and therefore may be taken in many directions).
+\end{exampleblock}
+
+\begin{block}{}
+Goal : Design a controlled natural language which is 
+\end{block}
+
+\begin{itemize}
+\item Suitable as an ``approximation'' for a voice assistant for an autonomous vehicle
+\item Has a well defined semantics in temporal logic
+\item Seeking to balance breadth and depth of our system
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Trade-offs}
+\begin{itemize}[<+->]
+\item Depth versus breadth
+\begin{itemize}[<+->]
+\item Breadth : Wide coverage, usable by non-experts (where ML comes in)
+\item Depth   : Well-behaved, verifiable (where FP comes in)
+\end{itemize}
+\item Specificity and generality
+\item Formality and formalizability
+\item Verifiability and validity
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Where does ML come in?}
@@ -703,6 +689,10 @@ Integrate their technique and code with our parser and dataset
 \item Working on a draft document, with references, of everything shown here.
 \end{itemize} 
 
+\end{frame}
+
+\begin{frame}
+Acknolwedgements
 \end{frame}
 
 \end{document}
